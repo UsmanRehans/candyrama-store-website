@@ -31,6 +31,7 @@ type Order = {
 export function AdminOrdersClient() {
   const [session, setSession] = useState<Session | null>(null);
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [orders, setOrders] = useState<Order[]>([]);
   const [message, setMessage] = useState('');
   const [busy, setBusy] = useState(false);
@@ -47,16 +48,15 @@ export function AdminOrdersClient() {
   async function signIn() {
     setBusy(true);
     setMessage('');
-    const { error } = await getSupabaseBrowser().auth.signInWithOtp({
+    const { error } = await getSupabaseBrowser().auth.signInWithPassword({
       email,
-      options: {
-        shouldCreateUser: false,
-        emailRedirectTo: `${location.origin}/admin/orders`,
-      },
+      password,
     });
-    setMessage(
-      error ? error.message : 'Check your email for the secure sign-in link.',
-    );
+    if (error) {
+      setMessage('Email or password is incorrect.');
+    } else {
+      setMessage('Signed in securely.');
+    }
     setBusy(false);
   }
   async function authorizedFetch(url: string, init?: RequestInit) {
@@ -131,10 +131,7 @@ export function AdminOrdersClient() {
         <section className="admin-card">
           <p className="eyebrow">CANDYRAMA ADMIN</p>
           <h1>Orders sign in</h1>
-          <p>
-            Use an invited administrator email. We’ll send a one-time secure
-            link.
-          </p>
+          <p>Sign in with an approved administrator account.</p>
           <label>
             Email
             <input
@@ -144,12 +141,21 @@ export function AdminOrdersClient() {
               placeholder="admin@candyrama.com"
             />
           </label>
+          <label>
+            Password
+            <input
+              type="password"
+              value={password}
+              onChange={(event) => setPassword(event.target.value)}
+              autoComplete="current-password"
+            />
+          </label>
           <button
             className="button primary"
-            disabled={busy || !email}
+            disabled={busy || !email || !password}
             onClick={signIn}
           >
-            {busy ? 'Sending…' : 'Email sign-in link'}
+            {busy ? 'Signing in…' : 'Sign in'}
           </button>
           {message && <output className="admin-message">{message}</output>}
         </section>

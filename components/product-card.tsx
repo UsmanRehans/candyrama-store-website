@@ -19,6 +19,7 @@ export function ProductCard({ product }: { product: StorefrontProduct }) {
           alt={product.name}
           width={520}
           height={520}
+          unoptimized
         />
       </Link>
       <div className="product-info">

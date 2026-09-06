@@ -22,6 +22,12 @@ function toneFor(accentColor: string) {
   return 'pink';
 }
 
+function stableProductImageUrl(image: string) {
+  return image.startsWith('/generated/')
+    ? `https://candyrama-store.vercel.app${image}`
+    : image;
+}
+
 export async function getStorefrontProducts(): Promise<StorefrontProduct[]> {
   const records = await db.product.findMany({
     where: { status: 'ACTIVE' },
@@ -67,10 +73,11 @@ export async function getStorefrontProducts(): Promise<StorefrontProduct[]> {
         note: record.tagline ?? record.description,
         price: `$${(priceCents / 100).toFixed(2)}`,
         priceCents,
-        image:
+        image: stableProductImageUrl(
           record.images[0]?.url ??
-          design?.image ??
-          '/generated/rainbow-sour-cutout.png',
+            design?.image ??
+            '/generated/rainbow-sour-cutout.png',
+        ),
         tone: design?.tone ?? toneFor(record.accentColor),
         badge: design?.badge,
         netWeight: variant.netWeight ?? undefined,

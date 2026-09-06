@@ -21,6 +21,13 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
+        hostname: 'candyrama-store.vercel.app',
+        port: '',
+        pathname: '/generated/**',
+        search: '',
+      },
+      {
+        protocol: 'https',
         hostname: 'vfvnhyedbdhzbdvfhqae.supabase.co',
         port: '',
         pathname: '/storage/v1/object/public/product-media/**',

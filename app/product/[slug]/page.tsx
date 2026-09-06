@@ -35,6 +35,7 @@ export default async function ProductPage({
             width={700}
             height={700}
             priority
+            unoptimized
           />
         </div>
         <div className="product-detail-copy">

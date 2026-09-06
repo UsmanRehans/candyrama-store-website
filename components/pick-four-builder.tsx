@@ -78,7 +78,13 @@ export function PickFourBuilder({
             key={product.slug}
           >
             <span className="pick-four-image">
-              <Image src={product.image} alt="" width={240} height={240} />
+              <Image
+                src={product.image}
+                alt=""
+                width={240}
+                height={240}
+                unoptimized
+              />
             </span>
             <strong>{product.name}</strong>
             <small>

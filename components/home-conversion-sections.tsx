@@ -162,7 +162,13 @@ export function HomeConversionSections({
               }
               key={product.slug}
             >
-              <Image src={product.image} alt="" width={90} height={90} />
+              <Image
+                src={product.image}
+                alt=""
+                width={90}
+                height={90}
+                unoptimized
+              />
               <span>{product.name}</span>
               <b>{box.includes(product.slug) ? 'Picked' : 'Pick me'}</b>
             </button>

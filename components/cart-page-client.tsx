@@ -81,6 +81,7 @@ export function CartPageClient({
                   alt={product.name}
                   width={150}
                   height={150}
+                  unoptimized
                 />
                 <div>
                   <h2>{product.name}</h2>

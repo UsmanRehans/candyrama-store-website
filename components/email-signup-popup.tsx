@@ -114,18 +114,24 @@ export function EmailSignupPopup() {
             {offerEligible ? (
               <>
                 <p>
-                  Add at least two treats to your bag, then enter this code in
-                  your cart.
+                  Add at least two treats to your bag. Your free treat will be
+                  added automatically when you check out with this email.
                 </p>
-                <strong className="signup-offer-code">SWEETSTART</strong>
                 <Link className="button primary" href="/shop" onClick={close}>
                   Pick your treats
+                </Link>
+                <Link
+                  className="signup-account-link"
+                  href="/account"
+                  onClick={close}
+                >
+                  Create my account
                 </Link>
               </>
             ) : (
               <>
                 <p>
-                  You’re back on the CandyRama email list. SWEETSTART is
+                  You’re back on the CandyRama email list. The welcome BOGO is
                   reserved for subscribers who have not placed their first order
                   yet.
                 </p>
@@ -171,8 +177,9 @@ export function EmailSignupPopup() {
               <summary>Offer details</summary>
               <p>
                 For new subscribers on their first order. Add two or more
-                eligible treats and use SWEETSTART. The lowest priced treat is
-                free. One use per email. Cannot be combined with Sugar Points.
+                eligible treats and check out with your signup email. The lowest
+                priced treat is free automatically. One use per email. Cannot be
+                combined with Sugar Points.
               </p>
             </details>
           </>

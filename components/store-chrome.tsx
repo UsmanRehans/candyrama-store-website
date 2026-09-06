@@ -40,6 +40,7 @@ export function StoreFooter() {
         <Link href="/allergens">Allergen info</Link>
         <Link href="/legal/privacy">Privacy policy</Link>
         <Link href="/legal/privacy-choices">Privacy choices</Link>
+        <Link href="/account">My account</Link>
       </nav>
       <div className="footer-column footer-contact">
         <h2>Contact</h2>

@@ -18,7 +18,6 @@ export function CartPageClient({
   const [giftRecipientName, setGiftRecipientName] = useState('');
   const [giftMessage, setGiftMessage] = useState('');
   const [referralCode, setReferralCode] = useState('');
-  const [discountCode, setDiscountCode] = useState('');
   const [useRewards, setUseRewards] = useState(false);
   const lines = items.flatMap((item) => {
     const product = products.find(
@@ -43,7 +42,6 @@ export function CartPageClient({
           giftRecipientName: isGift ? giftRecipientName : undefined,
           giftMessage: isGift ? giftMessage : undefined,
           referralCode: referralCode || undefined,
-          discountCode: discountCode || undefined,
           useRewards,
         }),
       });
@@ -121,17 +119,10 @@ export function CartPageClient({
                 placeholder="you@example.com"
               />
             </label>
-            <label>
-              Offer code
-              <input
-                value={discountCode}
-                onChange={(event) =>
-                  setDiscountCode(event.target.value.toUpperCase())
-                }
-                maxLength={24}
-                placeholder="SWEETSTART"
-              />
-            </label>
+            <p className="automatic-offer-note">
+              Email list member on your first order? Add two treats and your
+              lowest priced treat is free automatically.
+            </p>
             <label className="cart-check">
               <input
                 type="checkbox"

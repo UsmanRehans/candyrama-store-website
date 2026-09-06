@@ -10,7 +10,6 @@ export const checkoutSchema = z.object({
   giftRecipientName: z.string().trim().max(80).optional(),
   giftMessage: z.string().trim().max(300).optional(),
   referralCode: z.string().trim().toUpperCase().max(24).optional(),
-  discountCode: z.string().trim().toUpperCase().max(24).optional(),
   useRewards: z.boolean().default(false),
 });
 export const newsletterSchema = z.object({

@@ -57,7 +57,7 @@ async function releaseReservation(
           where: { email: attempt.email },
           data: { rewardPoints: { increment: attempt.rewardPointsRedeemed } },
         });
-      if (attempt.discountCode === 'SWEETSTART' && attempt.email)
+      if (attempt.discountCode === 'WELCOME_BOGO' && attempt.email)
         await tx.newsletterSubscriber.updateMany({
           where: {
             email: attempt.email,
@@ -255,7 +255,7 @@ async function completeOrder(
           });
         }
       }
-      if (attempt.discountCode === 'SWEETSTART') {
+      if (attempt.discountCode === 'WELCOME_BOGO') {
         const redeemed = await tx.newsletterSubscriber.updateMany({
           where: {
             email: customerEmail,

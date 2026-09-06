@@ -2583,7 +2583,7 @@ img {
 .signup-popup details { margin-top: 14px; font-size: 12px; font-weight: 800; line-height: 1.5; }
 .signup-popup summary { cursor: pointer; font-weight: 950; }
 .signup-popup-success { display: grid; justify-items: start; }
-.signup-offer-code { display: block; margin: 22px 0; border: 3px dashed var(--cr-plum-deep); border-radius: 12px; padding: 13px 20px; background: var(--cr-cream); font-size: 26px; letter-spacing: 3px; }
+.automatic-offer-note { border: 2px dashed var(--cr-pink); border-radius: 12px; padding: 12px; background: var(--cr-cream); font-size: 12px; font-weight: 900; line-height: 1.45; }
 
 @media (max-width: 980px) {
   body.mobile-menu-open { overflow: hidden; }
@@ -2597,4 +2597,57 @@ img {
   .mobile-navigation { inset: 106px 0 auto; }
   .signup-popup { padding: 42px 25px 30px; border-radius: 22px; box-shadow: 7px 7px 0 var(--cr-pink); }
   .signup-popup h2 { font-size: 52px; }
+}
+
+/* Customer accounts */
+.account-button { display: flex; align-items: center; gap: 7px; margin-right: 20px; font-size: 12px; font-weight: 900; text-transform: uppercase; }
+.account-button svg { width: 22px; }
+.signup-account-link { margin-top: 14px; font-weight: 950; text-decoration: underline; text-underline-offset: 4px; }
+.account-shell { min-height: 680px; display: grid; grid-template-columns: 1.1fr .9fr; gap: 7vw; align-items: center; padding: 85px 8vw; background: var(--cr-sky); border-bottom: 4px solid var(--cr-plum-deep); }
+.account-intro h1, .account-dashboard h1 { max-width: 760px; margin: 10px 0 22px; font-family: var(--font-anton); font-size: clamp(58px, 7vw, 100px); font-weight: 400; line-height: .9; text-transform: uppercase; }
+.account-intro > p:last-of-type { max-width: 630px; font-size: 18px; font-weight: 800; line-height: 1.6; }
+.account-intro > div { display: grid; grid-template-columns: auto 1fr; gap: 14px; align-items: center; margin-top: 35px; font-weight: 950; text-transform: uppercase; }
+.account-intro > div svg { color: var(--cr-pink); }
+.account-auth-card { display: grid; gap: 17px; border: 4px solid var(--cr-plum-deep); border-radius: 24px; padding: 35px; background: var(--cr-cream); box-shadow: 9px 9px 0 var(--cr-plum-deep); }
+.account-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+.account-tabs button { border: 2px solid var(--cr-plum-deep); border-radius: 999px; padding: 11px; background: transparent; color: var(--cr-plum-deep); font: inherit; font-weight: 950; cursor: pointer; }
+.account-tabs button.active { background: var(--cr-pink); color: var(--cr-cream); }
+.account-auth-card > label:not(.cart-check) { display: grid; gap: 7px; font-size: 11px; font-weight: 950; letter-spacing: 1px; text-transform: uppercase; }
+.account-auth-card input:not([type='checkbox']) { width: 100%; border: 3px solid var(--cr-plum-deep); border-radius: 12px; padding: 13px; background: #fff; font: inherit; }
+.account-auth-card output { font-weight: 900; }
+.account-auth-card small { line-height: 1.5; }
+.account-auth-card small a { text-decoration: underline; }
+.account-dashboard { min-height: 680px; padding: 75px 7vw 100px; background: var(--cr-cream); }
+.account-dashboard-head { display: flex; justify-content: space-between; gap: 30px; align-items: end; }
+.account-dashboard-head h1 { margin-bottom: 10px; }
+.account-dashboard-head p:last-child { font-weight: 850; }
+.account-dashboard-head button { display: inline-flex; align-items: center; gap: 8px; border: 2px solid var(--cr-plum-deep); border-radius: 999px; padding: 11px 17px; background: transparent; color: inherit; font: inherit; font-weight: 900; cursor: pointer; }
+.account-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 45px 0 65px; }
+.account-stats article { display: flex; min-height: 145px; flex-direction: column; justify-content: space-between; border: 3px solid var(--cr-plum-deep); border-radius: 18px; padding: 23px; background: var(--cr-yellow); box-shadow: 5px 5px 0 var(--cr-plum-deep); }
+.account-stats span { font-size: 11px; font-weight: 950; letter-spacing: 1px; text-transform: uppercase; }
+.account-stats strong { overflow-wrap: anywhere; font-family: var(--font-anton); font-size: 34px; font-weight: 400; text-transform: uppercase; }
+.account-orders { max-width: 1050px; margin: 0 auto; }
+.account-orders > h2 { font-family: var(--font-anton); font-size: 48px; font-weight: 400; text-transform: uppercase; }
+.account-order { display: grid; grid-template-columns: 180px 1fr 150px; gap: 28px; align-items: start; border-top: 3px solid var(--cr-plum-deep); padding: 28px 0; }
+.account-order h3 { margin: 5px 0; font-family: var(--font-anton); font-size: 27px; font-weight: 400; }
+.account-order b, .account-order > div > span { font-size: 11px; font-weight: 950; text-transform: uppercase; }
+.account-order ul { display: grid; gap: 9px; margin: 0; padding: 0; list-style: none; }
+.account-order li { display: flex; justify-content: space-between; gap: 20px; }
+.account-order > div:last-child { display: grid; gap: 6px; text-align: right; }
+
+@media (max-width: 900px) {
+  .account-shell { grid-template-columns: 1fr; }
+  .account-order { grid-template-columns: 140px 1fr; }
+  .account-order > div:last-child { grid-column: 2; text-align: left; }
+}
+@media (max-width: 640px) {
+  .account-button { margin-right: 12px; }
+  .account-button span { display: none; }
+  .account-shell { padding: 65px 22px 80px; }
+  .account-auth-card { padding: 25px 20px; box-shadow: 6px 6px 0 var(--cr-plum-deep); }
+  .account-dashboard { padding: 60px 22px 80px; }
+  .account-dashboard-head { align-items: flex-start; flex-direction: column; }
+  .account-stats { grid-template-columns: 1fr; }
+  .account-order { grid-template-columns: 1fr; }
+  .account-order > div:last-child { grid-column: 1; }
 }

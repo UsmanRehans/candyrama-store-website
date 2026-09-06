@@ -89,7 +89,7 @@ export function HomeConversionSections({
       const result = await response.json();
       if (!response.ok) throw new Error(result.error ?? 'Signup failed.');
       setSignupMessage(
-        'You’re in! Use SWEETSTART for buy one, get one free on your first order.',
+        'You’re in! Your first order BOGO will be added automatically at checkout.',
       );
       setEmail('');
     } catch (error) {

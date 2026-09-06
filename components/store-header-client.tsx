@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu, ShoppingBag, X } from 'lucide-react';
+import { CircleUserRound, Menu, ShoppingBag, X } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { CartCount } from './cart-count';
 import { openEmailSignup } from './email-signup-popup';
@@ -62,6 +62,14 @@ export function StoreHeaderClient() {
           >
             {menuOpen ? <X /> : <Menu />}
           </button>
+          <Link
+            href="/account"
+            className="account-button"
+            aria-label="My account"
+          >
+            <CircleUserRound />
+            <span>Account</span>
+          </Link>
           <Link href="/cart" className="cart-button" aria-label="Shopping bag">
             <ShoppingBag />
             <CartCount />
@@ -85,6 +93,9 @@ export function StoreHeaderClient() {
           </Link>
           <Link href="/wholesale" onClick={closeMenu}>
             Wholesale
+          </Link>
+          <Link href="/account" onClick={closeMenu}>
+            My account
           </Link>
           <button
             type="button"

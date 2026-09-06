@@ -64,45 +64,24 @@ export async function POST(request: NextRequest) {
           select: { id: true, email: true, rewardPoints: true },
         })
       : null;
-    const discountCode = body.discountCode || null;
-    const usesSignupOffer = discountCode === 'SWEETSTART';
-    if (discountCode && !usesSignupOffer)
-      return NextResponse.json(
-        { error: 'That offer code is not valid.' },
-        { status: 400 },
-      );
-    if (usesSignupOffer && !body.email)
-      return NextResponse.json(
-        { error: 'Enter your signup email to use SWEETSTART.' },
-        { status: 400 },
-      );
-    if (usesSignupOffer && body.useRewards)
-      return NextResponse.json(
-        { error: 'Choose SWEETSTART or Sugar Points for this order.' },
-        { status: 400 },
-      );
-    if (
-      usesSignupOffer &&
-      cart.reduce((sum, item) => sum + item.quantity, 0) < 2
-    )
-      return NextResponse.json(
-        { error: 'Add at least two treats to use SWEETSTART.' },
-        { status: 400 },
-      );
-    if (usesSignupOffer) {
-      const [subscriber, priorOrders] = await Promise.all([
-        db.newsletterSubscriber.findUnique({
-          where: { email: body.email!.toLowerCase() },
-          select: { active: true, offerRedeemedAt: true },
-        }),
-        db.order.count({ where: { email: body.email!.toLowerCase() } }),
-      ]);
-      if (!subscriber?.active || subscriber.offerRedeemedAt || priorOrders > 0)
-        return NextResponse.json(
-          { error: 'SWEETSTART is for a subscriber’s first order.' },
-          { status: 400 },
-        );
-    }
+    const cartQuantity = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const [subscriber, priorOrders] = body.email
+      ? await Promise.all([
+          db.newsletterSubscriber.findUnique({
+            where: { email: body.email!.toLowerCase() },
+            select: { active: true, offerRedeemedAt: true },
+          }),
+          db.order.count({ where: { email: body.email!.toLowerCase() } }),
+        ])
+      : [null, 0];
+    const usesSignupOffer = Boolean(
+      body.email &&
+      cartQuantity >= 2 &&
+      subscriber?.active &&
+      !subscriber.offerRedeemedAt &&
+      priorOrders === 0,
+    );
+    const discountCode = usesSignupOffer ? 'WELCOME_BOGO' : null;
     const referral = body.referralCode
       ? await db.customer.findUnique({
           where: { referralCode: body.referralCode },
@@ -118,7 +97,7 @@ export async function POST(request: NextRequest) {
         { status: 400 },
       );
     const rewardPointsRedeemed =
-      body.useRewards && customer
+      body.useRewards && customer && !usesSignupOffer
         ? Math.min(customer.rewardPoints, Math.floor(subtotalCents / 5))
         : 0;
     const rewardDiscountCents = rewardPointsRedeemed * 5;
@@ -203,7 +182,7 @@ export async function POST(request: NextRequest) {
             giftRecipientName: body.giftRecipientName || null,
             giftMessage: body.giftMessage || null,
             referralCode: body.referralCode || null,
-            useRewards: body.useRewards,
+            useRewards: body.useRewards && !usesSignupOffer,
             rewardPointsRedeemed,
             discountCode,
             promotionDiscountCents,
@@ -226,7 +205,7 @@ export async function POST(request: NextRequest) {
             currency: 'usd',
             duration: 'once',
             name: usesSignupOffer
-              ? 'CandyRama SWEETSTART BOGO'
+              ? 'CandyRama welcome BOGO'
               : 'CandyRama rewards',
             metadata: { checkoutAttemptId: attempt.id },
           })
@@ -270,7 +249,7 @@ export async function POST(request: NextRequest) {
           },
         ],
         automatic_tax: { enabled: true },
-        allow_promotion_codes: !checkoutCoupon,
+        allow_promotion_codes: false,
         discounts: checkoutCoupon ? [{ coupon: checkoutCoupon.id }] : undefined,
         success_url: `${env.NEXT_PUBLIC_SITE_URL}/order/confirmed?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${env.NEXT_PUBLIC_SITE_URL}/cart?checkout=cancelled`,
@@ -333,7 +312,7 @@ export async function POST(request: NextRequest) {
                   rewardPoints: { increment: attempt.rewardPointsRedeemed },
                 },
               });
-            if (attempt.discountCode === 'SWEETSTART' && attempt.email)
+            if (attempt.discountCode === 'WELCOME_BOGO' && attempt.email)
               await tx.newsletterSubscriber.updateMany({
                 where: {
                   email: attempt.email,
@@ -375,7 +354,7 @@ export async function POST(request: NextRequest) {
       );
     if (error instanceof Error && error.message === 'OFFER_UNAVAILABLE')
       return NextResponse.json(
-        { error: 'SWEETSTART is already in use or has been redeemed.' },
+        { error: 'Your welcome offer is already in use or was redeemed.' },
         { status: 409 },
       );
     if (error && typeof error === 'object' && 'issues' in error)

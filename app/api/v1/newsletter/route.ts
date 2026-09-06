@@ -20,10 +20,9 @@ export async function POST(request: NextRequest) {
       {
         data: {
           subscribed: true,
-          offerCode: offerEligible ? 'SWEETSTART' : null,
           offerEligible,
           offer: offerEligible
-            ? 'Buy one treat and get one treat free on your first order.'
+            ? 'Buy one treat and get one treat free automatically on your first order.'
             : null,
         },
       },

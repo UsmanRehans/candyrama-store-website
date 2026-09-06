@@ -46,7 +46,7 @@ const schema = z.object({
   RESEND_API_KEY: optionalSecret,
   EMAIL_FROM: z.string().default('CandyRama <orders@example.com>'),
   EMAIL_REPLY_TO: optionalEmail,
-  CUSTOMER_CARE_EMAIL: z.email().default('customercare@twistedtreatz.com'),
+  CUSTOMER_CARE_EMAIL: z.email().default('admin@thecandyrama.com'),
   ADMIN_NOTIFICATION_EMAIL: optionalEmail,
   IP_HASH_SECRET: optionalSecret,
 });

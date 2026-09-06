@@ -1,12 +1,12 @@
-import 'server-only';
-import { Resend } from 'resend';
-import { env } from './env';
+import "server-only";
+import { Resend } from "resend";
+import { env } from "./env";
 
 function escapeHtml(value: string) {
   return value.replace(
     /[&<>'"]/g,
     (character) =>
-      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' })[
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;" })[
         character
       ]!,
   );
@@ -19,7 +19,7 @@ async function send(message: {
   replyTo?: string;
 }) {
   if (!env.RESEND_API_KEY)
-    return { sent: false as const, reason: 'not_configured' as const };
+    return { sent: false as const, reason: "not_configured" as const };
   const resend = new Resend(env.RESEND_API_KEY);
   const { data, error } = await resend.emails.send({
     from: env.EMAIL_FROM,
@@ -33,7 +33,7 @@ async function send(message: {
 export async function sendIntegrationTest(to: string) {
   return send({
     to,
-    subject: 'CandyRama email integration is working',
+    subject: "CandyRama email integration is working",
     html: `<div style="font-family:Arial,sans-serif;color:#4e0f34"><h1>Sweet! Email is connected.</h1><p>CandyRama can send order emails through Resend.</p><p>No action is needed.</p></div>`,
   });
 }
@@ -42,11 +42,14 @@ export async function sendOrderConfirmation(order: {
   email: string;
   orderNumber: string;
   totalCents: number;
+  rewardPointsEarned?: number;
+  referralCode?: string | null;
+  giftRecipientName?: string | null;
 }) {
   return send({
     to: order.email,
     subject: `CandyRama order ${order.orderNumber} is confirmed`,
-    html: `<div style="font-family:Arial,sans-serif;color:#4e0f34"><h1>Sweet! We have your order.</h1><p>Order <strong>${order.orderNumber}</strong> is confirmed.</p><p>Total: <strong>$${(order.totalCents / 100).toFixed(2)}</strong></p><p>We’ll email you again when your candy ships.</p></div>`,
+    html: `<div style="font-family:Arial,sans-serif;color:#4e0f34"><h1>Sweet! We have your order.</h1><p>Order <strong>${escapeHtml(order.orderNumber)}</strong> is confirmed.</p><p>Total: <strong>$${(order.totalCents / 100).toFixed(2)}</strong></p>${order.giftRecipientName ? `<p>Your gift note for <strong>${escapeHtml(order.giftRecipientName)}</strong> is included.</p>` : ""}${order.rewardPointsEarned ? `<p>You earned <strong>${order.rewardPointsEarned} Sugar Points</strong>.</p>` : ""}${order.referralCode ? `<p>Give a friend code <strong>${escapeHtml(order.referralCode)}</strong>. You both get 100 Sugar Points after their first order.</p>` : ""}<p>We’ll email you again when your candy ships.</p></div>`,
   });
 }
 
@@ -61,7 +64,7 @@ export async function sendContactNotification(input: {
     to: destination,
     replyTo: input.email,
     subject: `CandyRama contact: ${input.subject}`,
-    html: `<div style="font-family:Arial,sans-serif;color:#4e0f34"><h1>New CandyRama message</h1><p><strong>From:</strong> ${escapeHtml(input.name)} (${escapeHtml(input.email)})</p><p><strong>Subject:</strong> ${escapeHtml(input.subject)}</p><p>${escapeHtml(input.message).replace(/\n/g, '<br>')}</p></div>`,
+    html: `<div style="font-family:Arial,sans-serif;color:#4e0f34"><h1>New CandyRama message</h1><p><strong>From:</strong> ${escapeHtml(input.name)} (${escapeHtml(input.email)})</p><p><strong>Subject:</strong> ${escapeHtml(input.subject)}</p><p>${escapeHtml(input.message).replace(/\n/g, "<br>")}</p></div>`,
   });
 }
 
@@ -79,7 +82,7 @@ export async function sendWholesaleNotification(input: {
     to: destination,
     replyTo: input.email,
     subject: `CandyRama wholesale inquiry: ${input.businessName}`,
-    html: `<div style="font-family:Arial,sans-serif;color:#4e0f34"><h1>New wholesale application</h1><p><strong>Business:</strong> ${escapeHtml(input.businessName)}</p><p><strong>Contact:</strong> ${escapeHtml(input.contactName)} (${escapeHtml(input.email)})</p><p><strong>Phone:</strong> ${escapeHtml(input.phone ?? 'Not provided')}</p><p><strong>Website:</strong> ${escapeHtml(input.website ?? 'Not provided')}</p><p><strong>Quantity:</strong> ${escapeHtml(input.estimatedQuantity)}</p><p>${escapeHtml(input.message ?? 'No additional message').replace(/\n/g, '<br>')}</p></div>`,
+    html: `<div style="font-family:Arial,sans-serif;color:#4e0f34"><h1>New wholesale application</h1><p><strong>Business:</strong> ${escapeHtml(input.businessName)}</p><p><strong>Contact:</strong> ${escapeHtml(input.contactName)} (${escapeHtml(input.email)})</p><p><strong>Phone:</strong> ${escapeHtml(input.phone ?? "Not provided")}</p><p><strong>Website:</strong> ${escapeHtml(input.website ?? "Not provided")}</p><p><strong>Quantity:</strong> ${escapeHtml(input.estimatedQuantity)}</p><p>${escapeHtml(input.message ?? "No additional message").replace(/\n/g, "<br>")}</p></div>`,
   });
 }
 

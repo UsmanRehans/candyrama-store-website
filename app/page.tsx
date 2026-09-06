@@ -5,6 +5,7 @@ import { ProductCard } from '@/components/product-card';
 import { StoreFooter, StoreHeader } from '@/components/store-chrome';
 import { connection } from 'next/server';
 import { getStorefrontProducts } from '@/lib/server/catalog';
+import { HomeConversionSections } from '@/components/home-conversion-sections';
 
 export default async function Home() {
   await connection();
@@ -76,6 +77,7 @@ export default async function Home() {
           ))}
         </div>
       </section>
+      <HomeConversionSections products={products} />
       <section className="story-section" id="story">
         <div className="story-card">
           <p className="eyebrow">HOWDY, SWEET TOOTH!</p>

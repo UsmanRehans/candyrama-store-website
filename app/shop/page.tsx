@@ -1,20 +1,42 @@
-import Link from 'next/link';
-import { ProductCard } from '@/components/product-card';
-import { StoreFooter, StoreHeader } from '@/components/store-chrome';
-import { connection } from 'next/server';
-import { getStorefrontProducts } from '@/lib/server/catalog';
+import Link from "next/link";
+import { ProductCard } from "@/components/product-card";
+import { StoreFooter, StoreHeader } from "@/components/store-chrome";
+import { connection } from "next/server";
+import { getStorefrontProducts } from "@/lib/server/catalog";
 
-const categories = ['All treats', 'Sour', 'Sweet', 'Spicy', 'Bark & brittle'];
+const categories = [
+  { label: "All treats", value: "all" },
+  { label: "Sour", value: "sour" },
+  { label: "Sweet", value: "sweet" },
+  { label: "Spicy", value: "spicy" },
+  { label: "Crunchy", value: "crunchy" },
+];
 
 export const metadata = {
-  title: 'Shop All Candy | CandyRama',
+  title: "Shop All Candy | CandyRama",
   description:
-    'Shop CandyRama sour gummies, spicy candy, bark, and brittle. Every order is packed by hand in Texas.',
+    "Shop CandyRama sour gummies, spicy candy, bark, and brittle. Every order is packed by hand in Texas.",
 };
 
-export default async function ShopPage() {
+export default async function ShopPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ craving?: string }>;
+}) {
   await connection();
+  const requestedCraving = (await searchParams).craving?.toLowerCase() ?? "all";
+  const activeCraving = categories.some(
+    (category) => category.value === requestedCraving,
+  )
+    ? requestedCraving
+    : "all";
   const products = await getStorefrontProducts();
+  const filteredProducts = products.filter((product) => {
+    if (activeCraving === "all") return true;
+    if (activeCraving === "crunchy")
+      return ["bark", "brittle"].includes(product.category.toLowerCase());
+    return product.category.toLowerCase() === activeCraving;
+  });
   return (
     <main>
       <StoreHeader />
@@ -26,14 +48,22 @@ export default async function ShopPage() {
       <section className="catalog-shell">
         <div className="catalog-toolbar">
           <div className="filter-pills" aria-label="Product categories">
-            {categories.map((category, index) => (
-              <button className={index === 0 ? 'active' : ''} key={category}>
-                {category}
-              </button>
+            {categories.map((category) => (
+              <Link
+                className={activeCraving === category.value ? "active" : ""}
+                href={
+                  category.value === "all"
+                    ? "/shop"
+                    : `/shop?craving=${category.value}`
+                }
+                key={category.value}
+              >
+                {category.label}
+              </Link>
             ))}
           </div>
           <label>
-            Sort by{' '}
+            Sort by{" "}
             <select defaultValue="featured">
               <option value="featured">Featured</option>
               <option value="price-low">Price: low to high</option>
@@ -43,12 +73,13 @@ export default async function ShopPage() {
         </div>
         <div className="catalog-summary">
           <p>
-            <strong>{products.length}</strong> treats ready to make your day
+            <strong>{filteredProducts.length}</strong> treats ready to make your
+            day
           </p>
           <Link href="/about">Meet CandyRama →</Link>
         </div>
         <div className="product-grid catalog-grid">
-          {products.map((product) => (
+          {filteredProducts.map((product) => (
             <ProductCard product={product} key={product.slug} />
           ))}
         </div>

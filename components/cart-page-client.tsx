@@ -1,9 +1,9 @@
-'use client';
-import Image from 'next/image';
-import Link from 'next/link';
-import { useState } from 'react';
-import { useCart } from './cart-provider';
-import type { StorefrontProduct } from '@/lib/products';
+"use client";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { useCart } from "./cart-provider";
+import type { StorefrontProduct } from "@/lib/products";
 
 export function CartPageClient({
   products,
@@ -11,9 +11,14 @@ export function CartPageClient({
   products: StorefrontProduct[];
 }) {
   const { items, setQuantity } = useCart();
-  const [email, setEmail] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [isGift, setIsGift] = useState(false);
+  const [giftRecipientName, setGiftRecipientName] = useState("");
+  const [giftMessage, setGiftMessage] = useState("");
+  const [referralCode, setReferralCode] = useState("");
+  const [useRewards, setUseRewards] = useState(false);
   const lines = items.flatMap((item) => {
     const product = products.find(
       (candidate) => candidate.variantSku === item.variantSku,
@@ -26,20 +31,27 @@ export function CartPageClient({
   );
   async function checkout() {
     setLoading(true);
-    setError('');
+    setError("");
     try {
-      const response = await fetch('/api/v1/checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ items, email: email || undefined }),
+      const response = await fetch("/api/v1/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          items,
+          email: email || undefined,
+          giftRecipientName: isGift ? giftRecipientName : undefined,
+          giftMessage: isGift ? giftMessage : undefined,
+          referralCode: referralCode || undefined,
+          useRewards,
+        }),
       });
       const result = await response.json();
       if (!response.ok || !result.data?.checkoutUrl)
-        throw new Error(result.error ?? 'Checkout is unavailable.');
+        throw new Error(result.error ?? "Checkout is unavailable.");
       window.location.assign(result.data.checkoutUrl);
     } catch (cause) {
       setError(
-        cause instanceof Error ? cause.message : 'Checkout is unavailable.',
+        cause instanceof Error ? cause.message : "Checkout is unavailable.",
       );
       setLoading(false);
     }
@@ -95,7 +107,7 @@ export function CartPageClient({
             </p>
             <p>
               <span>Shipping</span>
-              <strong>{subtotal >= 5000 ? 'Free' : '$5.99'}</strong>
+              <strong>{subtotal >= 5000 ? "Free" : "$5.99"}</strong>
             </p>
             <small>Taxes are calculated securely at checkout.</small>
             <label>
@@ -107,6 +119,62 @@ export function CartPageClient({
                 placeholder="you@example.com"
               />
             </label>
+            <label className="cart-check">
+              <input
+                type="checkbox"
+                checked={isGift}
+                onChange={(event) => setIsGift(event.target.checked)}
+              />
+              This is a gift
+            </label>
+            {isGift && (
+              <div className="gift-fields">
+                <label>
+                  Who is it for?
+                  <input
+                    value={giftRecipientName}
+                    onChange={(event) =>
+                      setGiftRecipientName(event.target.value)
+                    }
+                    maxLength={80}
+                    placeholder="Their name"
+                  />
+                </label>
+                <label>
+                  Gift message
+                  <textarea
+                    value={giftMessage}
+                    onChange={(event) => setGiftMessage(event.target.value)}
+                    maxLength={300}
+                    rows={4}
+                    placeholder="Write something sweet"
+                  />
+                </label>
+                <small>{giftMessage.length} of 300 characters</small>
+              </div>
+            )}
+            <label>
+              Referral code
+              <input
+                value={referralCode}
+                onChange={(event) =>
+                  setReferralCode(event.target.value.toUpperCase())
+                }
+                maxLength={24}
+                placeholder="CANDYCODE"
+              />
+            </label>
+            <label className="cart-check">
+              <input
+                type="checkbox"
+                checked={useRewards}
+                onChange={(event) => setUseRewards(event.target.checked)}
+              />
+              Use my Sugar Points
+            </label>
+            <small>
+              We will apply every available point tied to this email.
+            </small>
             {error && (
               <p className="form-error" role="alert">
                 {error}
@@ -117,7 +185,7 @@ export function CartPageClient({
               disabled={loading}
               onClick={checkout}
             >
-              {loading ? 'Opening checkout…' : 'Secure checkout'}
+              {loading ? "Opening checkout…" : "Secure checkout"}
             </button>
           </aside>
         </div>

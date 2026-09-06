@@ -22,7 +22,7 @@ export function StoreFooter() {
     <div className="footer-brand">
       <Wordmark footer />
       <p>More candy. More drama.</p>
-      <p className="footer-description">Bold, tangy, and sweet treats packed with personality in Houston, Texas.</p>
+      <p className="footer-description">Bold, tangy, and sweet treats packed with personality in Rosenberg, Texas.</p>
     </div>
     <nav className="footer-column" aria-label="Footer shop navigation">
       <h2>Shop</h2>
@@ -41,15 +41,15 @@ export function StoreFooter() {
     </nav>
     <div className="footer-column footer-contact">
       <h2>Contact</h2>
-      <address>9807 Harwin Dr, Suite R<br />Houston, TX 77036</address>
-      <a href="mailto:customercare@twistedtreatz.com">customercare@twistedtreatz.com</a>
+      <address>Rosenberg, Texas</address>
+      <a href="mailto:admin@thecandyrama.com">admin@thecandyrama.com</a>
       <Link href="/contact">Send us a message</Link>
       <Link href="/careers">Careers</Link>
       <Link href="/investors">Investor relations</Link>
     </div>
     <div className="footer-bottom">
       <p>© 2026 CandyRama. All rights reserved.</p>
-      <p>Made with sweetness in Houston, Texas.</p>
+      <p>Made with sweetness in Rosenberg, Texas.</p>
     </div>
   </footer>;
 }

@@ -146,7 +146,7 @@ Start with taste and texture. Follow with the moment or mood. End with useful de
 
 Example:
 
-Bright blue raspberry flavor with a serious sour sparkle. Chewy, electric, and ready to wake up your candy stash. Packed fresh in Houston and made for movie nights, road trips, and very selective sharing.
+Bright blue raspberry flavor with a serious sour sparkle. Chewy, electric, and ready to wake up your candy stash. Packed fresh in Rosenberg and made for movie nights, road trips, and very selective sharing.
 
 Keep claims honest. If a candy is packed rather than made by CandyRama, say packed. If it contains or may contact an allergen, say so clearly and without jokes.
 

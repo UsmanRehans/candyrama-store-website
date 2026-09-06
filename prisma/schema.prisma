@@ -165,25 +165,30 @@ model ProductImage {
 }
 
 model Customer {
-  id        String   @id @default(cuid())
-  email     String   @unique
-  name      String?
-  phone     String?
-  orders    Order[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id               String         @id @default(cuid())
+  email            String         @unique
+  name             String?
+  phone            String?
+  referralCode     String?        @unique
+  rewardPoints     Int            @default(0)
+  orders           Order[]
+  rewardEntries    RewardLedger[]
+  referralsMade    Referral[]     @relation("ReferralReferrer")
+  referralReceived Referral?      @relation("ReferralCustomer")
+  createdAt        DateTime       @default(now())
+  updatedAt        DateTime       @updatedAt
 }
 
 model Order {
-  id                    String      @id @default(cuid())
-  orderNumber           String      @unique
+  id                    String         @id @default(cuid())
+  orderNumber           String         @unique
   customerId            String?
-  customer              Customer?   @relation(fields: [customerId], references: [id])
+  customer              Customer?      @relation(fields: [customerId], references: [id])
   email                 String
-  status                OrderStatus @default(PENDING)
+  status                OrderStatus    @default(PENDING)
   items                 OrderItem[]
   subtotalCents         Int
-  discountCents         Int         @default(0)
+  discountCents         Int            @default(0)
   shippingCents         Int
   taxCents              Int
   totalCents            Int
@@ -194,18 +199,25 @@ model Order {
   shippingCity          String
   shippingState         String
   shippingZip           String
-  shippingCountry       String      @default("US")
+  shippingCountry       String         @default("US")
   carrier               String?
   serviceLevel          String?
   trackingNumber        String?
   shippingLabelUrl      String?
-  stripeSessionId       String?     @unique
-  stripePaymentIntentId String?     @unique
+  stripeSessionId       String?        @unique
+  stripePaymentIntentId String?        @unique
+  giftRecipientName     String?
+  giftMessage           String?
+  referralCode          String?
+  rewardPointsRedeemed  Int            @default(0)
+  rewardPointsEarned    Int            @default(0)
   internalNote          String?
   paidAt                DateTime?
   shippedAt             DateTime?
-  createdAt             DateTime    @default(now())
-  updatedAt             DateTime    @updatedAt
+  createdAt             DateTime       @default(now())
+  updatedAt             DateTime       @updatedAt
+  rewardEntries         RewardLedger[]
+  referral              Referral?
 
   @@index([email, orderNumber])
   @@index([status, createdAt])
@@ -334,19 +346,63 @@ model WebhookEvent {
 }
 
 model CheckoutAttempt {
-  id              String    @id @default(cuid())
-  stripeSessionId String?   @unique
-  status          String    @default("OPEN")
-  email           String?
-  items           Json
-  subtotalCents   Int
-  shippingCents   Int
-  expiresAt       DateTime
-  completedAt     DateTime?
-  createdAt       DateTime  @default(now())
-  updatedAt       DateTime  @updatedAt
+  id                   String    @id @default(cuid())
+  stripeSessionId      String?   @unique
+  status               String    @default("OPEN")
+  email                String?
+  items                Json
+  subtotalCents        Int
+  shippingCents        Int
+  giftRecipientName    String?
+  giftMessage          String?
+  referralCode         String?
+  useRewards           Boolean   @default(false)
+  rewardPointsRedeemed Int       @default(0)
+  expiresAt            DateTime
+  completedAt          DateTime?
+  createdAt            DateTime  @default(now())
+  updatedAt            DateTime  @updatedAt
 
   @@index([status, expiresAt])
+}
+
+model RewardLedger {
+  id          String   @id @default(cuid())
+  customerId  String
+  customer    Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  orderId     String?
+  order       Order?   @relation(fields: [orderId], references: [id], onDelete: SetNull)
+  points      Int
+  reason      String
+  description String
+  createdAt   DateTime @default(now())
+
+  @@index([customerId, createdAt])
+  @@index([orderId])
+}
+
+model Referral {
+  id                 String   @id @default(cuid())
+  codeSnapshot       String
+  referrerId         String
+  referrer           Customer @relation("ReferralReferrer", fields: [referrerId], references: [id], onDelete: Cascade)
+  referredCustomerId String   @unique
+  referredCustomer   Customer @relation("ReferralCustomer", fields: [referredCustomerId], references: [id], onDelete: Cascade)
+  orderId            String   @unique
+  order              Order    @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  bonusPoints        Int      @default(100)
+  createdAt          DateTime @default(now())
+
+  @@index([referrerId, createdAt])
+}
+
+model NewsletterSubscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  source    String   @default("homepage")
+  active    Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 }
 
 model AuditLog {

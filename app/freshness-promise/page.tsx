@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function FreshnessPromisePage() {
   return <InfoPage eyebrow="OUR PROMISE TO YOU" title="Fresh candy. Full drama." intro="Every bag is checked, packed, and delivered with care. That is how the good stuff stays good.">
-    <InfoSection title="Packed for your order"><p>Your candy is packed for your order and sealed before it leaves our Houston home base. We do not want tired treats sitting around waiting for their big moment.</p></InfoSection>
+    <InfoSection title="Packed for your order"><p>Your candy is packed for your order and sealed before it leaves our Rosenberg home base. We do not want tired treats sitting around waiting for their big moment.</p></InfoSection>
     <InfoSection title="Checked before it ships"><p>We look at texture, color, packaging, and seal quality before an item goes into your box. If something does not look right, it does not make the trip.</p></InfoSection>
     <InfoSection title="Heat gets special attention"><p>Chocolate, brittle, caramel, and some gummies can be sensitive to warm weather. We pack with care and may recommend faster shipping when temperatures climb. Bring deliveries inside as soon as possible so the Texas sun does not join the tasting party.</p></InfoSection>
     <InfoSection title="Plenty of time to enjoy"><p>We check date information before products ship and do not send items that are too close to their stated quality date. Store your treats sealed in a cool, dry place for their best flavor and texture.</p></InfoSection>

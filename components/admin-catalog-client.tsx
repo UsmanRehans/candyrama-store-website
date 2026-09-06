@@ -216,8 +216,8 @@ export function AdminCatalogClient() {
         <div className="admin-workspace-content">
           <section className="admin-toolbar" aria-label="Catalog tools">
             <div>
-              <strong>{integrations?.catalog.products ?? '—'} products</strong>
-              <span>{integrations?.catalog.variants ?? '—'} variants</span>
+              <strong>{integrations?.catalog.products ?? 'Not set'} products</strong>
+              <span>{integrations?.catalog.variants ?? 'Not set'} variants</span>
             </div>
             <div className="admin-toolbar-actions">
               <button disabled={busy} onClick={download}>

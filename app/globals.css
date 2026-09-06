@@ -343,3 +343,4 @@
     grid-template-columns: 1fr;
   }
 }
+.admin-dashboard .orders-list{margin:0}.admin-dashboard .order-card{border:1px solid var(--admin-border);border-radius:6px;box-shadow:none;padding:20px}.admin-dashboard .order-summary h2{font:700 18px/1.3 Arial,sans-serif;margin:6px 0}.admin-dashboard .order-summary>strong{font:700 18px/1.3 Arial,sans-serif}.admin-dashboard .order-status{border:0;border-radius:3px;background:#e7f4dc;color:#315c17}.admin-dashboard .order-card ul{background:#f5f6f8;border-radius:4px}.admin-dashboard .order-actions{display:flex;gap:8px}.admin-dashboard .orders-list+.text-link{display:none}.admin-dashboard>.admin-workspace .admin-message{margin:0 0 18px}

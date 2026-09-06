@@ -3,7 +3,14 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import type { Session } from '@supabase/supabase-js';
-import { ExternalLink, PackageCheck, RefreshCw } from 'lucide-react';
+import {
+  Boxes,
+  ExternalLink,
+  LogOut,
+  PackageCheck,
+  RefreshCw,
+  ShoppingBag,
+} from 'lucide-react';
 import { getSupabaseBrowser } from '@/lib/supabase-browser';
 
 type Order = {
@@ -125,6 +132,32 @@ export function AdminOrdersClient() {
       setBusy(false);
     }
   }
+  async function checkRate(order: Order) {
+    setBusy(true);
+    setMessage('');
+    try {
+      const response = await authorizedFetch(
+        `/api/v1/admin/orders/${order.id}/shipping-label`,
+      );
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error);
+      const quote = result.data as {
+        carrier: string;
+        serviceLevel: string;
+        amount: number;
+        currency: string;
+        deliveryDays: number | null;
+        rateCount: number;
+      };
+      setMessage(
+        `Quote ready for ${order.orderNumber}: ${quote.carrier} ${quote.serviceLevel}, ${new Intl.NumberFormat('en-US', { style: 'currency', currency: quote.currency }).format(quote.amount)}${quote.deliveryDays ? `, about ${quote.deliveryDays} days` : ''}. Compared ${quote.rateCount} rates. No label was purchased.`,
+      );
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : 'Rate check failed.');
+    } finally {
+      setBusy(false);
+    }
+  }
   if (!session)
     return (
       <main className="admin-shell">
@@ -162,100 +195,124 @@ export function AdminOrdersClient() {
       </main>
     );
   return (
-    <main className="admin-shell">
-      <section className="admin-card orders-admin">
-        <div className="admin-title-row">
+    <main className="admin-dashboard">
+      <aside className="admin-sidebar">
+        <div className="admin-sidebar-brand">CandyRama</div>
+        <nav aria-label="Admin navigation">
+          <Link href="/admin/catalog">
+            <Boxes /> Catalog
+          </Link>
+          <Link className="active" href="/admin/orders">
+            <ShoppingBag /> Orders
+          </Link>
+          <a href="https://thecandyrama.com" target="_blank" rel="noreferrer">
+            <ExternalLink /> View store
+          </a>
+        </nav>
+      </aside>
+      <section className="admin-workspace">
+        <header className="admin-topbar">
           <div>
-            <p className="eyebrow">CANDYRAMA ADMIN</p>
             <h1>Orders</h1>
-            <p>Paid orders, fulfillment, tracking, and ShipStation labels.</p>
+            <p>Paid orders, fulfillment, tracking, and shipping.</p>
           </div>
-          <div className="admin-nav">
-            <Link className="button secondary" href="/admin/catalog">
-              Catalog
-            </Link>
-            <button
-              className="button secondary"
-              disabled={busy}
-              onClick={() => void load()}
-            >
-              <RefreshCw /> Refresh
+          <div className="admin-account">
+            <span>{session.user.email}</span>
+            <button onClick={() => void getSupabaseBrowser().auth.signOut()}>
+              <LogOut /> Sign out
             </button>
           </div>
-        </div>
-        {message && <output className="admin-message">{message}</output>}
-        <div className="orders-list">
-          {orders.length === 0 ? (
-            <div className="admin-note">
-              <strong>No orders yet.</strong>
-              <p>
-                Completed Stripe sandbox orders will appear here automatically.
-              </p>
+        </header>
+        <div className="admin-workspace-content">
+          <section className="admin-toolbar" aria-label="Order tools">
+            <div>
+              <strong>{orders.length} orders</strong>
+              <span>Most recent 100</span>
             </div>
-          ) : (
-            orders.map((order) => (
-              <article className="order-card" key={order.id}>
-                <div className="order-summary">
-                  <div>
-                    <span className="order-status">{order.status}</span>
-                    <h2>{order.orderNumber}</h2>
-                    <p>
-                      {order.shippingName} · {order.shippingCity},{' '}
-                      {order.shippingState}
-                    </p>
-                    <small>
-                      {new Date(order.createdAt).toLocaleString()} ·{' '}
-                      {order.email}
-                    </small>
+            <div className="admin-toolbar-actions">
+              <button disabled={busy} onClick={() => void load()}>
+                <RefreshCw /> Refresh
+              </button>
+            </div>
+          </section>
+          {message && <output className="admin-message">{message}</output>}
+          <div className="orders-list">
+            {orders.length === 0 ? (
+              <div className="admin-note">
+                <strong>No orders yet.</strong>
+                <p>
+                  Completed Stripe sandbox orders will appear here
+                  automatically.
+                </p>
+              </div>
+            ) : (
+              orders.map((order) => (
+                <article className="order-card" key={order.id}>
+                  <div className="order-summary">
+                    <div>
+                      <span className="order-status">{order.status}</span>
+                      <h2>{order.orderNumber}</h2>
+                      <p>
+                        {order.shippingName} · {order.shippingCity},{' '}
+                        {order.shippingState}
+                      </p>
+                      <small>
+                        {new Date(order.createdAt).toLocaleString()} ·{' '}
+                        {order.email}
+                      </small>
+                    </div>
+                    <strong>${(order.totalCents / 100).toFixed(2)}</strong>
                   </div>
-                  <strong>${(order.totalCents / 100).toFixed(2)}</strong>
-                </div>
-                <ul>
-                  {order.items.map((item) => (
-                    <li key={item.id}>
-                      {item.quantity}× {item.nameSnapshot}
-                      {item.skuSnapshot ? ` · ${item.skuSnapshot}` : ''}
-                    </li>
-                  ))}
-                </ul>
-                {order.shippingLabelUrl ? (
-                  <a
-                    className="button primary"
-                    href={order.shippingLabelUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <ExternalLink /> Open label
-                  </a>
-                ) : (
-                  ['PAID', 'PACKING'].includes(order.status) && (
-                    <button
+                  <ul>
+                    {order.items.map((item) => (
+                      <li key={item.id}>
+                        {item.quantity}× {item.nameSnapshot}
+                        {item.skuSnapshot ? ` · ${item.skuSnapshot}` : ''}
+                      </li>
+                    ))}
+                  </ul>
+                  {order.shippingLabelUrl ? (
+                    <a
                       className="button primary"
-                      disabled={busy}
-                      onClick={() => void buyLabel(order)}
+                      href={order.shippingLabelUrl}
+                      target="_blank"
+                      rel="noreferrer"
                     >
-                      <PackageCheck /> Buy cheapest label
-                    </button>
-                  )
-                )}
-                {order.trackingNumber && (
-                  <p className="tracking-line">
-                    <strong>
-                      {order.carrier} {order.serviceLevel}
-                    </strong>{' '}
-                    · {order.trackingNumber}
-                  </p>
-                )}
-              </article>
-            ))
-          )}
+                      <ExternalLink /> Open label
+                    </a>
+                  ) : (
+                    ['PAID', 'PACKING'].includes(order.status) && (
+                      <div className="order-actions">
+                        <button
+                          className="button secondary"
+                          disabled={busy}
+                          onClick={() => void checkRate(order)}
+                        >
+                          <RefreshCw /> Check rate
+                        </button>
+                        <button
+                          className="button primary"
+                          disabled={busy}
+                          onClick={() => void buyLabel(order)}
+                        >
+                          <PackageCheck /> Buy cheapest label
+                        </button>
+                      </div>
+                    )
+                  )}
+                  {order.trackingNumber && (
+                    <p className="tracking-line">
+                      <strong>
+                        {order.carrier} {order.serviceLevel}
+                      </strong>{' '}
+                      · {order.trackingNumber}
+                    </p>
+                  )}
+                </article>
+              ))
+            )}
+          </div>
         </div>
-        <button
-          className="text-link"
-          onClick={() => void getSupabaseBrowser().auth.signOut()}
-        >
-          Sign out
-        </button>
       </section>
     </main>
   );

@@ -1,8 +1,71 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { db } from '@/lib/server/db';
 import { requireAdmin } from '@/lib/server/admin-auth';
-import { buyCheapestLabel } from '@/lib/server/shipstation';
+import {
+  buyCheapestLabel,
+  missingShippingOriginFields,
+  quoteCheapestLabel,
+} from '@/lib/server/shipstation';
 import { sendShippingConfirmation } from '@/lib/server/email';
+
+export async function GET(
+  request: NextRequest,
+  { params }: { params: Promise<{ orderId: string }> },
+) {
+  const admin = await requireAdmin(request);
+  if (!admin)
+    return NextResponse.json({ error: 'Unauthorized.' }, { status: 401 });
+  const missingOrigin = missingShippingOriginFields();
+  if (missingOrigin.length > 0)
+    return NextResponse.json(
+      {
+        error: `Shipping origin is incomplete. Configure: ${missingOrigin.join(', ')}.`,
+      },
+      { status: 503 },
+    );
+  const { orderId } = await params;
+  const order = await db.order.findUnique({
+    where: { id: orderId },
+    include: { items: true, customer: true },
+  });
+  if (!order || !['PAID', 'PACKING'].includes(order.status))
+    return NextResponse.json(
+      { error: 'Order is not ready for a shipping quote.' },
+      { status: 409 },
+    );
+  if (order.shippingLabelUrl)
+    return NextResponse.json(
+      { error: 'A label already exists for this order.' },
+      { status: 409 },
+    );
+  try {
+    const quantity = order.items.reduce((sum, item) => sum + item.quantity, 0);
+    const quote = await quoteCheapestLabel(
+      order.orderNumber,
+      {
+        name: order.shippingName,
+        phone: order.customer?.phone,
+        street1: order.shippingLine1,
+        street2: order.shippingLine2,
+        city: order.shippingCity,
+        state: order.shippingState,
+        zip: order.shippingZip,
+        country: order.shippingCountry,
+      },
+      quantity * 8 + 4,
+    );
+    return NextResponse.json(
+      { data: quote },
+      { headers: { 'Cache-Control': 'no-store' } },
+    );
+  } catch (error) {
+    console.error('shipping_rate_quote_failed', { orderId, error });
+    return NextResponse.json(
+      { error: 'Unable to retrieve shipping rates.' },
+      { status: 502 },
+    );
+  }
+}
 
 export async function POST(
   request: NextRequest,
@@ -11,6 +74,14 @@ export async function POST(
   const admin = await requireAdmin(request);
   if (!admin)
     return NextResponse.json({ error: 'Unauthorized.' }, { status: 401 });
+  const missingOrigin = missingShippingOriginFields();
+  if (missingOrigin.length > 0)
+    return NextResponse.json(
+      {
+        error: `Shipping origin is incomplete. Configure: ${missingOrigin.join(', ')}.`,
+      },
+      { status: 503 },
+    );
   const { orderId } = await params;
   const order = await db.order.findUnique({
     where: { id: orderId },

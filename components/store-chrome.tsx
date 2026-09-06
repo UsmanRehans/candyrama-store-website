@@ -27,21 +27,25 @@ export function StoreFooter() {
     <nav className="footer-column" aria-label="Footer shop navigation">
       <h2>Shop</h2>
       <Link href="/shop">All candy</Link>
-      <Link href="/shop">Best sellers</Link>
+      <Link href="/why-candyrama">Why CandyRama</Link>
       <Link href="/wholesale">Wholesale</Link>
     </nav>
     <nav className="footer-column" aria-label="Footer help navigation">
       <h2>Help</h2>
       <Link href="/faq">FAQ</Link>
       <Link href="/legal/shipping-returns">Shipping &amp; returns</Link>
+      <Link href="/freshness-promise">Freshness promise</Link>
       <Link href="/allergens">Allergen info</Link>
       <Link href="/legal/privacy">Privacy policy</Link>
+      <Link href="/legal/privacy-choices">Privacy choices</Link>
     </nav>
     <div className="footer-column footer-contact">
       <h2>Contact</h2>
       <address>9807 Harwin Dr, Suite R<br />Houston, TX 77036</address>
       <a href="mailto:customercare@twistedtreatz.com">customercare@twistedtreatz.com</a>
       <Link href="/contact">Send us a message</Link>
+      <Link href="/careers">Careers</Link>
+      <Link href="/investors">Investor relations</Link>
     </div>
     <div className="footer-bottom">
       <p>© 2026 CandyRama. All rights reserved.</p>

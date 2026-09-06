@@ -129,10 +129,10 @@ model ProductVariant {
   lowStockAt Int @default(6)
   stripePriceId String? @unique
   // Cross-channel platform SKUs that roll up to this leaf (reconciliation only).
-  amazonSkus String[]
-  shopifySkus String[]
-  tiktokSkus String[]
-  temuSkus String[]
+  amazonSkus String[] @default([])
+  shopifySkus String[] @default([])
+  tiktokSkus String[] @default([])
+  temuSkus String[] @default([])
   position Int @default(0)
   isDefault Boolean @default(false) // exactly one per product: the storefront default
   active Boolean @default(true)

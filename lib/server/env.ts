@@ -1,7 +1,19 @@
 import 'server-only';
 import { z } from 'zod';
 
-const optionalSecret = z.string().min(1).optional();
+// `.env.example` intentionally contains empty placeholders. Treat those as
+// unconfigured so an unrelated optional integration cannot prevent startup.
+// Feature entry points still call `requireEnv` before using their credentials.
+const optionalSecret = z.preprocess(
+  (value) =>
+    typeof value === 'string' && value.trim() === '' ? undefined : value,
+  z.string().min(1).optional(),
+);
+const optionalEmail = z.preprocess(
+  (value) =>
+    typeof value === 'string' && value.trim() === '' ? undefined : value,
+  z.email().optional(),
+);
 const schema = z.object({
   DATABASE_URL: optionalSecret,
   DIRECT_URL: optionalSecret,
@@ -22,12 +34,15 @@ const schema = z.object({
   RESEND_API_KEY: optionalSecret,
   EMAIL_FROM: z.string().default('CandyRama <orders@example.com>'),
   CUSTOMER_CARE_EMAIL: z.email().default('customercare@twistedtreatz.com'),
+  ADMIN_NOTIFICATION_EMAIL: optionalEmail,
   IP_HASH_SECRET: optionalSecret,
 });
 
 export const env = schema.parse(process.env);
 
-export function requireEnv<K extends keyof typeof env>(key: K): NonNullable<(typeof env)[K]> {
+export function requireEnv<K extends keyof typeof env>(
+  key: K,
+): NonNullable<(typeof env)[K]> {
   const value = env[key];
   if (!value) throw new Error(`${key} is not configured`);
   return value as NonNullable<(typeof env)[K]>;

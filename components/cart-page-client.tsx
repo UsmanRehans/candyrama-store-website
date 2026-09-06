@@ -3,23 +3,125 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useCart } from './cart-provider';
-import { products } from '@/lib/products';
+import type { StorefrontProduct } from '@/lib/products';
 
-export function CartPageClient() {
+export function CartPageClient({
+  products,
+}: {
+  products: StorefrontProduct[];
+}) {
   const { items, setQuantity } = useCart();
   const [email, setEmail] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const lines = items.flatMap(item => { const product = products.find(candidate => candidate.slug === item.productSlug); return product ? [{ ...item, product }] : []; });
-  const subtotal = lines.reduce((sum, line) => sum + line.product.priceCents * line.quantity, 0);
+  const lines = items.flatMap((item) => {
+    const product = products.find(
+      (candidate) => candidate.variantSku === item.variantSku,
+    );
+    return product ? [{ ...item, product }] : [];
+  });
+  const subtotal = lines.reduce(
+    (sum, line) => sum + line.product.priceCents * line.quantity,
+    0,
+  );
   async function checkout() {
-    setLoading(true); setError('');
+    setLoading(true);
+    setError('');
     try {
-      const response = await fetch('/api/v1/checkout', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ items, email: email || undefined }) });
+      const response = await fetch('/api/v1/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items, email: email || undefined }),
+      });
       const result = await response.json();
-      if (!response.ok || !result.data?.checkoutUrl) throw new Error(result.error ?? 'Checkout is unavailable.');
+      if (!response.ok || !result.data?.checkoutUrl)
+        throw new Error(result.error ?? 'Checkout is unavailable.');
       window.location.assign(result.data.checkoutUrl);
-    } catch (cause) { setError(cause instanceof Error ? cause.message : 'Checkout is unavailable.'); setLoading(false); }
+    } catch (cause) {
+      setError(
+        cause instanceof Error ? cause.message : 'Checkout is unavailable.',
+      );
+      setLoading(false);
+    }
   }
-  return <section className="cart-shell"><p className="eyebrow">YOUR CANDY STASH</p><h1>Your bag</h1>{lines.length === 0 ? <div className="empty-cart"><p>Your bag is ready for something sweet.</p><Link className="button primary" href="/shop">Shop all candy</Link></div> : <div className="cart-layout"><div className="cart-lines">{lines.map(({ product, quantity }) => <article className="cart-line" key={product.slug}><Image src={product.image} alt={product.name} width={150} height={150}/><div><h2>{product.name}</h2><p>{product.note}</p><strong>{product.price}</strong></div><label>Qty<input aria-label={`Quantity for ${product.name}`} type="number" min="0" max="20" value={quantity} onChange={event => setQuantity(product.slug, Number(event.target.value))}/></label></article>)}</div><aside className="cart-summary"><h2>Order summary</h2><p><span>Subtotal</span><strong>${(subtotal / 100).toFixed(2)}</strong></p><p><span>Shipping</span><strong>{subtotal >= 5000 ? 'Free' : '$5.99'}</strong></p><small>Taxes are calculated securely at checkout.</small><label>Email for your receipt<input type="email" value={email} onChange={event => setEmail(event.target.value)} placeholder="you@example.com"/></label>{error && <p className="form-error" role="alert">{error}</p>}<button className="button primary" disabled={loading} onClick={checkout}>{loading ? 'Opening checkout…' : 'Secure checkout'}</button></aside></div>}</section>;
+  return (
+    <section className="cart-shell">
+      <p className="eyebrow">YOUR CANDY STASH</p>
+      <h1>Your bag</h1>
+      {lines.length === 0 ? (
+        <div className="empty-cart">
+          <p>Your bag is ready for something sweet.</p>
+          <Link className="button primary" href="/shop">
+            Shop all candy
+          </Link>
+        </div>
+      ) : (
+        <div className="cart-layout">
+          <div className="cart-lines">
+            {lines.map(({ product, variantSku, quantity }) => (
+              <article className="cart-line" key={variantSku}>
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  width={150}
+                  height={150}
+                />
+                <div>
+                  <h2>{product.name}</h2>
+                  <p>{product.note}</p>
+                  <strong>{product.price}</strong>
+                </div>
+                <label>
+                  Qty
+                  <input
+                    aria-label={`Quantity for ${product.name}`}
+                    type="number"
+                    min="0"
+                    max="20"
+                    value={quantity}
+                    onChange={(event) =>
+                      setQuantity(variantSku, Number(event.target.value))
+                    }
+                  />
+                </label>
+              </article>
+            ))}
+          </div>
+          <aside className="cart-summary">
+            <h2>Order summary</h2>
+            <p>
+              <span>Subtotal</span>
+              <strong>${(subtotal / 100).toFixed(2)}</strong>
+            </p>
+            <p>
+              <span>Shipping</span>
+              <strong>{subtotal >= 5000 ? 'Free' : '$5.99'}</strong>
+            </p>
+            <small>Taxes are calculated securely at checkout.</small>
+            <label>
+              Email for your receipt
+              <input
+                type="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                placeholder="you@example.com"
+              />
+            </label>
+            {error && (
+              <p className="form-error" role="alert">
+                {error}
+              </p>
+            )}
+            <button
+              className="button primary"
+              disabled={loading}
+              onClick={checkout}
+            >
+              {loading ? 'Opening checkout…' : 'Secure checkout'}
+            </button>
+          </aside>
+        </div>
+      )}
+    </section>
+  );
 }

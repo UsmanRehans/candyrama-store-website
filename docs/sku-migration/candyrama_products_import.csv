@@ -1,0 +1,277 @@
+slug,sku,name,brand,product_family,flavor,candyrama_category,category_confidence,status,tagline,description,ingredients,allergens_pipe,seasonal,accent_color,source_master_skus
+almonds-roasted-salted,TT-Almonds-RoastedSalted,Almonds - Roasted Salted,TWISTED_TREATZ,Almonds,Roasted Salted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-almonds-bite-crunchy-energy
+banana-chips-original,TT-BananaChips-Original,Banana Chips - Original,TWISTED_TREATZ,Banana Chips,Original,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,BananaChips-Original
+bananarama-banana,TT-Bananarama-Banana,Bananarama - Banana,TWISTED_TREATZ,Bananarama,Banana,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-banana-bananarama-crunchy-hard
+brownie-brittle-chocolate,TT-BrownieBrittle-Chocolate,Brownie Brittle - Chocolate,TWISTED_TREATZ,Brownie Brittle,Chocolate,BRITTLE,HIGH,DRAFT,,,,,FALSE,#EA537B,BrownieBrittle-Chocolate
+brownie-brittle-m-m,TT-BrownieBrittle-MM,Brownie Brittle - M&M,TWISTED_TREATZ,Brownie Brittle,M&M,BRITTLE,HIGH,DRAFT,,,,,FALSE,#EA537B,BrownieBrittle-MM
+brownie-brittle-original,TT-BrownieBrittle-Original,Brownie Brittle - Original,TWISTED_TREATZ,Brownie Brittle,Original,BRITTLE,HIGH,DRAFT,,,,,FALSE,#EA537B,BrownieBrittle-1lb...
+bundles-blue-raspberry,TT-Bundles-BlueRaspberry,Bundles - Blue Raspberry,TWISTED_TREATZ,Bundles,Blue Raspberry,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,Bundle-BlueGummyTrio
+bundles-chamoy-pickle-kit,TT-Bundles-ChamoyPickleKit,Bundles - Chamoy Pickle Kit,TWISTED_TREATZ,Bundles,Chamoy Pickle Kit,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-chamoy-gusano-kit-lucas
+bundles-root-beer-butterscotch,TT-Bundles-RootBeerButterscotch,Bundles - Root Beer & Butterscotch,TWISTED_TREATZ,Bundles,Root Beer & Butterscotch,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,Bundle-RootBeerButterscotchRetro
+butter-toffee-original,TT-ButterToffee-Original,Butter Toffee - Original,TWISTED_TREATZ,Butter Toffee,Original,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-butter-creamy-hard-toffee
+butter-toffee-nuts-almond,TT-ButterToffeeNuts-Almond,Butter Toffee Nuts - Almond,TWISTED_TREATZ,Butter Toffee Nuts,Almond,CHEWS,REVIEW,DRAFT,,,,,FALSE,#EA537B,ButterToffee-Almonds
+butter-toffee-nuts-cashew,TT-ButterToffeeNuts-Cashew,Butter Toffee Nuts - Cashew,TWISTED_TREATZ,Butter Toffee Nuts,Cashew,CHEWS,REVIEW,DRAFT,,,,,FALSE,#EA537B,ButterToffee-Cashews
+butter-toffee-nuts-pecan,TT-ButterToffeeNuts-Pecan,Butter Toffee Nuts - Pecan,TWISTED_TREATZ,Butter Toffee Nuts,Pecan,CHEWS,REVIEW,DRAFT,,,,,FALSE,#EA537B,ButterToffee-Pecans
+butterscotch-buttons-original,TT-ButterscotchButtons-Original,Butterscotch Buttons - Original,TWISTED_TREATZ,Butterscotch Buttons,Original,CHEWS,REVIEW,DRAFT,,,,,FALSE,#EA537B,ButterscotchButtons
+candy-barrels-root-beer,TT-CandyBarrels-RootBeer,Candy Barrels - Root Beer,TWISTED_TREATZ,Candy Barrels,Root Beer,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,CandyBarrels-RootBeer
+candy-corn-blackberry-cobbler,TT-CandyCorn-BlackberryCobbler,Candy Corn - Blackberry Cobbler,TWISTED_TREATZ,Candy Corn,Blackberry Cobbler,SEASONAL,REVIEW,DRAFT,,,,,TRUE,#EA537B,CandyCorn-BlackberryCobbler
+candy-corn-caramel,TT-CandyCorn-Caramel,Candy Corn - Caramel,TWISTED_TREATZ,Candy Corn,Caramel,SEASONAL,REVIEW,DRAFT,,,,,TRUE,#EA537B,CandyCorn-Caramel
+candy-corn-caramel-apple,TT-CandyCorn-CaramelApple,Candy Corn - Caramel Apple,TWISTED_TREATZ,Candy Corn,Caramel Apple,SEASONAL,REVIEW,DRAFT,,,,,TRUE,#EA537B,CandyCorn-CaramelApple
+candy-corn-christmas,TT-CandyCorn-Christmas,Candy Corn - Christmas,TWISTED_TREATZ,Candy Corn,Christmas,SEASONAL,REVIEW,DRAFT,,,,,TRUE,#EA537B,CandyCorn-Christmas
+candy-corn-easter,TT-CandyCorn-Easter,Candy Corn - Easter,TWISTED_TREATZ,Candy Corn,Easter,SEASONAL,REVIEW,DRAFT,,,,,TRUE,#EA537B,CandyCorn-Easter
+candy-corn-original,TT-CandyCorn-Original,Candy Corn - Original,TWISTED_TREATZ,Candy Corn,Original,SEASONAL,REVIEW,DRAFT,,,,,TRUE,#EA537B,CandyCorn-Original
+candy-corn-s-mores,TT-CandyCorn-Smores,Candy Corn - S'mores,TWISTED_TREATZ,Candy Corn,S'mores,SEASONAL,REVIEW,DRAFT,,,,,TRUE,#EA537B,CandyCorn-Smores
+candy-corn-valentine,TT-CandyCorn-Valentine,Candy Corn - Valentine,TWISTED_TREATZ,Candy Corn,Valentine,SEASONAL,REVIEW,DRAFT,,,,,TRUE,#EA537B,CandyCorn-Valentine; TT-corn-day-gifts-pink; Valen-Corn-8oz-1PK; Valen-Corn-8oz-1PK.
+caramel-chews-apple,TT-CaramelChews-Apple,Caramel Chews - Apple,TWISTED_TREATZ,Caramel Chews,Apple,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,CaramelAppleChews-1lb.; CaramelAppleChews-3lbJar; CaramelAppleChews-8oz; CaramelChews-Apple
+caramel-chews-assorted,TT-CaramelChews-Assorted,Caramel Chews - Assorted,TWISTED_TREATZ,Caramel Chews,Assorted,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,AssortedCaramelChews-1lb.; AssortedCaramelChews-3lbJar; AssortedCaramelChews-8oz; Bundle-CaramelChewsVariety; CaramelChews-Assorted
+caramel-chews-chocolate,TT-CaramelChews-Chocolate,Caramel Chews - Chocolate,TWISTED_TREATZ,Caramel Chews,Chocolate,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,CaramelChews-Chocolate
+caramel-chews-coconut,TT-CaramelChews-Coconut,Caramel Chews - Coconut,TWISTED_TREATZ,Caramel Chews,Coconut,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,CaramelChews-Coconut; TT-buttery-caramel-chews-coconut
+caramel-chews-original,TT-CaramelChews-Original,Caramel Chews - Original,TWISTED_TREATZ,Caramel Chews,Original,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,CaramelChews-1lb.; CaramelChews-3lbJar; CaramelChews-8oz; CaramelChews-Original
+caramel-chews-patriotic-chocolate,TT-CaramelChews-PatrioticChocolate,Caramel Chews - Patriotic Chocolate,TWISTED_TREATZ,Caramel Chews,Patriotic Chocolate,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,TT-caramel-chocolate-patriotic
+caramel-chews-sea-salt,TT-CaramelChews-SeaSalt,Caramel Chews - Sea Salt,TWISTED_TREATZ,Caramel Chews,Sea Salt,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,CaramelChews-SeaSalt; SeaSaltCaramelChews-1lb.; SeaSaltCaramelChews-3lbJar
+caramel-chews-vanilla,TT-CaramelChews-Vanilla,Caramel Chews - Vanilla,TWISTED_TREATZ,Caramel Chews,Vanilla,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,TT-buttery-caramel-chews-vanilla
+cashews-honey-roasted,TT-Cashews-HoneyRoasted,Cashews - Honey Roasted,TWISTED_TREATZ,Cashews,Honey Roasted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-blend-cashew-cashews-crunchy
+chamoy-candy-tajin,TT-ChamoyCandy-Tajin,Chamoy Candy - Tajin,TWISTED_TREATZ,Chamoy Candy,Tajin,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-chamoy-gushers-mexican-skittles
+chamoy-gummies-spicy-mango,TT-ChamoyGummies-SpicyMango,Chamoy Gummies - Spicy Mango,TWISTED_TREATZ,Chamoy Gummies,Spicy Mango,SPICY,HIGH,DRAFT,,,,,FALSE,#EA537B,ChamoyGummies-SpicyMango
+chocolate-bark-cheerios,TT-ChocolateBark-Cheerios,Chocolate Bark - Cheerios,TWISTED_TREATZ,Chocolate Bark,Cheerios,BARK,HIGH,DRAFT,,,,,FALSE,#EA537B,CheeriosBark-Milk
+chocolate-bark-cookies-cream,TT-ChocolateBark-CookiesCream,Chocolate Bark - Cookies & Cream,TWISTED_TREATZ,Chocolate Bark,Cookies & Cream,BARK,HIGH,DRAFT,,,,,FALSE,#EA537B,Cookie&Cream-WhiteBark-16oz; Cookie&Cream-WhiteBark-2lb; Cookie&Cream-WhiteBark-8oz
+chocolate-bark-dates-almond,TT-ChocolateBark-DatesAlmond,Chocolate Bark - Dates & Almond,TWISTED_TREATZ,Chocolate Bark,Dates & Almond,BARK,HIGH,DRAFT,,,,,FALSE,#EA537B,DatesAlmondBark-DarkChocolate
+chocolate-bark-pistachio-dark-chocolate,TT-ChocolateBark-PistachioDarkChocolate,Chocolate Bark - Pistachio Dark Chocolate,TWISTED_TREATZ,Chocolate Bark,Pistachio Dark Chocolate,BARK,HIGH,DRAFT,,,,,FALSE,#EA537B,Pistachio-Bark-Dark-8oz
+chocolate-bark-pistachio-milk-chocolate,TT-ChocolateBark-PistachioMilkChocolate,Chocolate Bark - Pistachio Milk Chocolate,TWISTED_TREATZ,Chocolate Bark,Pistachio Milk Chocolate,BARK,HIGH,DRAFT,,,,,FALSE,#EA537B,Pistachio-Bark-Milk-8oz
+chocolate-bark-potato-chip-dark-chocolate,TT-ChocolateBark-PotatoChipDarkChocolate,Chocolate Bark - Potato Chip Dark Chocolate,TWISTED_TREATZ,Chocolate Bark,Potato Chip Dark Chocolate,BARK,HIGH,DRAFT,,,,,FALSE,#EA537B,PotatoChip-DarkChoc-1lb; PotatoChip-DarkChoc-8oz
+chocolate-bark-potato-chip-milk-chocolate,TT-ChocolateBark-PotatoChipMilkChocolate,Chocolate Bark - Potato Chip Milk Chocolate,TWISTED_TREATZ,Chocolate Bark,Potato Chip Milk Chocolate,BARK,HIGH,DRAFT,,,,,FALSE,#EA537B,PotatoChip-MilkChoc-1lb-rev1; PotatoChip-MilkChoc-8oz
+chocolate-bark-rainbow-crunch,TT-ChocolateBark-RainbowCrunch,Chocolate Bark - Rainbow Crunch,TWISTED_TREATZ,Chocolate Bark,Rainbow Crunch,BARK,HIGH,DRAFT,,,,,FALSE,#EA537B,FruityPebbleBark-2lb; FruityPebbleBark-2lbs; FruityPebbleBark-8oz
+chocolate-bark-sea-salt-almond,TT-ChocolateBark-SeaSaltAlmond,Chocolate Bark - Sea Salt Almond,TWISTED_TREATZ,Chocolate Bark,Sea Salt Almond,BARK,HIGH,DRAFT,,,,,FALSE,#EA537B,SeaSalt-Almond-8oz
+chocolate-bark-white-chocolate-pebbles,TT-ChocolateBark-WhiteChocolatePebbles,Chocolate Bark - White Chocolate Pebbles,TWISTED_TREATZ,Chocolate Bark,White Chocolate Pebbles,BARK,HIGH,DRAFT,,,,,FALSE,#EA537B,WhiteBark-ChocolatePebbles
+chocolate-bars-spicy-dark,TT-ChocolateBars-SpicyDark,Chocolate Bars - Spicy Dark,TWISTED_TREATZ,Chocolate Bars,Spicy Dark,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,SpicyChocolate-Dark
+chocolate-covered-gummy-bears-original,TT-ChocolateCoveredGummyBears-Original,Chocolate Covered Gummy Bears - Original,TWISTED_TREATZ,Chocolate Covered Gummy Bears,Original,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,GummyBears-ChocolateCovered
+chocolate-peanut-butter-mix-jam,TT-ChocolatePeanutButterMix-Jam,Chocolate Peanut Butter Mix - Jam,TWISTED_TREATZ,Chocolate Peanut Butter Mix,Jam,CHOCOLATE,REVIEW,DRAFT,,,,,FALSE,#EA537B,ChocPeanutButterMix-Jam
+chocolate-peanut-butter-mix-original,TT-ChocolatePeanutButterMix-Original,Chocolate Peanut Butter Mix - Original,TWISTED_TREATZ,Chocolate Peanut Butter Mix,Original,CHOCOLATE,REVIEW,DRAFT,,,,,FALSE,#EA537B,ChocPeanutButterMix-Original
+cotton-candy-chocolate-coffee,TT-CottonCandy-ChocolateCoffee,Cotton Candy - Chocolate Coffee,TWISTED_TREATZ,Cotton Candy,Chocolate Coffee,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,CottonCandy-ChocolateCoffee
+cotton-candy-orange,TT-CottonCandy-Orange,Cotton Candy - Orange,TWISTED_TREATZ,Cotton Candy,Orange,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,CottonCandy-Orange
+cotton-candy-watermelon,TT-CottonCandy-Watermelon,Cotton Candy - Watermelon,TWISTED_TREATZ,Cotton Candy,Watermelon,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,CottonCandy-Watermelon
+delight-hard-candy-coffee,TT-DelightHardCandy-Coffee,Delight Hard Candy - Coffee,TWISTED_TREATZ,Delight Hard Candy,Coffee,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-coffee-delight-filled-hard
+delight-hard-candy-strawberry,TT-DelightHardCandy-Strawberry,Delight Hard Candy - Strawberry,TWISTED_TREATZ,Delight Hard Candy,Strawberry,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-center-delight-filled-hard
+dipping-powder-sour-blue-raspberry,TT-DippingPowder-SourBlueRaspberry,Dipping Powder - Sour Blue Raspberry,TWISTED_TREATZ,Dipping Powder,Sour Blue Raspberry,SOUR,REVIEW,DRAFT,,,,,FALSE,#EA537B,DippingPowder-SourBlueRaspberry
+dipping-powder-sour-cherry,TT-DippingPowder-SourCherry,Dipping Powder - Sour Cherry,TWISTED_TREATZ,Dipping Powder,Sour Cherry,SOUR,REVIEW,DRAFT,,,,,FALSE,#EA537B,DippingPowder-SourCherry
+dipping-powder-sour-pink-cherry,TT-DippingPowder-SourPinkCherry,Dipping Powder - Sour Pink Cherry,TWISTED_TREATZ,Dipping Powder,Sour Pink Cherry,SOUR,REVIEW,DRAFT,,,,,FALSE,#EA537B,DippingPowder-SourPinkCherry
+dipping-powder-sour-watermelon,TT-DippingPowder-SourWatermelon,Dipping Powder - Sour Watermelon,TWISTED_TREATZ,Dipping Powder,Sour Watermelon,SOUR,REVIEW,DRAFT,,,,,FALSE,#EA537B,DippingPowder-SourWatermelon
+dipping-powder-sweet-blue-raspberry,TT-DippingPowder-SweetBlueRaspberry,Dipping Powder - Sweet Blue Raspberry,TWISTED_TREATZ,Dipping Powder,Sweet Blue Raspberry,SOUR,REVIEW,DRAFT,,,,,FALSE,#EA537B,DippingPowder-SweetBlueRaspberry
+dipping-powder-sweet-cherry,TT-DippingPowder-SweetCherry,Dipping Powder - Sweet Cherry,TWISTED_TREATZ,Dipping Powder,Sweet Cherry,SOUR,REVIEW,DRAFT,,,,,FALSE,#EA537B,DippingPowder-SweetCherry
+dipping-powder-sweet-cotton-candy,TT-DippingPowder-SweetCottonCandy,Dipping Powder - Sweet Cotton Candy,TWISTED_TREATZ,Dipping Powder,Sweet Cotton Candy,SOUR,REVIEW,DRAFT,,,,,FALSE,#EA537B,DippingPowder-SweetCottonCandy
+dipping-powder-sweet-pink-cherry,TT-DippingPowder-SweetPinkCherry,Dipping Powder - Sweet Pink Cherry,TWISTED_TREATZ,Dipping Powder,Sweet Pink Cherry,SOUR,REVIEW,DRAFT,,,,,FALSE,#EA537B,DippingPowder-SweetPinkCherry
+dipping-powder-sweet-watermelon,TT-DippingPowder-SweetWatermelon,Dipping Powder - Sweet Watermelon,TWISTED_TREATZ,Dipping Powder,Sweet Watermelon,SOUR,REVIEW,DRAFT,,,,,FALSE,#EA537B,DippingPowder-SweetWatermelon
+dried-mango-chamoy,TT-DriedMango-Chamoy,Dried Mango - Chamoy,TWISTED_TREATZ,Dried Mango,Chamoy,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,ChamoyMango
+dubai-chocolate-dark-chocolate,TT-DubaiChocolate-DarkChocolate,Dubai Chocolate - Dark Chocolate,TWISTED_TREATZ,Dubai Chocolate,Dark Chocolate,CHOCOLATE,HIGH,DRAFT,,,,,FALSE,#EA537B,DubaiChoc-Dark; DubaiChocBar-Dark
+dubai-chocolate-dark-chocolate-peanut-butter,TT-DubaiChocolate-DarkChocolatePeanutButter,Dubai Chocolate - Dark Chocolate Peanut Butter,TWISTED_TREATZ,Dubai Chocolate,Dark Chocolate Peanut Butter,CHOCOLATE,HIGH,DRAFT,,,,,FALSE,#EA537B,DubaiDarkChocPeanutButter-8oz
+dubai-chocolate-milk-chocolate,TT-DubaiChocolate-MilkChocolate,Dubai Chocolate - Milk Chocolate,TWISTED_TREATZ,Dubai Chocolate,Milk Chocolate,CHOCOLATE,HIGH,DRAFT,,,,,FALSE,#EA537B,MilkChoc-16oz...; MilkChoc-8oz..
+dubai-chocolate-milk-chocolate-peanut-butter,TT-DubaiChocolate-MilkChocolatePeanutButter,Dubai Chocolate - Milk Chocolate Peanut Butter,TWISTED_TREATZ,Dubai Chocolate,Milk Chocolate Peanut Butter,CHOCOLATE,HIGH,DRAFT,,,,,FALSE,#EA537B,DubaiChoc-PB-8oz; DubaiChocBar-MilkPeanutButter; DubaiMalikChocPeanutButter-1lb
+exotic-gummy-mix-assorted,TT-ExoticGummyMix-Assorted,Exotic Gummy Mix - Assorted,TWISTED_TREATZ,Exotic Gummy Mix,Assorted,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,ExoticGummyMix-1lb; ExoticGummyMix-1lb.; ExoticGummyMix-2lbs; ExoticGummyMix-2lbs.; ExoticGummyMix-3.25lbs.; ExoticGummyMix-7lbs.; ExoticGummyMix-8oz; ExoticGummyMix-8oz.
+filled-whale-gummies-assorted,TT-FilledWhaleGummies-Assorted,Filled Whale Gummies - Assorted,TWISTED_TREATZ,Filled Whale Gummies,Assorted,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,FilledWhaleGummy
+flamingo-gummies-assorted,TT-FlamingoGummies-Assorted,Flamingo Gummies - Assorted,TWISTED_TREATZ,Flamingo Gummies,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,PinkFlamingoGummies-Fruity
+flower-power-candy-assorted,TT-FlowerPowerCandy-Assorted,Flower Power Candy - Assorted,TWISTED_TREATZ,Flower Power Candy,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-flower-power-shaped
+freedom-gummies-assorted,TT-FreedomGummies-Assorted,Freedom Gummies - Assorted,TWISTED_TREATZ,Freedom Gummies,Assorted,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,FreedomGummy-Bears
+fruit-chews-assorted,TT-FruitChews-Assorted,Fruit Chews - Assorted,TWISTED_TREATZ,Fruit Chews,Assorted,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,FruitChews-Assorted
+fruit-jelly-candy-assorted,TT-FruitJellyCandy-Assorted,Fruit Jelly Candy - Assorted,TWISTED_TREATZ,Fruit Jelly Candy,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-jelly-socially
+fruit-slices-apple,TT-FruitSlices-Apple,Fruit Slices - Apple,TWISTED_TREATZ,Fruit Slices,Apple,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,FruitSlice-Apple; FruitSlice-Apple-1lb; FruitSlice-Apple-8oz; FruitSlice-Apple-8oz.
+fruit-slices-assorted,TT-FruitSlices-Assorted,Fruit Slices - Assorted,TWISTED_TREATZ,Fruit Slices,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,FruitJelly-Assorted-1lb; FruitJelly-Assorted-2.75lbJar; FruitJelly-Assorted-2.75lbJar.; FruitJelly-Assorted-2lb; FruitJelly-Assorted-6lbJar.; FruitJelly-Assorted-8oz; FruitSlice-Assort-1lb; FruitSlice-Assort-1lb.; FruitSlice-Assort-2lb; FruitSlice-Assort-2lb.; FruitSlice-Assort-8oz; FruitSlice-Assort-8oz.; FruitSlice-Assorted
+fruit-slices-blue-raspberry,TT-FruitSlices-BlueRaspberry,Fruit Slices - Blue Raspberry,TWISTED_TREATZ,Fruit Slices,Blue Raspberry,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,FruitSlice-Blue-1lb; FruitSlice-Blue-2lb; FruitSlice-Blue-8oz; FruitSlice-Blue-8oz.; FruitSlice-BlueRaspberry
+fruit-slices-cherry,TT-FruitSlices-Cherry,Fruit Slices - Cherry,TWISTED_TREATZ,Fruit Slices,Cherry,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,FruitJelly-Cherry; FruitJelly-Cherry-1lb; FruitJelly-Cherry-1lb.; FruitJelly-Cherry-2lbs.; FruitJelly-Cherry-4oz.; FruitJelly-Cherry-8oz; FruitJelly-Cherry-8oz.; FruitSlice-Cherry; FruitSlice-Cherry-2lb; FruitSlice-Cherry-8oz; FruitSlice-Cherry-8oz.; FruitSlice-Cherry-FruitSlice-Cherry-1lb
+fruit-slices-grape,TT-FruitSlices-Grape,Fruit Slices - Grape,TWISTED_TREATZ,Fruit Slices,Grape,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,FruitSlice-Grape; FruitSlice-Grape-1lb; FruitSlice-Grape-8oz; FruitSlice-Grape-8oz.
+fruit-slices-lemon,TT-FruitSlices-Lemon,Fruit Slices - Lemon,TWISTED_TREATZ,Fruit Slices,Lemon,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,FruitSlice-Lemon; FruitSlice-Lemon-1lb; FruitSlice-Lemon-2lb; FruitSlice-Lemon-8oz; FruitSlice-Lemon-8oz.
+fruit-slices-lemon-lime,TT-FruitSlices-LemonLime,Fruit Slices - Lemon Lime,TWISTED_TREATZ,Fruit Slices,Lemon Lime,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,FruitSlice-LemonLime; FruitSlice-LemonLime-1lb; FruitSlice-LemonLime-2lb; FruitSlice-LemonLime-8oz; FruitSlice-LemonLime-8oz.
+fruit-slices-lime,TT-FruitSlices-Lime,Fruit Slices - Lime,TWISTED_TREATZ,Fruit Slices,Lime,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,FruitSlice-Lime; FruitSlice-Lime-1lb; FruitSlice-Lime-2lb; FruitSlice-Lime-8oz; FruitSlice-Lime-8oz.
+fruit-slices-orange,TT-FruitSlices-Orange,Fruit Slices - Orange,TWISTED_TREATZ,Fruit Slices,Orange,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,FruitJelly-Orange-1lb.; FruitJelly-Orange-2.75lbsJar.; FruitJelly-Orange-2lb.; FruitJelly-Orange-6lbsJar.; FruitJelly-Orange-8oz; FruitJelly-Orange-8oz.; FruitSlice-Orange; FruitSlice-Orange-1lb; FruitSlice-Orange-2lb; FruitSlice-Orange-8oz; FruitSlice-Orange-8oz.
+fruit-slices-peach,TT-FruitSlices-Peach,Fruit Slices - Peach,TWISTED_TREATZ,Fruit Slices,Peach,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,FruitSlice-Peach; FruitSlice-Peach-1lb; FruitSlice-Peach-2lb; FruitSlice-Peach-8oz
+fruit-slices-pink-grapefruit,TT-FruitSlices-PinkGrapefruit,Fruit Slices - Pink Grapefruit,TWISTED_TREATZ,Fruit Slices,Pink Grapefruit,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,FruitSlice-PinkGrape-1lb; FruitSlice-PinkGrape-2lb; FruitSlice-PinkGrape-8oz; FruitSlice-PinkGrape-8oz.; FruitSlice-PinkGrapefruit
+fruit-slices-raspberry,TT-FruitSlices-Raspberry,Fruit Slices - Raspberry,TWISTED_TREATZ,Fruit Slices,Raspberry,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,FruitSlice-Raspberry; FruitSlice-Raspberry-1lb; FruitSlice-Raspberry-2lb; FruitSlice-Raspberry-8oz; FruitSlice-Raspberry-8oz.
+fruit-slices-spearmint,TT-FruitSlices-Spearmint,Fruit Slices - Spearmint,TWISTED_TREATZ,Fruit Slices,Spearmint,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,FruitJelly-Spearmint; FruitJelly-Spearmint-1lb; FruitJelly-Spearmint-2.75lbsJar.; FruitJelly-Spearmint-2lb.; FruitJelly-Spearmint-8oz; FruitSlice-Spearmint
+fruit-slices-watermelon,TT-FruitSlices-Watermelon,Fruit Slices - Watermelon,TWISTED_TREATZ,Fruit Slices,Watermelon,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,FruitSlice-Watermelon; FruitSlice-Watermelon-1lb; FruitSlice-Watermelon-2lb; FruitSlice-Watermelon-8oz; FruitSlice-Watermelon-8oz.
+ginger-candy-original,TT-GingerCandy-Original,Ginger Candy - Original,TWISTED_TREATZ,Ginger Candy,Original,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-ginger-hard-spicy
+gummi-berries-assorted,TT-GummiBerries-Assorted,Gummi Berries - Assorted,TWISTED_TREATZ,Gummi Berries,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-berries-colorful-gummi-irresistibly
+gummi-butterflies-assorted,TT-GummiButterflies-Assorted,Gummi Butterflies - Assorted,TWISTED_TREATZ,Gummi Butterflies,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-butterflies-colorful-gummi-large
+gummi-ice-pops-sherbet,TT-GummiIcePops-Sherbet,Gummi Ice Pops - Sherbet,TWISTED_TREATZ,Gummi Ice Pops,Sherbet,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-gummi-ice-pops-sherbet
+gummy-army-guys-original,TT-GummyArmyGuys-Original,Gummy Army Guys - Original,TWISTED_TREATZ,Gummy Army Guys,Original,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,ArmyGuys-8oz-1ct; ArmyGuys-8oz-2ct
+gummy-awesome-blossoms-assorted,TT-GummyAwesomeBlossoms-Assorted,Gummy Awesome Blossoms - Assorted,TWISTED_TREATZ,Gummy Awesome Blossoms,Assorted,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,Gummi-AwesomeBlossoms
+gummy-bears-assorted,TT-GummyBears-Assorted,Gummy Bears - Assorted,TWISTED_TREATZ,Gummy Bears,Assorted,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyBear-Assorted; GummyBears-Assorted; PROV-67aa9247; PROV-7a5e6b51; PROV-7e63ac72; TT-bears-burst-gummy-parties
+gummy-bears-blue-raspberry,TT-GummyBears-BlueRaspberry,Gummy Bears - Blue Raspberry,TWISTED_TREATZ,Gummy Bears,Blue Raspberry,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyBear-BlueRaspberry; GummyBears-BlueRaspberry
+gummy-bears-christmas-mix,TT-GummyBears-ChristmasMix,Gummy Bears - Christmas Mix,TWISTED_TREATZ,Gummy Bears,Christmas Mix,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyBear-Christmas; GummyBears-Christmas
+gummy-bears-grape,TT-GummyBears-Grape,Gummy Bears - Grape,TWISTED_TREATZ,Gummy Bears,Grape,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyBear-Grape; GummyBears-Grape
+gummy-bears-green-apple,TT-GummyBears-GreenApple,Gummy Bears - Green Apple,TWISTED_TREATZ,Gummy Bears,Green Apple,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyBear-GreenApple; GummyBears-GreenApple
+gummy-bears-mango,TT-GummyBears-Mango,Gummy Bears - Mango,TWISTED_TREATZ,Gummy Bears,Mango,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyBear-Mango; GummyBears-Mango
+gummy-bears-mystery,TT-GummyBears-Mystery,Gummy Bears - Mystery,TWISTED_TREATZ,Gummy Bears,Mystery,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyBears-Mystery
+gummy-bears-orange,TT-GummyBears-Orange,Gummy Bears - Orange,TWISTED_TREATZ,Gummy Bears,Orange,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyBear-Orange; GummyBears-Orange
+gummy-bears-peach,TT-GummyBears-Peach,Gummy Bears - Peach,TWISTED_TREATZ,Gummy Bears,Peach,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyBear-Peace
+gummy-bears-pineapple,TT-GummyBears-Pineapple,Gummy Bears - Pineapple,TWISTED_TREATZ,Gummy Bears,Pineapple,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyBear-Pineapple; GummyBears-Pineapple
+gummy-bears-pink-grapefruit,TT-GummyBears-PinkGrapefruit,Gummy Bears - Pink Grapefruit,TWISTED_TREATZ,Gummy Bears,Pink Grapefruit,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyBear-PinkGrapefruit; GummyBears-PinkGrapefruit
+gummy-bears-sour,TT-GummyBears-Sour,Gummy Bears - Sour,TWISTED_TREATZ,Gummy Bears,Sour,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyBear-Sour; GummyBears-Sour
+gummy-bears-spicy-chamoy,TT-GummyBears-SpicyChamoy,Gummy Bears - Spicy Chamoy,TWISTED_TREATZ,Gummy Bears,Spicy Chamoy,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,TT-bears-chamoy-gummy-spicy
+gummy-bears-strawberry,TT-GummyBears-Strawberry,Gummy Bears - Strawberry,TWISTED_TREATZ,Gummy Bears,Strawberry,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyBear-Strawberry; GummyBears-Strawberry
+gummy-bears-valentine-mix,TT-GummyBears-ValentineMix,Gummy Bears - Valentine Mix,TWISTED_TREATZ,Gummy Bears,Valentine Mix,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyBear-Valentine; GummyBears-ValentinesDay
+gummy-bears-watermelon,TT-GummyBears-Watermelon,Gummy Bears - Watermelon,TWISTED_TREATZ,Gummy Bears,Watermelon,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyBear-LightBlueWatermelon; GummyBears-Watermelon
+gummy-bears-wild-cherry,TT-GummyBears-WildCherry,Gummy Bears - Wild Cherry,TWISTED_TREATZ,Gummy Bears,Wild Cherry,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyBear-WildCherry; GummyBears-WildCherry
+gummy-body-parts-original,TT-GummyBodyParts-Original,Gummy Body Parts - Original,TWISTED_TREATZ,Gummy Body Parts,Original,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,BodyPartsGummy
+gummy-butterflies-assorted,TT-GummyButterflies-Assorted,Gummy Butterflies - Assorted,TWISTED_TREATZ,Gummy Butterflies,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,Gummy-Butterflies
+gummy-buttons-sour-peach,TT-GummyButtons-SourPeach,Gummy Buttons - Sour Peach,TWISTED_TREATZ,Gummy Buttons,Sour Peach,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,Gummi-SourPeachButtons
+gummy-chicken-feet-original,TT-GummyChickenFeet-Original,Gummy Chicken Feet - Original,TWISTED_TREATZ,Gummy Chicken Feet,Original,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,Gummi-ChickenFeet
+gummy-cola-bottles-original,TT-GummyColaBottles-Original,Gummy Cola Bottles - Original,TWISTED_TREATZ,Gummy Cola Bottles,Original,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,Gummy-ColaBottles
+gummy-fried-eggs-original,TT-GummyFriedEggs-Original,Gummy Fried Eggs - Original,TWISTED_TREATZ,Gummy Fried Eggs,Original,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,Gummi-FriedEgg
+gummy-lips-sour,TT-GummyLips-Sour,Gummy Lips - Sour,TWISTED_TREATZ,Gummy Lips,Sour,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,Gummy-SourLips
+gummy-mix-apple-orchard,TT-GummyMix-AppleOrchard,Gummy Mix - Apple Orchard,TWISTED_TREATZ,Gummy Mix,Apple Orchard,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,TT-apple-gummi-gummies-orchard
+gummy-mix-gingerbread,TT-GummyMix-Gingerbread,Gummy Mix - Gingerbread,TWISTED_TREATZ,Gummy Mix,Gingerbread,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,TT-christmas-gingerbread-gummies-gummy
+gummy-mix-halloween,TT-GummyMix-Halloween,Gummy Mix - Halloween,TWISTED_TREATZ,Gummy Mix,Halloween,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,TT-gummi-gummies-halloween-spooktacular
+gummy-mix-halloween-pumpkins,TT-GummyMix-HalloweenPumpkins,Gummy Mix - Halloween Pumpkins,TWISTED_TREATZ,Gummy Mix,Halloween Pumpkins,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,TT-fall-gummy-halloween-lantern
+gummy-mix-spicy-chamoy-mango,TT-GummyMix-SpicyChamoyMango,Gummy Mix - Spicy Chamoy Mango,TWISTED_TREATZ,Gummy Mix,Spicy Chamoy Mango,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,TT-chamoy-gummies-gummy-mango
+gummy-mix-strawberry-cream,TT-GummyMix-StrawberryCream,Gummy Mix - Strawberry & Cream,TWISTED_TREATZ,Gummy Mix,Strawberry & Cream,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,TT-cream-gummy-juicy-strawberry
+gummy-monster-mix-assorted,TT-GummyMonsterMix-Assorted,Gummy Monster Mix - Assorted,TWISTED_TREATZ,Gummy Monster Mix,Assorted,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,Gummi-MonsterMix; GummiMonsterMix-Assorted
+gummy-raspberries-original,TT-GummyRaspberries-Original,Gummy Raspberries - Original,TWISTED_TREATZ,Gummy Raspberries,Original,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,Gummi-RedRaspberries
+gummy-rattlesnakes-original,TT-GummyRattlesnakes-Original,Gummy Rattlesnakes - Original,TWISTED_TREATZ,Gummy Rattlesnakes,Original,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GiantGummi-Rattlesnake
+gummy-rings-assorted,TT-GummyRings-Assorted,Gummy Rings - Assorted,TWISTED_TREATZ,Gummy Rings,Assorted,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyRings-Assorted
+gummy-rings-blue-raspberry,TT-GummyRings-BlueRaspberry,Gummy Rings - Blue Raspberry,TWISTED_TREATZ,Gummy Rings,Blue Raspberry,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyRings-BlueRaspberry
+gummy-rings-cherry,TT-GummyRings-Cherry,Gummy Rings - Cherry,TWISTED_TREATZ,Gummy Rings,Cherry,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyRings-Cherry
+gummy-rings-green-apple,TT-GummyRings-GreenApple,Gummy Rings - Green Apple,TWISTED_TREATZ,Gummy Rings,Green Apple,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyRings-GreenApple
+gummy-rings-peach,TT-GummyRings-Peach,Gummy Rings - Peach,TWISTED_TREATZ,Gummy Rings,Peach,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyRings-Peach
+gummy-rings-pineapple,TT-GummyRings-Pineapple,Gummy Rings - Pineapple,TWISTED_TREATZ,Gummy Rings,Pineapple,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyRings-Pineapple; TT-bonbon-gummy-pineapple-rings
+gummy-rings-strawberry-banana,TT-GummyRings-StrawberryBanana,Gummy Rings - Strawberry Banana,TWISTED_TREATZ,Gummy Rings,Strawberry Banana,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyRings-StrawberryBanana
+gummy-rings-watermelon,TT-GummyRings-Watermelon,Gummy Rings - Watermelon,TWISTED_TREATZ,Gummy Rings,Watermelon,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummyRings-Watermelon
+gummy-sharks-original,TT-GummySharks-Original,Gummy Sharks - Original,TWISTED_TREATZ,Gummy Sharks,Original,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,Gummy-Shark
+gummy-snowflakes-assorted,TT-GummySnowflakes-Assorted,Gummy Snowflakes - Assorted,TWISTED_TREATZ,Gummy Snowflakes,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,GummiSnowflakes
+gummy-strawberries-cream-original,TT-GummyStrawberriesCream-Original,Gummy Strawberries & Cream - Original,TWISTED_TREATZ,Gummy Strawberries & Cream,Original,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,Gummy-StrawberryCream
+gummy-teeth-original,TT-GummyTeeth-Original,Gummy Teeth - Original,TWISTED_TREATZ,Gummy Teeth,Original,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,Gummi-Teeth; Gummy-Teeth
+gummy-unicorns-assorted,TT-GummyUnicorns-Assorted,Gummy Unicorns - Assorted,TWISTED_TREATZ,Gummy Unicorns,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,GummyUnicorn-Assorted
+gummy-worms-assorted,TT-GummyWorms-Assorted,Gummy Worms - Assorted,TWISTED_TREATZ,Gummy Worms,Assorted,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummiWorms-Mini
+gummy-worms-neon-sour,TT-GummyWorms-NeonSour,Gummy Worms - Neon Sour,TWISTED_TREATZ,Gummy Worms,Neon Sour,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GummiWorms-NeonSour
+gummy-worms-sugar-free-assorted,TT-GummyWormsSugarFree-Assorted,Gummy Worms (Sugar-Free) - Assorted,TWISTED_TREATZ,Gummy Worms (Sugar-Free),Assorted,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,SugarFree-Worms-8oz-1pk; SugarFree-Worms-8oz-1pk-rev1; SugarFree-Worms-8oz-2pk-rev1; SugarFree-Worms-8oz-4pk; SugarFree-Worms-8oz-4pk-rev1
+gushers-assorted,TT-Gushers-Assorted,Gushers - Assorted,TWISTED_TREATZ,Gushers,Assorted,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,Bundle-GushersTrio; PROV-982a6e6f
+gushers-blue-raspberry,TT-Gushers-BlueRaspberry,Gushers - Blue Raspberry,TWISTED_TREATZ,Gushers,Blue Raspberry,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,Gushers-BlueRaspberry
+gushers-chamoy-tajin,TT-Gushers-ChamoyTajin,Gushers - Chamoy Tajin,TWISTED_TREATZ,Gushers,Chamoy Tajin,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,Gushers-ChamoyTajin
+gushers-cotton-candy,TT-Gushers-CottonCandy,Gushers - Cotton Candy,TWISTED_TREATZ,Gushers,Cotton Candy,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,Gushers-CottonCandy; SourGushers-CottonCandy
+gushers-sour-blue-raspberry,TT-Gushers-SourBlueRaspberry,Gushers - Sour Blue Raspberry,TWISTED_TREATZ,Gushers,Sour Blue Raspberry,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,Blue-Gusher-8oz-2pk; GooeyGummies-SourBlueRaspberry; GooeyGusher-BlueRaspberry; TT-blue-exotic-gooey-gummies
+gushers-sour-cherry,TT-Gushers-SourCherry,Gushers - Sour Cherry,TWISTED_TREATZ,Gushers,Sour Cherry,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GooeyGummies-SourCherry; GooeyGushers-SourCherry
+gushers-sour-grape,TT-Gushers-SourGrape,Gushers - Sour Grape,TWISTED_TREATZ,Gushers,Sour Grape,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GooeyGummies-SourGrape; GooeyGushers-SourGrape
+gushers-sour-green-apple,TT-Gushers-SourGreenApple,Gushers - Sour Green Apple,TWISTED_TREATZ,Gushers,Sour Green Apple,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GooeyGummies-SourGreenApple; GooeyGushers-SourGreenApple
+gushers-sour-orange,TT-Gushers-SourOrange,Gushers - Sour Orange,TWISTED_TREATZ,Gushers,Sour Orange,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GooeyGummies-SourOrange; GooeyGushers-SourOrange
+gushers-sour-watermelon,TT-Gushers-SourWatermelon,Gushers - Sour Watermelon,TWISTED_TREATZ,Gushers,Sour Watermelon,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GooeyGummies-SourWatermelon; GooeyGushers-SourWatermelon
+gushers-sour-wild-cherry,TT-Gushers-SourWildCherry,Gushers - Sour Wild Cherry,TWISTED_TREATZ,Gushers,Sour Wild Cherry,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,Cherry-Gusher-4oz-1pk
+gushers-sweet-blue-raspberry,TT-Gushers-SweetBlueRaspberry,Gushers - Sweet Blue Raspberry,TWISTED_TREATZ,Gushers,Sweet Blue Raspberry,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GooeyGummies-SweetBlueRaspberry; GooeyGushers-SweetBlueRaspberry
+gushers-sweet-cherry,TT-Gushers-SweetCherry,Gushers - Sweet Cherry,TWISTED_TREATZ,Gushers,Sweet Cherry,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GooeyGummies-SweetCherry; GooeyGushers-SweetCherry
+gushers-sweet-grape,TT-Gushers-SweetGrape,Gushers - Sweet Grape,TWISTED_TREATZ,Gushers,Sweet Grape,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GooeyGummies-SweetGrape; GooeyGushers-SweetGrape
+gushers-sweet-green-apple,TT-Gushers-SweetGreenApple,Gushers - Sweet Green Apple,TWISTED_TREATZ,Gushers,Sweet Green Apple,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GooeyGushers-SweetGreenApple
+gushers-sweet-orange,TT-Gushers-SweetOrange,Gushers - Sweet Orange,TWISTED_TREATZ,Gushers,Sweet Orange,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GooeyGushers-SweetOrange
+gushers-sweet-watermelon,TT-Gushers-SweetWatermelon,Gushers - Sweet Watermelon,TWISTED_TREATZ,Gushers,Sweet Watermelon,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,GooeyGummies-SweetWatermelon; GooeyGushers-SweetWatermelon
+gushers-watermelon,TT-Gushers-Watermelon,Gushers - Watermelon,TWISTED_TREATZ,Gushers,Watermelon,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,Gushers-Watermelon
+halloween-gummy-mix-assorted,TT-HalloweenGummyMix-Assorted,Halloween Gummy Mix - Assorted,TWISTED_TREATZ,Halloween Gummy Mix,Assorted,GUMMIES,REVIEW,DRAFT,,,,,TRUE,#EA537B,Ghoulish Gummi Mix-8oz-2ct; GummiMix-Spooktacular
+hard-candy-assorted,TT-HardCandy-Assorted,Hard Candy - Assorted,TWISTED_TREATZ,Hard Candy,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,PROV-6183219a
+hard-candy-banana-rama,TT-HardCandy-BananaRama,Hard Candy - Banana Rama,TWISTED_TREATZ,Hard Candy,Banana Rama,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,HardCandy-BananaRama; HardCandyJar-Bananarama
+hard-candy-crazy-banana,TT-HardCandy-CrazyBanana,Hard Candy - Crazy Banana,TWISTED_TREATZ,Hard Candy,Crazy Banana,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,HardCandy-CrazyBanana; HardCandyJar-CrazyBananans
+hard-candy-crazy-bananas,TT-HardCandy-CrazyBananas,Hard Candy - Crazy Bananas,TWISTED_TREATZ,Hard Candy,Crazy Bananas,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-bananas-crazy-hard
+hard-candy-flower-power,TT-HardCandy-FlowerPower,Hard Candy - Flower Power,TWISTED_TREATZ,Hard Candy,Flower Power,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,HardCandy-FlowerPower; HardCandyJar-FlowerPower
+hard-candy-peppermint,TT-HardCandy-Peppermint,Hard Candy - Peppermint,TWISTED_TREATZ,Hard Candy,Peppermint,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,MintBalls-Peppermint
+hard-candy-root-beer,TT-HardCandy-RootBeer,Hard Candy - Root Beer,TWISTED_TREATZ,Hard Candy,Root Beer,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,HardCandy-RootBeerBarrels
+hard-candy-spearmint,TT-HardCandy-Spearmint,Hard Candy - Spearmint,TWISTED_TREATZ,Hard Candy,Spearmint,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,HardCandyDiscs-Spearmint
+jelly-belly-berry-blue,TT-JellyBelly-BerryBlue,Jelly Belly - Berry Blue,TWISTED_TREATZ,Jelly Belly,Berry Blue,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,jelly-beans-8oz-BerryBlue-1pk-rev1
+jelly-belly-caramel-corn,TT-JellyBelly-CaramelCorn,Jelly Belly - Caramel Corn,TWISTED_TREATZ,Jelly Belly,Caramel Corn,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,jelly-beans-8oz-CaramelCorn-1pk-rev1
+jelly-belly-christmas-mix,TT-JellyBelly-ChristmasMix,Jelly Belly - Christmas Mix,TWISTED_TREATZ,Jelly Belly,Christmas Mix,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,jelly-beans-8oz-ChrisrmasMix-1pk-rev1
+jelly-belly-green-apple,TT-JellyBelly-GreenApple,Jelly Belly - Green Apple,TWISTED_TREATZ,Jelly Belly,Green Apple,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,jelly-beans-8oz-GreenApple-1pk-rev1
+jelly-belly-juicy-pear,TT-JellyBelly-JuicyPear,Jelly Belly - Juicy Pear,TWISTED_TREATZ,Jelly Belly,Juicy Pear,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,jelly-beans-8oz-Juicypear-1pk-rev1
+jelly-belly-mango,TT-JellyBelly-Mango,Jelly Belly - Mango,TWISTED_TREATZ,Jelly Belly,Mango,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,jelly-beans-8oz-Mango-1pk-rev3
+jelly-belly-peach,TT-JellyBelly-Peach,Jelly Belly - Peach,TWISTED_TREATZ,Jelly Belly,Peach,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,jelly-beans-8oz-Peach-1pk-rev3
+jelly-belly-sizzling-cinnamon,TT-JellyBelly-SizzlingCinnamon,Jelly Belly - Sizzling Cinnamon,TWISTED_TREATZ,Jelly Belly,Sizzling Cinnamon,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,jelly-beans-8oz-SizzlingCinnamon-1pk
+jelly-belly-strawberry-cheesecake,TT-JellyBelly-StrawberryCheesecake,Jelly Belly - Strawberry Cheesecake,TWISTED_TREATZ,Jelly Belly,Strawberry Cheesecake,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,jelly-beans-8oz-StrawCheese-1pk-rev1
+jelly-belly-strawberry-daiquiri,TT-JellyBelly-StrawberryDaiquiri,Jelly Belly - Strawberry Daiquiri,TWISTED_TREATZ,Jelly Belly,Strawberry Daiquiri,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,jelly-beans-8oz-StrawDaiq-1pk-rev1
+jelly-belly-toasted-marshmallow,TT-JellyBelly-ToastedMarshmallow,Jelly Belly - Toasted Marshmallow,TWISTED_TREATZ,Jelly Belly,Toasted Marshmallow,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,jelly-beans-8oz-ToastedMarshmal-1pk-rev2
+jelly-belly-top-banana,TT-JellyBelly-TopBanana,Jelly Belly - Top Banana,TWISTED_TREATZ,Jelly Belly,Top Banana,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,jelly-beans-8oz-TopBananna-1pk-rev1
+jelly-hearts-assorted,TT-JellyHearts-Assorted,Jelly Hearts - Assorted,TWISTED_TREATZ,Jelly Hearts,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,Jelly-Hearts-8oz
+ju-ju-hearts-cinnamon,TT-JuJuHearts-Cinnamon,Ju Ju Hearts - Cinnamon,TWISTED_TREATZ,Ju Ju Hearts,Cinnamon,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,Cinnamon-Hearts8oz-JuJu
+lobster-gummies-assorted,TT-LobsterGummies-Assorted,Lobster Gummies - Assorted,TWISTED_TREATZ,Lobster Gummies,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-fun-gummy-lobster-red
+lollipops-assorted,TT-Lollipops-Assorted,Lollipops - Assorted,TWISTED_TREATZ,Lollipops,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,Lollipops-Assorted
+lotus-crunch-delight-biscoff,TT-LotusCrunchDelight-Biscoff,Lotus Crunch Delight - Biscoff,TWISTED_TREATZ,Lotus Crunch Delight,Biscoff,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,LotusCrunchDelight-Biscoff
+military-hero-gummies-assorted,TT-MilitaryHeroGummies-Assorted,Military Hero Gummies - Assorted,TWISTED_TREATZ,Military Hero Gummies,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,MilitaryHeroGummies
+milk-toffee-coffee,TT-MilkToffee-Coffee,Milk Toffee - Coffee,TWISTED_TREATZ,Milk Toffee,Coffee,CHEWS,REVIEW,DRAFT,,,,,FALSE,#EA537B,MilkToffee-Coffee
+milk-toffee-original,TT-MilkToffee-Original,Milk Toffee - Original,TWISTED_TREATZ,Milk Toffee,Original,CHEWS,REVIEW,DRAFT,,,,,FALSE,#EA537B,Original-MilkToffee-16oz; Original-MilkToffee-9oz; TT-crispy-easily-light-melts
+mixed-nuts-roasted-salted,TT-MixedNuts-RoastedSalted,Mixed Nuts - Roasted Salted,TWISTED_TREATZ,Mixed Nuts,Roasted Salted,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,MixedNuts-RoastedSalted
+mixed-nuts-unsalted,TT-MixedNuts-Unsalted,Mixed Nuts - Unsalted,TWISTED_TREATZ,Mixed Nuts,Unsalted,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-almonds-blend-brazil-cashews
+novelty-chewy-candy-assorted,TT-NoveltyChewyCandy-Assorted,Novelty Chewy Candy - Assorted,TWISTED_TREATZ,Novelty Chewy Candy,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,HardCandy-Pacifier
+pacifier-candy-assorted,TT-PacifierCandy-Assorted,Pacifier Candy - Assorted,TWISTED_TREATZ,Pacifier Candy,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,PacifierCandy-Assorted
+peace-gummy-bears-assorted,TT-PeaceGummyBears-Assorted,Peace Gummy Bears - Assorted,TWISTED_TREATZ,Peace Gummy Bears,Assorted,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,PeaceGummiBears-Fruity; PeaceGummyBears-Assorted
+peanut-brittle-original,TT-PeanutBrittle-Original,Peanut Brittle - Original,TWISTED_TREATZ,Peanut Brittle,Original,BRITTLE,HIGH,DRAFT,,,,,FALSE,#EA537B,PeanutBrittle; PeanutBrittle-4oz..
+peanuts-butter-toasted,TT-Peanuts-ButterToasted,Peanuts - Butter Toasted,TWISTED_TREATZ,Peanuts,Butter Toasted,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-bites-butter-coated-crispy
+peanuts-cajun-spicy,TT-Peanuts-CajunSpicy,Peanuts - Cajun Spicy,TWISTED_TREATZ,Peanuts,Cajun Spicy,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-bite-bold-cajun-coated
+peanuts-honey-roasted,TT-Peanuts-HoneyRoasted,Peanuts - Honey Roasted,TWISTED_TREATZ,Peanuts,Honey Roasted,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,Peanuts-HoneyRoasted
+peanuts-spanish-roasted-salted,TT-Peanuts-SpanishRoastedSalted,Peanuts - Spanish Roasted Salted,TWISTED_TREATZ,Peanuts,Spanish Roasted Salted,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-bite-bold-crunchy-peanuts
+pecans-roasted-salted,TT-Pecans-RoastedSalted,Pecans - Roasted Salted,TWISTED_TREATZ,Pecans,Roasted Salted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,Pecans-RoastedSalted
+pectin-gummy-cubes-assorted,TT-PectinGummyCubes-Assorted,Pectin Gummy Cubes - Assorted,TWISTED_TREATZ,Pectin Gummy Cubes,Assorted,GUMMIES,HIGH,DRAFT,,,,,FALSE,#EA537B,PectinGummyCubes-Assorted; TT-based-bites-cubes-pectin
+peppermint-puffs-peppermint,TT-PeppermintPuffs-Peppermint,Peppermint Puffs - Peppermint,TWISTED_TREATZ,Peppermint Puffs,Peppermint,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,PeppermintPuffs
+peppermint-twists-peppermint,TT-PeppermintTwists-Peppermint,Peppermint Twists - Peppermint,TWISTED_TREATZ,Peppermint Twists,Peppermint,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,PeppermintTwist-Mint
+personal-care-bath-loofah-sponge,TT-PersonalCare-BathLoofahSponge,Personal Care - Bath Loofah Sponge,TWISTED_TREATZ,Personal Care,Bath Loofah Sponge,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-back-bath-body-exfoliator
+saltwater-taffy-assorted,TT-SaltwaterTaffy-Assorted,Saltwater Taffy - Assorted,TWISTED_TREATZ,Saltwater Taffy,Assorted,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,SaltwaterTaffy-Assorted; Taffy-Assorted
+saltwater-taffy-banana,TT-SaltwaterTaffy-Banana,Saltwater Taffy - Banana,TWISTED_TREATZ,Saltwater Taffy,Banana,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-Banana
+saltwater-taffy-blackberry-crumble,TT-SaltwaterTaffy-BlackberryCrumble,Saltwater Taffy - Blackberry Crumble,TWISTED_TREATZ,Saltwater Taffy,Blackberry Crumble,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-BlackberryCrumble
+saltwater-taffy-butterscotch,TT-SaltwaterTaffy-Butterscotch,Saltwater Taffy - Butterscotch,TWISTED_TREATZ,Saltwater Taffy,Butterscotch,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-Butterscotch
+saltwater-taffy-caramel-mocha,TT-SaltwaterTaffy-CaramelMocha,Saltwater Taffy - Caramel Mocha,TWISTED_TREATZ,Saltwater Taffy,Caramel Mocha,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-CaramelMocha
+saltwater-taffy-caramel-swirls,TT-SaltwaterTaffy-CaramelSwirls,Saltwater Taffy - Caramel Swirls,TWISTED_TREATZ,Saltwater Taffy,Caramel Swirls,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-CaramelSwirls
+saltwater-taffy-chili-mango,TT-SaltwaterTaffy-ChiliMango,Saltwater Taffy - Chili Mango,TWISTED_TREATZ,Saltwater Taffy,Chili Mango,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-ChiliMango
+saltwater-taffy-chocolate,TT-SaltwaterTaffy-Chocolate,Saltwater Taffy - Chocolate,TWISTED_TREATZ,Saltwater Taffy,Chocolate,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-Chocolate
+saltwater-taffy-chocolate-caramel-sea-salt,TT-SaltwaterTaffy-ChocolateCaramelSeaSalt,Saltwater Taffy - Chocolate Caramel Sea Salt,TWISTED_TREATZ,Saltwater Taffy,Chocolate Caramel Sea Salt,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-ChocCaramelSeaSalt
+saltwater-taffy-cinnamon-roll,TT-SaltwaterTaffy-CinnamonRoll,Saltwater Taffy - Cinnamon Roll,TWISTED_TREATZ,Saltwater Taffy,Cinnamon Roll,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-CinnamonRoll
+saltwater-taffy-coconut-cream,TT-SaltwaterTaffy-CoconutCream,Saltwater Taffy - Coconut Cream,TWISTED_TREATZ,Saltwater Taffy,Coconut Cream,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-CoconutCream
+saltwater-taffy-cookies-cream,TT-SaltwaterTaffy-CookiesCream,Saltwater Taffy - Cookies & Cream,TWISTED_TREATZ,Saltwater Taffy,Cookies & Cream,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-CookiesCream
+saltwater-taffy-cotton-candy,TT-SaltwaterTaffy-CottonCandy,Saltwater Taffy - Cotton Candy,TWISTED_TREATZ,Saltwater Taffy,Cotton Candy,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-CottonCandy
+saltwater-taffy-honey,TT-SaltwaterTaffy-Honey,Saltwater Taffy - Honey,TWISTED_TREATZ,Saltwater Taffy,Honey,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-Honey-8oz-2pk
+saltwater-taffy-maple-bacon,TT-SaltwaterTaffy-MapleBacon,Saltwater Taffy - Maple Bacon,TWISTED_TREATZ,Saltwater Taffy,Maple Bacon,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-MapleBacon
+saltwater-taffy-passion-fruit,TT-SaltwaterTaffy-PassionFruit,Saltwater Taffy - Passion Fruit,TWISTED_TREATZ,Saltwater Taffy,Passion Fruit,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-PassionFruit
+saltwater-taffy-peanut-butter-jelly,TT-SaltwaterTaffy-PeanutButterJelly,Saltwater Taffy - Peanut Butter & Jelly,TWISTED_TREATZ,Saltwater Taffy,Peanut Butter & Jelly,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-PBJ
+saltwater-taffy-peppermint,TT-SaltwaterTaffy-Peppermint,Saltwater Taffy - Peppermint,TWISTED_TREATZ,Saltwater Taffy,Peppermint,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-Peppermint
+saltwater-taffy-pickle,TT-SaltwaterTaffy-Pickle,Saltwater Taffy - Pickle,TWISTED_TREATZ,Saltwater Taffy,Pickle,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-Pickle
+saltwater-taffy-pina-colada,TT-SaltwaterTaffy-PinaColada,Saltwater Taffy - Pina Colada,TWISTED_TREATZ,Saltwater Taffy,Pina Colada,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-PinaColada
+saltwater-taffy-root-beer-float,TT-SaltwaterTaffy-RootBeerFloat,Saltwater Taffy - Root Beer Float,TWISTED_TREATZ,Saltwater Taffy,Root Beer Float,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-RootBeerFloat
+saltwater-taffy-stars-stripes,TT-SaltwaterTaffy-StarsStripes,Saltwater Taffy - Stars & Stripes,TWISTED_TREATZ,Saltwater Taffy,Stars & Stripes,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-StarsAndStripes
+saltwater-taffy-strawberry-kiwi,TT-SaltwaterTaffy-StrawberryKiwi,Saltwater Taffy - Strawberry Kiwi,TWISTED_TREATZ,Saltwater Taffy,Strawberry Kiwi,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-StrawberryKiwi
+saltwater-taffy-vanilla,TT-SaltwaterTaffy-Vanilla,Saltwater Taffy - Vanilla,TWISTED_TREATZ,Saltwater Taffy,Vanilla,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-Vanilla-8oz-1pk
+saltwater-taffy-watermelon,TT-SaltwaterTaffy-Watermelon,Saltwater Taffy - Watermelon,TWISTED_TREATZ,Saltwater Taffy,Watermelon,CHEWS,HIGH,DRAFT,,,,,FALSE,#EA537B,Taffy-Watermelon
+sesame-sticks-honey,TT-SesameSticks-Honey,Sesame Sticks - Honey,TWISTED_TREATZ,Sesame Sticks,Honey,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-bite-crisp-crunchy-golden
+snack-mix-fire-cracker,TT-SnackMix-FireCracker,Snack Mix - Fire Cracker,TWISTED_TREATZ,Snack Mix,Fire Cracker,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,FireCrackerMix
+snack-mix-firecracker,TT-SnackMix-Firecracker,Snack Mix - Firecracker,TWISTED_TREATZ,Snack Mix,Firecracker,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,SnackMix-Firecracker
+snack-mix-fruit-nut-trail,TT-SnackMix-FruitNutTrail,Snack Mix - Fruit & Nut Trail,TWISTED_TREATZ,Snack Mix,Fruit & Nut Trail,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,SnackMix-FruitNutTrail
+snack-mix-honey-nut,TT-SnackMix-HoneyNut,Snack Mix - Honey Nut,TWISTED_TREATZ,Snack Mix,Honey Nut,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,SnackMix-HoneyNut
+snack-mix-nuts-seeds-raisins,TT-SnackMix-NutsSeedsRaisins,Snack Mix - Nuts Seeds & Raisins,TWISTED_TREATZ,Snack Mix,Nuts Seeds & Raisins,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,SnackMix-NutsSeedsRaisins
+snack-mix-raisin-cranberry-nut,TT-SnackMix-RaisinCranberryNut,Snack Mix - Raisin & Cranberry Nut,TWISTED_TREATZ,Snack Mix,Raisin & Cranberry Nut,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-blend-cranberry-crunchy-healthy
+snack-mix-sesame-crunch,TT-SnackMix-SesameCrunch,Snack Mix - Sesame Crunch,TWISTED_TREATZ,Snack Mix,Sesame Crunch,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,SnackMix-SesameCrunch
+snack-mix-spicy-crunch,TT-SnackMix-SpicyCrunch,Snack Mix - Spicy Crunch,TWISTED_TREATZ,Snack Mix,Spicy Crunch,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-blend-crunch-nuts-savory
+snack-mix-sweet-salty-cranberry,TT-SnackMix-SweetSaltyCranberry,Snack Mix - Sweet & Salty Cranberry,TWISTED_TREATZ,Snack Mix,Sweet & Salty Cranberry,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,SnackMix-SweetSaltyCranberry
+snack-mix-tropical-crunch,TT-SnackMix-TropicalCrunch,Snack Mix - Tropical Crunch,TWISTED_TREATZ,Snack Mix,Tropical Crunch,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-banana-blend-cashew-chips
+snack-mix-tropical-dried-fruit,TT-SnackMix-TropicalDriedFruit,Snack Mix - Tropical Dried Fruit,TWISTED_TREATZ,Snack Mix,Tropical Dried Fruit,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-blend-crunchy-dried-energy
+snack-mix-tropical-nut-fruit,TT-SnackMix-TropicalNutFruit,Snack Mix - Tropical Nut & Fruit,TWISTED_TREATZ,Snack Mix,Tropical Nut & Fruit,GIFT_BOXES,REVIEW,DRAFT,,,,,FALSE,#EA537B,SnackMix-TropicalNutFruit
+snowflake-gummies-assorted,TT-SnowflakeGummies-Assorted,Snowflake Gummies - Assorted,TWISTED_TREATZ,Snowflake Gummies,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,SnowflakeGummy-Assorted
+sour-belts-assorted,TT-SourBelts-Assorted,Sour Belts - Assorted,TWISTED_TREATZ,Sour Belts,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-belts-ropes-snacking-tangy
+sour-buttons-assorted,TT-SourButtons-Assorted,Sour Buttons - Assorted,TWISTED_TREATZ,Sour Buttons,Assorted,SOUR,HIGH,DRAFT,,,,,FALSE,#EA537B,TT-boards-buttons-flavour-gummy
+sour-buttons-blue-raspberry,TT-SourButtons-BlueRaspberry,Sour Buttons - Blue Raspberry,TWISTED_TREATZ,Sour Buttons,Blue Raspberry,SOUR,HIGH,DRAFT,,,,,FALSE,#EA537B,SourButtons-BlueRaspberry
+sour-drops-assorted,TT-SourDrops-Assorted,Sour Drops - Assorted,TWISTED_TREATZ,Sour Drops,Assorted,SOUR,HIGH,DRAFT,,,,,FALSE,#EA537B,SourDrops-16oz; SourDrops-8oz
+sour-fruit-balls-assorted,TT-SourFruitBalls-Assorted,Sour Fruit Balls - Assorted,TWISTED_TREATZ,Sour Fruit Balls,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,SourFruitBalls-Assorted
+spice-drops-assorted,TT-SpiceDrops-Assorted,Spice Drops - Assorted,TWISTED_TREATZ,Spice Drops,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,SpiceDrops-Assorted
+spice-drops-cinnamon-spearmint,TT-SpiceDrops-CinnamonSpearmint,Spice Drops - Cinnamon & Spearmint,TWISTED_TREATZ,Spice Drops,Cinnamon & Spearmint,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-christmas-cinnamon-colored-drops
+starlight-candy-fruit,TT-StarlightCandy-Fruit,Starlight Candy - Fruit,TWISTED_TREATZ,Starlight Candy,Fruit,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-hard-starlight-swirl
+swedish-candy-assorted,TT-SwedishCandy-Assorted,Swedish Candy - Assorted,TWISTED_TREATZ,Swedish Candy,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,SwedishCandy-Assorted
+swedish-candy-banana-toffee-skulls,TT-SwedishCandy-BananaToffeeSkulls,Swedish Candy - Banana Toffee Skulls,TWISTED_TREATZ,Swedish Candy,Banana Toffee Skulls,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,SwedishCandy-BananaToffeeSkulls
+swedish-candy-blueberry-strawberry-bears,TT-SwedishCandy-BlueberryStrawberryBears,Swedish Candy - Blueberry Strawberry Bears,TWISTED_TREATZ,Swedish Candy,Blueberry Strawberry Bears,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,SwedishCandy-BlueberryStrawberryBears
+swedish-candy-grape-skulls,TT-SwedishCandy-GrapeSkulls,Swedish Candy - Grape Skulls,TWISTED_TREATZ,Swedish Candy,Grape Skulls,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,SwedishCandy-GrapeSkulls
+swedish-candy-mango-bears,TT-SwedishCandy-MangoBears,Swedish Candy - Mango Bears,TWISTED_TREATZ,Swedish Candy,Mango Bears,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,SourMango-Bears-8oz-1PK-rev1
+swedish-candy-pineapple-passionfruit-aliens,TT-SwedishCandy-PineapplePassionfruitAliens,Swedish Candy - Pineapple Passionfruit Aliens,TWISTED_TREATZ,Swedish Candy,Pineapple Passionfruit Aliens,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,Pine-PassionAlien-8oz-1PK-rev1
+swedish-candy-sour-lemon-strawberry,TT-SwedishCandy-SourLemonStrawberry,Swedish Candy - Sour Lemon Strawberry,TWISTED_TREATZ,Swedish Candy,Sour Lemon Strawberry,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,LemonStrawButter-8oz-1PK-rev1
+swedish-candy-strawberry-vanilla-hearts,TT-SwedishCandy-StrawberryVanillaHearts,Swedish Candy - Strawberry Vanilla Hearts,TWISTED_TREATZ,Swedish Candy,Strawberry Vanilla Hearts,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,SwedishCandy-StrawberryVanillaHearts
+swedish-candy-watermelon-aliens,TT-SwedishCandy-WatermelonAliens,Swedish Candy - Watermelon Aliens,TWISTED_TREATZ,Swedish Candy,Watermelon Aliens,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,SwedishCandy-WatermelonAliens
+swirly-fish-gummies-assorted,TT-SwirlyFishGummies-Assorted,Swirly Fish Gummies - Assorted,TWISTED_TREATZ,Swirly Fish Gummies,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,SwirlyFish-Fruity
+triple-heart-gummies-assorted,TT-TripleHeartGummies-Assorted,Triple Heart Gummies - Assorted,TWISTED_TREATZ,Triple Heart Gummies,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TripleHeartGummy-Assorted
+valentine-gummies-assorted,TT-ValentineGummies-Assorted,Valentine Gummies - Assorted,TWISTED_TREATZ,Valentine Gummies,Assorted,SEASONAL,REVIEW,DRAFT,,,,,TRUE,#EA537B,PROV-25ab9027; PROV-fd8d90ec
+valentine-gummies-cherry-jelly-hearts,TT-ValentineGummies-CherryJellyHearts,Valentine Gummies - Cherry Jelly Hearts,TWISTED_TREATZ,Valentine Gummies,Cherry Jelly Hearts,SEASONAL,REVIEW,DRAFT,,,,,TRUE,#EA537B,TT-cherry-day-desserts-gifts
+valentine-gummies-hugs-kisses,TT-ValentineGummies-HugsKisses,Valentine Gummies - Hugs & Kisses,TWISTED_TREATZ,Valentine Gummies,Hugs & Kisses,SEASONAL,REVIEW,DRAFT,,,,,TRUE,#EA537B,Val-Candy-1Pk-Hugs and Kisses-8oz.
+valentine-gummies-lovestruck-bears,TT-ValentineGummies-LovestruckBears,Valentine Gummies - Lovestruck Bears,TWISTED_TREATZ,Valentine Gummies,Lovestruck Bears,SEASONAL,REVIEW,DRAFT,,,,,TRUE,#EA537B,Val-Candy-1Pk-Lovestruck Bears-8oz; Val-Candy-1Pk-Lovestruck Bears-8oz.
+valentine-gummies-mellow-creme,TT-ValentineGummies-MellowCreme,Valentine Gummies - Mellow Creme,TWISTED_TREATZ,Valentine Gummies,Mellow Creme,SEASONAL,REVIEW,DRAFT,,,,,TRUE,#EA537B,Val-Mellow-8oz-1PK; Val-Mellow-8oz-1PK-rev1; Val-Mellow-8oz-1PK.; Val-Mellow-8oz-2PK; Val-Mellow-8oz-2PK.; Val-Mellow-8oz-4PK
+valentine-gummies-sanded-hearts,TT-ValentineGummies-SandedHearts,Valentine Gummies - Sanded Hearts,TWISTED_TREATZ,Valentine Gummies,Sanded Hearts,SEASONAL,REVIEW,DRAFT,,,,,TRUE,#EA537B,Val-Candy-1 Pk -Sanded Hearts -8oz.
+valentine-gummies-sour-hearts,TT-ValentineGummies-SourHearts,Valentine Gummies - Sour Hearts,TWISTED_TREATZ,Valentine Gummies,Sour Hearts,SEASONAL,REVIEW,DRAFT,,,,,TRUE,#EA537B,Val-Candy-1 Pk -Sour Hearts -8oz.; Val-Candy-2-Pk -Sour Hearts -8oz
+vegan-sour-chews-assorted,TT-VeganSourChews-Assorted,Vegan Sour Chews - Assorted,TWISTED_TREATZ,Vegan Sour Chews,Assorted,CHEWS,REVIEW,DRAFT,,,,,FALSE,#EA537B,SourVeganChews
+vegan-sour-chews-cherry,TT-VeganSourChews-Cherry,Vegan Sour Chews - Cherry,TWISTED_TREATZ,Vegan Sour Chews,Cherry,CHEWS,REVIEW,DRAFT,,,,,FALSE,#EA537B,VeganSourChews-Cherry
+walnuts-roasted-salted,TT-Walnuts-RoastedSalted,Walnuts - Roasted Salted,TWISTED_TREATZ,Walnuts,Roasted Salted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-bite-crunchy-energy-fat
+wasabi-peas-original,TT-WasabiPeas-Original,Wasabi Peas - Original,TWISTED_TREATZ,Wasabi Peas,Original,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-bite-bold-coated-crispy
+wax-bottles-assorted,TT-WaxBottles-Assorted,Wax Bottles - Assorted,TWISTED_TREATZ,Wax Bottles,Assorted,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,CandyWax-Bottles-1lb; CandyWax-Bottles-1lb.; CandyWax-Bottles-8oz; TT-bottles-filled-liquid-retro; WaxBottleCandy-Assorted
+yogurt-pretzels-original,TT-YogurtPretzels-Original,Yogurt Pretzels - Original,TWISTED_TREATZ,Yogurt Pretzels,Original,GUMMIES,REVIEW,DRAFT,,,,,FALSE,#EA537B,TT-bite-coated-cream-crunch

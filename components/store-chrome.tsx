@@ -18,5 +18,34 @@ export function StoreHeader() {
 }
 
 export function StoreFooter() {
-  return <footer><div><Wordmark footer /><p>More candy. More drama.</p></div><div className="footer-links"><Link href="/shop">Shop</Link><Link href="/about">About</Link><Link href="/wholesale">Wholesale</Link><Link href="/faq">FAQ</Link><Link href="/contact">Contact</Link><Link href="/allergens">Allergens</Link><Link href="/legal/shipping-returns">Shipping</Link><Link href="/legal/privacy">Privacy</Link></div><p className="copyright">© 2026 CandyRama · Houston, Texas</p></footer>;
+  return <footer className="site-footer">
+    <div className="footer-brand">
+      <Wordmark footer />
+      <p>More candy. More drama.</p>
+      <p className="footer-description">Bold, tangy, and sweet treats packed with personality in Houston, Texas.</p>
+    </div>
+    <nav className="footer-column" aria-label="Footer shop navigation">
+      <h2>Shop</h2>
+      <Link href="/shop">All candy</Link>
+      <Link href="/shop">Best sellers</Link>
+      <Link href="/wholesale">Wholesale</Link>
+    </nav>
+    <nav className="footer-column" aria-label="Footer help navigation">
+      <h2>Help</h2>
+      <Link href="/faq">FAQ</Link>
+      <Link href="/legal/shipping-returns">Shipping &amp; returns</Link>
+      <Link href="/allergens">Allergen info</Link>
+      <Link href="/legal/privacy">Privacy policy</Link>
+    </nav>
+    <div className="footer-column footer-contact">
+      <h2>Contact</h2>
+      <address>9807 Harwin Dr, Suite R<br />Houston, TX 77036</address>
+      <a href="mailto:customercare@twistedtreatz.com">customercare@twistedtreatz.com</a>
+      <Link href="/contact">Send us a message</Link>
+    </div>
+    <div className="footer-bottom">
+      <p>© 2026 CandyRama. All rights reserved.</p>
+      <p>Made with sweetness in Houston, Texas.</p>
+    </div>
+  </footer>;
 }

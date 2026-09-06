@@ -55,229 +55,315 @@ enum WholesaleStatus {
   DECLINED
 }
 
+// Mirrors the TwistedTreatz SKU spine's two-brand model
+// (ops/RULES.md: every master SKU is TwistedTreatz or Other (IP)).
+enum ProductBrand {
+  TWISTED_TREATZ
+  OTHER_IP
+}
+
+enum CategoryConfidence {
+  HIGH
+  REVIEW
+}
+
 model Product {
-  id String @id @default(cuid())
-  slug String @unique
-  name String
-  category Category
-  tagline String?
-  description String
-  ingredients String
-  allergens String[]
-  netWeight String
-  priceCents Int
+  id                 String             @id @default(cuid())
+  slug               String             @unique
+  // Canonical master SKU from the TwistedTreatz cross-channel spine
+  // (sku_spine_v3 / SKU_Map.xlsx). Stable, opaque, preserved verbatim —
+  // never renamed, never parsed to derive hierarchy. Nullable only during
+  // migration; make it required once every product is backfilled.
+  sku                String?            @unique
+  name               String
+  // Hierarchy lives in COLUMNS, never parsed from the SKU string (spine rule).
+  // A Product row is at brand + productFamily + flavor grain. Size/pack is an
+  // attribute of ProductVariant (variant.sizeSig), never part of identity.
+  brand              ProductBrand       @default(TWISTED_TREATZ)
+  productFamily      String?
+  flavor             String? // spine invariant: never NULL in source — "Original" / "Assorted"
+  category           Category
+  categoryConfidence CategoryConfidence @default(REVIEW)
+  sourceMasterSkus   String[]           @default([])
+  tagline            String?
+  description        String
+  ingredients        String
+  allergens          String[]
+  status             ProductStatus      @default(DRAFT)
+  isSeasonal         Boolean            @default(false)
+  availableFrom      DateTime?
+  availableTo        DateTime?
+  accentColor        String             @default("#EA537B")
+
+  // ── Deprecated single-variant fields ──────────────────────────────────
+  // Source of truth for price/stock/Stripe is now ProductVariant. These are
+  // retained so existing callers (checkout, cart, product API, workbook, the
+  // Stripe webhook) keep compiling during the variant migration; treat them
+  // as the default variant's mirror and remove once all callers read variants.
+  netWeight      String?
+  priceCents     Int?
   compareAtCents Int?
-  stockQty Int @default(0)
-  lowStockAt Int @default(6)
-  status ProductStatus @default(DRAFT)
-  isSeasonal Boolean @default(false)
-  availableFrom DateTime?
-  availableTo DateTime?
-  accentColor String @default("#EA537B")
-  stripePriceId String? @unique
-  images ProductImage[]
-  reviews Review[]
-  orderItems OrderItem[]
+  stockQty       Int?
+  lowStockAt     Int?
+  stripePriceId  String? @unique
+
+  variants       ProductVariant[]
+  images         ProductImage[]
+  reviews        Review[]
+  orderItems     OrderItem[]
   stockMovements StockMovement[]
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt      DateTime         @default(now())
+  updatedAt      DateTime         @updatedAt
 
   @@index([status, category])
+  @@index([brand, productFamily])
   @@index([createdAt])
 }
 
+// Size/pack grain — the sellable unit. Mirrors the spine's size_sig ladder:
+// one Product (brand+family+flavor) has many variants (8oz-1pk, 8oz-2pk, 1lb…).
+// `sku` is the leaf, channel-facing SKU, e.g. TT-FruitSlices-Apple-8oz-2pk.
+model ProductVariant {
+  id             String          @id @default(cuid())
+  productId      String
+  product        Product         @relation(fields: [productId], references: [id], onDelete: Cascade)
+  sku            String          @unique // leaf SKU (master + size/pack); preserved verbatim, never parsed
+  sizeSig        String? // spine size_sig, e.g. "8oz", "1lb", "8oz|4pk"
+  netWeight      String?
+  priceCents     Int?
+  compareAtCents Int?
+  stockQty       Int?
+  lowStockAt     Int             @default(6)
+  stripePriceId  String?         @unique
+  // Cross-channel platform SKUs that roll up to this leaf (reconciliation only).
+  amazonSkus     String[]        @default([])
+  shopifySkus    String[]        @default([])
+  tiktokSkus     String[]        @default([])
+  temuSkus       String[]        @default([])
+  position       Int             @default(0)
+  isDefault      Boolean         @default(false) // exactly one per product: the storefront default
+  active         Boolean         @default(false)
+  orderItems     OrderItem[]
+  stockMovements StockMovement[]
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  @@index([productId, active, position])
+}
+
 model ProductImage {
-  id String @id @default(cuid())
-  productId String
-  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  id          String   @id @default(cuid())
+  productId   String
+  product     Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
   storagePath String
-  url String
-  alt String
-  position Int @default(0)
-  createdAt DateTime @default(now())
+  url         String
+  alt         String
+  position    Int      @default(0)
+  createdAt   DateTime @default(now())
+
   @@index([productId, position])
 }
 
 model Customer {
-  id String @id @default(cuid())
-  email String @unique
-  name String?
-  phone String?
-  orders Order[]
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  phone     String?
+  orders    Order[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
 model Order {
-  id String @id @default(cuid())
-  orderNumber String @unique
-  customerId String?
-  customer Customer? @relation(fields: [customerId], references: [id])
-  email String
-  status OrderStatus @default(PENDING)
-  items OrderItem[]
-  subtotalCents Int
-  discountCents Int @default(0)
-  shippingCents Int
-  taxCents Int
-  totalCents Int
-  discountCode String?
-  shippingName String
-  shippingLine1 String
-  shippingLine2 String?
-  shippingCity String
-  shippingState String
-  shippingZip String
-  shippingCountry String @default("US")
-  carrier String?
-  serviceLevel String?
-  trackingNumber String?
-  shippingLabelUrl String?
-  stripeSessionId String? @unique
-  stripePaymentIntentId String? @unique
-  internalNote String?
-  paidAt DateTime?
-  shippedAt DateTime?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id                    String      @id @default(cuid())
+  orderNumber           String      @unique
+  customerId            String?
+  customer              Customer?   @relation(fields: [customerId], references: [id])
+  email                 String
+  status                OrderStatus @default(PENDING)
+  items                 OrderItem[]
+  subtotalCents         Int
+  discountCents         Int         @default(0)
+  shippingCents         Int
+  taxCents              Int
+  totalCents            Int
+  discountCode          String?
+  shippingName          String
+  shippingLine1         String
+  shippingLine2         String?
+  shippingCity          String
+  shippingState         String
+  shippingZip           String
+  shippingCountry       String      @default("US")
+  carrier               String?
+  serviceLevel          String?
+  trackingNumber        String?
+  shippingLabelUrl      String?
+  stripeSessionId       String?     @unique
+  stripePaymentIntentId String?     @unique
+  internalNote          String?
+  paidAt                DateTime?
+  shippedAt             DateTime?
+  createdAt             DateTime    @default(now())
+  updatedAt             DateTime    @updatedAt
 
   @@index([email, orderNumber])
   @@index([status, createdAt])
 }
 
 model OrderItem {
-  id String @id @default(cuid())
-  orderId String
-  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
-  productId String
-  product Product @relation(fields: [productId], references: [id])
+  id           String          @id @default(cuid())
+  orderId      String
+  order        Order           @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId    String
+  product      Product         @relation(fields: [productId], references: [id])
+  // Variant the line was bought at (nullable during migration; becomes the
+  // real grain once checkout writes variants). skuSnapshot freezes the SKU
+  // sold, like nameSnapshot/priceCents freeze name and price.
+  variantId    String?
+  variant      ProductVariant? @relation(fields: [variantId], references: [id])
+  skuSnapshot  String?
   nameSnapshot String
-  priceCents Int
-  quantity Int
+  priceCents   Int
+  quantity     Int
+
   @@index([orderId])
   @@index([productId])
+  @@index([variantId])
 }
 
 model StockMovement {
-  id String @id @default(cuid())
+  id        String          @id @default(cuid())
   productId String
-  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
-  delta Int
-  reason String
-  orderId String?
-  actorId String?
-  createdAt DateTime @default(now())
+  product   Product         @relation(fields: [productId], references: [id], onDelete: Cascade)
+  // Variant whose stock moved (nullable during migration). Once stock lives on
+  // variants this becomes the real target; productId stays for rollup queries.
+  variantId String?
+  variant   ProductVariant? @relation(fields: [variantId], references: [id], onDelete: Restrict)
+  delta     Int
+  reason    String
+  orderId   String?
+  actorId   String?
+  createdAt DateTime        @default(now())
+
   @@index([productId, createdAt])
+  @@index([variantId, createdAt])
 }
 
 model Discount {
-  id String @id @default(cuid())
-  code String @unique
-  type DiscountType
-  value Int
+  id           String       @id @default(cuid())
+  code         String       @unique
+  type         DiscountType
+  value        Int
   minimumCents Int?
-  usageLimit Int?
-  usageCount Int @default(0)
-  active Boolean @default(true)
-  startsAt DateTime?
-  endsAt DateTime?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  usageLimit   Int?
+  usageCount   Int          @default(0)
+  active       Boolean      @default(true)
+  startsAt     DateTime?
+  endsAt       DateTime?
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
 }
 
 model Review {
-  id String @id @default(cuid())
-  productId String
-  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
-  authorName String
-  email String
-  rating Int
-  title String?
-  body String
-  status ReviewStatus @default(PENDING)
-  verifiedOrder Boolean @default(false)
-  createdAt DateTime @default(now())
+  id            String       @id @default(cuid())
+  productId     String
+  product       Product      @relation(fields: [productId], references: [id], onDelete: Cascade)
+  authorName    String
+  email         String
+  rating        Int
+  title         String?
+  body          String
+  status        ReviewStatus @default(PENDING)
+  verifiedOrder Boolean      @default(false)
+  createdAt     DateTime     @default(now())
+
   @@index([productId, status, createdAt])
 }
 
 model WholesaleApplication {
-  id String @id @default(cuid())
-  businessName String
-  contactName String
-  email String
-  phone String?
-  website String?
+  id                String          @id @default(cuid())
+  businessName      String
+  contactName       String
+  email             String
+  phone             String?
+  website           String?
   estimatedQuantity String
-  message String?
-  status WholesaleStatus @default(NEW)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  message           String?
+  status            WholesaleStatus @default(NEW)
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+
   @@index([status, createdAt])
 }
 
 model Stockist {
-  id String @id @default(cuid())
-  name String
+  id           String   @id @default(cuid())
+  name         String
   addressLine1 String
   addressLine2 String?
-  city String
-  state String
-  postalCode String
-  latitude Decimal? @db.Decimal(9, 6)
-  longitude Decimal? @db.Decimal(9, 6)
-  website String?
-  active Boolean @default(true)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  city         String
+  state        String
+  postalCode   String
+  latitude     Decimal? @db.Decimal(9, 6)
+  longitude    Decimal? @db.Decimal(9, 6)
+  website      String?
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
   @@index([active, state, city])
 }
 
 model AdminProfile {
-  userId String @id
-  email String @unique
-  role String @default("staff")
-  active Boolean @default(true)
+  userId    String   @id
+  email     String   @unique
+  role      String   @default("staff")
+  active    Boolean  @default(true)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
 
 model WebhookEvent {
-  id String @id
-  provider String
-  eventType String
+  id          String   @id
+  provider    String
+  eventType   String
   processedAt DateTime @default(now())
+
   @@index([provider, processedAt])
 }
 
 model CheckoutAttempt {
-  id String @id @default(cuid())
-  stripeSessionId String? @unique
-  status String @default("OPEN")
-  email String?
-  items Json
-  subtotalCents Int
-  shippingCents Int
-  expiresAt DateTime
-  completedAt DateTime?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id              String    @id @default(cuid())
+  stripeSessionId String?   @unique
+  status          String    @default("OPEN")
+  email           String?
+  items           Json
+  subtotalCents   Int
+  shippingCents   Int
+  expiresAt       DateTime
+  completedAt     DateTime?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+
   @@index([status, expiresAt])
 }
 
 model AuditLog {
-  id String @id @default(cuid())
-  actorId String?
-  action String
+  id           String   @id @default(cuid())
+  actorId      String?
+  action       String
   resourceType String
-  resourceId String?
-  metadata Json?
-  ipHash String?
-  createdAt DateTime @default(now())
+  resourceId   String?
+  metadata     Json?
+  ipHash       String?
+  createdAt    DateTime @default(now())
+
   @@index([resourceType, resourceId, createdAt])
   @@index([actorId, createdAt])
 }
 
 model OrderSequence {
-  key String @id
-  value Int @default(1000)
+  key   String @id
+  value Int    @default(1000)
 }

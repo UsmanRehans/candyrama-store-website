@@ -16,13 +16,13 @@ Custom Next.js storefront with a portable commerce backend. The public site neve
 1. Install Node.js 22 and run `npm install`.
 2. Create a Supabase project and copy `.env.example` to `.env.local`.
 3. Add the pooled Supabase connection as `DATABASE_URL` and the direct connection as `DIRECT_URL`.
-4. Run `npm run db:migrate -- --name init`, then `npm run db:seed`.
-5. Add Stripe test keys. In another terminal, run `stripe listen --forward-to localhost:3000/api/webhooks/stripe` and copy its webhook secret.
+4. Link the project with Supabase CLI and run `npx supabase db push`, then `npm run db:seed` when seed data is needed.
+5. Add Stripe sandbox keys. In another terminal, run `stripe listen --events checkout.session.completed,checkout.session.expired --forward-to localhost:3001/api/webhooks/stripe` and copy its webhook secret.
 6. Add a ShipStation API key, connect the desired carriers in ShipStation, and enter the physical ship-from address.
 7. Add a verified Resend sending domain and API key.
-8. Run `npm run dev`.
+8. Run `npm run dev -- -p 3001`.
 
-The first migration is intentionally generated against the real Supabase database so Prisma records it in `_prisma_migrations`. Commit the generated `prisma/migrations` directory before production deployment.
+Database migrations live in `supabase/migrations` and are applied through Supabase CLI. Always dry-run a production migration before pushing it.
 
 ## Production setup
 
@@ -47,13 +47,15 @@ After creating an admin in Supabase Auth, insert a matching `AdminProfile` row u
 
 ## Catalog administration
 
-The admin catalog is available at `/admin/catalog`. Only users present in Supabase Auth and the `AdminProfile` table can call its APIs.
+Store operations are available at `/admin/catalog`, and fulfillment is available at `/admin/orders`. Only users present in Supabase Auth and the `AdminProfile` table can call these APIs.
 
-- **Download products** creates a current `.xlsx` workbook from PostgreSQL.
+- **Integration status** reports database, Stripe, ShipStation, and Resend readiness without returning credentials.
+- **Download products + variants** creates a two-sheet `.xlsx` workbook from PostgreSQL.
 - **Upload edited workbook** validates every row before applying changes transactionally.
-- Stock changes create `StockMovement` records and every import creates an `AuditLog` record.
+- SKU-level variant stock changes create `StockMovement` records and every import creates an `AuditLog` record.
 - Slugs are permanent identifiers. Image URLs are reference-only in Excel.
 - Product images use the `product-media` Supabase Storage bucket and are uploaded separately through the authenticated image endpoint.
+- Paid orders appear under `/admin/orders`; label purchase always requires a confirmation because ShipStation can create a real charge.
 
 To add an administrator, invite the person through Supabase Auth and insert their Auth UUID and email into `AdminProfile`. Admin sign-in uses one-time email links rather than shared passwords.
 

@@ -106,6 +106,7 @@ export async function quoteCheapestLabel(
   const payload = (await response.json()) as {
     rate_response?: {
       rates?: Array<{
+        rate_id?: string;
         carrier_friendly_name?: string;
         carrier_code?: string;
         service_type?: string;
@@ -117,7 +118,14 @@ export async function quoteCheapestLabel(
   };
   const rates = payload.rate_response?.rates ?? [];
   const cheapest = rates
-    .filter((rate) => typeof rate.shipping_amount?.amount === 'number')
+    .filter((rate) => {
+      const service = `${rate.service_type ?? ''} ${rate.service_code ?? ''}`;
+      return (
+        Boolean(rate.rate_id) &&
+        typeof rate.shipping_amount?.amount === 'number' &&
+        !/media mail|library mail/i.test(service)
+      );
+    })
     .sort(
       (a, b) =>
         (a.shipping_amount?.amount ?? Infinity) -
@@ -125,6 +133,7 @@ export async function quoteCheapestLabel(
     )[0];
   if (!cheapest) throw new Error('ShipStation returned no usable rates.');
   return {
+    rateId: cheapest.rate_id!,
     carrier:
       cheapest.carrier_friendly_name ?? cheapest.carrier_code ?? 'Carrier',
     serviceLevel: cheapest.service_type ?? cheapest.service_code ?? 'Service',
@@ -140,8 +149,9 @@ export async function buyCheapestLabel(
   to: ShipTo,
   weightOz: number,
 ) {
+  const quote = await quoteCheapestLabel(orderNumber, to, weightOz);
   const response = await fetch(
-    'https://api.shipstation.com/v2/labels/rate_shopper_id/cheapest',
+    `https://api.shipstation.com/v2/labels/rates/${quote.rateId}`,
     {
       method: 'POST',
       headers: {
@@ -149,7 +159,7 @@ export async function buyCheapestLabel(
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        shipment: shipment(orderNumber, to, weightOz),
+        validate_address: 'validate_and_clean',
         label_format: 'pdf',
         label_layout: '4x6',
         label_download_type: 'url',

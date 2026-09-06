@@ -9,7 +9,7 @@ const luckiest = Luckiest_Guy({ variable: '--font-luckiest', subsets: ['latin'],
 
 export const metadata: Metadata = {
   title: 'CandyRama | Turn Up the Taste-o-Rama',
-  description: 'Small-batch candy made in Texas. Gummies, brittle, sweet stuff and sour stuff—packed with drama.',
+  description: 'Candy packed in Texas with big flavor and plenty of drama. Shop gummies, brittle, sweet stuff, and sour stuff.',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

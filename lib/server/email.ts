@@ -34,7 +34,7 @@ export async function sendIntegrationTest(to: string) {
   return send({
     to,
     subject: 'CandyRama email integration is working',
-    html: `<div style="font-family:Arial,sans-serif;color:#4e0f34"><h1>Sweet — email is connected!</h1><p>This test confirms that CandyRama can send transactional email through Resend.</p><p>No action is needed.</p></div>`,
+    html: `<div style="font-family:Arial,sans-serif;color:#4e0f34"><h1>Sweet! Email is connected.</h1><p>CandyRama can send order emails through Resend.</p><p>No action is needed.</p></div>`,
   });
 }
 

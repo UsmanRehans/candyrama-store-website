@@ -27,13 +27,13 @@ export default async function Home() {
           <h1>
             Candy with
             <br />
-            <em>main-character</em>
+            <em>main character</em>
             <br />
             energy.
           </h1>
           <p className="lede">
-            Small-batch gummies, brittle and wildly good treats—made with big
-            flavor in Texas.
+            Gummies, brittle, and wildly good treats. Packed with big flavor
+            right here in Texas.
           </p>
           <div className="hero-buttons">
             <Link href="/shop" className="button primary">
@@ -45,9 +45,9 @@ export default async function Home() {
           </div>
           <div className="micro-proof">
             <span>
-              <Star fill="currentColor" /> 4.9 from candy lovers
+              <Star fill="currentColor" /> Big flavor in every bag
             </span>
-            <span>Hand-packed in Texas</span>
+            <span>Packed by hand in Texas</span>
           </div>
         </div>
       </section>
@@ -58,7 +58,7 @@ export default async function Home() {
         <b>✦</b>
         <span>SOUR STUFF</span>
         <b>✦</b>
-        <span>SPICY-SWEET</span>
+        <span>SPICY AND SWEET</span>
       </section>
       <section className="shop-section" id="shop">
         <div className="section-heading">
@@ -85,8 +85,8 @@ export default async function Home() {
             Big candy drama.
           </h2>
           <p>
-            We make candy for the people who always want one more handful. Bold
-            flavors, real craft, and absolutely no boring bites.
+            We pack candy for people who always want one more handful. Every
+            bag brings the flavor. Boring bites can stay home.
           </p>
           <Link href="/about" className="button secondary">
             Read our story

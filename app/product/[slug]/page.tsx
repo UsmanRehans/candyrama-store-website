@@ -38,12 +38,12 @@ export default async function ProductPage({
           />
         </div>
         <div className="product-detail-copy">
-          <p className="eyebrow">{product.category} · SMALL-BATCH</p>
+          <p className="eyebrow">{product.category} · PACKED BY HAND</p>
           <h1>{product.name}</h1>
           <p className="detail-price">{product.price}</p>
           <p className="detail-note">
-            {product.note}. Packed by hand in Texas for maximum flavor and
-            maximum fun.
+            {product.note}. Packed by hand in Texas and ready for your candy
+            stash.
           </p>
           <AddToCartButton
             variantSku={product.variantSku}

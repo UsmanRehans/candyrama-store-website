@@ -9,7 +9,7 @@ const categories = ['All treats', 'Sour', 'Sweet', 'Spicy', 'Bark & brittle'];
 export const metadata = {
   title: 'Shop All Candy | CandyRama',
   description:
-    'Shop CandyRama sour gummies, spicy candy, bark and brittle—all packed by hand in Texas.',
+    'Shop CandyRama sour gummies, spicy candy, bark, and brittle. Every order is packed by hand in Texas.',
 };
 
 export default async function ShopPage() {
@@ -21,7 +21,7 @@ export default async function ShopPage() {
       <section className="page-hero shop-hero">
         <p className="eyebrow">FIND YOUR NEW FAVORITE</p>
         <h1>All the good stuff.</h1>
-        <p>Sweet, sour, spicy, crunchy—pick your kind of candy drama.</p>
+        <p>Sweet, sour, spicy, or crunchy. Pick your kind of candy drama.</p>
       </section>
       <section className="catalog-shell">
         <div className="catalog-toolbar">
@@ -45,7 +45,7 @@ export default async function ShopPage() {
           <p>
             <strong>{products.length}</strong> treats ready to make your day
           </p>
-          <Link href="/about">Why small-batch tastes better →</Link>
+          <Link href="/about">Meet CandyRama →</Link>
         </div>
         <div className="product-grid catalog-grid">
           {products.map((product) => (

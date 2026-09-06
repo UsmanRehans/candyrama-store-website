@@ -26,7 +26,7 @@ export function ContactForm() {
       formElement.reset();
       setSuccess(true);
       setMessage(
-        'Message sent. We’ll get back to you within 1–2 business days.',
+        'Message sent. We’ll get back to you within 1 to 2 business days.',
       );
     } catch (error) {
       setMessage(

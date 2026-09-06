@@ -8,7 +8,7 @@ export function Wordmark({ footer = false }: { footer?: boolean }) {
 
 export function StoreHeader() {
   return <>
-    <div className="announcement">FREE SHIPPING ON ORDERS $50+ <span>★</span> SMALL-BATCH <span>★</span> MADE IN TEXAS</div>
+    <div className="announcement">FREE SHIPPING ON ORDERS $50+ <span>★</span> PACKED BY HAND <span>★</span> MADE IN TEXAS</div>
     <header className="site-header">
       <Link href="/" className="brand" aria-label="CandyRama home"><Wordmark /></Link>
       <nav aria-label="Main navigation"><Link href="/shop">Shop</Link><Link href="/about">Our story</Link><Link href="/#find-us">Find us</Link><Link href="/wholesale">Wholesale</Link></nav>

@@ -78,6 +78,26 @@ Avoid: Buy now before it is too late.
 
 10. Never use guilt, false urgency, or confusing language to push a sale.
 
+## Keep it human
+
+AI copy often sounds tidy but empty. CandyRama copy should sound like somebody tasted the candy before writing about it.
+
+Cut vague praise. Name the flavor, texture, size, timing, or action instead.
+
+Do not use staged contrasts such as not just this but that. Say the point directly.
+
+Do not force ideas into groups of three. Use the number the thought actually needs.
+
+Do not begin with broad claims about a changing world, a growing market, or a new era.
+
+Do not add a summary sentence that repeats the paragraph above it.
+
+Do not call ordinary features seamless, powerful, innovative, elevated, or transformative.
+
+Do not claim a product is loved, trusted, popular, or highly rated unless current evidence supports the claim.
+
+Read the copy out loud. If it sounds like a pitch deck, rewrite it like a person.
+
 ## Words we love
 
 Bold. Sweet. Sour. Tangy. Crunchy. Chewy. Gooey. Juicy. Colorful. Wild. Classic. Fresh. Twist. Treat. Craving. Favorite. Drama. Party. Share. Stash. Sprinkle. Bite. Bag. Batch.

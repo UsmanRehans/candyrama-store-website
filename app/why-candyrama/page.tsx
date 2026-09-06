@@ -7,9 +7,9 @@ export const metadata = {
 };
 
 export default function WhyCandyRamaPage() {
-  return <InfoPage eyebrow="WHY CANDYRAMA" title="Candy should be the fun part" intro="Big flavor, bright energy, and treats that know how to make an entrance.">
-    <InfoSection title="Flavor comes first"><p>We choose candy that earns its spot in the bag. That means bold fruit, serious sour, satisfying crunch, and chewy bites worth coming back for.</p><p>No sleepy candy. No forgettable handfuls. Just the good stuff.</p></InfoSection>
-    <InfoSection title="Packed with care"><p>Every order is checked, packed, and sealed by people who care about what reaches your door. We pay attention to freshness, presentation, and the tiny details that turn a delivery into a moment.</p></InfoSection>
+  return <InfoPage eyebrow="WHY CANDYRAMA" title="Candy should be the fun part" intro="Expect loud flavor and a bag that disappears fast.">
+    <InfoSection title="Flavor comes first"><p>We want fruit you can taste, sour with a real pucker, chocolate that snaps, and gummies with a proper chew.</p><p>No sleepy candy. No forgettable handfuls. Just the good stuff.</p></InfoSection>
+    <InfoSection title="Packed with care"><p>We check the candy, seal the bag, and pack the box at our Houston home base. Your order should look good when you open it and taste even better.</p></InfoSection>
     <InfoSection title="Made for real life"><p>CandyRama belongs at movie nights, birthdays, road trips, desk drawers, gift tables, and quiet Tuesdays that need better energy. Share it with everyone, or protect your stash. We understand both choices.</p></InfoSection>
     <InfoSection title="Ready for a taste"><p>Meet the sweet, sour, spicy, chewy, and crunchy sides of CandyRama.</p><Link href="/shop" className="button primary">Shop the candy</Link></InfoSection>
   </InfoPage>;

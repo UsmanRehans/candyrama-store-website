@@ -65,9 +65,9 @@ export function WholesaleForm() {
       <label>
         Estimated quantity
         <select name="estimatedQuantity">
-          <option>50–99 units</option>
-          <option>100–249 units</option>
-          <option>250–499 units</option>
+          <option>50 to 99 units</option>
+          <option>100 to 249 units</option>
+          <option>250 to 499 units</option>
           <option>500+ units</option>
         </select>
       </label>

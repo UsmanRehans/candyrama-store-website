@@ -16,7 +16,7 @@ export function CartPageClient({
   const [loading, setLoading] = useState(false);
   const lines = items.flatMap((item) => {
     const product = products.find(
-      (candidate) => candidate.slug === item.productSlug,
+      (candidate) => candidate.variantSku === item.variantSku,
     );
     return product ? [{ ...item, product }] : [];
   });
@@ -58,8 +58,8 @@ export function CartPageClient({
       ) : (
         <div className="cart-layout">
           <div className="cart-lines">
-            {lines.map(({ product, quantity }) => (
-              <article className="cart-line" key={product.slug}>
+            {lines.map(({ product, variantSku, quantity }) => (
+              <article className="cart-line" key={variantSku}>
                 <Image
                   src={product.image}
                   alt={product.name}
@@ -80,7 +80,7 @@ export function CartPageClient({
                     max="20"
                     value={quantity}
                     onChange={(event) =>
-                      setQuantity(product.slug, Number(event.target.value))
+                      setQuantity(variantSku, Number(event.target.value))
                     }
                   />
                 </label>

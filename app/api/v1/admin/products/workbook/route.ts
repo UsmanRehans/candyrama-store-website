@@ -22,43 +22,43 @@ export async function GET(request: NextRequest) {
   const productRows = products.map((product) => ({
     slug: product.slug,
     sku: product.sku ?? '',
+    name: product.name,
     brand: product.brand,
     product_family: product.productFamily ?? '',
     flavor: product.flavor ?? '',
-    name: product.name,
-    category: product.category,
+    candyrama_category: product.category,
+    category_confidence: product.categoryConfidence,
     status: product.status,
-    price_usd: product.priceCents / 100,
-    stock_qty: product.stockQty,
-    low_stock_at: product.lowStockAt,
-    net_weight: product.netWeight,
     tagline: product.tagline ?? '',
     description: product.description,
     ingredients: product.ingredients,
     allergens_pipe: product.allergens.join('|'),
     seasonal: product.isSeasonal,
     accent_color: product.accentColor,
+    source_master_skus: product.sourceMasterSkus.join('|'),
     available_from: product.availableFrom ?? '',
     available_to: product.availableTo ?? '',
     image_url: product.images[0]?.url ?? '',
   }));
   const variantRows = products.flatMap((product) =>
     product.variants.map((variant) => ({
-      product_slug: product.slug,
-      sku: variant.sku,
-      size_sig: variant.sizeSig,
-      net_weight: variant.netWeight,
-      price_usd: variant.priceCents / 100,
-      compare_at_usd:
-        variant.compareAtCents === null ? '' : variant.compareAtCents / 100,
-      stock_qty: variant.stockQty,
-      low_stock_at: variant.lowStockAt,
+      product_sku: product.sku ?? '',
+      variant_sku: variant.sku,
+      size_sig: variant.sizeSig ?? '',
       is_default: variant.isDefault,
       active: variant.active,
-      amazon_skus_pipe: variant.amazonSkus.join('|'),
-      shopify_skus_pipe: variant.shopifySkus.join('|'),
-      tiktok_skus_pipe: variant.tiktokSkus.join('|'),
-      temu_skus_pipe: variant.temuSkus.join('|'),
+      position: variant.position,
+      net_weight: variant.netWeight ?? '',
+      price_usd: variant.priceCents === null ? '' : variant.priceCents / 100,
+      compare_at_usd:
+        variant.compareAtCents === null ? '' : variant.compareAtCents / 100,
+      stock_qty: variant.stockQty ?? '',
+      low_stock_at: variant.lowStockAt,
+      stripe_price_id: variant.stripePriceId ?? '',
+      amazon_skus: variant.amazonSkus.join('|'),
+      shopify_skus: variant.shopifySkus.join('|'),
+      tiktok_skus: variant.tiktokSkus.join('|'),
+      temu_skus: variant.temuSkus.join('|'),
     })),
   );
   const file = await buildProductWorkbook(productRows, variantRows);
@@ -88,6 +88,7 @@ export async function POST(request: NextRequest) {
       { error: 'Upload one .xlsx file smaller than 5 MB.' },
       { status: 400 },
     );
+
   try {
     const { products, variants } = await parseProductWorkbook(
       Buffer.from(await file.arrayBuffer()),
@@ -98,133 +99,112 @@ export async function POST(request: NextRequest) {
           updated = 0,
           variantsCreated = 0,
           variantsUpdated = 0;
-        const productsBySlug = new Map<string, { id: string }>();
+        const productsBySku = new Map<string, { id: string }>();
         for (const row of products) {
-          const existing = await tx.product.findUnique({
+          const bySku = await tx.product.findUnique({
+            where: { sku: row.sku },
+          });
+          const bySlug = await tx.product.findUnique({
             where: { slug: row.slug },
           });
-          const availableFrom = row.available_from
-            ? new Date(row.available_from)
-            : null;
-          const availableTo = row.available_to
-            ? new Date(row.available_to)
-            : null;
+          if (bySku && bySlug && bySku.id !== bySlug.id)
+            throw new Error(
+              `Product SKU ${row.sku} and slug ${row.slug} identify different products.`,
+            );
+          const existing = bySku ?? bySlug;
           const data = {
-            sku: row.sku || null,
+            sku: row.sku,
             brand: row.brand,
-            productFamily: row.product_family || null,
-            flavor: row.flavor || null,
+            productFamily: row.product_family,
+            flavor: row.flavor,
             name: row.name,
-            category: row.category,
+            category: row.candyrama_category,
+            categoryConfidence: row.category_confidence,
+            sourceMasterSkus: pipeList(row.source_master_skus),
             status: row.status,
-            priceCents: Math.round(row.price_usd * 100),
-            stockQty: row.stock_qty,
-            lowStockAt: row.low_stock_at,
-            netWeight: row.net_weight,
             tagline: row.tagline || null,
             description: row.description,
             ingredients: row.ingredients,
             allergens: pipeList(row.allergens_pipe),
             isSeasonal: row.seasonal,
             accentColor: row.accent_color.toUpperCase(),
-            availableFrom,
-            availableTo,
+            availableFrom: row.available_from
+              ? new Date(row.available_from)
+              : null,
+            availableTo: row.available_to ? new Date(row.available_to) : null,
           };
-          if (existing) {
-            const saved = await tx.product.update({
-              where: { id: existing.id },
-              data,
-            });
-            productsBySlug.set(row.slug, saved);
-            updated++;
-            if (existing.stockQty !== row.stock_qty)
-              await tx.stockMovement.create({
-                data: {
-                  productId: existing.id,
-                  delta: row.stock_qty - existing.stockQty,
-                  reason: 'ADMIN_WORKBOOK_IMPORT',
-                  actorId: admin.userId,
-                },
-              });
-          } else {
-            const saved = await tx.product.create({
-              data: { slug: row.slug, ...data },
-            });
-            productsBySlug.set(row.slug, saved);
-            created++;
-          }
+          const saved = existing
+            ? await tx.product.update({ where: { id: existing.id }, data })
+            : await tx.product.create({ data: { slug: row.slug, ...data } });
+          if (existing) updated++;
+          else created++;
+          productsBySku.set(row.sku, saved);
         }
+
         for (const row of variants) {
-          const product = productsBySlug.get(row.product_slug);
+          const product = productsBySku.get(row.product_sku);
           if (!product)
             throw new Error(
-              `Variant ${row.sku} references missing product ${row.product_slug}.`,
+              `Variant ${row.variant_sku} references missing product ${row.product_sku}.`,
             );
           const existing = await tx.productVariant.findUnique({
-            where: { sku: row.sku },
+            where: { sku: row.variant_sku },
           });
           if (existing && existing.productId !== product.id)
             throw new Error(
-              `Variant SKU ${row.sku} already belongs to another product.`,
+              `Variant SKU ${row.variant_sku} already belongs to another product.`,
             );
-          if (row.is_default)
+          if (row.active && row.is_default)
             await tx.productVariant.updateMany({
               where: {
                 productId: product.id,
+                active: true,
                 isDefault: true,
-                NOT: { sku: row.sku },
+                NOT: { sku: row.variant_sku },
               },
               data: { isDefault: false },
             });
           const data = {
             productId: product.id,
-            sizeSig: row.size_sig,
-            netWeight: row.net_weight,
-            priceCents: Math.round(row.price_usd * 100),
+            sizeSig: row.size_sig || null,
+            netWeight: row.net_weight || null,
+            priceCents:
+              row.price_usd === null ? null : Math.round(row.price_usd * 100),
             compareAtCents:
               row.compare_at_usd === null
                 ? null
                 : Math.round(row.compare_at_usd * 100),
             stockQty: row.stock_qty,
             lowStockAt: row.low_stock_at,
+            stripePriceId: row.stripe_price_id || null,
+            position: row.position,
             isDefault: row.is_default,
             active: row.active,
-            amazonSkus: pipeList(row.amazon_skus_pipe),
-            shopifySkus: pipeList(row.shopify_skus_pipe),
-            tiktokSkus: pipeList(row.tiktok_skus_pipe),
-            temuSkus: pipeList(row.temu_skus_pipe),
+            amazonSkus: pipeList(row.amazon_skus),
+            shopifySkus: pipeList(row.shopify_skus),
+            tiktokSkus: pipeList(row.tiktok_skus),
+            temuSkus: pipeList(row.temu_skus),
           };
-          if (existing) {
-            await tx.productVariant.update({
-              where: { id: existing.id },
-              data,
-            });
-            variantsUpdated++;
-            if (existing.stockQty !== row.stock_qty)
-              await tx.stockMovement.create({
-                data: {
-                  productId: product.id,
-                  variantId: existing.id,
-                  delta: row.stock_qty - existing.stockQty,
-                  reason: 'ADMIN_WORKBOOK_IMPORT',
-                  actorId: admin.userId,
-                },
+          const saved = existing
+            ? await tx.productVariant.update({
+                where: { id: existing.id },
+                data,
+              })
+            : await tx.productVariant.create({
+                data: { sku: row.variant_sku, ...data },
               });
-          } else {
-            const saved = await tx.productVariant.create({
-              data: { sku: row.sku, ...data },
+          if (existing) variantsUpdated++;
+          else variantsCreated++;
+          if (row.stock_qty !== null && row.stock_qty !== existing?.stockQty) {
+            await tx.stockMovement.create({
+              data: {
+                productId: product.id,
+                variantId: saved.id,
+                delta: row.stock_qty - (existing?.stockQty ?? 0),
+                reason: 'ADMIN_WORKBOOK_IMPORT',
+                actorId: admin.userId,
+              },
             });
-            variantsCreated++;
-            if (row.stock_qty > 0)
-              await tx.stockMovement.create({
-                data: {
-                  productId: product.id,
-                  variantId: saved.id,
-                  delta: row.stock_qty,
-                  reason: 'ADMIN_WORKBOOK_IMPORT',
-                  actorId: admin.userId,
-                },
-              });
           }
         }
         await tx.auditLog.create({
@@ -247,7 +227,8 @@ export async function POST(request: NextRequest) {
           updated,
           variantsCreated,
           variantsUpdated,
-          total: products.length,
+          productRows: products.length,
+          variantRows: variants.length,
         };
       },
       { isolationLevel: Prisma.TransactionIsolationLevel.Serializable },

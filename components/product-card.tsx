@@ -9,7 +9,8 @@ export function ProductCard({ product }: { product: StorefrontProduct }) {
   const { add } = useCart();
   const [added, setAdded] = useState(false);
   function quickAdd() {
-    add(product.slug);
+    if (!product.variantSku) return;
+    add(product.variantSku);
     setAdded(true);
     window.setTimeout(() => setAdded(false), 1200);
   }
@@ -34,7 +35,7 @@ export function ProductCard({ product }: { product: StorefrontProduct }) {
       </div>
       <button
         className="quick-add"
-        disabled={!product.available}
+        disabled={!product.available || !product.variantSku}
         onClick={quickAdd}
       >
         {!product.available ? 'Sold out' : added ? 'Added!' : 'Quick add'}{' '}

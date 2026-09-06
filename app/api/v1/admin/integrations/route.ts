@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { requireAdmin } from '@/lib/server/admin-auth';
 import { db } from '@/lib/server/db';
-import { env } from '@/lib/server/env';
+import { env, getStripeEnv } from '@/lib/server/env';
 
 type Check = { status: 'connected' | 'needs_setup' | 'error'; detail: string };
 
@@ -20,22 +20,26 @@ export async function GET(request: NextRequest) {
       detail: 'Database connection failed.',
     }));
 
+  const stripeEnv = getStripeEnv();
   let stripe: Check = {
     status: 'needs_setup',
-    detail: 'Add matching sandbox secret and publishable keys.',
+    detail: `Add matching ${stripeEnv.mode} secret, publishable, and webhook keys.`,
   };
   if (
-    env.STRIPE_SECRET_KEY?.startsWith('sk_test_') &&
-    env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY?.startsWith('pk_test_') &&
-    env.STRIPE_WEBHOOK_SECRET?.startsWith('whsec_')
+    stripeEnv.mode === 'test' &&
+    (stripeEnv.secretKey?.startsWith('sk_test_') ||
+      stripeEnv.secretKey?.startsWith('rk_test_')) &&
+    stripeEnv.publishableKey?.startsWith('pk_test_') &&
+    stripeEnv.webhookSecret?.startsWith('whsec_')
   )
     stripe = {
       status: 'connected',
       detail: 'Sandbox keys and signed webhook are configured.',
     };
   else if (
-    env.STRIPE_SECRET_KEY?.includes('_live_') ||
-    env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY?.includes('_live_')
+    stripeEnv.mode === 'test' &&
+    (stripeEnv.secretKey?.includes('_live_') ||
+      stripeEnv.publishableKey?.includes('_live_'))
   )
     stripe = {
       status: 'error',

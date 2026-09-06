@@ -12,38 +12,40 @@ export async function POST(request: NextRequest) {
     const quantities = new Map<string, number>();
     for (const item of body.items)
       quantities.set(
-        item.productSlug,
-        (quantities.get(item.productSlug) ?? 0) + item.quantity,
+        item.variantSku,
+        (quantities.get(item.variantSku) ?? 0) + item.quantity,
       );
-    const productSlugs = [...quantities.keys()];
-    const products = await db.product.findMany({
-      where: { slug: { in: productSlugs }, status: 'ACTIVE' },
-      include: {
-        variants: {
-          where: { active: true },
-          orderBy: [{ isDefault: 'desc' }, { position: 'asc' }],
-        },
+    const variantSkus = [...quantities.keys()];
+    const variants = await db.productVariant.findMany({
+      where: {
+        sku: { in: variantSkus },
+        active: true,
+        priceCents: { not: null },
+        stockQty: { not: null },
+        product: { status: 'ACTIVE' },
       },
+      include: { product: true },
     });
-    if (products.length !== productSlugs.length)
+    if (variants.length !== variantSkus.length)
       return NextResponse.json(
         { error: 'One or more products are unavailable.' },
         { status: 409 },
       );
 
-    const cart = products.map((product) => {
-      const variant = product.variants[0];
+    const cart = variants.map((variant) => {
+      const { product } = variant;
+      if (variant.priceCents === null || variant.stockQty === null)
+        throw new Error('VARIANT_INCOMPLETE');
       return {
         productId: product.id,
-        variantId: variant?.id,
-        sku: variant?.sku ?? product.sku,
-        name:
-          variant && product.variants.length > 1
-            ? `${product.name} · ${variant.netWeight}`
-            : product.name,
-        priceCents: variant?.priceCents ?? product.priceCents,
-        quantity: quantities.get(product.slug)!,
-        stockQty: variant?.stockQty ?? product.stockQty,
+        variantId: variant.id,
+        sku: variant.sku,
+        name: variant.netWeight
+          ? `${product.name} · ${variant.netWeight}`
+          : product.name,
+        priceCents: variant.priceCents,
+        stripePriceId: variant.stripePriceId,
+        quantity: quantities.get(variant.sku)!,
       };
     });
     const subtotalCents = cart.reduce(
@@ -52,23 +54,32 @@ export async function POST(request: NextRequest) {
     );
     const shippingCents = subtotalCents >= 5000 ? 0 : 599;
     const expiresAt = new Date(Date.now() + 30 * 60 * 1000);
+    const stripe = getStripe();
+    await Promise.all(
+      cart.map(async (item) => {
+        if (!item.stripePriceId) return;
+        const price = await stripe.prices.retrieve(item.stripePriceId);
+        if (
+          !price.active ||
+          price.currency !== 'usd' ||
+          price.unit_amount !== item.priceCents
+        )
+          throw new Error('STRIPE_PRICE_MISMATCH');
+      }),
+    );
 
     const attempt = await db.$transaction(
       async (tx) => {
         for (const item of cart) {
-          const updated = item.variantId
-            ? await tx.productVariant.updateMany({
-                where: {
-                  id: item.variantId,
-                  active: true,
-                  stockQty: { gte: item.quantity },
-                },
-                data: { stockQty: { decrement: item.quantity } },
-              })
-            : await tx.product.updateMany({
-                where: { id: item.productId, stockQty: { gte: item.quantity } },
-                data: { stockQty: { decrement: item.quantity } },
-              });
+          const updated = await tx.productVariant.updateMany({
+            where: {
+              id: item.variantId,
+              productId: item.productId,
+              active: true,
+              stockQty: { gte: item.quantity },
+            },
+            data: { stockQty: { decrement: item.quantity } },
+          });
           if (updated.count !== 1) throw new Error('OUT_OF_STOCK');
           await tx.stockMovement.create({
             data: {
@@ -93,20 +104,26 @@ export async function POST(request: NextRequest) {
     );
     reservedAttemptId = attempt.id;
 
-    const stripe = getStripe();
     const session = await stripe.checkout.sessions.create(
       {
         mode: 'payment',
         customer_email: body.email,
         client_reference_id: attempt.id,
-        line_items: cart.map((item) => ({
-          quantity: item.quantity,
-          price_data: {
-            currency: 'usd',
-            unit_amount: item.priceCents,
-            product_data: { name: item.name },
-          },
-        })),
+        line_items: cart.map((item) =>
+          item.stripePriceId
+            ? { quantity: item.quantity, price: item.stripePriceId }
+            : {
+                quantity: item.quantity,
+                price_data: {
+                  currency: 'usd',
+                  unit_amount: item.priceCents,
+                  product_data: {
+                    name: item.name,
+                    metadata: { variantSku: item.sku },
+                  },
+                },
+              },
+        ),
         shipping_address_collection: { allowed_countries: ['US'] },
         shipping_options: [
           {
@@ -157,20 +174,14 @@ export async function POST(request: NextRequest) {
               return;
             const items = attempt.items as Array<{
               productId: string;
-              variantId?: string;
+              variantId: string;
               quantity: number;
             }>;
             for (const item of items) {
-              if (item.variantId)
-                await tx.productVariant.update({
-                  where: { id: item.variantId },
-                  data: { stockQty: { increment: item.quantity } },
-                });
-              else
-                await tx.product.update({
-                  where: { id: item.productId },
-                  data: { stockQty: { increment: item.quantity } },
-                });
+              await tx.productVariant.updateMany({
+                where: { id: item.variantId, productId: item.productId },
+                data: { stockQty: { increment: item.quantity } },
+              });
               await tx.stockMovement.create({
                 data: {
                   productId: item.productId,
@@ -197,6 +208,11 @@ export async function POST(request: NextRequest) {
     if (error instanceof Error && error.message === 'OUT_OF_STOCK')
       return NextResponse.json(
         { error: 'A product just sold out. Please update your cart.' },
+        { status: 409 },
+      );
+    if (error instanceof Error && error.message === 'STRIPE_PRICE_MISMATCH')
+      return NextResponse.json(
+        { error: 'A product price is temporarily unavailable.' },
         { status: 409 },
       );
     if (error && typeof error === 'object' && 'issues' in error)

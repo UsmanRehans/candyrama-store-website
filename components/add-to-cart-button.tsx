@@ -2,10 +2,10 @@
 import { useState } from 'react';
 import { useCart } from './cart-provider';
 export function AddToCartButton({
-  slug,
+  variantSku,
   available = true,
 }: {
-  slug: string;
+  variantSku?: string;
   available?: boolean;
 }) {
   const { add } = useCart();
@@ -13,9 +13,10 @@ export function AddToCartButton({
   return (
     <button
       className="quick-add"
-      disabled={!available}
+      disabled={!available || !variantSku}
       onClick={() => {
-        add(slug);
+        if (!variantSku) return;
+        add(variantSku);
         setAdded(true);
         window.setTimeout(() => setAdded(false), 1200);
       }}

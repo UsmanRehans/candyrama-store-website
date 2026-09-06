@@ -45,7 +45,10 @@ export default async function ProductPage({
             {product.note}. Packed by hand in Texas for maximum flavor and
             maximum fun.
           </p>
-          <AddToCartButton slug={product.slug} available={product.available} />
+          <AddToCartButton
+            variantSku={product.variantSku}
+            available={product.available}
+          />
           <div className="product-facts">
             <strong>{product.netWeight ?? 'See package for net weight'}</strong>
             <br />

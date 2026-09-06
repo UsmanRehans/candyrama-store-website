@@ -2,14 +2,14 @@ import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
 import { Prisma } from '@prisma/client';
 import { db } from '@/lib/server/db';
-import { requireEnv } from '@/lib/server/env';
+import { getStripeEnv } from '@/lib/server/env';
 import { getStripe } from '@/lib/server/stripe';
 import { sendOrderConfirmation } from '@/lib/server/email';
 
 type ReservedItem = {
   productId: string;
-  variantId?: string;
-  sku?: string | null;
+  variantId: string;
+  sku: string;
   name: string;
   priceCents: number;
   quantity: number;
@@ -33,16 +33,12 @@ async function releaseReservation(
       if (!attempt || attempt.status !== 'OPEN') return;
       const items = attempt.items as ReservedItem[];
       for (const item of items) {
-        if (item.variantId)
-          await tx.productVariant.update({
-            where: { id: item.variantId },
-            data: { stockQty: { increment: item.quantity } },
-          });
-        else
-          await tx.product.update({
-            where: { id: item.productId },
-            data: { stockQty: { increment: item.quantity } },
-          });
+        const released = await tx.productVariant.updateMany({
+          where: { id: item.variantId, productId: item.productId },
+          data: { stockQty: { increment: item.quantity } },
+        });
+        if (released.count !== 1)
+          throw new Error('Reserved variant no longer belongs to its product');
         await tx.stockMovement.create({
           data: {
             productId: item.productId,
@@ -146,7 +142,7 @@ async function completeOrder(
             create: items.map((item) => ({
               productId: item.productId,
               variantId: item.variantId,
-              skuSnapshot: item.sku ?? null,
+              skuSnapshot: item.sku,
               nameSnapshot: item.name,
               priceCents: item.priceCents,
               quantity: item.quantity,
@@ -193,7 +189,7 @@ export async function POST(request: NextRequest) {
     event = getStripe().webhooks.constructEvent(
       body,
       signature,
-      requireEnv('STRIPE_WEBHOOK_SECRET'),
+      getStripeEnv().webhookSecret ?? '',
     );
   } catch {
     return NextResponse.json({ error: 'Invalid signature.' }, { status: 400 });

@@ -10,6 +10,7 @@ export type StorefrontProduct = {
   badge?: string;
   netWeight?: string;
   available?: boolean;
+  variantSku?: string;
 };
 
 export const products: StorefrontProduct[] = [

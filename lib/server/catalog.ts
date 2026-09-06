@@ -27,34 +27,43 @@ export async function getStorefrontProducts(): Promise<StorefrontProduct[]> {
     include: {
       images: { orderBy: { position: 'asc' }, take: 1 },
       variants: {
-        where: { active: true },
+        where: {
+          active: true,
+          priceCents: { not: null },
+          stockQty: { not: null },
+        },
         orderBy: [{ isDefault: 'desc' }, { position: 'asc' }],
       },
     },
     orderBy: { createdAt: 'asc' },
   });
-  return records.map((record) => {
+  return records.flatMap((record) => {
     const variant = record.variants[0];
+    if (!variant || variant.priceCents === null || variant.stockQty === null)
+      return [];
     const design = designProducts.find(
       (product) => product.slug === record.slug,
     );
-    const priceCents = variant?.priceCents ?? record.priceCents;
-    return {
-      slug: record.slug,
-      name: record.name,
-      category: categoryLabel(record.category),
-      note: record.tagline ?? record.description,
-      price: `$${(priceCents / 100).toFixed(2)}`,
-      priceCents,
-      image:
-        record.images[0]?.url ??
-        design?.image ??
-        '/generated/rainbow-sour-cutout.png',
-      tone: design?.tone ?? toneFor(record.accentColor),
-      badge: design?.badge,
-      netWeight: variant?.netWeight ?? record.netWeight,
-      available: (variant?.stockQty ?? record.stockQty) > 0,
-    };
+    const priceCents = variant.priceCents;
+    return [
+      {
+        slug: record.slug,
+        name: record.name,
+        category: categoryLabel(record.category),
+        note: record.tagline ?? record.description,
+        price: `$${(priceCents / 100).toFixed(2)}`,
+        priceCents,
+        image:
+          record.images[0]?.url ??
+          design?.image ??
+          '/generated/rainbow-sour-cutout.png',
+        tone: design?.tone ?? toneFor(record.accentColor),
+        badge: design?.badge,
+        netWeight: variant.netWeight ?? undefined,
+        available: variant.stockQty > 0,
+        variantSku: variant.sku,
+      },
+    ];
   });
 }
 

@@ -5,29 +5,29 @@ TT-Bananarama-Banana,Bananarama-Candy-8oz-1-PK,8oz,TRUE,8 oz,,,,,Bananarama-Cand
 TT-Bananarama-Banana,Bananarama-Candy-8oz-2-pk,8oz,FALSE,8 oz,,,,,Bananarama-Candy-8oz-2-pk,
 TT-Bananarama-Banana,Bananarama-Candy-8oz-4-pk,8oz,FALSE,8 oz,,,,,Bananarama-Candy-8oz-4-pk,
 TT-Bananarama-Banana,TT-banana-bananarama-crunchy-hard,,FALSE,,,,,,,
-TT-BrownieBrittle-Chocolate,BrownieBrittle-4oz-1pk,1pk|4oz,TRUE,4 oz,,,,,,BrownieBrittle-4oz-1pk
-TT-BrownieBrittle-Chocolate,BrownieBrittle-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,,BrownieBrittle-8oz-1pk
+TT-BrownieBrittle-Chocolate,BrownieBrittle-4oz-1pk,1pk|4oz,TRUE,4 oz,6.99,,,,,BrownieBrittle-4oz-1pk
+TT-BrownieBrittle-Chocolate,BrownieBrittle-8oz-1pk,1pk|8oz,FALSE,8 oz,12.99,,,,,BrownieBrittle-8oz-1pk
 TT-BrownieBrittle-Chocolate,BrownieBrittle-Chocolate,,FALSE,,,,,,,
-TT-BrownieBrittle-MM,M&MBrittle-16oz-1pk,16oz|1pk,TRUE,16 oz,,,,,M&MBrittle-16oz-1pk,
+TT-BrownieBrittle-MM,M&MBrittle-16oz-1pk,16oz|1pk,TRUE,16 oz,19.99,,,,M&MBrittle-16oz-1pk,
 TT-BrownieBrittle-MM,M&MBrittle-1lb,1lb,FALSE,1 lb,,,,,M&MBrittle-1lb,
 TT-BrownieBrittle-MM,M&MBrittle-1lb..,1lb,FALSE,1 lb,,,,,M&MBrittle-1lb..,
 TT-BrownieBrittle-MM,M&MBrittle-4oz,4oz,FALSE,4 oz,,,,,M&MBrittle-4oz,
 TT-BrownieBrittle-MM,M&MBrittle-4oz..,4oz,FALSE,4 oz,,,,,M&MBrittle-4oz..,
 TT-BrownieBrittle-MM,M&MBrittle-8oz,8oz,FALSE,8 oz,,,,,M&MBrittle-8oz,
-TT-BrownieBrittle-MM,M&MBrittle-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,M&MBrittle-8oz-1pk,
+TT-BrownieBrittle-MM,M&MBrittle-8oz-1pk,1pk|8oz,FALSE,8 oz,12.99,,,,M&MBrittle-8oz-1pk,
 TT-BrownieBrittle-MM,M&MBrittle-8oz..,8oz,FALSE,8 oz,,,,,M&MBrittle-8oz..,
 TT-BrownieBrittle-MM,BrownieBrittle-MM,,FALSE,,,,,,,
 TT-BrownieBrittle-Original,BrownieBrittle-1lb...,1lb,TRUE,1 lb,,,BrownieBrittle-1lb...,,BrownieBrittle-1lb...,
-TT-BrownieBrittle-Original,BrownieBrittle-16oz-1pk,16oz|1pk,FALSE,16 oz,,,,,BrownieBrittle-16oz-1pk,
+TT-BrownieBrittle-Original,BrownieBrittle-16oz-1pk,16oz|1pk,FALSE,16 oz,19.99,,,,BrownieBrittle-16oz-1pk,
 TT-BrownieBrittle-Original,BrownieBrittle-1lb,1lb,FALSE,1 lb,,,,,BrownieBrittle-1lb,
 TT-BrownieBrittle-Original,BrownieBrittle-4oz,4oz,FALSE,4 oz,,,,,BrownieBrittle-4oz,
 TT-BrownieBrittle-Original,BrownieBrittle-8oz,8oz,FALSE,8 oz,,,,,BrownieBrittle-8oz,
-TT-BrownieBrittle-Original,BrownieBrittle-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,BrownieBrittle-8oz-1pk,
+TT-BrownieBrittle-Original,BrownieBrittle-8oz-1pk,1pk|8oz,FALSE,8 oz,12.99,,,,BrownieBrittle-8oz-1pk,
 TT-BrownieBrittle-Original,BrownieBrittle-16oz-1pk-rev1,16oz|1pk,FALSE,16 oz,,,,,,BrownieBrittle-16oz-1pk-rev1
 TT-BrownieBrittle-Original,BrownieBrittle-4oz-1pk-rev1,1pk|4oz,FALSE,4 oz,,,,,,BrownieBrittle-4oz-1pk-rev1
 TT-Bundles-BlueRaspberry,BlueRasp-GummyTrio-8oz-3pk,3pk|8oz,TRUE,8 oz,,,,,BlueRasp-GummyTrio-8oz-3pk,BlueRasp-GummyTrio-8oz-3pk
 TT-Bundles-BlueRaspberry,Bundle-BlueGummyTrio,,FALSE,,,,,,,
-TT-Bundles-ChamoyPickleKit,ChamoyPickleKit-12ct,12ct,TRUE,,,,,,ChamoyPickleKit-12ct,ChamoyPickleKit-12ct
+TT-Bundles-ChamoyPickleKit,ChamoyPickleKit-12ct,12ct,TRUE,,19.99,,,,ChamoyPickleKit-12ct,ChamoyPickleKit-12ct
 TT-Bundles-ChamoyPickleKit,TT-chamoy-gusano-kit-lucas,,FALSE,,,,,,,
 TT-Bundles-RootBeerButterscotch,Bundle-RootBeerButterscotchRetro,,TRUE,,,,,,,
 TT-ButterToffee-Original,TT-butter-creamy-hard-toffee,,TRUE,,,,,,,
@@ -38,7 +38,7 @@ TT-ButterToffeeNuts-Pecan,ButterToffee-Pecans,,TRUE,,,,,,,
 TT-ButterscotchButtons-Original,ButterscotchButtons,,TRUE,,,,,,,
 TT-CandyBarrels-RootBeer,CandyBarrels-RootBeer,,TRUE,,,,,,,
 TT-CandyCorn-BlackberryCobbler,CandyCorn-Blackberry-8oz-1pk,1pk|8oz,TRUE,8 oz,,,,,,CandyCorn-Blackberry-8oz-1pk
-TT-CandyCorn-BlackberryCobbler,CandyCorn-Blackberry-8oz-2pk,2pk|8oz,FALSE,8 oz,,,,,,CandyCorn-Blackberry-8oz-2pk
+TT-CandyCorn-BlackberryCobbler,CandyCorn-Blackberry-8oz-2pk,2pk|8oz,FALSE,8 oz,10.99,,,,,CandyCorn-Blackberry-8oz-2pk
 TT-CandyCorn-BlackberryCobbler,CandyCorn-BlackberryCobbler,,FALSE,,,,,,,
 TT-CandyCorn-Caramel,CandyCorn-Caramel-8oz-2pk,2pk|8oz,TRUE,8 oz,,,,,,CandyCorn-Caramel-8oz-2pk
 TT-CandyCorn-Caramel,CandyCorn-Caramel,,FALSE,,,,,,,
@@ -46,18 +46,18 @@ TT-CandyCorn-CaramelApple,CandyCorn-CaramelApple-8oz-1pk,1pk|8oz,TRUE,8 oz,,,,,,
 TT-CandyCorn-CaramelApple,CandyCorn-CaramelApple-8oz-2pk,2pk|8oz,FALSE,8 oz,,,,,,CandyCorn-CaramelApple-8oz-2pk
 TT-CandyCorn-CaramelApple,CandyCorn-CaramelApple,,FALSE,,,,,,,
 TT-CandyCorn-Christmas,CandyCorn-Christmas,,TRUE,,,,,,,
-TT-CandyCorn-Easter,CandyCorn-Easter-8oz,8oz,TRUE,8 oz,,,,,CandyCorn-Easter-8oz,
+TT-CandyCorn-Easter,CandyCorn-Easter-8oz,8oz,TRUE,8 oz,5.99,,,,CandyCorn-Easter-8oz,
 TT-CandyCorn-Easter,CandyCorn-Easter,,FALSE,,,,,,,
 TT-CandyCorn-Original,CandyCorn-Original-4oz,4oz,TRUE,4 oz,,,,,CandyCorn-Original-4oz,
-TT-CandyCorn-Original,CandyCorn-Original-8oz,8oz,FALSE,8 oz,,,,,CandyCorn-Original-8oz,
+TT-CandyCorn-Original,CandyCorn-Original-8oz,8oz,FALSE,8 oz,5.99,,,,CandyCorn-Original-8oz,
 TT-CandyCorn-Original,CandyCorn-Original-8oz-2pk,2pk|8oz,FALSE,8 oz,,,,,,CandyCorn-Original-8oz-2pk
 TT-CandyCorn-Original,CandyCorn-Original,,FALSE,,,,,,,
-TT-CandyCorn-Smores,CandyCorn-Smores-8oz-2Pk,2pk|8oz,TRUE,8 oz,,,,,CandyCorn-Smores-8oz-2Pk,
+TT-CandyCorn-Smores,CandyCorn-Smores-8oz-2Pk,2pk|8oz,TRUE,8 oz,10.99,,,,CandyCorn-Smores-8oz-2Pk,
 TT-CandyCorn-Smores,CandyCorn-Smores-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,,CandyCorn-Smores-8oz-1pk
 TT-CandyCorn-Smores,CandyCorn-Smores,,FALSE,,,,,,,
 TT-CandyCorn-Valentine,Valen-Corn-8oz-1PK,1pk|8oz,TRUE,8 oz,,,Valen-Corn-8oz-1PK,,Valen-Corn-8oz-1PK,Valen-Corn-8oz-1PK
 TT-CandyCorn-Valentine,Valen-Corn-8oz-1PK.,1pk|8oz,FALSE,8 oz,,,Valen-Corn-8oz-1PK.,,,
-TT-CandyCorn-Valentine,CandyCorn-Valentine-8oz,8oz,FALSE,8 oz,,,,,CandyCorn-Valentine-8oz,
+TT-CandyCorn-Valentine,CandyCorn-Valentine-8oz,8oz,FALSE,8 oz,5.99,,,,CandyCorn-Valentine-8oz,
 TT-CandyCorn-Valentine,Valen-Corn-8oz-2PK,2pk|8oz,FALSE,8 oz,,,,,Valen-Corn-8oz-2PK,
 TT-CandyCorn-Valentine,Valen-Corn-8oz-4PK,4pk|8oz,FALSE,8 oz,,,,,Valen-Corn-8oz-4PK,
 TT-CandyCorn-Valentine,CandyCorn-Valentine,,FALSE,,,,,,,
@@ -148,7 +148,7 @@ TT-ChocolateBark-CookiesCream,Cookie&Cream-WhiteBark-2lb,2lb,FALSE,2 lb,,,Cookie
 TT-ChocolateBark-CookiesCream,Cookie&Cream-WhiteBark-8oz,8oz,FALSE,8 oz,,,Cookie&Cream-WhiteBark-8oz,,,Cookie&Cream-WhiteBark-8oz
 TT-ChocolateBark-CookiesCream,CookieBark-16oz,16oz,FALSE,16 oz,,,,,CookieBark-16oz,
 TT-ChocolateBark-CookiesCream,SeaSalt-Almond-2lb,2lb,FALSE,2 lb,,,,,SeaSalt-Almond-2lb,
-TT-ChocolateBark-CookiesCream,Cookie&Cream-WhiteBark-1lb-1PK,1lb|1pk,FALSE,1 lb,,,,,,Cookie&Cream-WhiteBark-1lb-1PK
+TT-ChocolateBark-CookiesCream,Cookie&Cream-WhiteBark-1lb-1PK,1lb|1pk,FALSE,1 lb,22.99,,,,,Cookie&Cream-WhiteBark-1lb-1PK
 TT-ChocolateBark-DatesAlmond,DatesAlmondBark-DarkChocolate,,TRUE,,,,,,,
 TT-ChocolateBark-PistachioDarkChocolate,Pistachio-Bark-Dark-8oz,8oz,TRUE,8 oz,,,Pistachio-Bark-Dark-8oz,,,
 TT-ChocolateBark-PistachioMilkChocolate,Pistachio-Bark-Milk-8oz,8oz,TRUE,8 oz,,,Pistachio-Bark-Milk-8oz,,,
@@ -162,7 +162,7 @@ TT-ChocolateBark-PotatoChipMilkChocolate,FruityPebbleBark-16oz,16oz,FALSE,16 oz,
 TT-ChocolateBark-PotatoChipMilkChocolate,PotatoChip-MilkChoc-16oz,16oz,FALSE,16 oz,,,,,PotatoChip-MilkChoc-16oz,
 TT-ChocolateBark-PotatoChipMilkChocolate,SeaSalt-Almond-16oz,16oz,FALSE,16 oz,,,,,SeaSalt-Almond-16oz,
 TT-ChocolateBark-RainbowCrunch,FruityPebbleBark-2lb,2lb,TRUE,2 lb,,,FruityPebbleBark-2lb,,FruityPebbleBark-2lb,
-TT-ChocolateBark-RainbowCrunch,FruityPebbleBark-2lbs,2lb,FALSE,2 lb,,,FruityPebbleBark-2lbs,,FruityPebbleBark-2lbs,
+TT-ChocolateBark-RainbowCrunch,FruityPebbleBark-2lbs,2lb,FALSE,2 lb,39.99,,FruityPebbleBark-2lbs,,FruityPebbleBark-2lbs,
 TT-ChocolateBark-RainbowCrunch,FruityPebbleBark-8oz,8oz,FALSE,8 oz,,,FruityPebbleBark-8oz,,FruityPebbleBark-8oz,
 TT-ChocolateBark-RainbowCrunch,FruityPebbleBark-16oz,16oz,FALSE,16 oz,,,,,FruityPebbleBark-16oz,
 TT-ChocolateBark-RainbowCrunch,FruityPebblesBark-1lb,1lb,FALSE,1 lb,,,,,FruityPebblesBark-1lb,
@@ -231,7 +231,7 @@ TT-ExoticGummyMix-Assorted,ExoticGummy-3.25lb-Jar,3.25lb,FALSE,3.25 lb,,,,,Exoti
 TT-ExoticGummyMix-Assorted,ExoticGummy-7lb-Jar,7lb,FALSE,7 lb,,,,,ExoticGummy-7lb-Jar,
 TT-ExoticGummyMix-Assorted,ExoticGummy-8oz,8oz,FALSE,8 oz,,,,,ExoticGummy-8oz,
 TT-ExoticGummyMix-Assorted,ExoticGummy-8oz-1PK,1pk|8oz,FALSE,8 oz,,,,,ExoticGummy-8oz-1PK,
-TT-ExoticGummyMix-Assorted,ExoticGummyMix-3.25lbs-Jar-1pk,1pk|3.25lb,FALSE,3.25 lb,,,,,,ExoticGummyMix-3.25lbs-Jar-1pk
+TT-ExoticGummyMix-Assorted,ExoticGummyMix-3.25lbs-Jar-1pk,1pk|3.25lb,FALSE,3.25 lb,24.99,,,,,ExoticGummyMix-3.25lbs-Jar-1pk
 TT-FilledWhaleGummies-Assorted,Filled-Whale-Gummy-8oz-1pk,1pk|8oz,TRUE,8 oz,,,,,,Filled-Whale-Gummy-8oz-1pk
 TT-FilledWhaleGummies-Assorted,Filled-Whale-Gummy-8oz-2pk,2pk|8oz,FALSE,8 oz,,,,,,Filled-Whale-Gummy-8oz-2pk
 TT-FilledWhaleGummies-Assorted,FilledWhaleGummy,,FALSE,,,,,,,
@@ -244,21 +244,21 @@ TT-FruitChews-Assorted,FruitChews-Assorted,,TRUE,,,,,,,
 TT-FruitJellyCandy-Assorted,Assorted-Vidal-FruitJelly-1pk,1pk,TRUE,,,,,,Assorted-Vidal-FruitJelly-1pk,Assorted-Vidal-FruitJelly-1pk
 TT-FruitJellyCandy-Assorted,Assorted-Vidal-FruitJelly-2pk,2pk,FALSE,,,,,,Assorted-Vidal-FruitJelly-2pk,
 TT-FruitJellyCandy-Assorted,TT-jelly-socially,,FALSE,,,,,,,
-TT-FruitSlices-Apple,FruitSlice-Apple-1lb,1lb,TRUE,1 lb,,,FruitSlice-Apple-1lb,,FruitSlice-Apple-1lb,
+TT-FruitSlices-Apple,FruitSlice-Apple-1lb,1lb,TRUE,1 lb,14.99,,FruitSlice-Apple-1lb,,FruitSlice-Apple-1lb,
 TT-FruitSlices-Apple,FruitSlice-Apple-8oz,8oz,FALSE,8 oz,,,FruitSlice-Apple-8oz,,FruitSlice-Apple-8oz,FruitSlice-Apple-8oz
 TT-FruitSlices-Apple,FruitSlice-Apple-8oz.,8oz,FALSE,8 oz,,,FruitSlice-Apple-8oz.,,,
-TT-FruitSlices-Apple,FruitJelly-Assorted-32oz,32oz,FALSE,32 oz,,,,FruitJelly-Assorted-32oz,,
-TT-FruitSlices-Apple,FruitJelly-Assorted-44ozJar,44oz,FALSE,44 oz,,,,FruitJelly-Assorted-44ozJar,,
-TT-FruitSlices-Apple,FruitJelly-Assorted-96ozJar,96oz,FALSE,96 oz,,,,FruitJelly-Assorted-96ozJar,,
-TT-FruitSlices-Apple,FruitSlice-Apple-2lb,2lb,FALSE,2 lb,,,,,FruitSlice-Apple-2lb,
+TT-FruitSlices-Apple,FruitJelly-Assorted-32oz,32oz,FALSE,32 oz,14.99,,,FruitJelly-Assorted-32oz,,
+TT-FruitSlices-Apple,FruitJelly-Assorted-44ozJar,44oz,FALSE,44 oz,22.99,,,FruitJelly-Assorted-44ozJar,,
+TT-FruitSlices-Apple,FruitJelly-Assorted-96ozJar,96oz,FALSE,96 oz,49.99,,,FruitJelly-Assorted-96ozJar,,
+TT-FruitSlices-Apple,FruitSlice-Apple-2lb,2lb,FALSE,2 lb,22.99,,,,FruitSlice-Apple-2lb,
 TT-FruitSlices-Apple,FruitSlice-Apple-4oz,4oz,FALSE,4 oz,,,,,FruitSlice-Apple-4oz,
 TT-FruitSlices-Apple,FruitJelly-Cherry-2lbs,2lb,FALSE,2 lb,,,,,FruitJelly-Cherry-2lbs,
-TT-FruitSlices-Apple,FruitJelly-Orange-1lb,1lb,FALSE,1 lb,,,,,FruitJelly-Orange-1lb,
+TT-FruitSlices-Apple,FruitJelly-Orange-1lb,1lb,FALSE,1 lb,8.99,,,,FruitJelly-Orange-1lb,
 TT-FruitSlices-Apple,FruitJelly-Orange-2lb,2lb,FALSE,2 lb,,,,,FruitJelly-Orange-2lb,
 TT-FruitSlices-Apple,FruitJelly-Spearmint-2lb,2lb,FALSE,2 lb,,,,,FruitJelly-Spearmint-2lb,
 TT-FruitSlices-Apple,SpiceDrops-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,SpiceDrops-8oz-1pk,
 TT-FruitSlices-Apple,SpiceDrops-8oz-2pk,2pk|8oz,FALSE,8 oz,,,,,SpiceDrops-8oz-2pk,
-TT-FruitSlices-Apple,FruitSlice-Apple-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,,FruitSlice-Apple-8oz-1pk
+TT-FruitSlices-Apple,FruitSlice-Apple-8oz-1pk,1pk|8oz,FALSE,8 oz,7.99,,,,,FruitSlice-Apple-8oz-1pk
 TT-FruitSlices-Apple,FruitJelly-Assorted-2.75lbJar-1pk,1pk|2.75lb,FALSE,2.75 lb,,,,,,FruitJelly-Assorted-2.75lbJar-1pk
 TT-FruitSlices-Apple,FruitJelly-Assorted-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,,FruitJelly-Assorted-8oz-1pk
 TT-FruitSlices-Apple,FruitJelly-Assorted-8oz-1pk-rev-3,1pk|8oz,FALSE,8 oz,,,,,,FruitJelly-Assorted-8oz-1pk-rev-3
@@ -276,17 +276,17 @@ TT-FruitSlices-Apple,FruitJelly-Spearmint-8oz-1pk-rev2,1pk|8oz,FALSE,8 oz,,,,,,F
 TT-FruitSlices-Apple,FruitSlice-Assort-2lb-1pk-Rev1,1pk|2lb,FALSE,2 lb,,,,,,FruitSlice-Assort-2lb-1pk-Rev1
 TT-FruitSlices-Apple,FruitSlice-Assort-8oz-1pk-rev1,1pk|8oz,FALSE,8 oz,,,,,,FruitSlice-Assort-8oz-1pk-rev1
 TT-FruitSlices-Apple,FruitSlice-Apple,,FALSE,,,,,,,
-TT-FruitSlices-Assorted,FruitJelly-Assorted-1lb,1lb,TRUE,1 lb,,,FruitJelly-Assorted-1lb,FruitJelly-Assorted-1lb,FruitJelly-Assorted-1lb,
+TT-FruitSlices-Assorted,FruitJelly-Assorted-1lb,1lb,TRUE,1 lb,8.99,,FruitJelly-Assorted-1lb,FruitJelly-Assorted-1lb,FruitJelly-Assorted-1lb,
 TT-FruitSlices-Assorted,FruitJelly-Assorted-2.75lbJar,2.75lb,FALSE,2.75 lb,,,FruitJelly-Assorted-2.75lbJar,,FruitJelly-Assorted-2.75lbJar,
 TT-FruitSlices-Assorted,FruitJelly-Assorted-2.75lbJar.,2.75lb,FALSE,2.75 lb,,,FruitJelly-Assorted-2.75lbJar.,,,
 TT-FruitSlices-Assorted,FruitJelly-Assorted-2lb,2lb,FALSE,2 lb,,,FruitJelly-Assorted-2lb,,FruitJelly-Assorted-2lb,FruitJelly-Assorted-2lb
 TT-FruitSlices-Assorted,FruitJelly-Assorted-6lbJar.,6lb,FALSE,6 lb,,,FruitJelly-Assorted-6lbJar.,,,
 TT-FruitSlices-Assorted,FruitJelly-Assorted-8oz,8oz,FALSE,8 oz,,,FruitJelly-Assorted-8oz,,FruitJelly-Assorted-8oz,FruitJelly-Assorted-8oz
-TT-FruitSlices-Assorted,FruitSlice-Assort-1lb,1lb,FALSE,1 lb,,,FruitSlice-Assort-1lb,,FruitSlice-Assort-1lb,
+TT-FruitSlices-Assorted,FruitSlice-Assort-1lb,1lb,FALSE,1 lb,14.99,,FruitSlice-Assort-1lb,,FruitSlice-Assort-1lb,
 TT-FruitSlices-Assorted,FruitSlice-Assort-1lb.,1lb,FALSE,1 lb,,,FruitSlice-Assort-1lb.,,,
-TT-FruitSlices-Assorted,FruitSlice-Assort-2lb,2lb,FALSE,2 lb,,,FruitSlice-Assort-2lb,,FruitSlice-Assort-2lb,FruitSlice-Assort-2lb
+TT-FruitSlices-Assorted,FruitSlice-Assort-2lb,2lb,FALSE,2 lb,22.99,,FruitSlice-Assort-2lb,,FruitSlice-Assort-2lb,FruitSlice-Assort-2lb
 TT-FruitSlices-Assorted,FruitSlice-Assort-2lb.,2lb,FALSE,2 lb,,,FruitSlice-Assort-2lb.,,,
-TT-FruitSlices-Assorted,FruitSlice-Assort-8oz,8oz,FALSE,8 oz,,,FruitSlice-Assort-8oz,,FruitSlice-Assort-8oz,FruitSlice-Assort-8oz
+TT-FruitSlices-Assorted,FruitSlice-Assort-8oz,8oz,FALSE,8 oz,6.99,,FruitSlice-Assort-8oz,,FruitSlice-Assort-8oz,FruitSlice-Assort-8oz
 TT-FruitSlices-Assorted,FruitSlice-Assort-8oz.,8oz,FALSE,8 oz,,,FruitSlice-Assort-8oz.,,,
 TT-FruitSlices-Assorted,FruitJelly-Assorted-6lbJar,6lb,FALSE,6 lb,,,,,FruitJelly-Assorted-6lbJar,
 TT-FruitSlices-Assorted,FruitJelly-Assorted-8oz-1PK,1pk|8oz,FALSE,8 oz,,,,,,FruitJelly-Assorted-8oz-1PK
@@ -294,7 +294,7 @@ TT-FruitSlices-Assorted,FruitJelly-Assorted-8oz-2PK,2pk|8oz,FALSE,8 oz,,,,,,Frui
 TT-FruitSlices-Assorted,FruitJelly-Assorted-8oz-rev1,8oz,FALSE,8 oz,,,,,,FruitJelly-Assorted-8oz-rev1
 TT-FruitSlices-Assorted,FruitSlice-Assort-2lb...,2lb,FALSE,2 lb,,,,,,FruitSlice-Assort-2lb...
 TT-FruitSlices-Assorted,FruitSlice-Assort-8oz-1Pk-rev1,1pk|8oz,FALSE,8 oz,,,,,,FruitSlice-Assort-8oz-1Pk-rev1
-TT-FruitSlices-Assorted,FruitSlice-Assort-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,,FruitSlice-Assort-8oz-1pk
+TT-FruitSlices-Assorted,FruitSlice-Assort-8oz-1pk,1pk|8oz,FALSE,8 oz,7.99,,,,,FruitSlice-Assort-8oz-1pk
 TT-FruitSlices-Assorted,FruitSlice-Assorted-6oz-1Pk,1pk|6oz,FALSE,6 oz,,,,,,FruitSlice-Assorted-6oz-1Pk
 TT-FruitSlices-Assorted,FruitSlice-MixFruit-6oz-1Pk,1pk|6oz,FALSE,6 oz,,,,,,FruitSlice-MixFruit-6oz-1Pk
 TT-FruitSlices-Assorted,FruitJelly-Assorted-8oz-1pk-rev1,1pk|8oz,FALSE,8 oz,,,,,,FruitJelly-Assorted-8oz-1pk-rev1
@@ -304,39 +304,39 @@ TT-FruitSlices-Assorted,FruitSlice-Assort-6oz-1pk,1pk|6oz,FALSE,6 oz,,,,,,FruitS
 TT-FruitSlices-Assorted,FruitSlice-Assort-6oz-1pk-rev1,1pk|6oz,FALSE,6 oz,,,,,,FruitSlice-Assort-6oz-1pk-rev1
 TT-FruitSlices-Assorted,FruitSlice-Assort-8oz.....,8oz,FALSE,8 oz,,,,,,FruitSlice-Assort-8oz.....
 TT-FruitSlices-Assorted,FruitSlice-Assorted,,FALSE,,,,,,,
-TT-FruitSlices-BlueRaspberry,FruitSlice-Blue-1lb,1lb,TRUE,1 lb,,,FruitSlice-Blue-1lb,,FruitSlice-Blue-1lb,
-TT-FruitSlices-BlueRaspberry,FruitSlice-Blue-2lb,2lb,FALSE,2 lb,,,FruitSlice-Blue-2lb,,FruitSlice-Blue-2lb,
+TT-FruitSlices-BlueRaspberry,FruitSlice-Blue-1lb,1lb,TRUE,1 lb,14.99,,FruitSlice-Blue-1lb,,FruitSlice-Blue-1lb,
+TT-FruitSlices-BlueRaspberry,FruitSlice-Blue-2lb,2lb,FALSE,2 lb,22.99,,FruitSlice-Blue-2lb,,FruitSlice-Blue-2lb,
 TT-FruitSlices-BlueRaspberry,FruitSlice-Blue-8oz,8oz,FALSE,8 oz,,,FruitSlice-Blue-8oz,,FruitSlice-Blue-8oz,FruitSlice-Blue-8oz
 TT-FruitSlices-BlueRaspberry,FruitSlice-Blue-8oz.,8oz,FALSE,8 oz,,,FruitSlice-Blue-8oz.,,,
-TT-FruitSlices-BlueRaspberry,FruitSlice-Blue-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,,FruitSlice-Blue-8oz-1pk
+TT-FruitSlices-BlueRaspberry,FruitSlice-Blue-8oz-1pk,1pk|8oz,FALSE,8 oz,7.99,,,,,FruitSlice-Blue-8oz-1pk
 TT-FruitSlices-BlueRaspberry,FruitSlice-Blue-2lb-rev1,2lb,FALSE,2 lb,,,,,,FruitSlice-Blue-2lb-rev1
 TT-FruitSlices-BlueRaspberry,FruitSlice-BlueRaspberry,,FALSE,,,,,,,
-TT-FruitSlices-Cherry,FruitJelly-Cherry-1lb,1lb,TRUE,1 lb,,,FruitJelly-Cherry-1lb,,FruitJelly-Cherry-1lb,FruitJelly-Cherry-1lb
+TT-FruitSlices-Cherry,FruitJelly-Cherry-1lb,1lb,TRUE,1 lb,8.99,,FruitJelly-Cherry-1lb,,FruitJelly-Cherry-1lb,FruitJelly-Cherry-1lb
 TT-FruitSlices-Cherry,FruitJelly-Cherry-1lb.,1lb,FALSE,1 lb,,,FruitJelly-Cherry-1lb.,,,
 TT-FruitSlices-Cherry,FruitJelly-Cherry-2lbs.,2lb,FALSE,2 lb,,,FruitJelly-Cherry-2lbs.,,,
 TT-FruitSlices-Cherry,FruitJelly-Cherry-4oz.,4oz,FALSE,4 oz,,,FruitJelly-Cherry-4oz.,,,
-TT-FruitSlices-Cherry,FruitJelly-Cherry-8oz,8oz,FALSE,8 oz,,,FruitJelly-Cherry-8oz,,FruitJelly-Cherry-8oz,FruitJelly-Cherry-8oz
+TT-FruitSlices-Cherry,FruitJelly-Cherry-8oz,8oz,FALSE,8 oz,4.99,,FruitJelly-Cherry-8oz,,FruitJelly-Cherry-8oz,FruitJelly-Cherry-8oz
 TT-FruitSlices-Cherry,FruitJelly-Cherry-8oz.,8oz,FALSE,8 oz,,,FruitJelly-Cherry-8oz.,,,
-TT-FruitSlices-Cherry,FruitSlice-Cherry-2lb,2lb,FALSE,2 lb,,,FruitSlice-Cherry-2lb,,FruitSlice-Cherry-2lb,
+TT-FruitSlices-Cherry,FruitSlice-Cherry-2lb,2lb,FALSE,2 lb,22.99,,FruitSlice-Cherry-2lb,,FruitSlice-Cherry-2lb,
 TT-FruitSlices-Cherry,FruitSlice-Cherry-8oz,8oz,FALSE,8 oz,,,FruitSlice-Cherry-8oz,,FruitSlice-Cherry-8oz,
 TT-FruitSlices-Cherry,FruitSlice-Cherry-8oz.,8oz,FALSE,8 oz,,,FruitSlice-Cherry-8oz.,,,
 TT-FruitSlices-Cherry,FruitSlice-Cherry-FruitSlice-Cherry-1lb,1lb,FALSE,1 lb,,,FruitSlice-Cherry-FruitSlice-Cherry-1lb,,,
-TT-FruitSlices-Cherry,FruitJelly-Cherry-32oz,32oz,FALSE,32 oz,,,,FruitJelly-Cherry-32oz,,
+TT-FruitSlices-Cherry,FruitJelly-Cherry-32oz,32oz,FALSE,32 oz,14.99,,,FruitJelly-Cherry-32oz,,
 TT-FruitSlices-Cherry,FruitJelly-Cherry-2.75lbsJar,2.75lb,FALSE,2.75 lb,,,,,FruitJelly-Cherry-2.75lbsJar,
 TT-FruitSlices-Cherry,FruitJelly-Cherry-2lbs,2lb,FALSE,2 lb,,,,,FruitJelly-Cherry-2lbs,
-TT-FruitSlices-Cherry,FruitSlice-Cherry-1lb,1lb,FALSE,1 lb,,,,,FruitSlice-Cherry-1lb,
+TT-FruitSlices-Cherry,FruitSlice-Cherry-1lb,1lb,FALSE,1 lb,14.99,,,,FruitSlice-Cherry-1lb,
 TT-FruitSlices-Cherry,FruitJelly-Cherry-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,,FruitJelly-Cherry-8oz-1pk
 TT-FruitSlices-Cherry,FruitJelly-Cherry-8oz-1pk-rev-3,1pk|8oz,FALSE,8 oz,,,,,,FruitJelly-Cherry-8oz-1pk-rev-3
 TT-FruitSlices-Cherry,FruitJelly-Cherry-8oz-1pk-rev2,1pk|8oz,FALSE,8 oz,,,,,,FruitJelly-Cherry-8oz-1pk-rev2
 TT-FruitSlices-Cherry,FruitJelly-Cherry-8oz-2pk,2pk|8oz,FALSE,8 oz,,,,,,FruitJelly-Cherry-8oz-2pk
 TT-FruitSlices-Cherry,FruitJelly-Cherry-8oz-rev1,8oz,FALSE,8 oz,,,,,,FruitJelly-Cherry-8oz-rev1
-TT-FruitSlices-Cherry,FruitSlice-Cherry-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,,FruitSlice-Cherry-8oz-1pk
+TT-FruitSlices-Cherry,FruitSlice-Cherry-8oz-1pk,1pk|8oz,FALSE,8 oz,7.99,,,,,FruitSlice-Cherry-8oz-1pk
 TT-FruitSlices-Cherry,FruitJelly-Cherry,,FALSE,,,,,,,
 TT-FruitSlices-Cherry,FruitSlice-Cherry,,FALSE,,,,,,,
-TT-FruitSlices-Grape,FruitSlice-Grape-1lb,1lb,TRUE,1 lb,,,FruitSlice-Grape-1lb,,FruitSlice-Grape-1lb,
+TT-FruitSlices-Grape,FruitSlice-Grape-1lb,1lb,TRUE,1 lb,14.99,,FruitSlice-Grape-1lb,,FruitSlice-Grape-1lb,
 TT-FruitSlices-Grape,FruitSlice-Grape-8oz,8oz,FALSE,8 oz,,,FruitSlice-Grape-8oz,,FruitSlice-Grape-8oz,FruitSlice-Grape-8oz
 TT-FruitSlices-Grape,FruitSlice-Grape-8oz.,8oz,FALSE,8 oz,,,FruitSlice-Grape-8oz.,,,
-TT-FruitSlices-Grape,FruitSlice-Grape-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,,FruitSlice-Grape-8oz-1pk
+TT-FruitSlices-Grape,FruitSlice-Grape-8oz-1pk,1pk|8oz,FALSE,8 oz,7.99,,,,,FruitSlice-Grape-8oz-1pk
 TT-FruitSlices-Grape,FruitSlice-Grape,,FALSE,,,,,,,
 TT-FruitSlices-Lemon,FruitSlice-Lemon-1lb,1lb,TRUE,1 lb,,,FruitSlice-Lemon-1lb,,FruitSlice-Lemon-1lb,
 TT-FruitSlices-Lemon,FruitSlice-Lemon-2lb,2lb,FALSE,2 lb,,,FruitSlice-Lemon-2lb,,,
@@ -344,31 +344,31 @@ TT-FruitSlices-Lemon,FruitSlice-Lemon-8oz,8oz,FALSE,8 oz,,,FruitSlice-Lemon-8oz,
 TT-FruitSlices-Lemon,FruitSlice-Lemon-8oz.,8oz,FALSE,8 oz,,,FruitSlice-Lemon-8oz.,,,FruitSlice-Lemon-8oz.
 TT-FruitSlices-Lemon,FruitSlice-Lemon-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,,FruitSlice-Lemon-8oz-1pk
 TT-FruitSlices-Lemon,FruitSlice-Lemon,,FALSE,,,,,,,
-TT-FruitSlices-LemonLime,FruitSlice-LemonLime-1lb,1lb,TRUE,1 lb,,,FruitSlice-LemonLime-1lb,,FruitSlice-LemonLime-1lb,
-TT-FruitSlices-LemonLime,FruitSlice-LemonLime-2lb,2lb,FALSE,2 lb,,,FruitSlice-LemonLime-2lb,,FruitSlice-LemonLime-2lb,
+TT-FruitSlices-LemonLime,FruitSlice-LemonLime-1lb,1lb,TRUE,1 lb,14.99,,FruitSlice-LemonLime-1lb,,FruitSlice-LemonLime-1lb,
+TT-FruitSlices-LemonLime,FruitSlice-LemonLime-2lb,2lb,FALSE,2 lb,22.99,,FruitSlice-LemonLime-2lb,,FruitSlice-LemonLime-2lb,
 TT-FruitSlices-LemonLime,FruitSlice-LemonLime-8oz,8oz,FALSE,8 oz,,,FruitSlice-LemonLime-8oz,,FruitSlice-LemonLime-8oz,
 TT-FruitSlices-LemonLime,FruitSlice-LemonLime-8oz.,8oz,FALSE,8 oz,,,FruitSlice-LemonLime-8oz.,,,FruitSlice-LemonLime-8oz.
-TT-FruitSlices-LemonLime,FruitSlice-LemonLime-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,,FruitSlice-LemonLime-8oz-1pk
+TT-FruitSlices-LemonLime,FruitSlice-LemonLime-8oz-1pk,1pk|8oz,FALSE,8 oz,7.99,,,,,FruitSlice-LemonLime-8oz-1pk
 TT-FruitSlices-LemonLime,FruitSlice-LemonLime,,FALSE,,,,,,,
-TT-FruitSlices-Lime,FruitSlice-Lime-1lb,1lb,TRUE,1 lb,,,FruitSlice-Lime-1lb,,FruitSlice-Lime-1lb,
-TT-FruitSlices-Lime,FruitSlice-Lime-2lb,2lb,FALSE,2 lb,,,FruitSlice-Lime-2lb,,FruitSlice-Lime-2lb,
+TT-FruitSlices-Lime,FruitSlice-Lime-1lb,1lb,TRUE,1 lb,14.99,,FruitSlice-Lime-1lb,,FruitSlice-Lime-1lb,
+TT-FruitSlices-Lime,FruitSlice-Lime-2lb,2lb,FALSE,2 lb,22.99,,FruitSlice-Lime-2lb,,FruitSlice-Lime-2lb,
 TT-FruitSlices-Lime,FruitSlice-Lime-8oz,8oz,FALSE,8 oz,,,FruitSlice-Lime-8oz,,FruitSlice-Lime-8oz,
 TT-FruitSlices-Lime,FruitSlice-Lime-8oz.,8oz,FALSE,8 oz,,,FruitSlice-Lime-8oz.,,,FruitSlice-Lime-8oz.
 TT-FruitSlices-Lime,FruitSlice-Lime-2lb-rev1,2lb,FALSE,2 lb,,,,,,FruitSlice-Lime-2lb-rev1
-TT-FruitSlices-Lime,FruitSlice-Lime-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,,FruitSlice-Lime-8oz-1pk
+TT-FruitSlices-Lime,FruitSlice-Lime-8oz-1pk,1pk|8oz,FALSE,8 oz,7.99,,,,,FruitSlice-Lime-8oz-1pk
 TT-FruitSlices-Lime,FruitSlice-Lime,,FALSE,,,,,,,
 TT-FruitSlices-Orange,FruitJelly-Orange-1lb.,1lb,TRUE,1 lb,,,FruitJelly-Orange-1lb.,,,
 TT-FruitSlices-Orange,FruitJelly-Orange-2.75lbsJar.,2.75lb,FALSE,2.75 lb,,,FruitJelly-Orange-2.75lbsJar.,,,
 TT-FruitSlices-Orange,FruitJelly-Orange-2lb.,2lb,FALSE,2 lb,,,FruitJelly-Orange-2lb.,,,
 TT-FruitSlices-Orange,FruitJelly-Orange-6lbsJar.,6lb,FALSE,6 lb,,,FruitJelly-Orange-6lbsJar.,,,
-TT-FruitSlices-Orange,FruitJelly-Orange-8oz,8oz,FALSE,8 oz,,,FruitJelly-Orange-8oz,,FruitJelly-Orange-8oz,FruitJelly-Orange-8oz
+TT-FruitSlices-Orange,FruitJelly-Orange-8oz,8oz,FALSE,8 oz,4.99,,FruitJelly-Orange-8oz,,FruitJelly-Orange-8oz,FruitJelly-Orange-8oz
 TT-FruitSlices-Orange,FruitJelly-Orange-8oz.,8oz,FALSE,8 oz,,,FruitJelly-Orange-8oz.,,,
-TT-FruitSlices-Orange,FruitSlice-Orange-1lb,1lb,FALSE,1 lb,,,FruitSlice-Orange-1lb,,FruitSlice-Orange-1lb,
-TT-FruitSlices-Orange,FruitSlice-Orange-2lb,2lb,FALSE,2 lb,,,FruitSlice-Orange-2lb,,FruitSlice-Orange-2lb,
+TT-FruitSlices-Orange,FruitSlice-Orange-1lb,1lb,FALSE,1 lb,14.99,,FruitSlice-Orange-1lb,,FruitSlice-Orange-1lb,
+TT-FruitSlices-Orange,FruitSlice-Orange-2lb,2lb,FALSE,2 lb,22.99,,FruitSlice-Orange-2lb,,FruitSlice-Orange-2lb,
 TT-FruitSlices-Orange,FruitSlice-Orange-8oz,8oz,FALSE,8 oz,,,FruitSlice-Orange-8oz,,FruitSlice-Orange-8oz,
 TT-FruitSlices-Orange,FruitSlice-Orange-8oz.,8oz,FALSE,8 oz,,,FruitSlice-Orange-8oz.,,,
-TT-FruitSlices-Orange,FruitJelly-Orange-32oz,32oz,FALSE,32 oz,,,,FruitJelly-Orange-32oz,,
-TT-FruitSlices-Orange,FruitJelly-Orange-1lb,1lb,FALSE,1 lb,,,,,FruitJelly-Orange-1lb,
+TT-FruitSlices-Orange,FruitJelly-Orange-32oz,32oz,FALSE,32 oz,14.99,,,FruitJelly-Orange-32oz,,
+TT-FruitSlices-Orange,FruitJelly-Orange-1lb,1lb,FALSE,1 lb,8.99,,,,FruitJelly-Orange-1lb,
 TT-FruitSlices-Orange,FruitJelly-Orange-2.75lbsJar,2.75lb,FALSE,2.75 lb,,,,,FruitJelly-Orange-2.75lbsJar,
 TT-FruitSlices-Orange,FruitJelly-Orange-2lb,2lb,FALSE,2 lb,,,,,FruitJelly-Orange-2lb,
 TT-FruitSlices-Orange,FruitJelly-Orange-6lbsJar,6lb,FALSE,6 lb,,,,,FruitJelly-Orange-6lbsJar,
@@ -377,30 +377,30 @@ TT-FruitSlices-Orange,FruitJelly-Orange-8oz-1pk-rev-3,1pk|8oz,FALSE,8 oz,,,,,,Fr
 TT-FruitSlices-Orange,FruitJelly-Orange-8oz-1pk-rev2,1pk|8oz,FALSE,8 oz,,,,,,FruitJelly-Orange-8oz-1pk-rev2
 TT-FruitSlices-Orange,FruitJelly-Orange-8oz-2PK,2pk|8oz,FALSE,8 oz,,,,,,FruitJelly-Orange-8oz-2PK
 TT-FruitSlices-Orange,FruitJelly-Orange-8oz-rev1,8oz,FALSE,8 oz,,,,,,FruitJelly-Orange-8oz-rev1
-TT-FruitSlices-Orange,FruitSlice-Orange-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,,FruitSlice-Orange-8oz-1pk
+TT-FruitSlices-Orange,FruitSlice-Orange-8oz-1pk,1pk|8oz,FALSE,8 oz,7.99,,,,,FruitSlice-Orange-8oz-1pk
 TT-FruitSlices-Orange,FruitSlice-Orange,,FALSE,,,,,,,
 TT-FruitSlices-Peach,FruitSlice-Peach-1lb,1lb,TRUE,1 lb,,,FruitSlice-Peach-1lb,,FruitSlice-Peach-1lb,
 TT-FruitSlices-Peach,FruitSlice-Peach-2lb,2lb,FALSE,2 lb,,,FruitSlice-Peach-2lb,,FruitSlice-Peach-2lb,
 TT-FruitSlices-Peach,FruitSlice-Peach-8oz,8oz,FALSE,8 oz,,,FruitSlice-Peach-8oz,,FruitSlice-Peach-8oz,
 TT-FruitSlices-Peach,FruitSlice-Peach-4oz,4oz,FALSE,4 oz,,,,,FruitSlice-Peach-4oz,
-TT-FruitSlices-Peach,FruitSlices-Peach-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,,FruitSlices-Peach-8oz-1pk
+TT-FruitSlices-Peach,FruitSlices-Peach-8oz-1pk,1pk|8oz,FALSE,8 oz,7.99,,,,,FruitSlices-Peach-8oz-1pk
 TT-FruitSlices-Peach,FruitSlice-Peach,,FALSE,,,,,,,
-TT-FruitSlices-PinkGrapefruit,FruitSlice-PinkGrape-1lb,1lb,TRUE,1 lb,,,FruitSlice-PinkGrape-1lb,,FruitSlice-PinkGrape-1lb,
-TT-FruitSlices-PinkGrapefruit,FruitSlice-PinkGrape-2lb,2lb,FALSE,2 lb,,,FruitSlice-PinkGrape-2lb,,FruitSlice-PinkGrape-2lb,
+TT-FruitSlices-PinkGrapefruit,FruitSlice-PinkGrape-1lb,1lb,TRUE,1 lb,14.99,,FruitSlice-PinkGrape-1lb,,FruitSlice-PinkGrape-1lb,
+TT-FruitSlices-PinkGrapefruit,FruitSlice-PinkGrape-2lb,2lb,FALSE,2 lb,22.99,,FruitSlice-PinkGrape-2lb,,FruitSlice-PinkGrape-2lb,
 TT-FruitSlices-PinkGrapefruit,FruitSlice-PinkGrape-8oz,8oz,FALSE,8 oz,,,FruitSlice-PinkGrape-8oz,,FruitSlice-PinkGrape-8oz,
 TT-FruitSlices-PinkGrapefruit,FruitSlice-PinkGrape-8oz.,8oz,FALSE,8 oz,,,FruitSlice-PinkGrape-8oz.,,,FruitSlice-PinkGrape-8oz.
-TT-FruitSlices-PinkGrapefruit,FruitSlice-PinkGrape-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,,FruitSlice-PinkGrape-8oz-1pk
+TT-FruitSlices-PinkGrapefruit,FruitSlice-PinkGrape-8oz-1pk,1pk|8oz,FALSE,8 oz,7.99,,,,,FruitSlice-PinkGrape-8oz-1pk
 TT-FruitSlices-PinkGrapefruit,FruitSlice-PinkGrapefruit,,FALSE,,,,,,,
-TT-FruitSlices-Raspberry,FruitSlice-Raspberry-1lb,1lb,TRUE,1 lb,,,FruitSlice-Raspberry-1lb,,FruitSlice-Raspberry-1lb,
-TT-FruitSlices-Raspberry,FruitSlice-Raspberry-2lb,2lb,FALSE,2 lb,,,FruitSlice-Raspberry-2lb,,FruitSlice-Raspberry-2lb,
+TT-FruitSlices-Raspberry,FruitSlice-Raspberry-1lb,1lb,TRUE,1 lb,14.99,,FruitSlice-Raspberry-1lb,,FruitSlice-Raspberry-1lb,
+TT-FruitSlices-Raspberry,FruitSlice-Raspberry-2lb,2lb,FALSE,2 lb,22.99,,FruitSlice-Raspberry-2lb,,FruitSlice-Raspberry-2lb,
 TT-FruitSlices-Raspberry,FruitSlice-Raspberry-8oz,8oz,FALSE,8 oz,,,FruitSlice-Raspberry-8oz,,FruitSlice-Raspberry-8oz,FruitSlice-Raspberry-8oz
 TT-FruitSlices-Raspberry,FruitSlice-Raspberry-8oz.,8oz,FALSE,8 oz,,,FruitSlice-Raspberry-8oz.,,,
-TT-FruitSlices-Raspberry,FruitSlice-Raspberry-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,,FruitSlice-Raspberry-8oz-1pk
+TT-FruitSlices-Raspberry,FruitSlice-Raspberry-8oz-1pk,1pk|8oz,FALSE,8 oz,7.99,,,,,FruitSlice-Raspberry-8oz-1pk
 TT-FruitSlices-Raspberry,FruitSlice-Raspberry,,FALSE,,,,,,,
-TT-FruitSlices-Spearmint,FruitJelly-Spearmint-1lb,1lb,TRUE,1 lb,,,FruitJelly-Spearmint-1lb,,FruitJelly-Spearmint-1lb,
+TT-FruitSlices-Spearmint,FruitJelly-Spearmint-1lb,1lb,TRUE,1 lb,8.99,,FruitJelly-Spearmint-1lb,,FruitJelly-Spearmint-1lb,
 TT-FruitSlices-Spearmint,FruitJelly-Spearmint-2.75lbsJar.,2.75lb,FALSE,2.75 lb,,,FruitJelly-Spearmint-2.75lbsJar.,,,
 TT-FruitSlices-Spearmint,FruitJelly-Spearmint-2lb.,2lb,FALSE,2 lb,,,FruitJelly-Spearmint-2lb.,,,
-TT-FruitSlices-Spearmint,FruitJelly-Spearmint-8oz,8oz,FALSE,8 oz,,,FruitJelly-Spearmint-8oz,,FruitJelly-Spearmint-8oz,FruitJelly-Spearmint-8oz
+TT-FruitSlices-Spearmint,FruitJelly-Spearmint-8oz,8oz,FALSE,8 oz,4.99,,FruitJelly-Spearmint-8oz,,FruitJelly-Spearmint-8oz,FruitJelly-Spearmint-8oz
 TT-FruitSlices-Spearmint,FruitJelly-Spearmint-2.75lbsJar,2.75lb,FALSE,2.75 lb,,,,,FruitJelly-Spearmint-2.75lbsJar,
 TT-FruitSlices-Spearmint,FruitJelly-Spearmint-2lb,2lb,FALSE,2 lb,,,,,FruitJelly-Spearmint-2lb,
 TT-FruitSlices-Spearmint,FruitJelly-Spearmint-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,,FruitJelly-Spearmint-8oz-1pk
@@ -410,23 +410,23 @@ TT-FruitSlices-Spearmint,FruitJelly-Spearmint-8oz-2pk,2pk|8oz,FALSE,8 oz,,,,,,Fr
 TT-FruitSlices-Spearmint,FruitJelly-Spearmint-8oz-rev1,8oz,FALSE,8 oz,,,,,,FruitJelly-Spearmint-8oz-rev1
 TT-FruitSlices-Spearmint,FruitJelly-Spearmint,,FALSE,,,,,,,
 TT-FruitSlices-Spearmint,FruitSlice-Spearmint,,FALSE,,,,,,,
-TT-FruitSlices-Watermelon,FruitSlice-Watermelon-1lb,1lb,TRUE,1 lb,,,FruitSlice-Watermelon-1lb,,FruitSlice-Watermelon-1lb,
-TT-FruitSlices-Watermelon,FruitSlice-Watermelon-2lb,2lb,FALSE,2 lb,,,FruitSlice-Watermelon-2lb,,FruitSlice-Watermelon-2lb,
+TT-FruitSlices-Watermelon,FruitSlice-Watermelon-1lb,1lb,TRUE,1 lb,14.99,,FruitSlice-Watermelon-1lb,,FruitSlice-Watermelon-1lb,
+TT-FruitSlices-Watermelon,FruitSlice-Watermelon-2lb,2lb,FALSE,2 lb,22.99,,FruitSlice-Watermelon-2lb,,FruitSlice-Watermelon-2lb,
 TT-FruitSlices-Watermelon,FruitSlice-Watermelon-8oz,8oz,FALSE,8 oz,,,FruitSlice-Watermelon-8oz,,FruitSlice-Watermelon-8oz,FruitSlice-Watermelon-8oz
 TT-FruitSlices-Watermelon,FruitSlice-Watermelon-8oz.,8oz,FALSE,8 oz,,,FruitSlice-Watermelon-8oz.,,,
-TT-FruitSlices-Watermelon,FruitSlice-Watermelon-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,,FruitSlice-Watermelon-8oz-1pk
+TT-FruitSlices-Watermelon,FruitSlice-Watermelon-8oz-1pk,1pk|8oz,FALSE,8 oz,7.99,,,,,FruitSlice-Watermelon-8oz-1pk
 TT-FruitSlices-Watermelon,FruitSlice-Watermelon,,FALSE,,,,,,,
 TT-GingerCandy-Original,TT-ginger-hard-spicy,,TRUE,,,,,,,
 TT-GummiBerries-Assorted,TT-berries-colorful-gummi-irresistibly,,TRUE,,,,,,,
-TT-GummiButterflies-Assorted,ButterfliesGummyLarge-8oz-2PK,2pk|8oz,TRUE,8 oz,,,,,ButterfliesGummyLarge-8oz-2PK,
+TT-GummiButterflies-Assorted,ButterfliesGummyLarge-8oz-2PK,2pk|8oz,TRUE,8 oz,9.99,,,,ButterfliesGummyLarge-8oz-2PK,
 TT-GummiButterflies-Assorted,ButterfliesGummyLarge-8oz-4PK,4pk|8oz,FALSE,8 oz,,,,,ButterfliesGummyLarge-8oz-4PK,
 TT-GummiButterflies-Assorted,TT-butterflies-colorful-gummi-large,,FALSE,,,,,,,
-TT-GummiIcePops-Sherbet,Sherbet-Gummy-8oz-1Pk,1pk|8oz,TRUE,8 oz,,,,,Sherbet-Gummy-8oz-1Pk,Sherbet-Gummy-8oz-1Pk
+TT-GummiIcePops-Sherbet,Sherbet-Gummy-8oz-1Pk,1pk|8oz,TRUE,8 oz,6.99,,,,Sherbet-Gummy-8oz-1Pk,Sherbet-Gummy-8oz-1Pk
 TT-GummiIcePops-Sherbet,Sherbet-Gummy-8oz-2Pk,2pk|8oz,FALSE,8 oz,,,,,Sherbet-Gummy-8oz-2Pk,Sherbet-Gummy-8oz-2Pk
 TT-GummiIcePops-Sherbet,TT-gummi-ice-pops-sherbet,,FALSE,,,,,,,
-TT-GummyArmyGuys-Original,ArmyGuys-8oz-1ct,1ct|8oz,TRUE,8 oz,,,ArmyGuys-8oz-1ct,,,
+TT-GummyArmyGuys-Original,ArmyGuys-8oz-1ct,1ct|8oz,TRUE,8 oz,14.99,,ArmyGuys-8oz-1ct,,,
 TT-GummyArmyGuys-Original,ArmyGuys-8oz-2ct,2ct|8oz,FALSE,8 oz,,,ArmyGuys-8oz-2ct,,ArmyGuys-8oz-2ct,ArmyGuys-8oz-2ct
-TT-GummyAwesomeBlossoms-Assorted,Blossoms-8oz-1PK,1pk|8oz,TRUE,8 oz,,,,,,Blossoms-8oz-1PK
+TT-GummyAwesomeBlossoms-Assorted,Blossoms-8oz-1PK,1pk|8oz,TRUE,8 oz,9.99,,,,,Blossoms-8oz-1PK
 TT-GummyAwesomeBlossoms-Assorted,Blossoms-8oz-2PK,2pk|8oz,FALSE,8 oz,,,,,,Blossoms-8oz-2PK
 TT-GummyAwesomeBlossoms-Assorted,Gummi-AwesomeBlossoms,,FALSE,,,,,,,
 TT-GummyBears-Assorted,Assorted-Bear-16oz-1PK,16oz|1pk,TRUE,16 oz,,,,,Assorted-Bear-16oz-1PK,
@@ -452,7 +452,7 @@ TT-GummyBears-Assorted,GummyBear-Mango-15oz-Jar,15oz,FALSE,15 oz,,,,,GummyBear-M
 TT-GummyBears-Assorted,GummyBear-Orange-15oz-Jar,15oz,FALSE,15 oz,,,,,GummyBear-Orange-15oz-Jar,
 TT-GummyBears-Assorted,GummyBear-Pineapple-15oz-Jar,15oz,FALSE,15 oz,,,,,GummyBear-Pineapple-15oz-Jar,
 TT-GummyBears-Assorted,GummyBear-Strawberry-15oz-Jar,15oz,FALSE,15 oz,,,,,GummyBear-Strawberry-15oz-Jar,
-TT-GummyBears-Assorted,GummyBear-Variety-8oz-4pk,4pk|8oz,FALSE,8 oz,,,,,GummyBear-Variety-8oz-4pk,GummyBear-Variety-8oz-4pk
+TT-GummyBears-Assorted,GummyBear-Variety-8oz-4pk,4pk|8oz,FALSE,8 oz,49.99,,,,GummyBear-Variety-8oz-4pk,GummyBear-Variety-8oz-4pk
 TT-GummyBears-Assorted,GummyBear-Watermelon-15oz-Jar,15oz,FALSE,15 oz,,,,,GummyBear-Watermelon-15oz-Jar,
 TT-GummyBears-Assorted,GummyBear-WildCherry-15oz-Jar,15oz,FALSE,15 oz,,,,,GummyBear-WildCherry-15oz-Jar,
 TT-GummyBears-Assorted,LtBluLtBlueWater-Bear-16oz-2PK,16oz|2pk,FALSE,16 oz,,,,,LtBluLtBlueWater-Bear-16oz-2PK,
@@ -540,10 +540,10 @@ TT-GummyBears-Sour,Sour-Bear-8oz-1pk,1pk|8oz,TRUE,8 oz,,,,,,Sour-Bear-8oz-1pk
 TT-GummyBears-Sour,GummyBear-Sour-8oz-1PK,1pk|8oz,FALSE,8 oz,,,,,,GummyBear-Sour-8oz-1PK
 TT-GummyBears-Sour,GummyBear-Sour-8oz-2PK,2pk|8oz,FALSE,8 oz,,,,,,GummyBear-Sour-8oz-2PK
 TT-GummyBears-Sour,GummyBear-Sour,,FALSE,,,,,,,
-TT-GummyBears-Sour,GummyBears-Sour,,FALSE,,,,,,,
+TT-GummyBears-Sour,GummyBears-Sour,,FALSE,,5.99,,,,,
 TT-GummyBears-SpicyChamoy,SpicyGummyBears-1lb,1lb,TRUE,1 lb,,,,,SpicyGummyBears-1lb,
 TT-GummyBears-SpicyChamoy,SpicyGummyBears-8oz,8oz,FALSE,8 oz,,,,,SpicyGummyBears-8oz,
-TT-GummyBears-SpicyChamoy,SpicyGummyBears-8oz-1PK,1pk|8oz,FALSE,8 oz,,,,,SpicyGummyBears-8oz-1PK,
+TT-GummyBears-SpicyChamoy,SpicyGummyBears-8oz-1PK,1pk|8oz,FALSE,8 oz,9.99,,,,SpicyGummyBears-8oz-1PK,
 TT-GummyBears-SpicyChamoy,SpicyGummyBears-8oz-2PK,2pk|8oz,FALSE,8 oz,,,,,SpicyGummyBears-8oz-2PK,
 TT-GummyBears-SpicyChamoy,TT-bears-chamoy-gummy-spicy,,FALSE,,,,,,,
 TT-GummyBears-Strawberry,Strawberry-Bear-8oz,8oz,TRUE,8 oz,,,,,Strawberry-Bear-8oz,
@@ -577,10 +577,10 @@ TT-GummyChickenFeet-Original,ChickFeet-8oz-2Pk,2pk|8oz,TRUE,8 oz,,,,,ChickFeet-8
 TT-GummyChickenFeet-Original,Gummi-ChickenFeet,,FALSE,,,,,,,
 TT-GummyColaBottles-Original,ColaBottle-8oz-1Pk,1pk|8oz,TRUE,8 oz,,,,,,ColaBottle-8oz-1Pk
 TT-GummyColaBottles-Original,ColaBottle-8oz-2Pk,2pk|8oz,FALSE,8 oz,,,,,,ColaBottle-8oz-2Pk
-TT-GummyColaBottles-Original,Gummy-ColaBottles,,FALSE,,,,,,,
+TT-GummyColaBottles-Original,Gummy-ColaBottles,,FALSE,,4.99,,,,,
 TT-GummyFriedEggs-Original,Gummi-FriedEgg,,TRUE,,,,,,,
 TT-GummyLips-Sour,Gummy-SourLips,,TRUE,,,,,,,
-TT-GummyMix-AppleOrchard,AppleOrchard-8oz-1pk,1pk|8oz,TRUE,8 oz,,,,,AppleOrchard-8oz-1pk,AppleOrchard-8oz-1pk
+TT-GummyMix-AppleOrchard,AppleOrchard-8oz-1pk,1pk|8oz,TRUE,8 oz,6.99,,,,AppleOrchard-8oz-1pk,AppleOrchard-8oz-1pk
 TT-GummyMix-AppleOrchard,AppleOrchard-8oz-2pk,2pk|8oz,FALSE,8 oz,,,,,AppleOrchard-8oz-2pk,
 TT-GummyMix-AppleOrchard,TT-apple-gummi-gummies-orchard,,FALSE,,,,,,,
 TT-GummyMix-Gingerbread,JollyGingerbread-8oz-1PK,1pk|8oz,TRUE,8 oz,,,,,JollyGingerbread-8oz-1PK,
@@ -597,36 +597,36 @@ TT-GummyMonsterMix-Assorted,MonsterGummy-8oz-1PK,1pk|8oz,TRUE,8 oz,,,,,MonsterGu
 TT-GummyMonsterMix-Assorted,Gummi-MonsterMix,,FALSE,,,,,,,
 TT-GummyMonsterMix-Assorted,GummiMonsterMix-Assorted,,FALSE,,,,,,,
 TT-GummyRaspberries-Original,Gummi-RedRaspberries,,TRUE,,,,,,,
-TT-GummyRattlesnakes-Original,Giant-Snake-Gummi-8oz-1pk,1pk|8oz,TRUE,8 oz,,,,,Giant-Snake-Gummi-8oz-1pk,
+TT-GummyRattlesnakes-Original,Giant-Snake-Gummi-8oz-1pk,1pk|8oz,TRUE,8 oz,11.99,,,,Giant-Snake-Gummi-8oz-1pk,
 TT-GummyRattlesnakes-Original,Giant-Snake-Gummi-8oz-4pk,4pk|8oz,FALSE,8 oz,,,,,Giant-Snake-Gummi-8oz-4pk,
 TT-GummyRattlesnakes-Original,Giant-Snake-Gummi-8oz-2pk,2pk|8oz,FALSE,8 oz,,,,,,Giant-Snake-Gummi-8oz-2pk
 TT-GummyRattlesnakes-Original,GiantGummi-Rattlesnake,,FALSE,,,,,,,
 TT-GummyRings-Assorted,GummyRings-Assorted,,TRUE,,,,,,,
-TT-GummyRings-BlueRaspberry,GummyRings-Blue-16oz-1pk,16oz|1pk,TRUE,16 oz,,,,,GummyRings-Blue-16oz-1pk,
+TT-GummyRings-BlueRaspberry,GummyRings-Blue-16oz-1pk,16oz|1pk,TRUE,16 oz,19.99,,,,GummyRings-Blue-16oz-1pk,
 TT-GummyRings-BlueRaspberry,GummyRings-Blue-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,GummyRings-Blue-8oz-1pk,GummyRings-Blue-8oz-1pk
 TT-GummyRings-BlueRaspberry,GummyRings-BlueRaspberry,,FALSE,,,,,,,
-TT-GummyRings-Cherry,GummyRings-Cherry-16oz-1pk,16oz|1pk,TRUE,16 oz,,,,,GummyRings-Cherry-16oz-1pk,
-TT-GummyRings-Cherry,GummyRings-Cherry-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,GummyRings-Cherry-8oz-1pk,
+TT-GummyRings-Cherry,GummyRings-Cherry-16oz-1pk,16oz|1pk,TRUE,16 oz,19.99,,,,GummyRings-Cherry-16oz-1pk,
+TT-GummyRings-Cherry,GummyRings-Cherry-8oz-1pk,1pk|8oz,FALSE,8 oz,14.99,,,,GummyRings-Cherry-8oz-1pk,
 TT-GummyRings-Cherry,GummyRings-Cherry,,FALSE,,,,,,,
-TT-GummyRings-GreenApple,GummyRings-Apple-16oz-1pk,16oz|1pk,TRUE,16 oz,,,,,GummyRings-Apple-16oz-1pk,
-TT-GummyRings-GreenApple,GummyRings-Apple-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,GummyRings-Apple-8oz-1pk,
+TT-GummyRings-GreenApple,GummyRings-Apple-16oz-1pk,16oz|1pk,TRUE,16 oz,19.99,,,,GummyRings-Apple-16oz-1pk,
+TT-GummyRings-GreenApple,GummyRings-Apple-8oz-1pk,1pk|8oz,FALSE,8 oz,14.99,,,,GummyRings-Apple-8oz-1pk,
 TT-GummyRings-GreenApple,GummyRings-Apple-4oz-2pk,2pk|4oz,FALSE,4 oz,,,,,,GummyRings-Apple-4oz-2pk
 TT-GummyRings-GreenApple,GummyRings-GreenApple,,FALSE,,,,,,,
-TT-GummyRings-Peach,GummyRings-Peach-16oz-1pk,16oz|1pk,TRUE,16 oz,,,,,GummyRings-Peach-16oz-1pk,
-TT-GummyRings-Peach,GummyRings-Peach-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,GummyRings-Peach-8oz-1pk,
+TT-GummyRings-Peach,GummyRings-Peach-16oz-1pk,16oz|1pk,TRUE,16 oz,19.99,,,,GummyRings-Peach-16oz-1pk,
+TT-GummyRings-Peach,GummyRings-Peach-8oz-1pk,1pk|8oz,FALSE,8 oz,14.99,,,,GummyRings-Peach-8oz-1pk,
 TT-GummyRings-Peach,GummyRings-Peach,,FALSE,,,,,,,
-TT-GummyRings-Pineapple,GummyRings-Pineapp-16oz-1pk,16oz|1pk,TRUE,16 oz,,,,,GummyRings-Pineapp-16oz-1pk,
+TT-GummyRings-Pineapple,GummyRings-Pineapp-16oz-1pk,16oz|1pk,TRUE,16 oz,19.99,,,,GummyRings-Pineapp-16oz-1pk,
 TT-GummyRings-Pineapple,GummyRing-PineApple-8oz-1PK,1pk|8oz,FALSE,8 oz,,,,,GummyRing-PineApple-8oz-1PK,
 TT-GummyRings-Pineapple,GummyRing-PineApple-8oz-2PK,2pk|8oz,FALSE,8 oz,,,,,GummyRing-PineApple-8oz-2PK,
-TT-GummyRings-Pineapple,GummyRings-Pineapp-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,,GummyRings-Pineapp-8oz-1pk
+TT-GummyRings-Pineapple,GummyRings-Pineapp-8oz-1pk,1pk|8oz,FALSE,8 oz,14.99,,,,,GummyRings-Pineapp-8oz-1pk
 TT-GummyRings-Pineapple,GummyRings-Pineapple,,FALSE,,,,,,,
 TT-GummyRings-Pineapple,TT-bonbon-gummy-pineapple-rings,,FALSE,,,,,,,
-TT-GummyRings-StrawberryBanana,GummyRings-StrawBan-16oz-1pk,16oz|1pk,TRUE,16 oz,,,,,GummyRings-StrawBan-16oz-1pk,
-TT-GummyRings-StrawberryBanana,GummyRings-StrawBan-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,GummyRings-StrawBan-8oz-1pk,
+TT-GummyRings-StrawberryBanana,GummyRings-StrawBan-16oz-1pk,16oz|1pk,TRUE,16 oz,19.99,,,,GummyRings-StrawBan-16oz-1pk,
+TT-GummyRings-StrawberryBanana,GummyRings-StrawBan-8oz-1pk,1pk|8oz,FALSE,8 oz,14.99,,,,GummyRings-StrawBan-8oz-1pk,
 TT-GummyRings-StrawberryBanana,GummyRings-StrawBan-4oz-1pk,1pk|4oz,FALSE,4 oz,,,,,,GummyRings-StrawBan-4oz-1pk
 TT-GummyRings-StrawberryBanana,GummyRings-StrawberryBanana,,FALSE,,,,,,,
-TT-GummyRings-Watermelon,GummyRings-Watermln-16oz-1pk,16oz|1pk,TRUE,16 oz,,,,,GummyRings-Watermln-16oz-1pk,
-TT-GummyRings-Watermelon,GummyRings-Watermln-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,GummyRings-Watermln-8oz-1pk,
+TT-GummyRings-Watermelon,GummyRings-Watermln-16oz-1pk,16oz|1pk,TRUE,16 oz,19.99,,,,GummyRings-Watermln-16oz-1pk,
+TT-GummyRings-Watermelon,GummyRings-Watermln-8oz-1pk,1pk|8oz,FALSE,8 oz,14.99,,,,GummyRings-Watermln-8oz-1pk,
 TT-GummyRings-Watermelon,GummyRings-Watermln-4oz-3pk,3pk|4oz,FALSE,4 oz,,,,,,GummyRings-Watermln-4oz-3pk
 TT-GummyRings-Watermelon,GummyRings-Watermelon,,FALSE,,,,,,,
 TT-GummySharks-Original,BlueShark-8oz-1PK,1pk|8oz,TRUE,8 oz,,,,,BlueShark-8oz-1PK,
@@ -638,11 +638,11 @@ TT-GummySharks-Original,Blue-GummyShark-8oz-2PK,2pk|8oz,FALSE,8 oz,,,,,,Blue-Gum
 TT-GummySharks-Original,Gummy-Shark-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,,Gummy-Shark-8oz-1pk
 TT-GummySharks-Original,Gummy-Shark,,FALSE,,,,,,,
 TT-GummySnowflakes-Assorted,GummiSnowflakes,,TRUE,,,,,,,
-TT-GummyStrawberriesCream-Original,Gummy-StrawberryCream,,TRUE,,,,,,,
-TT-GummyTeeth-Original,TeethGummy-8oz-1Pk,1pk|8oz,TRUE,8 oz,,,,,TeethGummy-8oz-1Pk,TeethGummy-8oz-1Pk
+TT-GummyStrawberriesCream-Original,Gummy-StrawberryCream,,TRUE,,5.99,,,,,
+TT-GummyTeeth-Original,TeethGummy-8oz-1Pk,1pk|8oz,TRUE,8 oz,12.99,,,,TeethGummy-8oz-1Pk,TeethGummy-8oz-1Pk
 TT-GummyTeeth-Original,Gummi-Teeth,,FALSE,,,,,,,
 TT-GummyTeeth-Original,Gummy-Teeth,,FALSE,,,,,,,
-TT-GummyUnicorns-Assorted,UnicornGummy-8oz-1pk,1pk|8oz,TRUE,8 oz,,,,,,UnicornGummy-8oz-1pk
+TT-GummyUnicorns-Assorted,UnicornGummy-8oz-1pk,1pk|8oz,TRUE,8 oz,5.99,,,,,UnicornGummy-8oz-1pk
 TT-GummyUnicorns-Assorted,GummyUnicorn-Assorted,,FALSE,,,,,,,
 TT-GummyWorms-Assorted,GummiWorms-Mini,,TRUE,,,,,,,
 TT-GummyWorms-NeonSour,NeonGummyWorm-8oz-1pk,1pk|8oz,TRUE,8 oz,,,,,NeonGummyWorm-8oz-1pk,
@@ -653,7 +653,7 @@ TT-GummyWormsSugarFree-Assorted,SugarFree-Worms-8oz-1pk-rev1,1pk|8oz,FALSE,8 oz,
 TT-GummyWormsSugarFree-Assorted,SugarFree-Worms-8oz-2pk-rev1,2pk|8oz,FALSE,8 oz,,,SugarFree-Worms-8oz-2pk-rev1,,,
 TT-GummyWormsSugarFree-Assorted,SugarFree-Worms-8oz-4pk,4pk|8oz,FALSE,8 oz,,,SugarFree-Worms-8oz-4pk,,,
 TT-GummyWormsSugarFree-Assorted,SugarFree-Worms-8oz-4pk-rev1,4pk|8oz,FALSE,8 oz,,,SugarFree-Worms-8oz-4pk-rev1,,,
-TT-GummyWormsSugarFree-Assorted,SugarFree-Worms-8oz-2pk,2pk|8oz,FALSE,8 oz,,,,,SugarFree-Worms-8oz-2pk,
+TT-GummyWormsSugarFree-Assorted,SugarFree-Worms-8oz-2pk,2pk|8oz,FALSE,8 oz,22.99,,,,SugarFree-Worms-8oz-2pk,
 TT-Gushers-Assorted,Gushers-Trio-4oz-3pk,3pk|4oz,TRUE,4 oz,,,,,,Gushers-Trio-4oz-3pk
 TT-Gushers-Assorted,Bundle-GushersTrio,,FALSE,,,,,,,
 TT-Gushers-Assorted,PROV-982a6e6f,,FALSE,,,,,,,
@@ -673,15 +673,15 @@ TT-Gushers-SourBlueRaspberry,Blue-Gusher-8oz-2PK-EXTRA,2pk|8oz,FALSE,8 oz,,,,,Bl
 TT-Gushers-SourBlueRaspberry,Blue-Gusher-8oz-EXTRA-1pk,1pk|8oz,FALSE,8 oz,,,,,Blue-Gusher-8oz-EXTRA-1pk,
 TT-Gushers-SourBlueRaspberry,Blue-Gusher-8oz-EXTRA-2PK,2pk|8oz,FALSE,8 oz,,,,,Blue-Gusher-8oz-EXTRA-2PK,
 TT-Gushers-SourBlueRaspberry,Chamoy-Gusher-8oz,8oz,FALSE,8 oz,,,,,Chamoy-Gusher-8oz,
-TT-Gushers-SourBlueRaspberry,Chamoy-Gusher-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,Chamoy-Gusher-8oz-1pk,
+TT-Gushers-SourBlueRaspberry,Chamoy-Gusher-8oz-1pk,1pk|8oz,FALSE,8 oz,9.99,,,,Chamoy-Gusher-8oz-1pk,
 TT-Gushers-SourBlueRaspberry,Chamoy-Gusher-8oz-2PK,2pk|8oz,FALSE,8 oz,,,,,Chamoy-Gusher-8oz-2PK,
 TT-Gushers-SourBlueRaspberry,Chamoy-Gusher-8oz-2PK-EXTRA,2pk|8oz,FALSE,8 oz,,,,,Chamoy-Gusher-8oz-2PK-EXTRA,
 TT-Gushers-SourBlueRaspberry,Chamoy-Gusher-8oz-EXTRA,8oz,FALSE,8 oz,,,,,Chamoy-Gusher-8oz-EXTRA,
 TT-Gushers-SourBlueRaspberry,Chamoy-Gusher-8oz-EXTRA-1pk,1pk|8oz,FALSE,8 oz,,,,,Chamoy-Gusher-8oz-EXTRA-1pk,
 TT-Gushers-SourBlueRaspberry,Chamoy-Gusher-8oz-EXTRA-2PK,2pk|8oz,FALSE,8 oz,,,,,Chamoy-Gusher-8oz-EXTRA-2PK,
-TT-Gushers-SourBlueRaspberry,Cherry-Gushers-8oz-1PK,1pk|8oz,FALSE,8 oz,,,,,Cherry-Gushers-8oz-1PK,
+TT-Gushers-SourBlueRaspberry,Cherry-Gushers-8oz-1PK,1pk|8oz,FALSE,8 oz,9.99,,,,Cherry-Gushers-8oz-1PK,
 TT-Gushers-SourBlueRaspberry,Cherry-Gushers-8oz-1PK-EXTRA,1pk|8oz,FALSE,8 oz,,,,,Cherry-Gushers-8oz-1PK-EXTRA,
-TT-Gushers-SourBlueRaspberry,Cherry-Gushers-8oz-2PK,2pk|8oz,FALSE,8 oz,,,,,Cherry-Gushers-8oz-2PK,
+TT-Gushers-SourBlueRaspberry,Cherry-Gushers-8oz-2PK,2pk|8oz,FALSE,8 oz,17.99,,,,Cherry-Gushers-8oz-2PK,
 TT-Gushers-SourBlueRaspberry,Cherry-Gushers-8oz-2PK-EXTRA,2pk|8oz,FALSE,8 oz,,,,,Cherry-Gushers-8oz-2PK-EXTRA,
 TT-Gushers-SourBlueRaspberry,Cherry-Gushers-8oz-EXTRA-1PK,1pk|8oz,FALSE,8 oz,,,,,Cherry-Gushers-8oz-EXTRA-1PK,
 TT-Gushers-SourBlueRaspberry,Cherry-Gushers-8oz-EXTRA-2PK,2pk|8oz,FALSE,8 oz,,,,,Cherry-Gushers-8oz-EXTRA-2PK,
@@ -699,11 +699,11 @@ TT-Gushers-SourBlueRaspberry,GooeyGushers-Cherry-20oz,20oz,FALSE,20 oz,,,,,Gooey
 TT-Gushers-SourBlueRaspberry,GooeyGushers-Cherry-9oz,9oz,FALSE,9 oz,,,,,GooeyGushers-Cherry-9oz,
 TT-Gushers-SourBlueRaspberry,GooeyGushers-Cherry-Powd-20oz,20oz,FALSE,20 oz,,,,,GooeyGushers-Cherry-Powd-20oz,
 TT-Gushers-SourBlueRaspberry,GooeyGushers-Cherry-Powd-9oz,9oz,FALSE,9 oz,,,,,GooeyGushers-Cherry-Powd-9oz,
-TT-Gushers-SourBlueRaspberry,GooeyGushers-SourCherry-20oz,20oz,FALSE,20 oz,,,,,GooeyGushers-SourCherry-20oz,
-TT-Gushers-SourBlueRaspberry,GooeyGushers-SourCherry-9oz,9oz,FALSE,9 oz,,,,,GooeyGushers-SourCherry-9oz,
+TT-Gushers-SourBlueRaspberry,GooeyGushers-SourCherry-20oz,20oz,FALSE,20 oz,17.99,,,,GooeyGushers-SourCherry-20oz,
+TT-Gushers-SourBlueRaspberry,GooeyGushers-SourCherry-9oz,9oz,FALSE,9 oz,10.99,,,,GooeyGushers-SourCherry-9oz,
 TT-Gushers-SourBlueRaspberry,GooeyGushers-SourGApple-20oz,20oz,FALSE,20 oz,,,,,GooeyGushers-SourGApple-20oz,
-TT-Gushers-SourBlueRaspberry,GooeyGushers-SourWater-20oz,20oz,FALSE,20 oz,,,,,GooeyGushers-SourWater-20oz,
-TT-Gushers-SourBlueRaspberry,GooeyGushers-SourWater-9oz,9oz,FALSE,9 oz,,,,,GooeyGushers-SourWater-9oz,
+TT-Gushers-SourBlueRaspberry,GooeyGushers-SourWater-20oz,20oz,FALSE,20 oz,19.99,,,,GooeyGushers-SourWater-20oz,
+TT-Gushers-SourBlueRaspberry,GooeyGushers-SourWater-9oz,9oz,FALSE,9 oz,11.99,,,,GooeyGushers-SourWater-9oz,
 TT-Gushers-SourBlueRaspberry,GooeyGushers-SweetBlue-20oz,20oz,FALSE,20 oz,,,,,GooeyGushers-SweetBlue-20oz,
 TT-Gushers-SourBlueRaspberry,GooeyGushers-SweetBlue-9oz,9oz,FALSE,9 oz,,,,,GooeyGushers-SweetBlue-9oz,
 TT-Gushers-SourBlueRaspberry,GooeyGushers-SweetCherry-20oz,20oz,FALSE,20 oz,,,,,GooeyGushers-SweetCherry-20oz,
@@ -715,8 +715,8 @@ TT-Gushers-SourBlueRaspberry,GooeyGushers-Water-Water-9oz,9oz,FALSE,9 oz,,,,,Goo
 TT-Gushers-SourBlueRaspberry,Blue-Gusher-4oz-1pk-sb,1pk|4oz,FALSE,4 oz,,,,,,Blue-Gusher-4oz-1pk-sb
 TT-Gushers-SourBlueRaspberry,Blue-Gusher-8oz-1pk-rev2,1pk|8oz,FALSE,8 oz,,,,,,Blue-Gusher-8oz-1pk-rev2
 TT-Gushers-SourBlueRaspberry,BlueRasp-GummyTrio-8oz-3pk,3pk|8oz,FALSE,8 oz,,,,,,BlueRasp-GummyTrio-8oz-3pk
-TT-Gushers-SourBlueRaspberry,GooeyGumm-Cher-20oz,20oz,FALSE,20 oz,,,,,,GooeyGumm-Cher-20oz
-TT-Gushers-SourBlueRaspberry,GooeyGumm-Cher-9oz,9oz,FALSE,9 oz,,,,,,GooeyGumm-Cher-9oz
+TT-Gushers-SourBlueRaspberry,GooeyGumm-Cher-20oz,20oz,FALSE,20 oz,16.99,,,,,GooeyGumm-Cher-20oz
+TT-Gushers-SourBlueRaspberry,GooeyGumm-Cher-9oz,9oz,FALSE,9 oz,10.99,,,,,GooeyGumm-Cher-9oz
 TT-Gushers-SourBlueRaspberry,GooeyGumm-GrnApp-9oz,9oz,FALSE,9 oz,,,,,,GooeyGumm-GrnApp-9oz
 TT-Gushers-SourBlueRaspberry,GooeyGushers-SourBlue-20oz-rev1,20oz,FALSE,20 oz,,,,,,GooeyGushers-SourBlue-20oz-rev1
 TT-Gushers-SourBlueRaspberry,GooeyGushers-SourBlue-9oz-rev1,9oz,FALSE,9 oz,,,,,,GooeyGushers-SourBlue-9oz-rev1
@@ -738,14 +738,14 @@ TT-Gushers-SourOrange,GooeyGummies-SourOrange,,TRUE,,,,,,,
 TT-Gushers-SourOrange,GooeyGushers-SourOrange,,FALSE,,,,,,,
 TT-Gushers-SourWatermelon,GooeyGumm-SourWater-20oz,20oz,TRUE,20 oz,,,,,GooeyGumm-SourWater-20oz,
 TT-Gushers-SourWatermelon,GooeyGumm-SourWater-9oz,9oz,FALSE,9 oz,,,,,GooeyGumm-SourWater-9oz,
-TT-Gushers-SourWatermelon,GooeyGushers-SourWater-9oz,9oz,FALSE,9 oz,,,,,GooeyGushers-SourWater-9oz,
-TT-Gushers-SourWatermelon,GooeyGushers-SourWater-20oz,20oz,FALSE,20 oz,,,,,,GooeyGushers-SourWater-20oz
+TT-Gushers-SourWatermelon,GooeyGushers-SourWater-9oz,9oz,FALSE,9 oz,11.99,,,,GooeyGushers-SourWater-9oz,
+TT-Gushers-SourWatermelon,GooeyGushers-SourWater-20oz,20oz,FALSE,20 oz,19.99,,,,,GooeyGushers-SourWater-20oz
 TT-Gushers-SourWatermelon,GooeyGushers-SourWater-20oz-rev1,20oz,FALSE,20 oz,,,,,,GooeyGushers-SourWater-20oz-rev1
 TT-Gushers-SourWatermelon,GooeyGummies-SourWatermelon,,FALSE,,,,,,,
 TT-Gushers-SourWatermelon,GooeyGushers-SourWatermelon,,FALSE,,,,,,,
 TT-Gushers-SourWildCherry,Cherry-Gusher-4oz-1pk,1pk|4oz,TRUE,4 oz,,,Cherry-Gusher-4oz-1pk,,,
 TT-Gushers-SourWildCherry,Cherry-Gushers-4oz-1PK,1pk|4oz,FALSE,4 oz,,,,,Cherry-Gushers-4oz-1PK,Cherry-Gushers-4oz-1PK
-TT-Gushers-SourWildCherry,Cherry-Gushers-8oz-1PK,1pk|8oz,FALSE,8 oz,,,,,Cherry-Gushers-8oz-1PK,
+TT-Gushers-SourWildCherry,Cherry-Gushers-8oz-1PK,1pk|8oz,FALSE,8 oz,9.99,,,,Cherry-Gushers-8oz-1PK,
 TT-Gushers-SourWildCherry,CherryPowder-Gushers-1lb-1PK,1lb|1pk,FALSE,1 lb,,,,,CherryPowder-Gushers-1lb-1PK,
 TT-Gushers-SweetBlueRaspberry,GooeyGumm-SweetBlue-20oz,20oz,TRUE,20 oz,,,,,GooeyGumm-SweetBlue-20oz,
 TT-Gushers-SweetBlueRaspberry,GooeyGumm-SweetBlue-9oz,9oz,FALSE,9 oz,,,,,GooeyGumm-SweetBlue-9oz,
@@ -772,7 +772,7 @@ TT-Gushers-Watermelon,Watermln-Gusher-4oz-1pk-rev1,1pk|4oz,TRUE,4 oz,,,,,,Waterm
 TT-Gushers-Watermelon,Gushers-Watermelon,,FALSE,,,,,,,
 TT-HalloweenGummyMix-Assorted,Ghoulish Gummi Mix-8oz-2ct,2ct|8oz,TRUE,8 oz,,,Ghoulish Gummi Mix-8oz-2ct,,,
 TT-HalloweenGummyMix-Assorted,GhoulishMix-8oz-2Pk,2pk|8oz,FALSE,8 oz,,,,,GhoulishMix-8oz-2Pk,
-TT-HalloweenGummyMix-Assorted,Spooktacular-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,,Spooktacular-8oz-1pk
+TT-HalloweenGummyMix-Assorted,Spooktacular-8oz-1pk,1pk|8oz,FALSE,8 oz,10.99,,,,,Spooktacular-8oz-1pk
 TT-HalloweenGummyMix-Assorted,GummiMix-Spooktacular,,FALSE,,,,,,,
 TT-HardCandy-Assorted,PROV-6183219a,,TRUE,,,,,,,
 TT-HardCandy-BananaRama,Banana-Rama-8oz-1-pk,8oz,TRUE,8 oz,,,,,Banana-Rama-8oz-1-pk,
@@ -801,7 +801,7 @@ TT-JellyBelly-GreenApple,jelly-beans-8oz-GreenApple-1pk-rev1,1pk|8oz,TRUE,8 oz,,
 TT-JellyBelly-JuicyPear,jelly-beans-8oz-Juicypear-1pk-rev1,1pk|8oz,TRUE,8 oz,,,jelly-beans-8oz-Juicypear-1pk-rev1,,,
 TT-JellyBelly-Mango,jelly-beans-8oz-Mango-1pk-rev3,1pk|8oz,TRUE,8 oz,,,jelly-beans-8oz-Mango-1pk-rev3,,,
 TT-JellyBelly-Peach,jelly-beans-8oz-Peach-1pk-rev3,1pk|8oz,TRUE,8 oz,,,jelly-beans-8oz-Peach-1pk-rev3,,,
-TT-JellyBelly-SizzlingCinnamon,jelly-beans-8oz-SizzlingCinnamon-1pk,1pk|8oz,TRUE,8 oz,,,jelly-beans-8oz-SizzlingCinnamon-1pk,,,jelly-beans-8oz-SizzlingCinnamon-1pk
+TT-JellyBelly-SizzlingCinnamon,jelly-beans-8oz-SizzlingCinnamon-1pk,1pk|8oz,TRUE,8 oz,12.99,,jelly-beans-8oz-SizzlingCinnamon-1pk,,,jelly-beans-8oz-SizzlingCinnamon-1pk
 TT-JellyBelly-StrawberryCheesecake,jelly-beans-8oz-StrawCheese-1pk-rev1,1pk|8oz,TRUE,8 oz,,,jelly-beans-8oz-StrawCheese-1pk-rev1,,,
 TT-JellyBelly-StrawberryDaiquiri,jelly-beans-8oz-StrawDaiq-1pk-rev1,1pk|8oz,TRUE,8 oz,,,jelly-beans-8oz-StrawDaiq-1pk-rev1,,,
 TT-JellyBelly-ToastedMarshmallow,jelly-beans-8oz-ToastedMarshmal-1pk-rev2,1pk|8oz,TRUE,8 oz,,,jelly-beans-8oz-ToastedMarshmal-1pk-rev2,,,
@@ -809,15 +809,15 @@ TT-JellyBelly-TopBanana,jelly-beans-8oz-TopBananna-1pk-rev1,1pk|8oz,TRUE,8 oz,,,
 TT-JellyHearts-Assorted,Jelly-Hearts-8oz,8oz,TRUE,8 oz,,,Jelly-Hearts-8oz,,Jelly-Hearts-8oz,
 TT-JellyHearts-Assorted,CherryHearts-Candy-8oz-1PK,1pk|8oz,FALSE,8 oz,,,,,CherryHearts-Candy-8oz-1PK,
 TT-JellyHearts-Assorted,CherryHearts-Candy-8oz-4PK,4pk|8oz,FALSE,8 oz,,,,,CherryHearts-Candy-8oz-4PK,
-TT-JellyHearts-Assorted,Cinn-JuJuHearts-8oz-1PK,1pk|8oz,FALSE,8 oz,,,,,Cinn-JuJuHearts-8oz-1PK,
+TT-JellyHearts-Assorted,Cinn-JuJuHearts-8oz-1PK,1pk|8oz,FALSE,8 oz,9.99,,,,Cinn-JuJuHearts-8oz-1PK,
 TT-JellyHearts-Assorted,Cinn-JuJuHearts-8oz-2PK,2pk|8oz,FALSE,8 oz,,,,,Cinn-JuJuHearts-8oz-2PK,
-TT-JellyHearts-Assorted,Jelly-Hearts-8oz-1PK,1pk|8oz,FALSE,8 oz,,,,,Jelly-Hearts-8oz-1PK,Jelly-Hearts-8oz-1PK
+TT-JellyHearts-Assorted,Jelly-Hearts-8oz-1PK,1pk|8oz,FALSE,8 oz,9.99,,,,Jelly-Hearts-8oz-1PK,Jelly-Hearts-8oz-1PK
 TT-JellyHearts-Assorted,Jelly-Hearts-8oz-2PK,2pk|8oz,FALSE,8 oz,,,,,Jelly-Hearts-8oz-2PK,
 TT-JellyHearts-Assorted,JuJu-HeartCandy-8oz-1PK,1pk|8oz,FALSE,8 oz,,,,,JuJu-HeartCandy-8oz-1PK,
 TT-JellyHearts-Assorted,JuJu-HeartCandy-8oz-4PK,4pk|8oz,FALSE,8 oz,,,,,JuJu-HeartCandy-8oz-4PK,
 TT-JuJuHearts-Cinnamon,Cinnamon-Hearts8oz-JuJu,8oz,TRUE,8 oz,,,Cinnamon-Hearts8oz-JuJu,,Cinnamon-Hearts8oz-JuJu,
 TT-JuJuHearts-Cinnamon,JuJu-HeartCandy-8oz-2PK,2pk|8oz,FALSE,8 oz,,,,,JuJu-HeartCandy-8oz-2PK,
-TT-JuJuHearts-Cinnamon,Cinn-JuJuHearts-8oz-1PK,1pk|8oz,FALSE,8 oz,,,,,,Cinn-JuJuHearts-8oz-1PK
+TT-JuJuHearts-Cinnamon,Cinn-JuJuHearts-8oz-1PK,1pk|8oz,FALSE,8 oz,9.99,,,,,Cinn-JuJuHearts-8oz-1PK
 TT-LobsterGummies-Assorted,Lobster-Gummy-8oz-2pk,2pk|8oz,TRUE,8 oz,,,,,,Lobster-Gummy-8oz-2pk
 TT-LobsterGummies-Assorted,TT-fun-gummy-lobster-red,,FALSE,,,,,,,
 TT-Lollipops-Assorted,Lollipops-Assorted,,TRUE,,,,,,,
@@ -838,7 +838,7 @@ TT-MixedNuts-Unsalted,TT-almonds-blend-brazil-cashews,,FALSE,,,,,,,
 TT-NoveltyChewyCandy-Assorted,Pacifier-HardCandy-8oz-1pk,1pk|8oz,TRUE,8 oz,,,,,,Pacifier-HardCandy-8oz-1pk
 TT-NoveltyChewyCandy-Assorted,HardCandy-Pacifier,,FALSE,,,,,,,
 TT-PacifierCandy-Assorted,PacifierCandy-Assorted,,TRUE,,,,,,,
-TT-PeaceGummyBears-Assorted,Peace-Bear-8oz-1PK,1pk|8oz,TRUE,8 oz,,,,,Peace-Bear-8oz-1PK,
+TT-PeaceGummyBears-Assorted,Peace-Bear-8oz-1PK,1pk|8oz,TRUE,8 oz,9.99,,,,Peace-Bear-8oz-1PK,
 TT-PeaceGummyBears-Assorted,GummyBear-Peace-7oz-1PK,1pk|7oz,FALSE,7 oz,,,,,,GummyBear-Peace-7oz-1PK
 TT-PeaceGummyBears-Assorted,GummyBear-Peace-7oz-2PK,2pk|7oz,FALSE,7 oz,,,,,,GummyBear-Peace-7oz-2PK
 TT-PeaceGummyBears-Assorted,PeaceGummiBears-Fruity,,FALSE,,,,,,,
@@ -847,7 +847,7 @@ TT-PeanutBrittle-Original,PeanutBrittle-4oz..,4oz,TRUE,4 oz,,,PeanutBrittle-4oz.
 TT-PeanutBrittle-Original,PeanutBrittle-1lb-1pk,1lb|1pk,FALSE,1 lb,,,,,PeanutBrittle-1lb-1pk,
 TT-PeanutBrittle-Original,PeanutBrittle-2.25lb-Jar-1pk,1pk|2.25lb,FALSE,2.25 lb,,,,,PeanutBrittle-2.25lb-Jar-1pk,
 TT-PeanutBrittle-Original,PeanutBrittle-2lb-1pk,1pk|2lb,FALSE,2 lb,,,,,PeanutBrittle-2lb-1pk,
-TT-PeanutBrittle-Original,PeanutBrittle-4oz-1pk,1pk|4oz,FALSE,4 oz,,,,,PeanutBrittle-4oz-1pk,
+TT-PeanutBrittle-Original,PeanutBrittle-4oz-1pk,1pk|4oz,FALSE,4 oz,6.99,,,,PeanutBrittle-4oz-1pk,
 TT-PeanutBrittle-Original,PeanutBrittle-8oz-1pk,1pk|8oz,FALSE,8 oz,,,,,PeanutBrittle-8oz-1pk,
 TT-PeanutBrittle-Original,PeanutBrittle-4oz-4pk,4oz|4pk,FALSE,4 oz,,,,,,PeanutBrittle-4oz-4pk
 TT-PeanutBrittle-Original,PeanutBrittle-8oz-2pk,2pk|8oz,FALSE,8 oz,,,,,,PeanutBrittle-8oz-2pk
@@ -863,7 +863,7 @@ TT-Peanuts-HoneyRoasted,HonRoasted-Peanuts-8oz-1pk,1pk|8oz,TRUE,8 oz,,,,,HonRoas
 TT-Peanuts-HoneyRoasted,Peanuts-HoneyRoasted,,FALSE,,,,,,,
 TT-Peanuts-SpanishRoastedSalted,TT-bite-bold-crunchy-peanuts,,TRUE,,,,,,,
 TT-Pecans-RoastedSalted,Pecans-RoastedSalted,,TRUE,,,,,,,
-TT-PectinGummyCubes-Assorted,PectinCubes-11.5oz-Jar,11.5oz,TRUE,11.5 oz,,,,,PectinCubes-11.5oz-Jar,
+TT-PectinGummyCubes-Assorted,PectinCubes-11.5oz-Jar,11.5oz,TRUE,11.5 oz,8.99,,,,PectinCubes-11.5oz-Jar,
 TT-PectinGummyCubes-Assorted,Sanded-Pectin-Cubes-8oz-2-pk-Assorted,8oz,FALSE,8 oz,,,,,Sanded-Pectin-Cubes-8oz-2-pk-Assorted,
 TT-PectinGummyCubes-Assorted,PectinCubes-Asstd-8oz-2pk,2pk|8oz,FALSE,8 oz,,,,,,PectinCubes-Asstd-8oz-2pk
 TT-PectinGummyCubes-Assorted,PectinGummyCubes-Assorted,,FALSE,,,,,,,
@@ -959,11 +959,11 @@ TT-SourBelts-Assorted,Sour-Ropes-Belts-8oz-1PK-Blue Raspberry,1pk|8oz,TRUE,8 oz,
 TT-SourBelts-Assorted,Sour-Ropes-Belts-8oz-1PK-Cotton Candy,1pk|8oz,FALSE,8 oz,,,,,Sour-Ropes-Belts-8oz-1PK-Cotton Candy,
 TT-SourBelts-Assorted,Sour-Ropes-Belts-8oz-1PK-Green Apple,1pk|8oz,FALSE,8 oz,,,,,Sour-Ropes-Belts-8oz-1PK-Green Apple,
 TT-SourBelts-Assorted,Sour-Ropes-Belts-8oz-1PK-Pink Lemonade,1pk|8oz,FALSE,8 oz,,,,,Sour-Ropes-Belts-8oz-1PK-Pink Lemonade,
-TT-SourBelts-Assorted,Sour-Ropes-Belts-8oz-1PK-Rainbow,1pk|8oz,FALSE,8 oz,,,,,Sour-Ropes-Belts-8oz-1PK-Rainbow,
+TT-SourBelts-Assorted,Sour-Ropes-Belts-8oz-1PK-Rainbow,1pk|8oz,FALSE,8 oz,6.99,,,,Sour-Ropes-Belts-8oz-1PK-Rainbow,
 TT-SourBelts-Assorted,Sour-Ropes-Belts-8oz-1PK-Raspberry Cherry,1pk|8oz,FALSE,8 oz,,,,,Sour-Ropes-Belts-8oz-1PK-Raspberry Cherry,
-TT-SourBelts-Assorted,Sour-Ropes-Belts-8oz-1PK-Strawberry,1pk|8oz,FALSE,8 oz,,,,,Sour-Ropes-Belts-8oz-1PK-Strawberry,
+TT-SourBelts-Assorted,Sour-Ropes-Belts-8oz-1PK-Strawberry,1pk|8oz,FALSE,8 oz,6.99,,,,Sour-Ropes-Belts-8oz-1PK-Strawberry,
 TT-SourBelts-Assorted,Sour-Ropes-Belts-8oz-1PK-Strawberry Banana,1pk|8oz,FALSE,8 oz,,,,,Sour-Ropes-Belts-8oz-1PK-Strawberry Banana,
-TT-SourBelts-Assorted,Sour-Ropes-Belts-8oz-1PK-Watermelon,1pk|8oz,FALSE,8 oz,,,,,Sour-Ropes-Belts-8oz-1PK-Watermelon,
+TT-SourBelts-Assorted,Sour-Ropes-Belts-8oz-1PK-Watermelon,1pk|8oz,FALSE,8 oz,6.99,,,,Sour-Ropes-Belts-8oz-1PK-Watermelon,
 TT-SourBelts-Assorted,Sour-Ropes-Belts-8oz-1PK-Wild Cherry,1pk|8oz,FALSE,8 oz,,,,,Sour-Ropes-Belts-8oz-1PK-Wild Cherry,
 TT-SourBelts-Assorted,Sour-Ropes-Belts-8oz-2PK-Blue RaspberryBlue Raspbe,2pk|8oz,FALSE,8 oz,,,,,Sour-Ropes-Belts-8oz-2PK-Blue RaspberryBlue Raspbe,
 TT-SourBelts-Assorted,Sour-Ropes-Belts-8oz-2PK-Cotton Candy,2pk|8oz,FALSE,8 oz,,,,,Sour-Ropes-Belts-8oz-2PK-Cotton Candy,
@@ -974,8 +974,8 @@ TT-SourBelts-Assorted,Sour-Ropes-Belts-8oz-2PK-Rainbow,2pk|8oz,FALSE,8 oz,,,,,So
 TT-SourBelts-Assorted,Sour-Ropes-Belts-8oz-2PK-Raspberry Cherry,2pk|8oz,FALSE,8 oz,,,,,Sour-Ropes-Belts-8oz-2PK-Raspberry Cherry,
 TT-SourBelts-Assorted,Sour-Ropes-Belts-8oz-4PK-Watermelon,4pk|8oz,FALSE,8 oz,,,,,Sour-Ropes-Belts-8oz-4PK-Watermelon,
 TT-SourBelts-Assorted,TT-belts-ropes-snacking-tangy,,FALSE,,,,,,,
-TT-SourButtons-Assorted,Asstd-SourButtons-8oz-1pk,1pk|8oz,TRUE,8 oz,,,,,Asstd-SourButtons-8oz-1pk,Asstd-SourButtons-8oz-1pk
-TT-SourButtons-Assorted,Asstd-SourButtons-8oz-2pk,2pk|8oz,FALSE,8 oz,,,,,Asstd-SourButtons-8oz-2pk,
+TT-SourButtons-Assorted,Asstd-SourButtons-8oz-1pk,1pk|8oz,TRUE,8 oz,6.99,,,,Asstd-SourButtons-8oz-1pk,Asstd-SourButtons-8oz-1pk
+TT-SourButtons-Assorted,Asstd-SourButtons-8oz-2pk,2pk|8oz,FALSE,8 oz,11.99,,,,Asstd-SourButtons-8oz-2pk,
 TT-SourButtons-Assorted,TT-boards-buttons-flavour-gummy,,FALSE,,,,,,,
 TT-SourButtons-BlueRaspberry,SourButtons-BlueRaspberry,,TRUE,,,,,,,
 TT-SourDrops-Assorted,SourDrops-16oz,16oz,TRUE,16 oz,,,SourDrops-16oz,,SourDrops-16oz,
@@ -997,25 +997,25 @@ TT-SpiceDrops-CinnamonSpearmint,TT-christmas-cinnamon-colored-drops,,FALSE,,,,,,
 TT-StarlightCandy-Fruit,TT-hard-starlight-swirl,,TRUE,,,,,,,
 TT-SwedishCandy-Assorted,Assorted-Swedish-8oz-1PK,1pk|8oz,TRUE,8 oz,,,,,,Assorted-Swedish-8oz-1PK
 TT-SwedishCandy-Assorted,SwedishCandy-Assorted,,FALSE,,,,,,,
-TT-SwedishCandy-BananaToffeeSkulls,SweetBanana-8oz-1PK,1pk|8oz,TRUE,8 oz,,,,,,SweetBanana-8oz-1PK
+TT-SwedishCandy-BananaToffeeSkulls,SweetBanana-8oz-1PK,1pk|8oz,TRUE,8 oz,9.99,,,,,SweetBanana-8oz-1PK
 TT-SwedishCandy-BananaToffeeSkulls,SwedishCandy-BananaToffeeSkulls,,FALSE,,,,,,,
 TT-SwedishCandy-BlueberryStrawberryBears,SwedishCandy-BlueberryStrawberryBears,,TRUE,,,,,,,
 TT-SwedishCandy-GrapeSkulls,SwedishCandy-GrapeSkulls,,TRUE,,,,,,,
 TT-SwedishCandy-MangoBears,SourMango-Bears-8oz-1PK-rev1,1pk|8oz,TRUE,8 oz,,,SourMango-Bears-8oz-1PK-rev1,,,
-TT-SwedishCandy-MangoBears,Assorted-8oz-1PK,1pk|8oz,FALSE,8 oz,,,,,Assorted-8oz-1PK,
-TT-SwedishCandy-MangoBears,Assorted-8oz-2PK,2pk|8oz,FALSE,8 oz,,,,,Assorted-8oz-2PK,
-TT-SwedishCandy-MangoBears,LemonStrawButter-8oz-2PK,2pk|8oz,FALSE,8 oz,,,,,LemonStrawButter-8oz-2PK,
+TT-SwedishCandy-MangoBears,Assorted-8oz-1PK,1pk|8oz,FALSE,8 oz,9.99,,,,Assorted-8oz-1PK,
+TT-SwedishCandy-MangoBears,Assorted-8oz-2PK,2pk|8oz,FALSE,8 oz,17.77,,,,Assorted-8oz-2PK,
+TT-SwedishCandy-MangoBears,LemonStrawButter-8oz-2PK,2pk|8oz,FALSE,8 oz,17.77,,,,LemonStrawButter-8oz-2PK,
 TT-SwedishCandy-MangoBears,SourBlue/StrawberryBears-8oz-1PK,1pk|8oz,FALSE,8 oz,,,,,SourBlue/StrawberryBears-8oz-1PK,
 TT-SwedishCandy-MangoBears,SourBlue/StrawberryBears-8oz-2PK,2pk|8oz,FALSE,8 oz,,,,,SourBlue/StrawberryBears-8oz-2PK,
-TT-SwedishCandy-MangoBears,SourMango-Bears-8oz-1PK,1pk|8oz,FALSE,8 oz,,,,,SourMango-Bears-8oz-1PK,
-TT-SwedishCandy-MangoBears,SourMango-Bears-8oz-2PK,2pk|8oz,FALSE,8 oz,,,,,SourMango-Bears-8oz-2PK,
-TT-SwedishCandy-MangoBears,StrawVanilla-Hearts-8oz-1PK,1pk|8oz,FALSE,8 oz,,,,,StrawVanilla-Hearts-8oz-1PK,
-TT-SwedishCandy-MangoBears,StrawVanilla-Hearts-8oz-2PK,2pk|8oz,FALSE,8 oz,,,,,StrawVanilla-Hearts-8oz-2PK,
-TT-SwedishCandy-MangoBears,SweetBanana-8oz-1PK,1pk|8oz,FALSE,8 oz,,,,,SweetBanana-8oz-1PK,
-TT-SwedishCandy-MangoBears,SweetBanana-8oz-2PK,2pk|8oz,FALSE,8 oz,,,,,SweetBanana-8oz-2PK,
+TT-SwedishCandy-MangoBears,SourMango-Bears-8oz-1PK,1pk|8oz,FALSE,8 oz,9.99,,,,SourMango-Bears-8oz-1PK,
+TT-SwedishCandy-MangoBears,SourMango-Bears-8oz-2PK,2pk|8oz,FALSE,8 oz,17.77,,,,SourMango-Bears-8oz-2PK,
+TT-SwedishCandy-MangoBears,StrawVanilla-Hearts-8oz-1PK,1pk|8oz,FALSE,8 oz,9.99,,,,StrawVanilla-Hearts-8oz-1PK,
+TT-SwedishCandy-MangoBears,StrawVanilla-Hearts-8oz-2PK,2pk|8oz,FALSE,8 oz,17.77,,,,StrawVanilla-Hearts-8oz-2PK,
+TT-SwedishCandy-MangoBears,SweetBanana-8oz-1PK,1pk|8oz,FALSE,8 oz,9.99,,,,SweetBanana-8oz-1PK,
+TT-SwedishCandy-MangoBears,SweetBanana-8oz-2PK,2pk|8oz,FALSE,8 oz,17.77,,,,SweetBanana-8oz-2PK,
 TT-SwedishCandy-PineapplePassionfruitAliens,Pine-PassionAlien-8oz-1PK-rev1,1pk|8oz,TRUE,8 oz,,,Pine-PassionAlien-8oz-1PK-rev1,,,
 TT-SwedishCandy-SourLemonStrawberry,LemonStrawButter-8oz-1PK-rev1,1pk|8oz,TRUE,8 oz,,,LemonStrawButter-8oz-1PK-rev1,,,
-TT-SwedishCandy-StrawberryVanillaHearts,StrawVanilla-Hearts-8oz-1PK,1pk|8oz,TRUE,8 oz,,,,,,StrawVanilla-Hearts-8oz-1PK
+TT-SwedishCandy-StrawberryVanillaHearts,StrawVanilla-Hearts-8oz-1PK,1pk|8oz,TRUE,8 oz,9.99,,,,,StrawVanilla-Hearts-8oz-1PK
 TT-SwedishCandy-StrawberryVanillaHearts,SwedishCandy-StrawberryVanillaHearts,,FALSE,,,,,,,
 TT-SwedishCandy-WatermelonAliens,SwedishCandy-WatermelonAliens,,TRUE,,,,,,,
 TT-SwirlyFishGummies-Assorted,SwirlyFish-Fruity,,TRUE,,,,,,,
@@ -1039,7 +1039,7 @@ TT-ValentineGummies-MellowCreme,Val-Mellow-8oz-1PK.,1pk|8oz,FALSE,8 oz,,,Val-Mel
 TT-ValentineGummies-MellowCreme,Val-Mellow-8oz-2PK,2pk|8oz,FALSE,8 oz,,,Val-Mellow-8oz-2PK,,Val-Mellow-8oz-2PK,Val-Mellow-8oz-2PK
 TT-ValentineGummies-MellowCreme,Val-Mellow-8oz-2PK.,2pk|8oz,FALSE,8 oz,,,Val-Mellow-8oz-2PK.,,,
 TT-ValentineGummies-MellowCreme,Val-Mellow-8oz-4PK,4pk|8oz,FALSE,8 oz,,,Val-Mellow-8oz-4PK,,Val-Mellow-8oz-4PK,
-TT-ValentineGummies-MellowCreme,Val-Mellow-Creme-8oz-1-Pack,8oz,FALSE,8 oz,,,,,,Val-Mellow-Creme-8oz-1-Pack
+TT-ValentineGummies-MellowCreme,Val-Mellow-Creme-8oz-1-Pack,8oz,FALSE,8 oz,12.99,,,,,Val-Mellow-Creme-8oz-1-Pack
 TT-ValentineGummies-SandedHearts,Val-Candy-1 Pk -Sanded Hearts -8oz.,1pk|8oz,TRUE,8 oz,,,Val-Candy-1 Pk -Sanded Hearts -8oz.,,,
 TT-ValentineGummies-SourHearts,Val-Candy-1 Pk -Sour Hearts -8oz.,1pk|8oz,TRUE,8 oz,,,Val-Candy-1 Pk -Sour Hearts -8oz.,,Val-Candy-1 Pk -Sour Hearts -8oz.,
 TT-ValentineGummies-SourHearts,Val-Candy-2-Pk -Sour Hearts -8oz,8oz,FALSE,8 oz,,,Val-Candy-2-Pk -Sour Hearts -8oz,,,
@@ -1063,8 +1063,8 @@ TT-WasabiPeas-Original,Wasabi-Peas-8oz-1pk,1pk|8oz,TRUE,8 oz,,,,,Wasabi-Peas-8oz
 TT-WasabiPeas-Original,TT-bite-bold-coated-crispy,,FALSE,,,,,,,
 TT-WaxBottles-Assorted,CandyWax-Bottles-1lb,1lb,TRUE,1 lb,,,CandyWax-Bottles-1lb,,,
 TT-WaxBottles-Assorted,CandyWax-Bottles-1lb.,1lb,FALSE,1 lb,,,CandyWax-Bottles-1lb.,,,
-TT-WaxBottles-Assorted,CandyWax-Bottles-8oz,8oz,FALSE,8 oz,,,CandyWax-Bottles-8oz,,,
-TT-WaxBottles-Assorted,CandyWax-Bottles-8oz-2PK,2pk|8oz,FALSE,8 oz,,,,,CandyWax-Bottles-8oz-2PK,CandyWax-Bottles-8oz-2PK
+TT-WaxBottles-Assorted,CandyWax-Bottles-8oz,8oz,FALSE,8 oz,7.99,,CandyWax-Bottles-8oz,,,
+TT-WaxBottles-Assorted,CandyWax-Bottles-8oz-2PK,2pk|8oz,FALSE,8 oz,14.99,,,,CandyWax-Bottles-8oz-2PK,CandyWax-Bottles-8oz-2PK
 TT-WaxBottles-Assorted,WaxBottle-8oz-2PK,2pk|8oz,FALSE,8 oz,,,,,WaxBottle-8oz-2PK,
 TT-WaxBottles-Assorted,CandyWax-Bottles-8oz-1PK,1pk|8oz,FALSE,8 oz,,,,,CandyWax-Bottles-8oz-1PK,CandyWax-Bottles-8oz-1PK
 TT-WaxBottles-Assorted,WaxBottle-8oz-1PK,1pk|8oz,FALSE,8 oz,,,,,WaxBottle-8oz-1PK,

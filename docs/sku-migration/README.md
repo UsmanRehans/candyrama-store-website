@@ -50,7 +50,7 @@ Columns: `slug, sku, name, brand, product_family, flavor, candyrama_category, ca
 **`candyrama_variants_import.csv`** — 1,076 variants (size/pack leaves).
 Columns: `product_sku, variant_sku, size_sig, is_default, net_weight, price_usd, stock_qty, amazon_skus, shopify_skus, tiktok_skus, temu_skus`.
 - `variant_sku` = the **real leaf SKU, verbatim.** `size_sig` parsed from it (weight/pack tokens only — allowed by the spine's "size tokens may come from strings" rule).
-- `net_weight` derived from `size_sig` where possible; `price_usd` + `stock_qty` **blank** (no reliable source — cost/retail pricing is a business decision; on-hand isn't in the spine).
+- `net_weight` derived from `size_sig` where possible; `stock_qty` is **blank** because on-hand isn't in the spine. `price_usd` is populated only for exact, unambiguous live-store SKU matches documented in `PRICE-BACKFILL.md`; unmatched prices remain blank.
 - `amazon/shopify/tiktok/temu_skus` = which channels carry that exact leaf (reconciliation).
 
 **`twistedtreatz-master-sku-catalog.csv`** — the full 842-master cross-channel catalog (all brands, incl. `Other (IP)` resale), revenue/units excluded. Reference for the whole company.

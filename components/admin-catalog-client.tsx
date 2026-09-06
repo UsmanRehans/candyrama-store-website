@@ -4,6 +4,7 @@ import type { Session } from '@supabase/supabase-js';
 import { Download, RefreshCw, Upload } from 'lucide-react';
 import Link from 'next/link';
 import { getSupabaseBrowser } from '@/lib/supabase-browser';
+import { AdminProductBrowser } from './admin-product-browser';
 
 export function AdminCatalogClient() {
   const [session, setSession] = useState<Session | null>(null);
@@ -62,6 +63,24 @@ export function AdminCatalogClient() {
     } catch (error) {
       setMessage(
         error instanceof Error ? error.message : 'Integration check failed.',
+      );
+    }
+    setBusy(false);
+  }
+  async function testResend() {
+    setBusy(true);
+    setMessage('');
+    try {
+      const response = await authorizedFetch(
+        '/api/v1/admin/integrations/resend/test',
+        { method: 'POST' },
+      );
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error);
+      setMessage(`Test email sent to ${session?.user.email}.`);
+    } catch (error) {
+      setMessage(
+        error instanceof Error ? error.message : 'Resend test failed.',
       );
     }
     setBusy(false);
@@ -205,6 +224,15 @@ export function AdminCatalogClient() {
                 {integrations.carriers.join(', ')}
               </p>
             )}
+            <div className="admin-actions">
+              <button
+                className="button secondary"
+                disabled={busy}
+                onClick={() => void testResend()}
+              >
+                Send Resend test email
+              </button>
+            </div>
           </section>
         )}
         <section className="catalog-admin-section">
@@ -236,6 +264,7 @@ export function AdminCatalogClient() {
             </label>
           </div>
         </section>
+        <AdminProductBrowser token={session.access_token} />
         <div className="admin-note">
           <strong>Images stay separate.</strong>
           <p>

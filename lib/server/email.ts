@@ -21,12 +21,21 @@ async function send(message: {
   if (!env.RESEND_API_KEY)
     return { sent: false as const, reason: 'not_configured' as const };
   const resend = new Resend(env.RESEND_API_KEY);
-  const { error } = await resend.emails.send({
+  const { data, error } = await resend.emails.send({
     from: env.EMAIL_FROM,
+    replyTo: message.replyTo ?? env.EMAIL_REPLY_TO,
     ...message,
   });
   if (error) throw new Error(`Resend rejected the email: ${error.message}`);
-  return { sent: true as const };
+  return { sent: true as const, id: data?.id };
+}
+
+export async function sendIntegrationTest(to: string) {
+  return send({
+    to,
+    subject: 'CandyRama email integration is working',
+    html: `<div style="font-family:Arial,sans-serif;color:#4e0f34"><h1>Sweet — email is connected!</h1><p>This test confirms that CandyRama can send transactional email through Resend.</p><p>No action is needed.</p></div>`,
+  });
 }
 
 export async function sendOrderConfirmation(order: {

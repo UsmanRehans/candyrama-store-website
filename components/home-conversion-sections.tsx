@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import Link from "next/link";
-import { SyntheticEvent, useMemo, useState } from "react";
-import { ArrowRight, Gift, Shuffle, Sparkles, Star } from "lucide-react";
-import type { StorefrontProduct } from "@/lib/products";
-import { useCart } from "./cart-provider";
+import Image from 'next/image';
+import Link from 'next/link';
+import { SyntheticEvent, useMemo, useState } from 'react';
+import { ArrowRight, Gift, Shuffle, Sparkles, Star } from 'lucide-react';
+import type { StorefrontProduct } from '@/lib/products';
+import { useCart } from './cart-provider';
 
 const cravings = [
-  { name: "Sour", line: "Pucker up", color: "pink" },
-  { name: "Sweet", line: "Pure happy", color: "yellow" },
-  { name: "Spicy", line: "Bring the heat", color: "orange" },
-  { name: "Crunchy", line: "Hear that snap", color: "sky" },
+  { name: 'Sour', line: 'Pucker up', color: 'pink' },
+  { name: 'Sweet', line: 'Pure happy', color: 'yellow' },
+  { name: 'Spicy', line: 'Bring the heat', color: 'orange' },
+  { name: 'Crunchy', line: 'Hear that snap', color: 'sky' },
 ];
 
 export function HomeConversionSections({
@@ -21,9 +21,9 @@ export function HomeConversionSections({
 }) {
   const { add } = useCart();
   const [box, setBox] = useState<string[]>([]);
-  const [boxNotice, setBoxNotice] = useState("");
-  const [email, setEmail] = useState("");
-  const [signupMessage, setSignupMessage] = useState("");
+  const [boxNotice, setBoxNotice] = useState('');
+  const [email, setEmail] = useState('');
+  const [signupMessage, setSignupMessage] = useState('');
   const [signupBusy, setSignupBusy] = useState(false);
   const builderProducts = products.slice(0, 6);
   const boxTotal = useMemo(
@@ -44,7 +44,7 @@ export function HomeConversionSections({
   }
 
   function toggleBox(slug: string) {
-    setBoxNotice("");
+    setBoxNotice('');
     setBox((current) =>
       current.includes(slug)
         ? current.filter((item) => item !== slug)
@@ -57,7 +57,7 @@ export function HomeConversionSections({
   function addBox() {
     if (box.length !== 4) {
       setBoxNotice(
-        `Pick ${4 - box.length} more ${box.length === 3 ? "treat" : "treats"} first.`,
+        `Pick ${4 - box.length} more ${box.length === 3 ? 'treat' : 'treats'} first.`,
       );
       return;
     }
@@ -71,28 +71,30 @@ export function HomeConversionSections({
     readyToAdd.forEach((product) => add(product.variantSku));
     setBoxNotice(
       readyToAdd.length === 4
-        ? "Your candy box is in the bag!"
-        : "Your box looks good. Ordering opens soon.",
+        ? 'Your candy box is in the bag!'
+        : 'Your box looks good. Ordering opens soon.',
     );
   }
 
   async function subscribe(event: SyntheticEvent<HTMLFormElement>) {
     event.preventDefault();
     setSignupBusy(true);
-    setSignupMessage("");
+    setSignupMessage('');
     try {
-      const response = await fetch("/api/v1/newsletter", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source: "homepage" }),
+      const response = await fetch('/api/v1/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, source: 'homepage' }),
       });
       const result = await response.json();
-      if (!response.ok) throw new Error(result.error ?? "Signup failed.");
-      setSignupMessage("You’re on the sweet list!");
-      setEmail("");
+      if (!response.ok) throw new Error(result.error ?? 'Signup failed.');
+      setSignupMessage(
+        'You’re in! Use SWEETSTART for buy one, get one free on your first order.',
+      );
+      setEmail('');
     } catch (error) {
       setSignupMessage(
-        error instanceof Error ? error.message : "Signup failed.",
+        error instanceof Error ? error.message : 'Signup failed.',
       );
     } finally {
       setSignupBusy(false);
@@ -155,14 +157,14 @@ export function HomeConversionSections({
               onClick={() => toggleBox(product.slug)}
               className={
                 box.includes(product.slug)
-                  ? "builder-product selected"
-                  : "builder-product"
+                  ? 'builder-product selected'
+                  : 'builder-product'
               }
               key={product.slug}
             >
               <Image src={product.image} alt="" width={90} height={90} />
               <span>{product.name}</span>
-              <b>{box.includes(product.slug) ? "Picked" : "Pick me"}</b>
+              <b>{box.includes(product.slug) ? 'Picked' : 'Pick me'}</b>
             </button>
           ))}
         </div>
@@ -348,7 +350,10 @@ export function HomeConversionSections({
         <div>
           <p className="eyebrow">JOIN THE SUGAR RUSH</p>
           <h2>New drops. First dibs.</h2>
-          <p>Get launch news, fresh flavors, and the occasional sweet deal.</p>
+          <p>
+            Get launch news, fresh flavors, and buy one, get one free on your
+            first order.
+          </p>
         </div>
         <form onSubmit={subscribe}>
           <label htmlFor="candy-email">Email address</label>
@@ -362,10 +367,14 @@ export function HomeConversionSections({
               required
             />
             <button className="button primary" disabled={signupBusy}>
-              {signupBusy ? "Joining…" : "Join the list"}
+              {signupBusy ? 'Joining…' : 'Join the list'}
             </button>
           </div>
           {signupMessage && <output>{signupMessage}</output>}
+          <small>
+            By signing up, you agree to receive CandyRama emails. Unsubscribe
+            anytime.
+          </small>
         </form>
       </section>
     </>

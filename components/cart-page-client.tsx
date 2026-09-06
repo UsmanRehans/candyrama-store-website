@@ -1,9 +1,9 @@
-"use client";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
-import { useCart } from "./cart-provider";
-import type { StorefrontProduct } from "@/lib/products";
+'use client';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
+import { useCart } from './cart-provider';
+import type { StorefrontProduct } from '@/lib/products';
 
 export function CartPageClient({
   products,
@@ -11,13 +11,14 @@ export function CartPageClient({
   products: StorefrontProduct[];
 }) {
   const { items, setQuantity } = useCart();
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [isGift, setIsGift] = useState(false);
-  const [giftRecipientName, setGiftRecipientName] = useState("");
-  const [giftMessage, setGiftMessage] = useState("");
-  const [referralCode, setReferralCode] = useState("");
+  const [giftRecipientName, setGiftRecipientName] = useState('');
+  const [giftMessage, setGiftMessage] = useState('');
+  const [referralCode, setReferralCode] = useState('');
+  const [discountCode, setDiscountCode] = useState('');
   const [useRewards, setUseRewards] = useState(false);
   const lines = items.flatMap((item) => {
     const product = products.find(
@@ -31,27 +32,28 @@ export function CartPageClient({
   );
   async function checkout() {
     setLoading(true);
-    setError("");
+    setError('');
     try {
-      const response = await fetch("/api/v1/checkout", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch('/api/v1/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           items,
           email: email || undefined,
           giftRecipientName: isGift ? giftRecipientName : undefined,
           giftMessage: isGift ? giftMessage : undefined,
           referralCode: referralCode || undefined,
+          discountCode: discountCode || undefined,
           useRewards,
         }),
       });
       const result = await response.json();
       if (!response.ok || !result.data?.checkoutUrl)
-        throw new Error(result.error ?? "Checkout is unavailable.");
+        throw new Error(result.error ?? 'Checkout is unavailable.');
       window.location.assign(result.data.checkoutUrl);
     } catch (cause) {
       setError(
-        cause instanceof Error ? cause.message : "Checkout is unavailable.",
+        cause instanceof Error ? cause.message : 'Checkout is unavailable.',
       );
       setLoading(false);
     }
@@ -107,7 +109,7 @@ export function CartPageClient({
             </p>
             <p>
               <span>Shipping</span>
-              <strong>{subtotal >= 5000 ? "Free" : "$5.99"}</strong>
+              <strong>{subtotal >= 5000 ? 'Free' : '$5.99'}</strong>
             </p>
             <small>Taxes are calculated securely at checkout.</small>
             <label>
@@ -117,6 +119,17 @@ export function CartPageClient({
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
                 placeholder="you@example.com"
+              />
+            </label>
+            <label>
+              Offer code
+              <input
+                value={discountCode}
+                onChange={(event) =>
+                  setDiscountCode(event.target.value.toUpperCase())
+                }
+                maxLength={24}
+                placeholder="SWEETSTART"
               />
             </label>
             <label className="cart-check">
@@ -185,7 +198,7 @@ export function CartPageClient({
               disabled={loading}
               onClick={checkout}
             >
-              {loading ? "Opening checkout…" : "Secure checkout"}
+              {loading ? 'Opening checkout…' : 'Secure checkout'}
             </button>
           </aside>
         </div>

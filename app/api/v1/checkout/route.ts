@@ -1,16 +1,17 @@
-import { NextRequest, NextResponse } from "next/server";
-import { Prisma } from "@prisma/client";
-import { checkoutSchema } from "@/lib/schemas/commerce";
-import { db } from "@/lib/server/db";
-import { env } from "@/lib/server/env";
-import { getStripe } from "@/lib/server/stripe";
+import { NextRequest, NextResponse } from 'next/server';
+import { randomUUID } from 'node:crypto';
+import { Prisma } from '@prisma/client';
+import { checkoutSchema } from '@/lib/schemas/commerce';
+import { db } from '@/lib/server/db';
+import { env } from '@/lib/server/env';
+import { getStripe } from '@/lib/server/stripe';
 
 export async function POST(request: NextRequest) {
   let reservedAttemptId: string | undefined;
   try {
     if (!env.STORE_PURCHASING_ENABLED)
       return NextResponse.json(
-        { error: "CandyRama ordering is coming soon." },
+        { error: 'CandyRama ordering is coming soon.' },
         { status: 503 },
       );
     const body = checkoutSchema.parse(await request.json());
@@ -27,20 +28,20 @@ export async function POST(request: NextRequest) {
         active: true,
         priceCents: { not: null },
         stockQty: { not: null },
-        product: { status: "ACTIVE" },
+        product: { status: 'ACTIVE' },
       },
       include: { product: true },
     });
     if (variants.length !== variantSkus.length)
       return NextResponse.json(
-        { error: "One or more products are unavailable." },
+        { error: 'One or more products are unavailable.' },
         { status: 409 },
       );
 
     const cart = variants.map((variant) => {
       const { product } = variant;
       if (variant.priceCents === null || variant.stockQty === null)
-        throw new Error("VARIANT_INCOMPLETE");
+        throw new Error('VARIANT_INCOMPLETE');
       return {
         productId: product.id,
         variantId: variant.id,
@@ -63,6 +64,45 @@ export async function POST(request: NextRequest) {
           select: { id: true, email: true, rewardPoints: true },
         })
       : null;
+    const discountCode = body.discountCode || null;
+    const usesSignupOffer = discountCode === 'SWEETSTART';
+    if (discountCode && !usesSignupOffer)
+      return NextResponse.json(
+        { error: 'That offer code is not valid.' },
+        { status: 400 },
+      );
+    if (usesSignupOffer && !body.email)
+      return NextResponse.json(
+        { error: 'Enter your signup email to use SWEETSTART.' },
+        { status: 400 },
+      );
+    if (usesSignupOffer && body.useRewards)
+      return NextResponse.json(
+        { error: 'Choose SWEETSTART or Sugar Points for this order.' },
+        { status: 400 },
+      );
+    if (
+      usesSignupOffer &&
+      cart.reduce((sum, item) => sum + item.quantity, 0) < 2
+    )
+      return NextResponse.json(
+        { error: 'Add at least two treats to use SWEETSTART.' },
+        { status: 400 },
+      );
+    if (usesSignupOffer) {
+      const [subscriber, priorOrders] = await Promise.all([
+        db.newsletterSubscriber.findUnique({
+          where: { email: body.email!.toLowerCase() },
+          select: { active: true, offerRedeemedAt: true },
+        }),
+        db.order.count({ where: { email: body.email!.toLowerCase() } }),
+      ]);
+      if (!subscriber?.active || subscriber.offerRedeemedAt || priorOrders > 0)
+        return NextResponse.json(
+          { error: 'SWEETSTART is for a subscriber’s first order.' },
+          { status: 400 },
+        );
+    }
     const referral = body.referralCode
       ? await db.customer.findUnique({
           where: { referralCode: body.referralCode },
@@ -74,7 +114,7 @@ export async function POST(request: NextRequest) {
       (!referral || referral.email === body.email?.toLowerCase())
     )
       return NextResponse.json(
-        { error: "That referral code cannot be used." },
+        { error: 'That referral code cannot be used.' },
         { status: 400 },
       );
     const rewardPointsRedeemed =
@@ -82,6 +122,9 @@ export async function POST(request: NextRequest) {
         ? Math.min(customer.rewardPoints, Math.floor(subtotalCents / 5))
         : 0;
     const rewardDiscountCents = rewardPointsRedeemed * 5;
+    const promotionDiscountCents = usesSignupOffer
+      ? Math.min(...cart.map((item) => item.priceCents))
+      : 0;
     const shippingCents = subtotalCents >= 5000 ? 0 : 599;
     const expiresAt = new Date(Date.now() + 30 * 60 * 1000);
     const stripe = getStripe();
@@ -91,13 +134,14 @@ export async function POST(request: NextRequest) {
         const price = await stripe.prices.retrieve(item.stripePriceId);
         if (
           !price.active ||
-          price.currency !== "usd" ||
+          price.currency !== 'usd' ||
           price.unit_amount !== item.priceCents
         )
-          throw new Error("STRIPE_PRICE_MISMATCH");
+          throw new Error('STRIPE_PRICE_MISMATCH');
       }),
     );
 
+    const attemptId = randomUUID();
     const attempt = await db.$transaction(
       async (tx) => {
         for (const item of cart) {
@@ -110,13 +154,13 @@ export async function POST(request: NextRequest) {
             },
             data: { stockQty: { decrement: item.quantity } },
           });
-          if (updated.count !== 1) throw new Error("OUT_OF_STOCK");
+          if (updated.count !== 1) throw new Error('OUT_OF_STOCK');
           await tx.stockMovement.create({
             data: {
               productId: item.productId,
               variantId: item.variantId,
               delta: -item.quantity,
-              reason: "CHECKOUT_RESERVED",
+              reason: 'CHECKOUT_RESERVED',
             },
           });
         }
@@ -128,10 +172,30 @@ export async function POST(request: NextRequest) {
             },
             data: { rewardPoints: { decrement: rewardPointsRedeemed } },
           });
-          if (reserved.count !== 1) throw new Error("REWARDS_CHANGED");
+          if (reserved.count !== 1) throw new Error('REWARDS_CHANGED');
+        }
+        if (usesSignupOffer) {
+          const reserved = await tx.newsletterSubscriber.updateMany({
+            where: {
+              email: body.email!.toLowerCase(),
+              active: true,
+              offerRedeemedAt: null,
+              OR: [
+                { offerReservedAttemptId: null },
+                { offerReservedUntil: { lt: new Date() } },
+                { offerReservedAttemptId: attemptId },
+              ],
+            },
+            data: {
+              offerReservedAttemptId: attemptId,
+              offerReservedUntil: expiresAt,
+            },
+          });
+          if (reserved.count !== 1) throw new Error('OFFER_UNAVAILABLE');
         }
         return tx.checkoutAttempt.create({
           data: {
+            id: attemptId,
             email: body.email?.toLowerCase(),
             items: cart,
             subtotalCents,
@@ -141,6 +205,8 @@ export async function POST(request: NextRequest) {
             referralCode: body.referralCode || null,
             useRewards: body.useRewards,
             rewardPointsRedeemed,
+            discountCode,
+            promotionDiscountCents,
             expiresAt,
           },
         });
@@ -149,20 +215,26 @@ export async function POST(request: NextRequest) {
     );
     reservedAttemptId = attempt.id;
 
-    const rewardCoupon =
-      rewardDiscountCents > 0
+    const checkoutDiscountCents = Math.max(
+      rewardDiscountCents,
+      promotionDiscountCents,
+    );
+    const checkoutCoupon =
+      checkoutDiscountCents > 0
         ? await stripe.coupons.create({
-            amount_off: rewardDiscountCents,
-            currency: "usd",
-            duration: "once",
-            name: "CandyRama rewards",
+            amount_off: checkoutDiscountCents,
+            currency: 'usd',
+            duration: 'once',
+            name: usesSignupOffer
+              ? 'CandyRama SWEETSTART BOGO'
+              : 'CandyRama rewards',
             metadata: { checkoutAttemptId: attempt.id },
           })
         : null;
 
     const session = await stripe.checkout.sessions.create(
       {
-        mode: "payment",
+        mode: 'payment',
         customer_email: body.email,
         client_reference_id: attempt.id,
         line_items: cart.map((item) =>
@@ -171,7 +243,7 @@ export async function POST(request: NextRequest) {
             : {
                 quantity: item.quantity,
                 price_data: {
-                  currency: "usd",
+                  currency: 'usd',
                   unit_amount: item.priceCents,
                   product_data: {
                     name: item.name,
@@ -180,34 +252,35 @@ export async function POST(request: NextRequest) {
                 },
               },
         ),
-        shipping_address_collection: { allowed_countries: ["US"] },
+        shipping_address_collection: { allowed_countries: ['US'] },
         shipping_options: [
           {
             shipping_rate_data: {
-              type: "fixed_amount",
-              fixed_amount: { amount: shippingCents, currency: "usd" },
+              type: 'fixed_amount',
+              fixed_amount: { amount: shippingCents, currency: 'usd' },
               display_name:
                 shippingCents === 0
-                  ? "Free standard shipping"
-                  : "USPS Ground Advantage",
+                  ? 'Free standard shipping'
+                  : 'USPS Ground Advantage',
               delivery_estimate: {
-                minimum: { unit: "business_day", value: 3 },
-                maximum: { unit: "business_day", value: 5 },
+                minimum: { unit: 'business_day', value: 3 },
+                maximum: { unit: 'business_day', value: 5 },
               },
             },
           },
         ],
         automatic_tax: { enabled: true },
-        allow_promotion_codes: !rewardCoupon,
-        discounts: rewardCoupon ? [{ coupon: rewardCoupon.id }] : undefined,
+        allow_promotion_codes: !checkoutCoupon,
+        discounts: checkoutCoupon ? [{ coupon: checkoutCoupon.id }] : undefined,
         success_url: `${env.NEXT_PUBLIC_SITE_URL}/order/confirmed?session_id={CHECKOUT_SESSION_ID}`,
         cancel_url: `${env.NEXT_PUBLIC_SITE_URL}/cart?checkout=cancelled`,
         expires_at: Math.floor(expiresAt.getTime() / 1000),
         metadata: {
           checkoutAttemptId: attempt.id,
-          giftRecipientName: body.giftRecipientName ?? "",
-          giftMessage: body.giftMessage ?? "",
-          referralCode: body.referralCode ?? "",
+          giftRecipientName: body.giftRecipientName ?? '',
+          giftMessage: body.giftMessage ?? '',
+          referralCode: body.referralCode ?? '',
+          discountCode: discountCode ?? '',
         },
       },
       { idempotencyKey: attempt.id },
@@ -230,7 +303,7 @@ export async function POST(request: NextRequest) {
             });
             if (
               !attempt ||
-              attempt.status !== "OPEN" ||
+              attempt.status !== 'OPEN' ||
               attempt.stripeSessionId
             )
               return;
@@ -249,7 +322,7 @@ export async function POST(request: NextRequest) {
                   productId: item.productId,
                   variantId: item.variantId,
                   delta: item.quantity,
-                  reason: "CHECKOUT_CREATE_FAILED",
+                  reason: 'CHECKOUT_CREATE_FAILED',
                 },
               });
             }
@@ -260,43 +333,59 @@ export async function POST(request: NextRequest) {
                   rewardPoints: { increment: attempt.rewardPointsRedeemed },
                 },
               });
+            if (attempt.discountCode === 'SWEETSTART' && attempt.email)
+              await tx.newsletterSubscriber.updateMany({
+                where: {
+                  email: attempt.email,
+                  offerReservedAttemptId: attempt.id,
+                },
+                data: {
+                  offerReservedAttemptId: null,
+                  offerReservedUntil: null,
+                },
+              });
             await tx.checkoutAttempt.update({
               where: { id: attempt.id },
-              data: { status: "FAILED" },
+              data: { status: 'FAILED' },
             });
           },
           { isolationLevel: Prisma.TransactionIsolationLevel.Serializable },
         );
       } catch (releaseError) {
-        console.error("checkout_reservation_release_failed", {
+        console.error('checkout_reservation_release_failed', {
           reservedAttemptId,
           releaseError,
         });
       }
     }
-    if (error instanceof Error && error.message === "OUT_OF_STOCK")
+    if (error instanceof Error && error.message === 'OUT_OF_STOCK')
       return NextResponse.json(
-        { error: "A product just sold out. Please update your cart." },
+        { error: 'A product just sold out. Please update your cart.' },
         { status: 409 },
       );
-    if (error instanceof Error && error.message === "STRIPE_PRICE_MISMATCH")
+    if (error instanceof Error && error.message === 'STRIPE_PRICE_MISMATCH')
       return NextResponse.json(
-        { error: "A product price is temporarily unavailable." },
+        { error: 'A product price is temporarily unavailable.' },
         { status: 409 },
       );
-    if (error instanceof Error && error.message === "REWARDS_CHANGED")
+    if (error instanceof Error && error.message === 'REWARDS_CHANGED')
       return NextResponse.json(
-        { error: "Your reward balance changed. Please try again." },
+        { error: 'Your reward balance changed. Please try again.' },
         { status: 409 },
       );
-    if (error && typeof error === "object" && "issues" in error)
+    if (error instanceof Error && error.message === 'OFFER_UNAVAILABLE')
       return NextResponse.json(
-        { error: "Invalid checkout request." },
+        { error: 'SWEETSTART is already in use or has been redeemed.' },
+        { status: 409 },
+      );
+    if (error && typeof error === 'object' && 'issues' in error)
+      return NextResponse.json(
+        { error: 'Invalid checkout request.' },
         { status: 400 },
       );
-    console.error("checkout_failed", error);
+    console.error('checkout_failed', error);
     return NextResponse.json(
-      { error: "Checkout is temporarily unavailable." },
+      { error: 'Checkout is temporarily unavailable.' },
       { status: 503 },
     );
   }

@@ -346,22 +346,24 @@ model WebhookEvent {
 }
 
 model CheckoutAttempt {
-  id                   String    @id @default(cuid())
-  stripeSessionId      String?   @unique
-  status               String    @default("OPEN")
-  email                String?
-  items                Json
-  subtotalCents        Int
-  shippingCents        Int
-  giftRecipientName    String?
-  giftMessage          String?
-  referralCode         String?
-  useRewards           Boolean   @default(false)
-  rewardPointsRedeemed Int       @default(0)
-  expiresAt            DateTime
-  completedAt          DateTime?
-  createdAt            DateTime  @default(now())
-  updatedAt            DateTime  @updatedAt
+  id                     String    @id @default(cuid())
+  stripeSessionId        String?   @unique
+  status                 String    @default("OPEN")
+  email                  String?
+  items                  Json
+  subtotalCents          Int
+  shippingCents          Int
+  giftRecipientName      String?
+  giftMessage            String?
+  referralCode           String?
+  useRewards             Boolean   @default(false)
+  rewardPointsRedeemed   Int       @default(0)
+  discountCode           String?
+  promotionDiscountCents Int       @default(0)
+  expiresAt              DateTime
+  completedAt            DateTime?
+  createdAt              DateTime  @default(now())
+  updatedAt              DateTime  @updatedAt
 
   @@index([status, expiresAt])
 }
@@ -397,12 +399,19 @@ model Referral {
 }
 
 model NewsletterSubscriber {
-  id        String   @id @default(cuid())
-  email     String   @unique
-  source    String   @default("homepage")
-  active    Boolean  @default(true)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id                     String    @id @default(cuid())
+  email                  String    @unique
+  source                 String    @default("homepage")
+  active                 Boolean   @default(true)
+  consentedAt            DateTime  @default(now())
+  offerReservedAttemptId String?
+  offerReservedUntil     DateTime?
+  offerRedeemedAt        DateTime?
+  createdAt              DateTime  @default(now())
+  updatedAt              DateTime  @updatedAt
+
+  @@index([active, offerRedeemedAt])
+  @@index([offerReservedUntil])
 }
 
 model AuditLog {

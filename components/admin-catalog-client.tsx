@@ -1,7 +1,15 @@
 'use client';
 import { useEffect, useState } from 'react';
 import type { Session } from '@supabase/supabase-js';
-import { Download, RefreshCw, Upload } from 'lucide-react';
+import {
+  Boxes,
+  Download,
+  ExternalLink,
+  LogOut,
+  RefreshCw,
+  ShoppingBag,
+  Upload,
+} from 'lucide-react';
 import Link from 'next/link';
 import { getSupabaseBrowser } from '@/lib/supabase-browser';
 import { AdminProductBrowser } from './admin-product-browser';
@@ -177,115 +185,90 @@ export function AdminCatalogClient() {
       </main>
     );
   return (
-    <main className="admin-shell">
-      <section className="admin-card wide">
-        <p className="eyebrow">CANDYRAMA ADMIN</p>
-        <div className="admin-title-row">
+    <main className="admin-dashboard">
+      <aside className="admin-sidebar">
+        <div className="admin-sidebar-brand">CandyRama</div>
+        <nav aria-label="Admin navigation">
+          <Link className="active" href="/admin/catalog">
+            <Boxes /> Catalog
+          </Link>
+          <Link href="/admin/orders">
+            <ShoppingBag /> Orders
+          </Link>
+          <a href="https://thecandyrama.com" target="_blank" rel="noreferrer">
+            <ExternalLink /> View store
+          </a>
+        </nav>
+      </aside>
+      <section className="admin-workspace">
+        <header className="admin-topbar">
           <div>
-            <h1>Store operations</h1>
-            <p>
-              Catalog, integrations, and launch readiness in one protected
-              workspace.
-            </p>
+            <h1>Product catalog</h1>
+            <p>Search products, manage variants, and add images.</p>
           </div>
-          <div className="admin-nav">
-            <Link className="button secondary" href="/admin/orders">
-              Orders
-            </Link>
-            <button
-              className="button secondary"
-              disabled={busy}
-              onClick={() => void refreshIntegrations()}
-            >
-              <RefreshCw /> Refresh status
+          <div className="admin-account">
+            <span>{session.user.email}</span>
+            <button onClick={() => void getSupabaseBrowser().auth.signOut()}>
+              <LogOut /> Sign out
             </button>
           </div>
-        </div>
-        {integrations && (
-          <section className="integration-panel">
-            <div className="integration-heading">
-              <h2>Integrations</h2>
-              <span>
-                {integrations.catalog.products} products ·{' '}
-                {integrations.catalog.variants} variants
-              </span>
+        </header>
+        <div className="admin-workspace-content">
+          <section className="admin-toolbar" aria-label="Catalog tools">
+            <div>
+              <strong>{integrations?.catalog.products ?? '—'} products</strong>
+              <span>{integrations?.catalog.variants ?? '—'} variants</span>
             </div>
-            <div className="integration-grid">
-              {Object.entries(integrations.checks).map(([name, check]) => (
-                <article
-                  key={name}
-                  className={`integration-card ${check.status}`}
-                >
-                  <div>
-                    <span className="status-dot" />
-                    <strong>{name}</strong>
-                  </div>
-                  <p>{check.detail}</p>
-                </article>
-              ))}
-            </div>
-            {integrations.carriers.length > 0 && (
-              <p className="carrier-list">
-                <strong>Connected carriers:</strong>{' '}
-                {integrations.carriers.join(', ')}
-              </p>
-            )}
-            <div className="admin-actions">
+            <div className="admin-toolbar-actions">
+              <button disabled={busy} onClick={download}>
+                <Download /> Export
+              </button>
+              <label className={busy ? 'disabled' : ''}>
+                <Upload /> Import workbook
+                <input
+                  type="file"
+                  accept=".xlsx"
+                  disabled={busy}
+                  onChange={(event) => {
+                    const file = event.target.files?.[0];
+                    if (file) void upload(file);
+                    event.target.value = '';
+                  }}
+                />
+              </label>
               <button
-                className="button secondary"
                 disabled={busy}
-                onClick={() => void testResend()}
+                onClick={() => void refreshIntegrations()}
               >
-                Send Resend test email
+                <RefreshCw /> Refresh
               </button>
             </div>
           </section>
-        )}
-        <section className="catalog-admin-section">
-          <h2>Product catalog</h2>
-          <p>
-            Download the current catalog, edit it in Excel, then upload the same
-            workbook. Imports are validated and recorded in the audit log.
-          </p>
-          <div className="admin-actions">
-            <button
-              className="button secondary"
-              disabled={busy}
-              onClick={download}
-            >
-              <Download /> Download products + variants
-            </button>
-            <label className={`button primary${busy ? ' disabled' : ''}`}>
-              <Upload /> Upload edited workbook
-              <input
-                type="file"
-                accept=".xlsx"
-                disabled={busy}
-                onChange={(event) => {
-                  const file = event.target.files?.[0];
-                  if (file) void upload(file);
-                  event.target.value = '';
-                }}
-              />
-            </label>
-          </div>
-        </section>
-        <AdminProductBrowser token={session.access_token} />
-        <div className="admin-note">
-          <strong>Images stay separate.</strong>
-          <p>
-            Attach product images in your CandyRama chat. They can be cleaned,
-            approved, and uploaded without risking spreadsheet links or
-            accidental image replacement.
-          </p>
+          {integrations && (
+            <section className="admin-system-status">
+              <h2>System status</h2>
+              <div className="integration-grid">
+                {Object.entries(integrations.checks).map(([name, check]) => (
+                  <article
+                    key={name}
+                    className={`integration-card ${check.status}`}
+                  >
+                    <div>
+                      <span className="status-dot" />
+                      <strong>{name}</strong>
+                    </div>
+                    <p>{check.detail}</p>
+                  </article>
+                ))}
+              </div>
+              <button disabled={busy} onClick={() => void testResend()}>
+                Test email
+              </button>
+            </section>
+          )}
+          <AdminProductBrowser token={session.access_token} />
+          {message && <output className="admin-message">{message}</output>}
         </div>
-        {message && <output className="admin-message">{message}</output>}
-        <button
-          className="text-link"
-          onClick={() => void getSupabaseBrowser().auth.signOut()}
-        >
-          Sign out
-        </button>
       </section>
     </main>
   );

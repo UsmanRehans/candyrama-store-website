@@ -74,14 +74,13 @@ export async function POST(request: NextRequest) {
           db.order.count({ where: { email: body.email!.toLowerCase() } }),
         ])
       : [null, 0];
-    const usesSignupOffer = Boolean(
+    const hasSignupOffer = Boolean(
       body.email &&
       cartQuantity >= 2 &&
       subscriber?.active &&
       !subscriber.offerRedeemedAt &&
       priorOrders === 0,
     );
-    const discountCode = usesSignupOffer ? 'WELCOME_BOGO' : null;
     const referral = body.referralCode
       ? await db.customer.findUnique({
           where: { referralCode: body.referralCode },
@@ -96,14 +95,41 @@ export async function POST(request: NextRequest) {
         { error: 'That referral code cannot be used.' },
         { status: 400 },
       );
-    const rewardPointsRedeemed =
-      body.useRewards && customer && !usesSignupOffer
+    const availableRewardPoints =
+      body.useRewards && customer
         ? Math.min(customer.rewardPoints, Math.floor(subtotalCents / 5))
         : 0;
-    const rewardDiscountCents = rewardPointsRedeemed * 5;
-    const promotionDiscountCents = usesSignupOffer
+    const availableRewardDiscountCents = availableRewardPoints * 5;
+    const welcomeDiscountCents = hasSignupOffer
       ? Math.min(...cart.map((item) => item.priceCents))
       : 0;
+    const bundleDiscountCents =
+      cartQuantity >= 4 ? Math.round(subtotalCents * 0.15) : 0;
+    const checkoutDiscountCents = Math.max(
+      availableRewardDiscountCents,
+      welcomeDiscountCents,
+      bundleDiscountCents,
+    );
+    const usesSignupOffer =
+      welcomeDiscountCents > 0 &&
+      checkoutDiscountCents === welcomeDiscountCents;
+    const usesBundleOffer =
+      bundleDiscountCents > 0 &&
+      checkoutDiscountCents === bundleDiscountCents &&
+      !usesSignupOffer;
+    const rewardPointsRedeemed =
+      !usesSignupOffer && !usesBundleOffer ? availableRewardPoints : 0;
+    const rewardDiscountCents = rewardPointsRedeemed * 5;
+    const promotionDiscountCents = usesSignupOffer
+      ? welcomeDiscountCents
+      : usesBundleOffer
+        ? bundleDiscountCents
+        : 0;
+    const discountCode = usesSignupOffer
+      ? 'WELCOME_BOGO'
+      : usesBundleOffer
+        ? 'PICK_FOUR_15'
+        : null;
     const shippingCents = subtotalCents >= 5000 ? 0 : 599;
     const expiresAt = new Date(Date.now() + 30 * 60 * 1000);
     const stripe = getStripe();
@@ -182,7 +208,7 @@ export async function POST(request: NextRequest) {
             giftRecipientName: body.giftRecipientName || null,
             giftMessage: body.giftMessage || null,
             referralCode: body.referralCode || null,
-            useRewards: body.useRewards && !usesSignupOffer,
+            useRewards: rewardPointsRedeemed > 0,
             rewardPointsRedeemed,
             discountCode,
             promotionDiscountCents,
@@ -194,10 +220,6 @@ export async function POST(request: NextRequest) {
     );
     reservedAttemptId = attempt.id;
 
-    const checkoutDiscountCents = Math.max(
-      rewardDiscountCents,
-      promotionDiscountCents,
-    );
     const checkoutCoupon =
       checkoutDiscountCents > 0
         ? await stripe.coupons.create({
@@ -206,7 +228,9 @@ export async function POST(request: NextRequest) {
             duration: 'once',
             name: usesSignupOffer
               ? 'CandyRama welcome BOGO'
-              : 'CandyRama rewards',
+              : usesBundleOffer
+                ? 'CandyRama four bag savings'
+                : 'CandyRama rewards',
             metadata: { checkoutAttemptId: attempt.id },
           })
         : null;

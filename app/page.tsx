@@ -1,11 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, MapPin, Star } from 'lucide-react';
+import { ArrowRight, Gift, PackageCheck, Sparkles, Star } from 'lucide-react';
 import { ProductCard } from '@/components/product-card';
 import { StoreFooter, StoreHeader } from '@/components/store-chrome';
 import { connection } from 'next/server';
 import { getStorefrontProducts } from '@/lib/server/catalog';
-import { HomeConversionSections } from '@/components/home-conversion-sections';
 
 export default async function Home() {
   await connection();
@@ -77,7 +76,47 @@ export default async function Home() {
           ))}
         </div>
       </section>
-      <HomeConversionSections products={products} />
+      <section className="home-pick-four">
+        <div>
+          <p className="eyebrow">THE FOUR BAG BOX</p>
+          <h2>
+            Four favorites.
+            <br />
+            15% happier.
+          </h2>
+          <p>Pick any four bags and we will take 15% off automatically.</p>
+          <Link href="/pick-four" className="button primary">
+            Build my box <ArrowRight />
+          </Link>
+        </div>
+        <div className="home-box-art" aria-hidden="true">
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <Sparkles />
+        </div>
+      </section>
+      <section className="home-paths">
+        <Link href="/gifting">
+          <Gift />
+          <strong>Send a sweet gift</strong>
+          <span>Add a note at checkout.</span>
+          <ArrowRight />
+        </Link>
+        <Link href="/freshness-promise">
+          <PackageCheck />
+          <strong>Packed with care</strong>
+          <span>See how we keep every bag fresh.</span>
+          <ArrowRight />
+        </Link>
+        <Link href="/account">
+          <Star />
+          <strong>Come back for more</strong>
+          <span>Track orders and Sugar Points.</span>
+          <ArrowRight />
+        </Link>
+      </section>
       <section className="story-section" id="story">
         <div className="story-card">
           <p className="eyebrow">HOWDY, SWEET TOOTH!</p>
@@ -87,8 +126,8 @@ export default async function Home() {
             Big candy drama.
           </h2>
           <p>
-            We pack candy for people who always want one more handful. Every
-            bag brings the flavor. Boring bites can stay home.
+            We pack candy for people who always want one more handful. Every bag
+            brings the flavor. Boring bites can stay home.
           </p>
           <Link href="/about" className="button secondary">
             Read our story
@@ -102,16 +141,6 @@ export default async function Home() {
             sizes="(max-width: 800px) 100vw, 55vw"
           />
         </div>
-      </section>
-      <section className="find-section" id="find-us">
-        <div>
-          <MapPin />
-          <p className="eyebrow">CRAVING CANDYRAMA IRL?</p>
-          <h2>Find us near you.</h2>
-        </div>
-        <Link href="#find-us" className="button primary">
-          Find a stockist
-        </Link>
       </section>
       <StoreFooter />
     </main>

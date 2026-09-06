@@ -44,8 +44,8 @@ export function StoreHeaderClient() {
         </Link>
         <nav aria-label="Main navigation">
           <Link href="/shop">Shop</Link>
+          <Link href="/pick-four">Pick four</Link>
           <Link href="/about">Our story</Link>
-          <Link href="/#find-us">Find us</Link>
           <Link href="/wholesale">Wholesale</Link>
           <button type="button" onClick={openEmailSignup}>
             Join and save
@@ -85,11 +85,11 @@ export function StoreHeaderClient() {
           <Link href="/shop" onClick={closeMenu}>
             Shop candy
           </Link>
+          <Link href="/pick-four" onClick={closeMenu}>
+            Pick four and save
+          </Link>
           <Link href="/about" onClick={closeMenu}>
             Our story
-          </Link>
-          <Link href="/#find-us" onClick={closeMenu}>
-            Find us
           </Link>
           <Link href="/wholesale" onClick={closeMenu}>
             Wholesale

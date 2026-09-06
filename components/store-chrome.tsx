@@ -29,6 +29,8 @@ export function StoreFooter() {
       <nav className="footer-column" aria-label="Footer shop navigation">
         <h2>Shop</h2>
         <Link href="/shop">All candy</Link>
+        <Link href="/pick-four">Pick four and save</Link>
+        <Link href="/gifting">Gifting</Link>
         <Link href="/why-candyrama">Why CandyRama</Link>
         <Link href="/wholesale">Wholesale</Link>
       </nav>

@@ -29,6 +29,10 @@ export function CartPageClient({
     (sum, line) => sum + line.product.priceCents * line.quantity,
     0,
   );
+  const bundleDiscount =
+    items.reduce((sum, item) => sum + item.quantity, 0) >= 4
+      ? Math.round(subtotal * 0.15)
+      : 0;
   async function checkout() {
     setLoading(true);
     setError('');
@@ -105,6 +109,12 @@ export function CartPageClient({
               <span>Subtotal</span>
               <strong>${(subtotal / 100).toFixed(2)}</strong>
             </p>
+            {bundleDiscount > 0 && (
+              <p className="cart-saving">
+                <span>Four bag savings</span>
+                <strong>-${(bundleDiscount / 100).toFixed(2)}</strong>
+              </p>
+            )}
             <p>
               <span>Shipping</span>
               <strong>{subtotal >= 5000 ? 'Free' : '$5.99'}</strong>

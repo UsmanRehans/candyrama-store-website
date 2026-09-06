@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { AddToCartButton } from '@/components/add-to-cart-button';
+import { ProductOptions } from '@/components/product-options';
 import { StoreFooter, StoreHeader } from '@/components/store-chrome';
 import { connection } from 'next/server';
 import { getStorefrontProduct } from '@/lib/server/catalog';
@@ -40,14 +40,14 @@ export default async function ProductPage({
         <div className="product-detail-copy">
           <p className="eyebrow">{product.category} · PACKED BY HAND</p>
           <h1>{product.name}</h1>
-          <p className="detail-price">{product.price}</p>
+          <p className="detail-price">From {product.price}</p>
           <p className="detail-note">
             {product.note}. Packed by hand in Texas and ready for your candy
             stash.
           </p>
-          <AddToCartButton
-            variantSku={product.variantSku}
-            available={product.available}
+          <ProductOptions
+            variants={product.variants ?? []}
+            purchaseEnabled={product.purchaseEnabled ?? false}
           />
           <div className="product-facts">
             <strong>{product.netWeight ?? 'See package for net weight'}</strong>

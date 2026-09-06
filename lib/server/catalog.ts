@@ -4,6 +4,7 @@ import {
   products as designProducts,
   type StorefrontProduct,
 } from '@/lib/products';
+import { env } from './env';
 
 function categoryLabel(value: string) {
   return value
@@ -45,6 +46,19 @@ export async function getStorefrontProducts(): Promise<StorefrontProduct[]> {
       (product) => product.slug === record.slug,
     );
     const priceCents = variant.priceCents;
+    const variants = record.variants.flatMap((item) => {
+      if (item.priceCents === null || item.stockQty === null) return [];
+      return [
+        {
+          sku: item.sku,
+          label: item.netWeight ?? item.sizeSig ?? 'Standard',
+          price: `$${(item.priceCents / 100).toFixed(2)}`,
+          priceCents: item.priceCents,
+          netWeight: item.netWeight ?? undefined,
+          available: env.STORE_PURCHASING_ENABLED && item.stockQty > 0,
+        },
+      ];
+    });
     return [
       {
         slug: record.slug,
@@ -60,8 +74,10 @@ export async function getStorefrontProducts(): Promise<StorefrontProduct[]> {
         tone: design?.tone ?? toneFor(record.accentColor),
         badge: design?.badge,
         netWeight: variant.netWeight ?? undefined,
-        available: variant.stockQty > 0,
+        available: env.STORE_PURCHASING_ENABLED && variant.stockQty > 0,
         variantSku: variant.sku,
+        purchaseEnabled: env.STORE_PURCHASING_ENABLED,
+        variants,
       },
     ];
   });

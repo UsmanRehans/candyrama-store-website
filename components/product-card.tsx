@@ -2,17 +2,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
-import { useCart } from './cart-provider';
 import type { StorefrontProduct } from '@/lib/products';
 
 export function ProductCard({ product }: { product: StorefrontProduct }) {
-  const { add } = useCart();
-  const [added, setAdded] = useState(false);
+  const [notice, setNotice] = useState(false);
   function quickAdd() {
-    if (!product.variantSku) return;
-    add(product.variantSku);
-    setAdded(true);
-    window.setTimeout(() => setAdded(false), 1200);
+    setNotice(true);
+    window.setTimeout(() => setNotice(false), 1600);
   }
   return (
     <article className={`product-card ${product.tone}`}>
@@ -35,11 +31,10 @@ export function ProductCard({ product }: { product: StorefrontProduct }) {
       </div>
       <button
         className="quick-add"
-        disabled={!product.available || !product.variantSku}
         onClick={quickAdd}
       >
-        {!product.available ? 'Sold out' : added ? 'Added!' : 'Quick add'}{' '}
-        <span>{added ? '✓' : '+'}</span>
+        {notice ? 'Launching soon!' : 'Coming soon'}{' '}
+        <span>{notice ? '✓' : '✦'}</span>
       </button>
     </article>
   );

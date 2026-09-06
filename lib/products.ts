@@ -11,6 +11,17 @@ export type StorefrontProduct = {
   netWeight?: string;
   available?: boolean;
   variantSku?: string;
+  purchaseEnabled?: boolean;
+  variants?: StorefrontVariant[];
+};
+
+export type StorefrontVariant = {
+  sku: string;
+  label: string;
+  price: string;
+  priceCents: number;
+  netWeight?: string;
+  available: boolean;
 };
 
 export const products: StorefrontProduct[] = [

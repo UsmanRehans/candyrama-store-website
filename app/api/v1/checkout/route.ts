@@ -8,6 +8,11 @@ import { getStripe } from '@/lib/server/stripe';
 export async function POST(request: NextRequest) {
   let reservedAttemptId: string | undefined;
   try {
+    if (!env.STORE_PURCHASING_ENABLED)
+      return NextResponse.json(
+        { error: 'CandyRama ordering is coming soon.' },
+        { status: 503 },
+      );
     const body = checkoutSchema.parse(await request.json());
     const quantities = new Map<string, number>();
     for (const item of body.items)

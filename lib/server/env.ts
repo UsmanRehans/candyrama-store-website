@@ -21,6 +21,10 @@ const schema = z.object({
   NEXT_PUBLIC_SUPABASE_ANON_KEY: optionalSecret,
   SUPABASE_SERVICE_ROLE_KEY: optionalSecret,
   NEXT_PUBLIC_SITE_URL: z.url().default('http://localhost:3000'),
+  STORE_PURCHASING_ENABLED: z
+    .enum(['true', 'false'])
+    .default('false')
+    .transform((value) => value === 'true'),
   STRIPE_MODE: z.enum(['test', 'live']).default('test'),
   STRIPE_TEST_SECRET_KEY: optionalSecret,
   STRIPE_TEST_WEBHOOK_SECRET: optionalSecret,

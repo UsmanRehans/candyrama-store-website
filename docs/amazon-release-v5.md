@@ -24,4 +24,10 @@ Theo owns repository/release and live reliability checks; Cando integrates decis
 
 Local production build, TypeScript and scoped lint passed. Automated browser checks cover the three tabs at 1440px and 390px, successful image loads, no horizontal overflow, all four download responses, no client exceptions, and rejected unauthenticated protected-media access. Vita caught and corrected the square gallery enlargement; Lauren refined the closing copy to fit the pouch photograph.
 
-Live deployment verification is pending at the time of this release preparation; it will be recorded after the actual production checks.
+## Live verification complete
+
+Release commit `2d96d296d39ad8cdff53d17988d2c7dac053b241` deployed successfully through Vercel Git integration as `dpl_DPqmbfguHUyoU9tQZzxGyc7LhfV8`. Theo verified the Ready production alias at https://thecandyrama.com/amazon-demo.
+
+Authenticated live browser checks completed at 2026-09-13T21:36:41.788Z: all three views at 1440px and 390px, all images loaded, no horizontal overflow, four successful attachment downloads, no client exceptions, and HTTP401 for unauthenticated image access. Lauren and Vita each inspected all six actual live captures and passed the deployed demo. See `amazon-lauren-live-review-v5.md` and the postdeployment section of `amazon-vita-review-v5.md`.
+
+The following documentation-only commit records those results without changing reviewed application or image content. Current-label/ASIN validation for Amazon upload remains outside this website demo release.

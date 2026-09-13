@@ -109,3 +109,13 @@ The local Next development indicator is expected in these captures; verify it is
 ### Local gallery fix verification
 
 Viewed refreshed `local-gallery-desktop.png` and `local-gallery-mobile.png` after the native-size cap. **PASS both**: the 300px square is centered and no longer enlarged; captions and download links remain well separated and readable. This supersedes the gallery revise verdict. Vita's predeployment visual gate is clear. Live deployment screenshots still require review.
+
+## Postdeployment live visual QA — PASS
+
+September 13, 2026. Reviewed the authenticated live Chrome captures supplied by Cando for deployment commit `2d96d29` at **https://thecandyrama.com/amazon-demo**. The check record timestamp is `2026-09-13T21:36:41.788Z`. This review inspected actual captured live page pixels, not merely the previous local renders.
+
+Individually viewed all six `outputs/amazon-v5/live-*.png` files: Store, A+, and gallery at desktop 1440px and mobile 390px widths. **PASS all six.** Both Store pouches remain complete in the mobile header; A+ hero and square are intact; the close-up matches the approved candy window; gallery square remains capped and centered; native headlines and captions are readable without clipping; no development indicator appears. The updated “UP CLOSE. FULL COLOR.” and “TASTE THE TWIST.” headings fit their images. No visual release defect was found in these captures.
+
+Also read `outputs/amazon-v5/live-checks.json`: it reports loaded images, no horizontal overflow, four downloads, no page errors and HTTP 401 for unauthenticated media. Those functional checks were run by Cando's capture process; Vita independently reviewed their recorded results and all six images.
+
+Scope: accepted deployed **website creative demo**, with the existing product-visualization and label/SKU-verification notices. This is not Amazon publication, current-label certification, or a guarantee about untested viewports and interactions. The requested postdeployment visual gate is complete.

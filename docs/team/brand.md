@@ -11,7 +11,7 @@ Updated September 13, 2026. Read this before any team assignment. This is a work
 - Candy Rama is Texas-based according to the owner direction recorded in the research. Texas-based, Texas-owned, Texas-packed, and Texas-made are different claims.
 
 - September 13 owner update: no Amazon backend connection for now. Prepare creative and manual upload handoffs; do not build an Amazon integration.
-- Latest local packaging direction is the peach studio edit recorded in `docs/amazon-packaging-v4.md`; preserve this newer direction when reading older campaign notes.
+- Current deployed packaging direction is the smooth peach-studio revision 05 in `docs/amazon-release-v5.md`, with exact prompt/output review in `docs/amazon-vita-review-v5.md`. Revision 04 is historical; revision 05 removes distracting bends and corrects the slogan ribbon.
 
 - September 13 owner quality requirement: Vita reviews exact prompts before generation and personally inspects every output and final graphic against the brand before use or push. See `vita.md` for the review contract.
 

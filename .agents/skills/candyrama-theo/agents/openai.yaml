@@ -1,0 +1,4 @@
+interface:
+  display_name: "Theo \u2014 Candy Rama"
+  short_description: "Theo: Candy Rama ecommerce engineering"
+  default_prompt: "Use $candyrama-theo to help with this Candy Rama assignment."

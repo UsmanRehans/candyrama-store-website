@@ -1,0 +1,4 @@
+interface:
+  display_name: "Avery \u2014 Candy Rama"
+  short_description: "Avery: Candy Rama data and evidence"
+  default_prompt: "Use $candyrama-avery to help with this Candy Rama assignment."

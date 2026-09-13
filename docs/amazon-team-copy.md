@@ -61,3 +61,7 @@ Implement the concise copy above in the private review. Use packaging-peach-v4 a
 ## Cando integration decision
 
 Cando accepted the product-mismatch concern and is preparing a single left gummy-pouch hero from the owner photograph. Keep the two-pouch composition in the brand Store; use the single gummy pouch for the three-module product concept (hero, detail, occasion above). This remains an AI-assisted concept pending ASIN and product-identity verification. No claim is made that the detail/lifestyle assortment matches that SKU. This narrows the review direction without inventing product facts.
+
+## Final revision 05 editorial decision
+
+Cando adopted Lauren’s predeployment refinement for the current pouch-only set: module 1 “CANDY WITH MAIN CHARACTER ENERGY.” / “Make room for your next candy craving.”; module 2 “UP CLOSE. FULL COLOR.” / “Take a closer look at your next sweet pick.”; module 3 “TASTE THE TWIST.” / “Pick your craving. Bring the candy.” This avoids repeating energy and pairs the closing pouch with the packaging signature rather than an absent movie scene.

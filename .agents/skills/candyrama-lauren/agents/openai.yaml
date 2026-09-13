@@ -1,0 +1,4 @@
+interface:
+  display_name: "Lauren \u2014 Candy Rama"
+  short_description: "Lauren: Candy Rama voice and brand QA"
+  default_prompt: "Use $candyrama-lauren to help with this Candy Rama assignment."

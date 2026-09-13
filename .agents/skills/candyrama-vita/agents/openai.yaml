@@ -1,0 +1,4 @@
+interface:
+  display_name: "Vita \u2014 Candy Rama"
+  short_description: "Vita: Candy Rama visual design"
+  default_prompt: "Use $candyrama-vita to help with this Candy Rama assignment."

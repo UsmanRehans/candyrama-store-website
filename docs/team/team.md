@@ -18,3 +18,7 @@ Example requests: “Cando, have the team build the Amazon Store and A+ creative
 ## Lean staffing for the current phase
 
 Cando coordinates Lauren, Vita, and task-specific Avery research. Miles joins Amazon creative/specification tasks without needing an Amazon backend connection. Theo owns the repo and technical release checks; Zahid handles security. Nico is on demand for operational questions, not a required participant in creative work. Roles are loaded when useful; they are not permanent running workers.
+
+## Versioned skill entry points
+
+The seven Candy Rama skill entry points and their display metadata are stored in `.agents/skills/` in this repository. Shared role instructions and brand memory remain in `docs/team/`; keep these canonical rather than copying them into every skill. Personal installations may also exist in `~/.codex/skills/`. Zahid is an existing separately installed security skill; its source is not duplicated here.

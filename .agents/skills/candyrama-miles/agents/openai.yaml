@@ -1,0 +1,4 @@
+interface:
+  display_name: "Miles \u2014 Candy Rama"
+  short_description: "Miles: Candy Rama Amazon merchandising"
+  default_prompt: "Use $candyrama-miles to help with this Candy Rama assignment."

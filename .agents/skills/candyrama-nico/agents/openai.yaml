@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nico \u2014 Candy Rama"
+  short_description: "Nico: Candy Rama store operations"
+  default_prompt: "Use $candyrama-nico to help with this Candy Rama assignment."

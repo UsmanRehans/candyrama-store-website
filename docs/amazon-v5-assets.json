@@ -1,0 +1,60 @@
+{
+  "revision": 5,
+  "method": "Built-in image generation with Vita prompt and output review; proportional Sharp export/crops",
+  "promptAndReviewRecord": "docs/amazon-vita-review-v5.md",
+  "copyRecord": "docs/amazon-team-copy.md",
+  "assets": [
+    {
+      "filename": "store-pouches-v5.jpg",
+      "module": "Store header hero",
+      "product": "Brand range, two separate products",
+      "source": "masters/store-pouches-v5.png",
+      "width": 3000,
+      "height": 600,
+      "bytes": 370750,
+      "format": "jpeg",
+      "colorSpace": "srgb",
+      "status": "Accepted for private website demo; current SKU and exact label verification pending",
+      "asin": null
+    },
+    {
+      "filename": "aplus-gummy-hero-v5.jpg",
+      "module": "Standard Image Header with Text",
+      "product": "Single gummy pouch",
+      "source": "masters/gummy-smooth-v5.png",
+      "width": 970,
+      "height": 600,
+      "bytes": 161856,
+      "format": "jpeg",
+      "colorSpace": "srgb",
+      "status": "Accepted for private website demo; current SKU and exact label verification pending",
+      "asin": null
+    },
+    {
+      "filename": "aplus-gummy-detail-v5.jpg",
+      "module": "Standard Image & Text Overlay",
+      "product": "Single gummy pouch window detail",
+      "source": "masters/gummy-smooth-v5.png",
+      "width": 970,
+      "height": 300,
+      "bytes": 104927,
+      "format": "jpeg",
+      "colorSpace": "srgb",
+      "status": "Accepted for private website demo; current SKU and exact label verification pending",
+      "asin": null
+    },
+    {
+      "filename": "aplus-gummy-pouch-v5.jpg",
+      "module": "Standard Single Side Image",
+      "product": "Single gummy pouch",
+      "source": "masters/gummy-smooth-v5.png",
+      "width": 300,
+      "height": 300,
+      "bytes": 41326,
+      "format": "jpeg",
+      "colorSpace": "srgb",
+      "status": "Accepted for private website demo; current SKU and exact label verification pending",
+      "asin": null
+    }
+  ]
+}

@@ -20,8 +20,10 @@ function Wordmark({ small = false }: { small?: boolean }) {
 }
 
 function ArtImage({ art, priority = false }: { art: Artwork; priority?: boolean }) {
+  const [unavailable, setUnavailable] = useState(false);
+  if (unavailable) return <output className={styles.assetPending} style={{ aspectRatio: `${art.width} / ${art.height}` }}>Artwork in review<br /><small>{art.title} · Pending approved export</small></output>;
   // Authenticated artwork must not enter the public image optimization cache.
-  return <Image src={`${media}${art.name}`} alt={art.alt} width={art.width} height={art.height} unoptimized loading={priority ? 'eager' : 'lazy'} />;
+  return <Image src={`${media}${art.name}`} alt={art.alt} width={art.width} height={art.height} unoptimized onError={() => setUnavailable(true)} loading={priority ? 'eager' : 'lazy'} />;
 }
 
 export function DemoStudio() {
@@ -44,11 +46,11 @@ export function DemoStudio() {
       {view === 'store' && <section aria-label="Candy Rama brand Store concept">
         <div className={styles.brandBanner}><Wordmark /><p>TASTE THE TWIST.</p><span>Texas-based.<br />Candy-obsessed.</span></div>
         <div className={styles.storeHeader}><ArtImage art={artwork[0]} priority /></div>
-        <div className={styles.storeIntro}><p className={styles.kicker}>CANDY RAMA</p><h1>A HANDFUL OF HAPPY.</h1><p>Find a little color for your next candy break.</p><a className={styles.pill} href="#demo-collection">Explore the collection <span aria-hidden="true">↘</span></a></div>
+        <div className={styles.storeIntro}><p className={styles.kicker}>CANDY RAMA</p><h1>CANDY WITH MAIN CHARACTER ENERGY.</h1><p>Make room for your next candy craving.</p><a className={styles.pill} href="#demo-collection">Explore the collection <span aria-hidden="true">↘</span></a></div>
         <div className={styles.ribbon} aria-hidden="true">COLORFUL BITES <i>✦</i> HAPPY HANDFULS <i>✦</i> LITTLE CANDY MOMENTS</div>
         <div id="demo-collection" className={styles.collection}>
           <div className={styles.sectionHeading}><p className={styles.kicker}>PICK YOUR NEXT SWEET MOMENT</p><h2>What sounds good?</h2></div>
-          <article className={styles.productFeature}><ArtImage art={artwork[1]} /><div><p className={styles.kicker}>THE GUMMY DIRECTION</p><h2>COLOR YOUR<br />CANDY BREAK.</h2><p>A little color. A little chew. A moment to enjoy.</p><button className={styles.pill} onClick={() => setView('product')}>View gummy A+ direction ↗</button></div></article>
+          <article className={styles.productFeature}><ArtImage art={artwork[1]} /><div><p className={styles.kicker}>THE GUMMY DIRECTION</p><h2>PICK YOUR<br />CRAVING.</h2><p>Make room for your next candy craving.</p><button className={styles.pill} onClick={() => setView('product')}>View gummy A+ direction ↗</button></div></article>
           <p className={styles.internalNote}>Collection concept: the header shows separate product varieties, not an included two-pouch bundle. Final catalog destinations and SKU details are pending.</p>
         </div>
         <div className={styles.storeFooter}><Wordmark small /><p>FIND YOUR HAPPY HANDFUL.<br /><strong>Candy Rama</strong></p></div>
@@ -56,9 +58,9 @@ export function DemoStudio() {
       {view === 'product' && <section className={styles.aplus} aria-label="Single gummy pouch A plus content concept">
         <div className={styles.aplusTitle}><h1>Product description</h1><span>Single gummy pouch · Three-module concept</span></div>
         <div className={styles.aplusStack}>
-          <article className={styles.reviewModule}><ArtImage art={artwork[1]} priority /><div className={styles.nativeCopy}><h2>HAPPINESS, BY THE HANDFUL.</h2><p>Make a little room for candy.</p></div><p className={styles.moduleSpec}>01 · Standard Image Header with Text · 970 × 600 px</p></article>
-          <article className={styles.reviewModule}><ArtImage art={artwork[2]} /><div className={styles.nativeCopy}><h2>TAKE A CLOSER LOOK.</h2><p>A little color for your candy break.</p></div><p className={styles.moduleSpec}>02 · Standard Image & Text Overlay · 970 × 300 px · Copy shown separately for mobile readability</p></article>
-          <article className={styles.reviewModule}><div className={styles.sideModule}><ArtImage art={artwork[3]} /><div className={styles.nativeCopy}><h2>TASTE THE TWIST.</h2><p>Candy Rama</p></div></div><p className={styles.moduleSpec}>03 · Standard Single Side Image · 300 × 300 px</p></article>
+          <article className={styles.reviewModule}><ArtImage art={artwork[1]} priority /><div className={styles.nativeCopy}><h2>CANDY WITH MAIN CHARACTER ENERGY.</h2><p>Make room for your next candy craving.</p></div><p className={styles.moduleSpec}>01 · Standard Image Header with Text · 970 × 600 px</p></article>
+          <article className={styles.reviewModule}><ArtImage art={artwork[2]} /><div className={styles.nativeCopy}><h2>UP CLOSE. FULL COLOR.</h2><p>Take a closer look at your next sweet pick.</p></div><p className={styles.moduleSpec}>02 · Standard Image & Text Overlay · 970 × 300 px · Copy shown separately for mobile readability</p></article>
+          <article className={styles.reviewModule}><div className={styles.sideModule}><ArtImage art={artwork[3]} /><div className={styles.nativeCopy}><h2>TASTE THE TWIST.</h2><p>Pick your craving. Bring the candy.</p></div></div><p className={styles.moduleSpec}>03 · Standard Single Side Image · 300 × 300 px</p></article>
         </div>
         <p className={styles.internalNote}>Editable copy is shown as live text outside the image exports. This is a layout review; final module rendering must be checked in Amazon’s desktop and mobile builder previews.</p>
       </section>}

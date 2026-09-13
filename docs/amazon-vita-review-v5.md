@@ -58,3 +58,54 @@ Inspected `/Users/usman/.codex/generated_images/01a09bc4-721c-72d3-88be-ffad2e50
 > Edit this existing Candy Rama single-pouch visualization surgically. Keep composition, pouch size and silhouette, peach/blush background, lighting, candy window and contents, CANDY RAMA wordmark, pink line artwork and NET WT. 8 OZ unchanged. Replace the entire cream slogan ribbon directly below the wordmark with one clean smooth level cream band, matching its existing location, height and warm color. Remove ALL existing ribbon lettering first. Print exactly this string once across the band in crisp dark-plum bold sans-serif type: Taste the Twist • Taste the Twist • Taste the Twist • Taste the Twist. Every letter must be correctly spelled, separated and readable; the three separator dots are pink. Use an even horizontal baseline and consistent size, with complete phrases inside the visible front face. Do not copy distorted existing letterforms, add words or create pseudo-text. Smooth the sharp dents and folded highlights immediately left of the CANDY RAMA wordmark and beside its lower-left edge so the front looks professionally filled and taut; preserve realistic gentle film sheen. Do not change any other text, candy shapes, layout or objects. No new elements. Exact readable ribbon typography is the acceptance criterion.
 
 This correction preserves wording while regularizing its presentation; exact flat-label production artwork remains unverified. If the next result still corrupts letters, reject it instead of accepting an approximate slogan.
+
+## Corrected smooth output — accepted for private demo
+
+Inspected `/Users/usman/.codex/generated_images/01a09bc4-721c-72d3-88be-ffad2e503bc5/exec-e8d9aef8-2e59-43df-91e8-534819ff68be.png`. **ACCEPT for private website demo and working exports.** Four complete Taste the Twist phrases are now readable, separated by pink dots. Left-front dents are softened; remaining edge reflections read as flexible-film sheen. Full pouch, wordmark, window and weight remain visible. This is a product visualization, not verified production-label photography or Amazon upload approval.
+
+Read `docs/team/brand-voice.md`: the pink pouch supplies strong brand energy within the quieter peach scene. Pair with Lauren's bold native headline; do not add luxury props or soften the brand into generic happiness language.
+
+Approved the deterministic preparation plan: 970 × 600 full composition without stretching or clipping the pouch; 970 × 300 detail taken from the actual window; 300 × 300 full pouch centered with breathing room. This authorizes preparation, not unseen-output approval. Vita must inspect all resulting files and live deployment views before declaring QA complete.
+
+### Smooth Store pair prompt — approved before generation
+
+> Use case: product visualization and shape-corrected compositing. Create a very wide Candy Rama Store header, 5:1 aspect ratio, target 3000 × 600. Use the original two-pouch photograph for the identity of both products, and the corrected smooth single-pouch image for the approved finish, lighting and packaging typography. Show exactly TWO upright pink pouches side by side, gummy mix LEFT and sugar-coated fruit pieces RIGHT. Make both front panels professionally smooth and evenly filled, top seals straight, side seams aligned, stable bottoms, subtle realistic film sheen without deep wrinkles or pinched waists. Keep both complete pouches within central 50% width and middle 80% height, fully separated with no overlapping labels. Preserve the source cream stacked CANDY RAMA wordmark/plum shadow, pink wave artwork, clear windows, silver edges and NET WT. 8 OZ. The left window retains the original irregular gummy mix; right retains original sugar-coated fruit pieces; never swap or combine contents. On EACH smooth cream ribbon print exactly: Taste the Twist • Taste the Twist • Taste the Twist • Taste the Twist. Four complete correctly spelled phrases in readable dark-plum bold sans-serif with pink separator dots, consistent baseline. No malformed pseudo-text. Pale peach seamless surface and blush background extend quietly to both edges, soft directional studio light and realistic contact shadows. No loose candy, pedestal, props, people, badges, headlines or extra text. Keep approachable bright pink/peach/cream color and photographic realism. Product visualization requires output inspection and current-label verification.
+
+## First export inspection
+
+Viewed each actual JPEG individually:
+
+- `assets/amazon-demo/aplus-gummy-hero-v5.jpg` (970 × 600): **ACCEPT**. Full pouch and bottom shadow remain visible, clean readable brand, no stretching. Top margin is tight but the seal is intact.
+- `assets/amazon-demo/aplus-gummy-detail-v5.jpg` (970 × 300): **ACCEPT**. Recognizable candy from the approved window, no introduced shapes. Narrow silver seam at right retains package context.
+- `assets/amazon-demo/aplus-gummy-pouch-v5.jpg` (300 × 300): **REVISE**. Pouch is visible and centered, but flat-color padding creates conspicuous vertical peach strips at both edges. Crop a genuine square of the full master centered around the pouch before resizing, preserving its real background; do not use mismatched fill. Corrected file requires another inspection.
+
+These decisions concern private-demo working exports. Live QA remains pending.
+
+### Corrected square inspection
+
+Viewed the replaced `aplus-gummy-pouch-v5.jpg` after the parent cropped master coordinates x512, y0, width1024, height1024 and resized to 300 × 300. **ACCEPT**: continuous natural background, no fill strips, complete centered pouch and readable brand. This supersedes the square's initial revise verdict. All three current A+ JPEG exports are accepted for the private demo.
+
+## Smooth pair output
+
+Inspected `/Users/usman/.codex/generated_images/01a09bc4-721c-72d3-88be-ffad2e503bc5/exec-0432e629-3bf2-4a75-803b-18b86934e554.png`. **ACCEPT for private Store demo**: two distinct complete pouches, smooth professional fronts, readable CANDY RAMA and all repeated Taste the Twist phrases, proper gummy-left/fruit-piece-right identities, grounded shadows and no product overlap.
+
+The service returned 2146 × 733 rather than requested 5:1. Approved preparation approach: preserve aspect ratio at 600px high, center in 3000 × 600 and extend background-only edge pixels horizontally. No product pixels are present at frame edges. Inspect final for banding or seams where the original gradient meets extension before accepting. Do not cover-crop pouches or stretch products.
+
+### Final Store export inspection
+
+Viewed `assets/amazon-demo/store-pouches-v5.jpg` (3000 × 600): **PASS for private demo**. Complete centered pouches, readable brand, no product stretching or obvious vertical join. Soft horizontal banding in the extended quiet background is acceptable at this placement. The proposed centered mobile cover at 180px height is approved for implementation because the entire product group occupies the center; actual browser capture must confirm no clipping.
+
+## Local browser review
+
+Viewed all six actual captures in `outputs/amazon-v5/`: `local-store-desktop.png`, `local-store-mobile.png`, `local-aplus-desktop.png`, `local-aplus-mobile.png`, `local-gallery-desktop.png`, and `local-gallery-mobile.png`.
+
+- Store desktop/mobile: **PASS**. Mobile 180px header retains both complete pouches, clear headline and accessible reading order.
+- A+ desktop/mobile: **PASS**. Complete hero and square, readable native copy, no clipping, coherent three-module progression.
+- Gallery mobile: **PASS**.
+- Gallery desktop: **REVISE one presentation detail**. The 300 × 300 export is enlarged to full gallery width, making it visibly soft and disproportionately tall. Cap that image at 300px width, retain height auto and center it in its card. Keep the original download dimensions.
+
+The local Next development indicator is expected in these captures; verify it is absent after production deployment. Live review still pending.
+
+### Local gallery fix verification
+
+Viewed refreshed `local-gallery-desktop.png` and `local-gallery-mobile.png` after the native-size cap. **PASS both**: the 300px square is centered and no longer enlarged; captions and download links remain well separated and readable. This supersedes the gallery revise verdict. Vita's predeployment visual gate is clear. Live deployment screenshots still require review.

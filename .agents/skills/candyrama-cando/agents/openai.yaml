@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cando \u2014 Candy Rama"
+  short_description: "Cando: Candy Rama team coordination"
+  default_prompt: "Use $candyrama-cando to help with this Candy Rama assignment."

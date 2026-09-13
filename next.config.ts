@@ -16,6 +16,9 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  outputFileTracingIncludes: {
+    '/amazon-demo/media/*': ['./assets/amazon-demo/**/*'],
+  },
   poweredByHeader: false,
   images: {
     remotePatterns: [
@@ -36,7 +39,13 @@ const nextConfig: NextConfig = {
     ],
   },
   async headers() {
-    return [{ source: '/(.*)', headers: securityHeaders }];
+    return [
+      { source: '/(.*)', headers: securityHeaders },
+      { source: '/amazon-demo/:path*', headers: [
+        { key: 'X-Robots-Tag', value: 'noindex, nofollow, noarchive' },
+        { key: 'Cache-Control', value: 'private, no-store' },
+      ] },
+    ];
   },
 };
 

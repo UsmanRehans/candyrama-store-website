@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import {
   SyntheticEvent,
   useCallback,
@@ -26,6 +27,8 @@ export function SignupButton({ className = '' }: { className?: string }) {
 }
 
 export function EmailSignupPopup() {
+  const pathname = usePathname();
+  const isDemo = pathname === '/amazon-demo' || pathname.startsWith('/amazon-demo/');
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState('');
   const [busy, setBusy] = useState(false);
@@ -39,6 +42,7 @@ export function EmailSignupPopup() {
   }, []);
 
   useEffect(() => {
+    if (isDemo) return;
     const show = () => setOpen(true);
     window.addEventListener(openEvent, show);
     const timer = window.setTimeout(() => {
@@ -48,7 +52,7 @@ export function EmailSignupPopup() {
       window.clearTimeout(timer);
       window.removeEventListener(openEvent, show);
     };
-  }, []);
+  }, [isDemo]);
 
   useEffect(() => {
     if (open) window.setTimeout(() => emailRef.current?.focus(), 50);
@@ -85,7 +89,7 @@ export function EmailSignupPopup() {
     }
   }
 
-  if (!open) return null;
+  if (!open || isDemo) return null;
 
   return (
     <div className="signup-popup-backdrop">

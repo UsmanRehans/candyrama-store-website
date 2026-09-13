@@ -1,0 +1,15 @@
+# Candy-first campaign prompts
+
+Generated September 13, 2026 with the built-in image generation tool. Outputs were visually inspected and encoded as WebP for the authenticated demo. Source photos inform candy form only; these are concepts, not verified SKU photographs. Original full-resolution PNGs remain in the Codex generated-images folder.
+
+## assets/amazon-demo/candy-abundance-v2.webp
+
+Use case: ads-marketing. Create original premium food campaign photography for Candy Rama's private Amazon storefront concept, landscape 1536x1024. Reference image is only a guide to candy shapes and textures: mixed glossy gummy bears, cherries, foam-backed rings and fruit-shaped gummies. Create a NEW composition, no copied layout. An abundant sculptural tumble of these candies spilling from a small plain cream ceramic bowl onto a warm pale peach studio surface. Low three-quarter macro camera angle, candy fills the frame and dominates, translucent jewel colors, tactile sugar crystals, believable imperfections, beautiful directional daylight and soft shadows. Crisp appetizing food editorial photograph, sophisticated and playful. No packaging, logos, text, labels, watermarks, fruit props or people. Keep the main bowl and pile in the center so it crops gracefully to square. This is concept imagery, not a factual listing main image.
+
+## assets/amazon-demo/blue-macro-v2.webp
+
+Use case: ads-marketing. Original Candy Rama candy texture campaign photograph, landscape 1536x1024. Use reference only for the form and surface of blue raspberry candy: small irregular rounded oblong blue gummies with coarse sparkling sugar crystals. New composition: extreme macro cluster of blue candies on a pale icy blue studio surface, a small mound centered, a few scattered naturally in foreground. Absolutely no scoop, glove, hand or copied reference composition. Raking studio light reveals individual sugar crystals, luminous cyan edges, rich electric blue middles, soft photographic depth of field, premium appetizing food photography, realistic scale and irregularities. Candy fills most of frame, suitable center square crop. No text, packaging, logos, fruit or watermarks. Private campaign concept.
+
+## assets/amazon-demo/movie-night-v2.webp
+
+Use case: ads-marketing. Create an original landscape 1536x1024 premium candy lifestyle photograph for Candy Rama's private Amazon creative concept. Use the reference only for candy types: mixed glossy gummy bears, cherries, sugar-coated foam-backed colorful rings and fruit shapes. Scene: cozy movie night coffee table with a large shallow cream ceramic bowl of these colorful candies prominently filling the central foreground, two small empty side dishes, linen napkin, softly blurred warm sofa and very subtle movie screen glow far behind. Candy is hero, tack sharp translucent gummies and sparkling sugar, appetizing realistic commercial food photography, warm evening light balanced with natural skin-free scene. No people, hands, popcorn, beverages, packaging, logos, words, watermarks or brand references. Wide composition that also survives a centered square crop. Do not reproduce the source composition.

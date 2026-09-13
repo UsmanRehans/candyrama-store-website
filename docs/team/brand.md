@@ -19,6 +19,8 @@ Updated September 13, 2026. Read this before any team assignment. This is a work
 
 ## Current visual and verbal foundation
 
+- Read [canonical brand voice](brand-voice.md) for the established live website tone, sentence rhythm, vocabulary, and Lauren’s image/page QA rules. Owner requested this capture September 13, 2026; it supersedes softer generic creative phrasing, while claims still require separate evidence.
+
 - Existing palette in `app/globals.css`: plum #5b123e, pink #ea537b, yellow #ffd23f, cream #fff2d9. Read current source before implementation; these are recorded implementation values, not an independently approved brand standards document.
 - Existing type setup in `app/layout.tsx`: Nunito, Anton, Luckiest Guy. Preserve the established system unless the task calls for exploring a change.
 - Packaging reference: pink pouch, cream stacked CANDY RAMA wordmark, dark outline/shadow, clear window, and “Taste the Twist.” Use approved source artwork for exact reproduction.

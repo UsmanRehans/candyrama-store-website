@@ -1,5 +1,7 @@
 # Candy Rama Amazon copy brief
 
+> Owner voice update: the principal headlines below are superseded by [canonical brand voice](team/brand-voice.md), captured from the live site at the owner’s request. Use its three-module copy for the current revision; retain the product-truth and packaging checks in this brief.
+
 Lauren · September 13, 2026 · Internal creative direction, pending target-SKU facts.
 
 ## Decision

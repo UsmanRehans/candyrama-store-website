@@ -5,6 +5,7 @@ import {
   type StorefrontProduct,
 } from '@/lib/products';
 import { env } from './env';
+import { productImageFrames } from '@/lib/product-image-framing';
 
 function categoryLabel(value: string) {
   return value
@@ -23,6 +24,8 @@ function toneFor(accentColor: string) {
 }
 
 function stableProductImageUrl(image: string) {
+  // Use the inspected local cutouts so their alpha bounds match the shared frame.
+  if (productImageFrames[image]) return image;
   return image.startsWith('/generated/')
     ? `https://candyrama-store.vercel.app${image}`
     : image;

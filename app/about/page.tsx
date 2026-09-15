@@ -1,17 +1,46 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Heart, Sparkles, Sun } from 'lucide-react';
 import { StoreFooter, StoreHeader } from '@/components/store-chrome';
 
-export const metadata = { title: 'Our Story | CandyRama', description: 'Meet CandyRama: a tiny Texas candy workshop making bold, joyful treats in small batches.' };
+export const metadata = {
+  title: 'Our Story | Candy Rama',
+  description: 'Meet Candy Rama, a Texas candy brand with big candy energy and a soft spot for sharing.',
+};
 
 export default function AboutPage() {
-  return <main><StoreHeader />
-    <section className="about-hero"><Image src="/generated/workshop.png" alt="Two CandyRama makers crafting gummies by hand" fill priority sizes="100vw" /><div className="about-hero-copy"><p className="eyebrow">OUR STORY</p><h1>A tiny Texas workshop with a whole lot of flavor.</h1></div></section>
-    <section className="story-intro"><div><p className="eyebrow">HOW IT STARTED</p><h2>We wanted candy to feel fun again.</h2></div><div><p>We wanted candy people would pass around the table. The kind that makes somebody stop chewing and ask, “Wait, what flavor is that?”</p><p>So we built CandyRama in Texas. We pack bold new flavors next to the classics we grew up loving.</p></div></section>
-    <section className="values-strip"><article><Sparkles /><h3>Big flavor</h3><p>Sour that puckers. Chamoy with a real kick. Chocolate with serious crunch.</p></article><article><Heart /><h3>Made with care</h3><p>We check every order and pack every bag with care.</p></article><article><Sun /><h3>Texas energy</h3><p>Friendly, loud, and ready to have some fun.</p></article></section>
-    <section className="about-lifestyle"><div className="about-lifestyle-image"><Image src="/generated/candy-picnic.png" alt="Friends enjoying colorful candy together outdoors" fill sizes="(max-width: 800px) 100vw, 58vw" /></div><div className="about-lifestyle-copy"><span className="story-number">01</span><p className="eyebrow">CANDY IS A SOCIAL FOOD</p><h2>Made for passing around.</h2><p>The best candy never stays in one person’s hands for long. It belongs at movie nights, road trips, backyard hangs and the desk drawer everybody knows about.</p><Link href="/shop" className="button secondary">Taste the lineup <ArrowRight /></Link></div></section>
-    <section className="about-manifesto"><p>NO BIG FACTORY LINE.</p><p>NO WEIRD CORPORATE ANYTHING.</p><h2>Just really good candy<br/>from your neighbors.</h2><Link href="/shop" className="button primary">Shop CandyRama</Link></section>
-    <StoreFooter />
-  </main>;
+  return (
+    <main className="candy-counter">
+      <StoreHeader />
+      <section className="counter-gifting">
+        <p className="eyebrow">Our story</p>
+        <h1>Made for passing around.</h1>
+        <p>
+          We are Candy Rama, a Texas candy brand for people who always want one
+          more handful. Big candy energy. Plenty to share.
+        </p>
+        <Link className="button primary" href="/shop">Taste the lineup</Link>
+      </section>
+      <section className="counter-story">
+        <div className="counter-story-copy">
+          <p className="eyebrow">Howdy, sweet tooth!</p>
+          <h2>Good company. Great candy plans.</h2>
+          <p>
+            Candy belongs at movie nights, on road trips, and in the desk drawer
+            everybody knows about. Pick your craving, bring your people, and
+            open a bag.
+          </p>
+          <Link className="text-link" href="/gifting">Send a little happy</Link>
+        </div>
+        <div className="counter-story-image">
+          <Image
+            src="/generated/workshop.png"
+            alt="Illustrated Candy Rama workshop scene"
+            fill
+            sizes="(max-width: 1023px) 100vw, 400px"
+          />
+        </div>
+      </section>
+      <StoreFooter />
+    </main>
+  );
 }

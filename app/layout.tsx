@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Anton, Luckiest_Guy, Nunito } from 'next/font/google';
 import './globals.css';
+import './candy-counter.css';
+import './candy-counter-signup.css';
 import { CartProvider } from '@/components/cart-provider';
 import { EmailSignupPopup } from '@/components/email-signup-popup';
 

@@ -1,5 +1,5 @@
 'use client';
-import Image from 'next/image';
+import { ProductPhoto } from '@/components/product-photo';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useCart } from './cart-provider';
@@ -21,18 +21,39 @@ export function CartPageClient({
   const [useRewards, setUseRewards] = useState(false);
   const lines = items.flatMap((item) => {
     const product = products.find(
-      (candidate) => candidate.variantSku === item.variantSku,
+      (candidate) =>
+        candidate.variantSku === item.variantSku ||
+        candidate.variants?.some((variant) => variant.sku === item.variantSku),
     );
-    return product ? [{ ...item, product }] : [];
+    if (!product) return [];
+    const variant = product.variants?.find(
+      (candidate) => candidate.sku === item.variantSku,
+    );
+    return [
+      {
+        ...item,
+        product: variant
+          ? {
+              ...product,
+              price: variant.price,
+              priceCents: variant.priceCents,
+              netWeight: variant.netWeight,
+            }
+          : product,
+      },
+    ];
   });
   const subtotal = lines.reduce(
     (sum, line) => sum + line.product.priceCents * line.quantity,
     0,
   );
   const bundleDiscount =
-    items.reduce((sum, item) => sum + item.quantity, 0) >= 4
+    lines.reduce((sum, item) => sum + item.quantity, 0) >= 4
       ? Math.round(subtotal * 0.15)
       : 0;
+  const quantity = lines.reduce((sum, line) => sum + line.quantity, 0);
+  const shipping = subtotal >= 5000 ? 0 : 599;
+  const total = subtotal - bundleDiscount + shipping;
   async function checkout() {
     setLoading(true);
     setError('');
@@ -62,8 +83,12 @@ export function CartPageClient({
   }
   return (
     <section className="cart-shell">
-      <p className="eyebrow">YOUR CANDY STASH</p>
       <h1>Your bag</h1>
+      {lines.length > 0 && (
+        <p className="cart-intro">
+          {quantity} {quantity === 1 ? 'bag' : 'bags'} of candy drama.
+        </p>
+      )}
       {lines.length === 0 ? (
         <div className="empty-cart">
           <p>Your bag is ready for something sweet.</p>
@@ -76,17 +101,23 @@ export function CartPageClient({
           <div className="cart-lines">
             {lines.map(({ product, variantSku, quantity }) => (
               <article className="cart-line" key={variantSku}>
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  width={150}
-                  height={150}
-                  unoptimized
-                />
+                <ProductPhoto src={product.image} alt={product.name} />
                 <div>
                   <h2>{product.name}</h2>
-                  <p>{product.note}</p>
-                  <strong>{product.price}</strong>
+                  <p>
+                    {product.variants?.find(
+                      (variant) => variant.sku === variantSku,
+                    )?.label ??
+                      product.netWeight ??
+                      'Candy bag'}
+                  </p>
+                  <button
+                    className="cart-remove"
+                    type="button"
+                    onClick={() => setQuantity(variantSku, 0)}
+                  >
+                    Remove
+                  </button>
                 </div>
                 <label>
                   Qty
@@ -101,11 +132,26 @@ export function CartPageClient({
                     }
                   />
                 </label>
+                <strong className="cart-line-price">
+                  ${((product.priceCents * quantity) / 100).toFixed(2)}
+                </strong>
               </article>
             ))}
+            {quantity < 4 && (
+              <div className="cart-upsell">
+                <span>
+                  {quantity === 3
+                    ? 'One more bag unlocks fifteen percent off.'
+                    : 'Make it four bags and save fifteen percent.'}
+                </span>
+                <Link className="button primary" href="/shop">
+                  {quantity === 3 ? 'Pick a fourth' : 'Pick another bag'}
+                </Link>
+              </div>
+            )}
           </div>
           <aside className="cart-summary">
-            <h2>Order summary</h2>
+            <h2 className="eyebrow">Order summary</h2>
             <p>
               <span>Subtotal</span>
               <strong>${(subtotal / 100).toFixed(2)}</strong>
@@ -120,7 +166,16 @@ export function CartPageClient({
               <span>Shipping</span>
               <strong>{subtotal >= 5000 ? 'Free' : '$5.99'}</strong>
             </p>
-            <small>Taxes are calculated securely at checkout.</small>
+            <p className="shipping-progress">
+              {shipping === 0
+                ? 'Your order qualifies for free shipping.'
+                : `$${((5000 - subtotal) / 100).toFixed(2)} away from free shipping.`}
+            </p>
+            <p className="cart-total">
+              <span>Estimated total</span>
+              <strong>${(total / 100).toFixed(2)}</strong>
+            </p>
+            <small>Taxes and eligible offers are finalized at checkout.</small>
             <label>
               Email for your receipt
               <input
@@ -200,7 +255,7 @@ export function CartPageClient({
               disabled={loading}
               onClick={checkout}
             >
-              {loading ? 'Opening checkout…' : 'Secure checkout'}
+              {loading ? 'Opening checkout…' : 'Checkout'}
             </button>
           </aside>
         </div>

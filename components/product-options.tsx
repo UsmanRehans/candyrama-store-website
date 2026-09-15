@@ -12,15 +12,15 @@ export function ProductOptions({
   purchaseEnabled: boolean;
 }) {
   const [selectedSku, setSelectedSku] = useState(variants[0]?.sku ?? '');
-  const selected = variants.find((variant) => variant.sku === selectedSku) ?? variants[0];
+  const selected =
+    variants.find((variant) => variant.sku === selectedSku) ?? variants[0];
 
   if (!selected) return null;
 
   return (
     <div className="product-options">
       <div className="product-option-heading">
-        <span>Choose your size</span>
-        <strong>{selected.price}</strong>
+        <span className="eyebrow">Pick your size</span>
       </div>
       <div className="product-option-grid" aria-label="Product options">
         {variants.map((variant) => (
@@ -36,13 +36,23 @@ export function ProductOptions({
           </button>
         ))}
       </div>
+      <p className="detail-price">
+        {selected.price} <span>{selected.label}</span>
+      </p>
       <AddToCartButton
         variantSku={selected.sku}
         available={selected.available}
         purchaseEnabled={purchaseEnabled}
       />
+      <p className="selected-net-weight">
+        {selected.netWeight
+          ? `Net weight ${selected.netWeight}`
+          : 'See package for net weight'}
+      </p>
       {!purchaseEnabled && (
-        <p className="coming-soon-note">Preview the options now. Ordering opens soon.</p>
+        <p className="coming-soon-note">
+          Preview the options now. Ordering opens soon.
+        </p>
       )}
     </div>
   );

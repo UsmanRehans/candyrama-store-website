@@ -7,7 +7,7 @@ export default async function CartPage() {
   await connection();
   const products = await getStorefrontProducts();
   return (
-    <main>
+    <main className="candy-counter">
       <StoreHeader />
       <CartPageClient products={products} />
       <StoreFooter />

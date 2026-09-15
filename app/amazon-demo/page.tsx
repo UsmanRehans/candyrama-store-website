@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { hasDemoSession } from '@/lib/server/amazon-demo-auth';
-import { DemoStudio } from './studio';
+import { redirect } from 'next/navigation';
 import styles from './studio.module.css';
 
 export const dynamic = 'force-dynamic';
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 export default async function AmazonDemo({ searchParams }: { searchParams: Promise<{ error?: string }> }) {
-  if (await hasDemoSession()) return <DemoStudio />;
+  if (await hasDemoSession()) redirect('/amazon-demo/preview');
   const { error } = await searchParams;
   return <main className={`${styles.studio} ${styles.login}`}>
     <div className={styles.loginBrand} aria-hidden="true">CANDY<br />RAMA<span>Taste the Twist.</span></div>

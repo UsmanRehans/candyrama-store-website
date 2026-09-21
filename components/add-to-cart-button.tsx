@@ -12,31 +12,28 @@ export function AddToCartButton({
 }) {
   const { add } = useCart();
   const [added, setAdded] = useState(false);
+  const disabled = !purchaseEnabled || !available || !variantSku;
   return (
     <button
+      type="button"
       className="quick-add"
-      disabled={purchaseEnabled && (!available || !variantSku)}
+      disabled={disabled}
       onClick={() => {
-        if (!purchaseEnabled) {
-          setAdded(true);
-          window.setTimeout(() => setAdded(false), 1600);
-          return;
-        }
         if (!variantSku) return;
         add(variantSku);
         setAdded(true);
         window.setTimeout(() => setAdded(false), 1200);
       }}
     >
-      {!purchaseEnabled
-        ? added
-          ? 'Launching soon ✓'
-          : 'Coming soon ✦'
-        : !available
-          ? 'Sold out'
-          : added
-            ? 'Added to your bag ✓'
-            : 'Add to bag +'}
+      <span aria-live="polite">
+        {!purchaseEnabled
+          ? 'Ordering unavailable'
+          : !available || !variantSku
+            ? 'Sold out'
+            : added
+              ? 'Added to your bag'
+              : 'Quick add'}
+      </span>
     </button>
   );
 }

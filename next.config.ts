@@ -18,6 +18,7 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     '/amazon-demo/media/*': ['./assets/amazon-demo/**/*'],
+    '/amazon-demo/preview/*': ['./assets/amazon-demo/review-v7/**/*'],
   },
   poweredByHeader: false,
   images: {

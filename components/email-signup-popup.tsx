@@ -28,7 +28,8 @@ export function SignupButton({ className = '' }: { className?: string }) {
 
 export function EmailSignupPopup() {
   const pathname = usePathname();
-  const isDemo = pathname === '/amazon-demo' || pathname.startsWith('/amazon-demo/');
+  const isDemo =
+    pathname === '/amazon-demo' || pathname.startsWith('/amazon-demo/');
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState('');
   const [busy, setBusy] = useState(false);
@@ -92,7 +93,9 @@ export function EmailSignupPopup() {
   if (!open || isDemo) return null;
 
   return (
-    <div className="signup-popup-backdrop">
+    <div
+      className={`signup-popup-backdrop${pathname === '/admin' || pathname.startsWith('/admin/') ? '' : ' counter-signup'}`}
+    >
       <dialog
         className="signup-popup"
         open

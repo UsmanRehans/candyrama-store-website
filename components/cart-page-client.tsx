@@ -1,17 +1,23 @@
 'use client';
-import Image from 'next/image';
+import '@/app/cart/cart.css';
+import { ProductPhoto } from '@/components/product-photo';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useCart } from './cart-provider';
+import { PaymentLinkOrder } from './payment-link-order';
 import type { StorefrontProduct } from '@/lib/products';
 
 export function CartPageClient({
   products,
+  canPayOnline = false,
 }: {
   products: StorefrontProduct[];
+  canPayOnline?: boolean;
 }) {
   const { items, setQuantity } = useCart();
   const [email, setEmail] = useState('');
+  const [showPaymentLink, setShowPaymentLink] = useState(!canPayOnline);
+  const [orderNumber, setOrderNumber] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [isGift, setIsGift] = useState(false);
@@ -21,18 +27,39 @@ export function CartPageClient({
   const [useRewards, setUseRewards] = useState(false);
   const lines = items.flatMap((item) => {
     const product = products.find(
-      (candidate) => candidate.variantSku === item.variantSku,
+      (candidate) =>
+        candidate.variantSku === item.variantSku ||
+        candidate.variants?.some((variant) => variant.sku === item.variantSku),
     );
-    return product ? [{ ...item, product }] : [];
+    if (!product) return [];
+    const variant = product.variants?.find(
+      (candidate) => candidate.sku === item.variantSku,
+    );
+    return [
+      {
+        ...item,
+        product: variant
+          ? {
+              ...product,
+              price: variant.price,
+              priceCents: variant.priceCents,
+              netWeight: variant.netWeight,
+            }
+          : product,
+      },
+    ];
   });
   const subtotal = lines.reduce(
     (sum, line) => sum + line.product.priceCents * line.quantity,
     0,
   );
   const bundleDiscount =
-    items.reduce((sum, item) => sum + item.quantity, 0) >= 4
+    lines.reduce((sum, item) => sum + item.quantity, 0) >= 4
       ? Math.round(subtotal * 0.15)
       : 0;
+  const quantity = lines.reduce((sum, line) => sum + line.quantity, 0);
+  const shipping = subtotal >= 5000 ? 0 : 599;
+  const total = subtotal - bundleDiscount + shipping;
   async function checkout() {
     setLoading(true);
     setError('');
@@ -58,12 +85,33 @@ export function CartPageClient({
         cause instanceof Error ? cause.message : 'Checkout is unavailable.',
       );
       setLoading(false);
+      setShowPaymentLink(true);
     }
   }
+  if (orderNumber)
+    return (
+      <section className="cart-shell" aria-live="polite">
+        <h1>Order received.</h1>
+        <p>
+          Your order number is <strong>{orderNumber}</strong>.
+        </p>
+        <p>
+          Payment is still due. We’ll review your order and email your payment
+          link. Your candy ships after payment.
+        </p>
+        <Link href="/shop" className="button primary">
+          Keep exploring
+        </Link>
+      </section>
+    );
   return (
     <section className="cart-shell">
-      <p className="eyebrow">YOUR CANDY STASH</p>
       <h1>Your bag</h1>
+      {lines.length > 0 && (
+        <p className="cart-intro">
+          {quantity} {quantity === 1 ? 'bag' : 'bags'} of candy drama.
+        </p>
+      )}
       {lines.length === 0 ? (
         <div className="empty-cart">
           <p>Your bag is ready for something sweet.</p>
@@ -76,17 +124,23 @@ export function CartPageClient({
           <div className="cart-lines">
             {lines.map(({ product, variantSku, quantity }) => (
               <article className="cart-line" key={variantSku}>
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  width={150}
-                  height={150}
-                  unoptimized
-                />
+                <ProductPhoto src={product.image} alt={product.name} />
                 <div>
                   <h2>{product.name}</h2>
-                  <p>{product.note}</p>
-                  <strong>{product.price}</strong>
+                  <p>
+                    {product.variants?.find(
+                      (variant) => variant.sku === variantSku,
+                    )?.label ??
+                      product.netWeight ??
+                      'Candy bag'}
+                  </p>
+                  <button
+                    className="cart-remove"
+                    type="button"
+                    onClick={() => setQuantity(variantSku, 0)}
+                  >
+                    Remove
+                  </button>
                 </div>
                 <label>
                   Qty
@@ -101,8 +155,23 @@ export function CartPageClient({
                     }
                   />
                 </label>
+                <strong className="cart-line-price">
+                  ${((product.priceCents * quantity) / 100).toFixed(2)}
+                </strong>
               </article>
             ))}
+            {quantity < 4 && (
+              <div className="cart-upsell">
+                <span>
+                  {quantity === 3
+                    ? 'One more bag unlocks fifteen percent off.'
+                    : 'Make it four bags and save fifteen percent.'}
+                </span>
+                <Link className="button primary" href="/shop">
+                  {quantity === 3 ? 'Pick a fourth' : 'Pick another bag'}
+                </Link>
+              </div>
+            )}
           </div>
           <aside className="cart-summary">
             <h2>Order summary</h2>
@@ -120,19 +189,36 @@ export function CartPageClient({
               <span>Shipping</span>
               <strong>{subtotal >= 5000 ? 'Free' : '$5.99'}</strong>
             </p>
-            <small>Taxes are calculated securely at checkout.</small>
-            <label>
-              Email for your receipt
-              <input
-                type="email"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                placeholder="you@example.com"
-              />
-            </label>
+            <p className="shipping-progress">
+              {shipping === 0
+                ? 'Your order qualifies for free shipping.'
+                : `$${((5000 - subtotal) / 100).toFixed(2)} away from free shipping.`}
+            </p>
+            <p className="cart-total">
+              <span>Estimated total</span>
+              <strong>${(total / 100).toFixed(2)}</strong>
+            </p>
+            <small>
+              U.S. shipping only. Taxes and eligible offers are finalized before
+              payment.
+            </small>
+          </aside>
+          <section className="cart-checkout" aria-labelledby="cart-details-heading">
+            <h2 id="cart-details-heading">Your details</h2>
+            {canPayOnline && (
+              <label>
+                Email for your receipt
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  placeholder="you@example.com"
+                />
+              </label>
+            )}
             <p className="automatic-offer-note">
-              Email list member on your first order? Add two treats and your
-              lowest priced treat is free automatically.
+              Email list member on your first order? We’ll check your welcome
+              offer before payment.
             </p>
             <label className="cart-check">
               <input
@@ -168,41 +254,64 @@ export function CartPageClient({
                 <small>{giftMessage.length} of 300 characters</small>
               </div>
             )}
-            <label>
-              Referral code
-              <input
-                value={referralCode}
-                onChange={(event) =>
-                  setReferralCode(event.target.value.toUpperCase())
-                }
-                maxLength={24}
-                placeholder="CANDYCODE"
-              />
-            </label>
-            <label className="cart-check">
-              <input
-                type="checkbox"
-                checked={useRewards}
-                onChange={(event) => setUseRewards(event.target.checked)}
-              />
-              Use my Sugar Points
-            </label>
-            <small>
-              We will apply every available point tied to this email.
-            </small>
+            {canPayOnline && (
+              <>
+                <label>
+                  Referral code
+                  <input
+                    value={referralCode}
+                    onChange={(event) =>
+                      setReferralCode(event.target.value.toUpperCase())
+                    }
+                    maxLength={24}
+                    placeholder="CANDYCODE"
+                  />
+                </label>
+                <label className="cart-check">
+                  <input
+                    type="checkbox"
+                    checked={useRewards}
+                    onChange={(event) => setUseRewards(event.target.checked)}
+                  />
+                  Use my Sugar Points
+                </label>
+                <small>
+                  We will apply every available point tied to this email.
+                </small>
+              </>
+            )}
             {error && (
               <p className="form-error" role="alert">
                 {error}
               </p>
             )}
-            <button
-              className="button primary"
-              disabled={loading}
-              onClick={checkout}
-            >
-              {loading ? 'Opening checkout…' : 'Secure checkout'}
-            </button>
-          </aside>
+            {canPayOnline && (
+              <button
+                className="button primary"
+                disabled={loading}
+                onClick={checkout}
+              >
+                {loading ? 'Opening checkout…' : 'Pay now'}
+              </button>
+            )}
+            {!showPaymentLink && (
+              <button
+                type="button"
+                className="button secondary"
+                onClick={() => setShowPaymentLink(true)}
+              >
+                Pay by link instead
+              </button>
+            )}
+            {showPaymentLink && (
+              <PaymentLinkOrder
+                email={email}
+                giftRecipientName={isGift ? giftRecipientName : undefined}
+                giftMessage={isGift ? giftMessage : undefined}
+                onComplete={setOrderNumber}
+              />
+            )}
+          </section>
         </div>
       )}
     </section>

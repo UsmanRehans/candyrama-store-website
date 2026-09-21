@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function AccountPage() {
   return (
-    <main>
+    <main className="candy-counter">
       <StoreHeader />
       <CustomerAccount />
       <StoreFooter />

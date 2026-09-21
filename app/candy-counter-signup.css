@@ -1,0 +1,166 @@
+/* The signup dialog sits outside the storefront wrapper. */
+.signup-popup-backdrop.counter-signup {
+  padding: 24px;
+  background: rgba(47, 18, 37, 0.5);
+  backdrop-filter: none;
+  font-family: var(--font-nunito), sans-serif;
+}
+.counter-signup .signup-popup {
+  width: min(540px, 100%);
+  max-height: calc(100dvh - 48px);
+  margin: auto;
+  border: 1px solid #efe7d8;
+  border-top: 1px solid #efe7d8;
+  border-radius: 0;
+  padding: 44px;
+  background: #fffcf5;
+  color: #55504a;
+  box-shadow: none;
+}
+.counter-signup .signup-popup::before {
+  display: none;
+}
+.counter-signup .signup-popup .signup-popup-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #5b123e;
+}
+.counter-signup .signup-popup-close:hover {
+  background: #fff2d9;
+}
+.counter-signup .signup-popup-sticker {
+  gap: 8px;
+  margin: 0 32px 26px 0;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  color: #8a5719;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  transform: none;
+}
+.counter-signup .eyebrow {
+  margin: 0 0 12px;
+  color: #8a5719;
+  font:
+    800 12px/1.5 var(--font-nunito),
+    sans-serif;
+  letter-spacing: 0.16em;
+}
+.counter-signup .signup-popup h2 {
+  margin: 0 0 18px;
+  color: #5b123e;
+  font:
+    400 clamp(36px, 6vw, 46px)/1.08 var(--font-luckiest),
+    cursive;
+  letter-spacing: normal;
+  text-transform: none;
+  text-shadow: none;
+}
+.counter-signup .signup-popup > p:not(.eyebrow),
+.counter-signup .signup-popup-success > p:not(.eyebrow) {
+  margin: 0 0 20px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.counter-signup .signup-popup form {
+  gap: 10px;
+  margin: 24px 0 18px;
+}
+.counter-signup .signup-popup form label {
+  color: #5b123e;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: normal;
+  text-transform: none;
+}
+.counter-signup .signup-popup input {
+  min-height: 48px;
+  border: 1px solid #c4b49c;
+  border-radius: 4px;
+  padding: 12px 14px;
+  background: #fffcf5;
+  color: #5b123e;
+  font:
+    400 16px/1.5 var(--font-nunito),
+    sans-serif;
+  box-shadow: none;
+}
+.counter-signup .signup-popup .button {
+  min-height: 48px;
+  border: 1px solid #5b123e;
+  border-radius: 4px;
+  padding: 12px 20px;
+  background: #5b123e;
+  color: #fffcf5;
+  font:
+    800 16px/1.4 var(--font-nunito),
+    sans-serif;
+  letter-spacing: normal;
+  text-transform: none;
+  box-shadow: none;
+  transform: none;
+}
+.counter-signup .signup-popup .button:hover {
+  background: #45102f;
+}
+.counter-signup .signup-popup .button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+.counter-signup .signup-popup :is(a, button, input, summary):focus-visible {
+  outline: 2px solid #5b123e;
+  outline-offset: 3px;
+}
+.counter-signup .signup-popup > small,
+.counter-signup .signup-popup details {
+  color: #6a6058;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.counter-signup .signup-popup details {
+  margin-top: 18px;
+  border-top: 1px solid #efe7d8;
+  padding-top: 6px;
+}
+.counter-signup .signup-popup summary {
+  min-height: 44px;
+  padding: 12px 0;
+  color: #5b123e;
+  font-weight: 800;
+}
+.counter-signup .signup-popup details p {
+  margin: 0 0 8px;
+}
+.counter-signup .signup-popup form output {
+  color: #a42545;
+  font-size: 14px;
+  font-weight: 700;
+}
+.counter-signup .signup-account-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: #5b123e;
+  font-size: 14px;
+  font-weight: 800;
+}
+@media (max-width: 480px) {
+  .signup-popup-backdrop.counter-signup {
+    padding: 16px;
+  }
+  .counter-signup .signup-popup {
+    max-height: calc(100dvh - 32px);
+    padding: 32px 24px 24px;
+  }
+}

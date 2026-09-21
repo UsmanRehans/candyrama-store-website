@@ -1,5 +1,6 @@
 import { CartPageClient } from '@/components/cart-page-client';
 import { StoreFooter, StoreHeader } from '@/components/store-chrome';
+import { getStripeEnv } from '@/lib/server/env';
 import { connection } from 'next/server';
 import { getStorefrontProducts } from '@/lib/server/catalog';
 export const metadata = { title: 'Your Bag | CandyRama' };
@@ -7,9 +8,14 @@ export default async function CartPage() {
   await connection();
   const products = await getStorefrontProducts();
   return (
-    <main>
+    <main className="candy-counter">
       <StoreHeader />
-      <CartPageClient products={products} />
+      <CartPageClient
+        products={products}
+        canPayOnline={
+          getStripeEnv().mode === 'live' && Boolean(getStripeEnv().secretKey)
+        }
+      />
       <StoreFooter />
     </main>
   );

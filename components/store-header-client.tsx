@@ -20,7 +20,14 @@ export function StoreHeaderClient() {
 
   useEffect(() => {
     document.body.classList.toggle('mobile-menu-open', menuOpen);
-    return () => document.body.classList.remove('mobile-menu-open');
+    function onEscape(event: KeyboardEvent) {
+      if (event.key === 'Escape') setMenuOpen(false);
+    }
+    document.addEventListener('keydown', onEscape);
+    return () => {
+      document.body.classList.remove('mobile-menu-open');
+      document.removeEventListener('keydown', onEscape);
+    };
   }, [menuOpen]);
 
   function closeMenu() {
@@ -30,8 +37,8 @@ export function StoreHeaderClient() {
   return (
     <>
       <div className="announcement">
-        FREE SHIPPING ON ORDERS $50+ <span>★</span> PACKED BY HAND{' '}
-        <span>★</span> MADE IN TEXAS
+        <span>Free shipping on orders $50 and up</span>
+        <Link href="/wholesale">Wholesale</Link>
       </div>
       <header className="site-header">
         <Link
@@ -45,8 +52,8 @@ export function StoreHeaderClient() {
         <nav aria-label="Main navigation">
           <Link href="/shop">Shop</Link>
           <Link href="/pick-four">Pick four</Link>
+          <Link href="/gifting">Gifting</Link>
           <Link href="/about">Our story</Link>
-          <Link href="/wholesale">Wholesale</Link>
           <button type="button" onClick={openEmailSignup}>
             Join and save
           </button>
@@ -87,6 +94,9 @@ export function StoreHeaderClient() {
           </Link>
           <Link href="/pick-four" onClick={closeMenu}>
             Pick four and save
+          </Link>
+          <Link href="/gifting" onClick={closeMenu}>
+            Gifting
           </Link>
           <Link href="/about" onClick={closeMenu}>
             Our story

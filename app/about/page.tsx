@@ -1,17 +1,108 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Heart, Sparkles, Sun } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { StoreFooter, StoreHeader } from '@/components/store-chrome';
+import { StorefrontMotion } from '@/components/storefront-motion';
+import { CandyHand } from '@/components/candy-hand';
+import { lifestyleImages } from '@/lib/lifestyle-images';
+import './story.css';
 
-export const metadata = { title: 'Our Story | CandyRama', description: 'Meet CandyRama: a tiny Texas candy workshop making bold, joyful treats in small batches.' };
+export const metadata = {
+  title: 'Our Story | Candy Rama',
+  description:
+    'A small team in Rosenberg, Texas, with a big appetite for candy discoveries. Get to know Candy Rama.',
+};
 
 export default function AboutPage() {
-  return <main><StoreHeader />
-    <section className="about-hero"><Image src="/generated/workshop.png" alt="Two CandyRama makers crafting gummies by hand" fill priority sizes="100vw" /><div className="about-hero-copy"><p className="eyebrow">OUR STORY</p><h1>A tiny Texas workshop with a whole lot of flavor.</h1></div></section>
-    <section className="story-intro"><div><p className="eyebrow">HOW IT STARTED</p><h2>We wanted candy to feel fun again.</h2></div><div><p>We wanted candy people would pass around the table. The kind that makes somebody stop chewing and ask, “Wait, what flavor is that?”</p><p>So we built CandyRama in Texas. We pack bold new flavors next to the classics we grew up loving.</p></div></section>
-    <section className="values-strip"><article><Sparkles /><h3>Big flavor</h3><p>Sour that puckers. Chamoy with a real kick. Chocolate with serious crunch.</p></article><article><Heart /><h3>Made with care</h3><p>We check every order and pack every bag with care.</p></article><article><Sun /><h3>Texas energy</h3><p>Friendly, loud, and ready to have some fun.</p></article></section>
-    <section className="about-lifestyle"><div className="about-lifestyle-image"><Image src="/generated/candy-picnic.png" alt="Friends enjoying colorful candy together outdoors" fill sizes="(max-width: 800px) 100vw, 58vw" /></div><div className="about-lifestyle-copy"><span className="story-number">01</span><p className="eyebrow">CANDY IS A SOCIAL FOOD</p><h2>Made for passing around.</h2><p>The best candy never stays in one person’s hands for long. It belongs at movie nights, road trips, backyard hangs and the desk drawer everybody knows about.</p><Link href="/shop" className="button secondary">Taste the lineup <ArrowRight /></Link></div></section>
-    <section className="about-manifesto"><p>NO BIG FACTORY LINE.</p><p>NO WEIRD CORPORATE ANYTHING.</p><h2>Just really good candy<br/>from your neighbors.</h2><Link href="/shop" className="button primary">Shop CandyRama</Link></section>
-    <StoreFooter />
-  </main>;
+  return (
+    <main className="candy-counter story-page">
+      <StorefrontMotion />
+      <StoreHeader />
+      <section className="story-opening" aria-labelledby="story-heading">
+        <div className="story-opening-copy">
+          <h1 id="story-heading">
+            Always curious.
+            <br />
+            Always candy.
+          </h1>
+          <p>
+            We’re Candy Rama, a small team in Rosenberg, Texas, with a big
+            appetite for trying something new. We love a familiar favorite—and
+            the excitement of finding a candy we’ve never tried before.
+          </p>
+          <Link className="text-link" href="#our-curiosity">
+            Get to know us <ArrowUpRight size={20} aria-hidden="true" />
+          </Link>
+        </div>
+        <div className="story-opening-photo">
+          <Image
+            src="/generated/hero-tasting-counter-v1.png"
+            alt="Rainbow sour belts, fruit gummies, and spicy candy gathered on a yellow tray"
+            width={1536}
+            height={1024}
+            sizes="(max-width: 900px) 100vw, 58vw"
+            preload
+          />
+        </div>
+      </section>
+      <section
+        className="story-curiosity"
+        id="our-curiosity"
+        aria-labelledby="curiosity-heading"
+      >
+        <div className="story-curiosity-title">
+          <h2 id="curiosity-heading">
+            A new find
+            <br />
+            gets us going.
+          </h2>
+          <CandyHand />
+        </div>
+        <div className="story-curiosity-copy">
+          <p>
+            When something catches our eye, we get experimenting. We give it our
+            best, then bring it online for you to try.
+          </p>
+          <p>
+            There’s always another flavor, texture, or candy idea to get curious
+            about.
+          </p>
+          <Link className="text-link" href="/shop">
+            Explore the candy <ArrowUpRight size={20} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+      <section className="story-sharing" aria-labelledby="sharing-heading">
+        <div className="story-sharing-photo">
+          <Image
+            src={lifestyleImages.backyardSharing}
+            alt="Friends passing colorful candy around a sunny backyard table with a pink Candy Rama pouch"
+            width={1536}
+            height={1024}
+            sizes="(max-width: 900px) 100vw, 58vw"
+          />
+        </div>
+        <div className="story-sharing-copy">
+          <h2 id="sharing-heading">
+            Good candy.
+            <br />
+            Good company.
+          </h2>
+          <p>
+            Open a bag for movie night. Bring something unexpected to the table.
+            Pass around an old favorite and see who reaches for more.
+          </p>
+          <p>
+            That’s the fun of candy: finding what you love and sharing a little
+            of it.
+          </p>
+          <Link className="button primary" href="/shop">
+            Find your next favorite{' '}
+            <ArrowUpRight size={18} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+      <StoreFooter />
+    </main>
+  );
 }

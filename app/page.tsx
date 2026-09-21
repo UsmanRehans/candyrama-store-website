@@ -1,237 +1,224 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { ArrowRight, Sparkles, Star } from 'lucide-react';
-import { ProductCard } from '@/components/product-card';
-import { StoreFooter, StoreHeader } from '@/components/store-chrome';
-import { connection } from 'next/server';
-import { getStorefrontProducts } from '@/lib/server/catalog';
+import Image from "next/image";
+import { CandyHand } from "@/components/candy-hand";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
+import { ProductCard } from "@/components/product-card";
+import { PickFourMotion } from "@/components/pick-four-motion";
+import { StorefrontMotion } from "@/components/storefront-motion";
+import { StoreFooter, StoreHeader } from "@/components/store-chrome";
+import { connection } from "next/server";
+import { getStorefrontProducts } from "@/lib/server/catalog";
+import { appetiteImages, lifestyleImages } from "@/lib/lifestyle-images";
+
+const candyDirections = [
+  {
+    label: "Sour",
+    craving: "sour",
+    categories: ["sour"],
+    image: appetiteImages.sour,
+    tone: "sour",
+  },
+  {
+    label: "Spicy",
+    craving: "spicy",
+    categories: ["spicy"],
+    image: appetiteImages.spicy,
+    tone: "spicy",
+  },
+  {
+    label: "Crunchy",
+    craving: "crunchy",
+    categories: ["bark", "brittle"],
+    image: appetiteImages.crunchy,
+    tone: "crunchy",
+  },
+];
 
 export default async function Home() {
   await connection();
   const products = await getStorefrontProducts();
+  // Catalog order is oldest first; show every active product with new finds first.
+  const lineup = [...products].reverse();
+  const directions = candyDirections.filter((direction) =>
+    products.some((product) =>
+      direction.categories.includes(product.category.toLowerCase()),
+    ),
+  );
   return (
-    <main>
+    <main className="candy-counter">
+      <StorefrontMotion />
       <StoreHeader />
-      <section className="hero lifestyle-hero">
-        <Image
-          className="lifestyle-hero-image"
-          src="/generated/candy-picnic.png"
-          alt="Friends sharing colorful CandyRama candy at a sunny backyard picnic"
-          fill
-          priority
-          sizes="100vw"
-        />
-        <div className="lifestyle-shade" />
-        <div className="hero-copy">
-          <p className="eyebrow">SWEET. LOUD. MADE BY HAND.</p>
-          <h1>
-            Candy with
-            <br />
-            <em>main character</em>
-            <br />
-            energy.
-          </h1>
-          <p className="lede">
-            Gummies, brittle, and wildly good treats. Packed with big flavor
-            right here in Texas.
-          </p>
-          <div className="hero-buttons">
-            <Link href="/shop" className="button primary">
-              Shop all candy <ArrowRight />
-            </Link>
-            <Link href="/about" className="button secondary">
-              Meet CandyRama
-            </Link>
-          </div>
-          <div className="micro-proof">
-            <span>
-              <Star fill="currentColor" /> Big flavor in every bag
-            </span>
-            <span>Packed by hand in Texas</span>
-          </div>
+      <section className="discovery-hero" aria-labelledby="discovery-title">
+        <div className="discovery-hero-art" aria-hidden="true">
+          <Image
+            loading="eager"
+            className="hero-pouch hero-pouch-blue"
+            src="/generated/blue-raspberry-pink-v1.png"
+            alt=""
+            width={1254}
+            height={1254}
+            sizes="(max-width: 639px) 42vw, 24vw"
+          />
+          <Image
+            loading="eager"
+            className="hero-pouch hero-pouch-belts"
+            src="/generated/sour-belts-pink-hero-v1.png"
+            alt=""
+            width={1254}
+            height={1254}
+            sizes="(max-width: 639px) 42vw, 24vw"
+          />
+          <Image
+            className="hero-pouch hero-pouch-rainbow"
+            src="/generated/rainbow-mix-pink-v1.png"
+            alt=""
+            width={1254}
+            height={1254}
+            sizes="(max-width: 639px) 34vw, (max-width: 900px) 24vw, 20vw"
+            preload
+          />
+          <Image
+            className="hero-sour-belts"
+            src="/generated/rainbow-sour-cutout.png"
+            alt=""
+            width={520}
+            height={520}
+            sizes="(max-width: 639px) 24vw, 13vw"
+          />
         </div>
-      </section>
-      <section className="ticker" aria-label="Candy categories">
-        <span>GUMMIES</span>
-        <b>✦</b>
-        <span>BRITTLE</span>
-        <b>✦</b>
-        <span>SOUR STUFF</span>
-        <b>✦</b>
-        <span>SPICY AND SWEET</span>
-      </section>
-      <section className="shop-section" id="shop">
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow">THE GOOD STUFF</p>
-            <h2>Pick your craving.</h2>
-          </div>
-          <Link href="/shop" className="text-link">
-            Shop all treats <ArrowRight />
+        <div className="hero-gloss" aria-hidden="true" />
+        <div className="discovery-hero-copy">
+          <h1 id="discovery-title">Taste the Twist.</h1>
+          <Link href="#candy-lineup" className="button primary">
+            Shop candy <ArrowUpRight size={19} aria-hidden="true" />
           </Link>
         </div>
-        <div className="product-grid">
-          {products.slice(0, 4).map((product) => (
-            <ProductCard product={product} key={product.slug} />
+      </section>
+      <section
+        id="candy-lineup"
+        className="counter-featured discovery-lineup"
+        aria-labelledby="lineup-title"
+      >
+        <div className="section-heading">
+          <h2 id="lineup-title">Find your next favorite.</h2>
+          <Link href="/shop" className="text-link">
+            Shop with filters <ArrowUpRight size={18} aria-hidden="true" />
+          </Link>
+        </div>
+        <nav className="discovery-filter-links" aria-label="Shop by craving">
+          <Link href="/shop">All candy</Link>
+          {directions.map((direction) => (
+            <Link
+              key={direction.craving}
+              href={`/shop?craving=${direction.craving}`}
+            >
+              {direction.label}
+            </Link>
+          ))}
+        </nav>
+        <div className="product-grid homepage-product-grid">
+          {lineup.map((product, index) => (
+            <ProductCard
+              key={product.slug}
+              product={product}
+              revealIndex={index}
+            />
           ))}
         </div>
+        {products.length === 0 && (
+          <p>Our candy lineup is taking a little break. Check back soon.</p>
+        )}
       </section>
-      <section className="home-photo-strip" aria-label="CandyRama favorites">
-        <Link href="/product/rainbow-sour-mix" className="home-photo-card tall">
+      <section
+        className="discovery-story"
+        aria-labelledby="story-title"
+        data-reveal
+      >
+        <div className="discovery-story-image">
           <Image
-            src="/generated/rainbow-mix-launch.png"
-            alt="Rainbow Sour Mix spilling from a CandyRama bag"
+            src={lifestyleImages.backyardSharing}
+            alt="Friends sharing colorful candy around a sunny backyard table"
             fill
-            sizes="(max-width: 700px) 100vw, 40vw"
+            sizes="(max-width: 900px) 100vw, 60vw"
           />
-          <span>
-            <small>Sour and loud</small>
-            <strong>Rainbow Sour Mix</strong>
-            <ArrowRight />
-          </span>
-        </Link>
-        <Link href="/product/chamoy-heatwave" className="home-photo-card">
-          <Image
-            src="/generated/chamoy-heatwave-launch.png"
-            alt="Chamoy Heatwave candy with a sweet and spicy kick"
-            fill
-            sizes="(max-width: 700px) 100vw, 30vw"
-          />
-          <span>
-            <small>Sweet meets heat</small>
-            <strong>Chamoy Heatwave</strong>
-            <ArrowRight />
-          </span>
-        </Link>
-        <Link href="/product/blue-raspberry-blast" className="home-photo-card">
-          <Image
-            src="/generated/blue-raspberry-launch.png"
-            alt="Blue Raspberry Blast sour candy"
-            fill
-            sizes="(max-width: 700px) 100vw, 30vw"
-          />
-          <span>
-            <small>Big blue pucker</small>
-            <strong>Blue Raspberry Blast</strong>
-            <ArrowRight />
-          </span>
-        </Link>
-      </section>
-      <section className="home-pick-four">
-        <div>
-          <p className="eyebrow">THE FOUR BAG BOX</p>
-          <h2>
-            Four favorites.
-            <br />
-            15% happier.
-          </h2>
-          <p>Pick any four bags and we will take 15% off automatically.</p>
-          <Link href="/pick-four" className="button primary">
-            Build my box <ArrowRight />
-          </Link>
         </div>
-        <div className="home-box-art" aria-hidden="true">
-          <span>
-            <Image
-              src="/generated/rainbow-sour-cutout.png"
-              alt=""
-              width={230}
-              height={230}
-            />
-          </span>
-          <span>
-            <Image
-              src="/generated/blue-sour-cutout.png"
-              alt=""
-              width={230}
-              height={230}
-            />
-          </span>
-          <span>
-            <Image
-              src="/generated/chamoy-cutout.png"
-              alt=""
-              width={230}
-              height={230}
-            />
-          </span>
-          <span>
-            <Image
-              src="/generated/brittle-cutout.png"
-              alt=""
-              width={230}
-              height={230}
-            />
-          </span>
-          <Sparkles />
-        </div>
-      </section>
-      <section className="home-paths">
-        <Link href="/gifting">
-          <span className="home-path-image">
-            <Image
-              src="/generated/gummy-bear-party-launch.png"
-              alt="A colorful CandyRama gift bag"
-              fill
-              sizes="(max-width: 900px) 100vw, 33vw"
-            />
-          </span>
-          <strong>Send a sweet gift</strong>
-          <span>Add a note at checkout.</span>
-          <ArrowRight />
-        </Link>
-        <Link href="/freshness-promise">
-          <span className="home-path-image">
-            <Image
-              src="/generated/workshop.png"
-              alt="CandyRama treats being packed by hand"
-              fill
-              sizes="(max-width: 900px) 100vw, 33vw"
-            />
-          </span>
-          <strong>Packed with care</strong>
-          <span>See how we keep every bag fresh.</span>
-          <ArrowRight />
-        </Link>
-        <Link href="/account">
-          <span className="home-path-image">
-            <Image
-              src="/generated/candy-picnic.png"
-              alt="Friends enjoying CandyRama treats together"
-              fill
-              sizes="(max-width: 900px) 100vw, 33vw"
-            />
-          </span>
-          <strong>Come back for more</strong>
-          <span>Track orders and Sugar Points.</span>
-          <ArrowRight />
-        </Link>
-      </section>
-      <section className="story-section" id="story">
-        <div className="story-card">
-          <p className="eyebrow">HOWDY, SWEET TOOTH!</p>
-          <h2>
-            Little batches.
-            <br />
-            Big candy drama.
-          </h2>
+        <div className="discovery-story-copy">
+          <h2 id="story-title">Small team. Big candy curiosity.</h2>
           <p>
-            We pack candy for people who always want one more handful. Every bag
-            brings the flavor. Boring bites can stay home.
+            We’re Candy Rama, a small Texas team with a big appetite for trying
+            something new.
           </p>
-          <Link href="/about" className="button secondary">
-            Read our story
+          <p>
+            When a new candy catches our eye, we experiment, give it our best,
+            and get it online for you to try.
+          </p>
+          <Link href="/about" className="text-link">
+            Meet Candy Rama <ArrowUpRight size={18} aria-hidden="true" />
           </Link>
         </div>
-        <div className="story-visual">
+      </section>
+      {directions.length > 0 && (
+        <section
+          className="discovery-cravings"
+          aria-labelledby="cravings-title"
+          data-reveal
+        >
+          <div className="section-heading">
+            <h2 id="cravings-title">Follow your craving.</h2>
+          </div>
+          <div
+            className="discovery-flavors"
+            aria-label="Explore candy by craving"
+          >
+            {directions.map((direction) => (
+              <Link
+                key={direction.craving}
+                href={`/shop?craving=${direction.craving}`}
+                className={`discovery-flavor discovery-flavor-${direction.tone}`}
+              >
+                <div className="discovery-candy-image">
+                  <Image
+                    src={direction.image}
+                    alt=""
+                    width={1448}
+                    height={1086}
+                    sizes="(max-width: 639px) 100vw, 33vw"
+                  />
+                </div>
+                <span>
+                  {direction.label}
+                  <ArrowUpRight size={22} aria-hidden="true" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+      <section
+        className="counter-box-band discovery-box"
+        data-reveal
+        data-sparkle
+      >
+        <div className="discovery-box-photo">
           <Image
-            src="/generated/workshop.png"
-            alt="Candy makers tossing colorful gummies by hand in a small Texas workshop"
+            src={lifestyleImages.movieNight}
+            alt="Candy Rama gummies and a pink pouch being shared at movie night"
             fill
-            sizes="(max-width: 800px) 100vw, 55vw"
+            sizes="(max-width: 767px) 100vw, 60vw"
           />
         </div>
+        <div className="discovery-box-copy">
+          <h2>Can’t pick just one?</h2>
+          <div>
+            <p>Pick four bags. Save 15%.</p>
+            <Link href="/pick-four" className="button primary">
+              Build your four <ArrowUpRight size={18} aria-hidden="true" />
+            </Link>
+          </div>
+          <PickFourMotion />
+        </div>
       </section>
+      <div className="candy-hand-divider"><CandyHand /></div>
       <StoreFooter />
     </main>
   );

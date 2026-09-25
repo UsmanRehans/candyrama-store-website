@@ -112,3 +112,25 @@ The owner requested a full public-site review of Rich n Richer and a team build 
 Owner follow-up: specifically likes the reference footer displaying all available shopping platforms with recognizable logos. Include this in the plan's first release as a Candy Rama-styled “Shop us on” row. Actual Candy Rama channels and URLs still need verification; the reference's platform list is not evidence of our availability. Preserve header/toolbar and do not infer authorization for backend marketplace integrations.
 
 Owner follow-up on video: use AI-generated promotional videos for concepts now; Hani, identified by the owner as CEO, may hire a real production person later. This authorizes concept creation, not fabricated customer testimonials or presenting generated footage as actual people/operations. Draft concepts are in `docs/ai-video-concepts-2026-09-21.md`. No video footage was generated in the planning session because no video-generation tool was connected.
+
+
+## Owner correction — September 21, 2026: website video mood
+
+After reviewing the initial AI concept direction, the owner wants Candy Rama packaging and brand name visible, but says the videos do not need to be so close up. Aim for beautiful, easygoing scenes that fit the website. This supersedes close-up-heavy candy videos and proposed punchy pouch reveal/end-card edits. Vita, Lauren and Avery should jointly define placement, visual direction and editorial purpose. Preserve the existing three-pouch hero, header/toolbar and near-top catalog. This is direction for internal concept development, not publication authorization or real customer/team proof.
+
+
+## Owner correction — hero only; gallery rejected
+
+Owner rejected the separate video gallery and clarified “main toolbar” means the hero/banner beneath navigation. Production was rolled back successfully to `dpl_BpXk2BSdzLcTZqdEyapexVT1veXg`; browser verification confirms original hero, complete lineup and story, without gallery. Local gallery component, insertion, styles and public media copies were removed; original production studies remain archived in outputs.
+
+The earlier after-catalog plan is superseded. AI footage is authorized only inside the existing hero/banner. Preserve navigation, established design, products and packaging. Reference inspected directly: Rich & Richer uses `/video/Hero.mp4`, a 10.005-second muted autoplay loop behind HTML hero content, starting on shelves of packaged candy and transitioning to household products. Adapt the ambient hero treatment to Candy Rama only. Do not add a video gallery or present AI as customer footage.
+
+
+## Owner refinement — packages within footage, softer native colors
+
+Owner prefers the packages themselves to be part of the video scene, not separate page overlays, and prefers the video’s softer colors instead of imposing the saturated CSS background. This supersedes the background-only/40% blend treatment. Scope remains the hero beneath navigation; keep headline/CTA and all other store sections. Generate a reference-conditioned full packaging scene with integrated lighting/shadows and preserve readable Candy Rama identity.
+
+Owner screenshot correction: remove the loose candy pile/cutout in front of hero pouches. Full scene should contain the three packages only; no foreground loose candy decoration.
+
+
+Owner explicitly rejected the visible “AI-created brand scene” label and round video control overlay (September21 screenshot11:54). Removed label and hid visual controls during normal browsing; keyboard focus still reveals an accessible pause/play control. Preserve reduced-motion/offscreen behavior. Do not reintroduce the rejected overlay.

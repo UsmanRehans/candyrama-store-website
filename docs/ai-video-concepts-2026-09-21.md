@@ -46,3 +46,10 @@ Postproduction: optional unchanged approved pouch composite only if its perspect
 6. Keep AI concept labels and distinguish these promotional illustrations from genuine customer reviews and real team stories. Publication is separate from this concept request.
 
 Alternative available approach: animate existing AI-generated product stills into motion previews. This is motion graphics, not generated action footage; agree that format before substituting it for these films.
+
+
+## Continuation update — September 21, 2026
+
+The earlier missing-tool blocker is resolved: Higgsfield connected and generated three initial studies, spending 37 credits. See [production record](ai-video-production-2026-09-21.md) and [Vita review](ai-video-vita-review-2026-09-21.md). Owner subsequently requested a calmer, wider website direction with visible packaging/name, developed jointly by Vita, Lauren and Avery. The initial portrait/candy-close-up studies are not the selected website treatment. No deployment or application integration occurred.
+
+Latest agreed team recommendation: [calm website video pilot](ai-video-website-team-plan-2026-09-21.md). One wide packaging-led scene after the catalog, separately composed mobile version, poster-first playback. This supersedes portrait-ad reveals/end cards. Next: a reviewed scene composition and one restrained pilot; no deployment.

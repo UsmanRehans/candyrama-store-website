@@ -2089,86 +2089,83 @@
 /* Discovery-led home: a strong candy image, then every active product. */
 .candy-counter .discovery-hero {
   position: relative;
-  min-height: clamp(440px, 48vw, 560px);
-  overflow: hidden;
-  background: linear-gradient(to bottom, #ffd23f 0 62.5%, #ea537b 62.5% 100%);
+  min-height: 0;
+  aspect-ratio: 16 / 7;
+  overflow: clip;
+  background: #bda681;
   isolation: isolate;
 }
-.candy-counter .discovery-hero-art {
+.candy-counter .hero-scene {
   position: absolute;
-  z-index: -2;
-  inset: 0 0 0 auto;
-  width: min(63vw, 1000px);
-  pointer-events: none;
-  /* Generated cutouts can retain a faint full-canvas color fringe. */
-  isolation: isolate;
-}
-.candy-counter .discovery-hero-art::before {
-  content: "";
-  position: absolute;
-  inset: 4% 4% 17%;
-  background: none;
-}
-.candy-counter .discovery-hero-art::after {
-  content: "";
-  position: absolute;
+  inset: 0;
   z-index: 0;
-  left: 12%;
-  right: 8%;
-  bottom: 2%;
-  height: 12%;
-  border-radius: 50%;
-  background: rgb(91 18 62 / 19%);
-  filter: blur(18px);
 }
-.candy-counter .hero-pouch,
-.candy-counter .hero-sour-belts {
+.candy-counter .hero-scene-poster,
+.candy-counter .hero-ambient-video {
   position: absolute;
-  width: auto;
-  object-fit: contain;
-  filter: drop-shadow(0 16px 18px rgb(91 18 62 / 14%));
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
-.candy-counter .hero-pouch-blue {
-  z-index: 1;
-  left: 22%;
-  bottom: 2%;
-  height: 72%;
-  translate: -50% 0;
+.candy-counter .hero-scene-poster {
+  background: url("/videos/hero/package-scene.jpg") center 43% / cover no-repeat;
 }
-.candy-counter .hero-pouch-belts {
-  z-index: 1;
-  left: 78%;
-  right: auto;
-  bottom: 2%;
-  height: 72%;
-  translate: -50% 0;
+.candy-counter .hero-ambient-video {
+  opacity: 1;
+  object-fit: cover;
+  object-position: center 43%;
 }
-.candy-counter .hero-pouch-rainbow {
-  z-index: 2;
-  display: block;
-  left: 50%;
-  bottom: 1%;
-  height: 80%;
-  translate: -50% 0;
+.candy-counter .hero-video-controls {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  left: var(--counter-pad);
+  bottom: 8px;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #5b123e;
+  font-size: 11px;
 }
-.candy-counter .hero-sour-belts {
-  z-index: 3;
-  left: 50%;
-  right: auto;
-  bottom: -7%;
-  height: 24%;
-  translate: -50% 0;
+.candy-counter .hero-video-controls:focus-within {
+  opacity: 1;
+  pointer-events: auto;
+}
+.candy-counter .hero-video-controls button {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: #fffcf5;
+  color: inherit;
+  cursor: pointer;
+}
+.candy-counter .hero-video-controls button:focus-visible {
+  outline: 3px solid #5b123e;
+  outline-offset: 3px;
 }
 .candy-counter .discovery-hero-copy {
-  min-height: inherit;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  z-index: 1;
+  pointer-events: none;
+  min-height: 100%;
+  height: 100%;
   max-width: 1280px;
   margin: auto;
-  padding: clamp(64px, 8vw, 112px) var(--counter-pad);
+  padding: clamp(32px, 6vw, 96px) var(--counter-pad);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
 }
+.candy-counter .discovery-hero-copy .button { pointer-events: auto; }
 .candy-counter .discovery-hero-copy h1 {
   max-width: 8ch;
   margin: 0;
@@ -2458,24 +2455,6 @@
 }
 
 @media (max-width: 900px) {
-  .candy-counter .discovery-hero-art {
-    width: 63%;
-  }
-  .candy-counter .hero-pouch-blue {
-    left: 22%;
-    height: 64%;
-  }
-  .candy-counter .hero-pouch-belts {
-    z-index: 1;
-    left: 78%;
-    right: auto;
-    height: 64%;
-  }
-  .candy-counter .hero-pouch-rainbow {
-    display: block;
-    left: 50%;
-    height: 72%;
-  }
   .candy-counter .homepage-product-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -2498,37 +2477,30 @@
 }
 @media (max-width: 639px) {
   .candy-counter .discovery-hero {
-    min-height: 560px;
+    min-height: 0;
+    aspect-ratio: auto;
+    background: #eadfcd;
   }
   .candy-counter .discovery-hero-copy {
-    justify-content: flex-start;
-    padding-top: 54px;
+    position: relative;
+    inset: auto;
+    min-height: 260px;
+    height: auto;
+    justify-content: center;
+    padding: 30px var(--counter-pad);
   }
-  .candy-counter .discovery-hero-art {
-    inset: auto 0 0;
-    width: 100%;
-    height: 72%;
+  .candy-counter .hero-scene {
+    position: relative;
+    aspect-ratio: 16 / 9;
   }
-  .candy-counter .hero-pouch-blue {
-    left: 22%;
-    height: 58%;
+  .candy-counter .hero-scene-poster {
+    background-image: url("/videos/hero/package-scene-mobile.jpg");
+    background-size: contain;
+    background-position: center;
   }
-  .candy-counter .hero-pouch-belts {
-    z-index: 1;
-    left: 78%;
-    right: auto;
-    height: 58%;
-  }
-  .candy-counter .hero-pouch-rainbow {
-    display: block;
-    left: 50%;
-    height: 64%;
-  }
-  .candy-counter .hero-sour-belts {
-    left: 50%;
-    right: auto;
-    height: 18%;
-  }
+  .candy-counter .hero-ambient-video { object-fit: contain; object-position: center; }
+  .candy-counter .hero-video-controls { bottom: 4px; font-size: 10px; }
+
   .candy-counter .discovery-hero-copy h1 {
     max-width: 9ch;
     font-size: clamp(48px, 15vw, 66px);

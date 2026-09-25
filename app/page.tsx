@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { HeroVideo } from "@/components/hero-video";
 import { CandyHand } from "@/components/candy-hand";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -49,50 +50,13 @@ export default async function Home() {
       <StorefrontMotion />
       <StoreHeader />
       <section className="discovery-hero" aria-labelledby="discovery-title">
-        <div className="discovery-hero-art" aria-hidden="true">
-          <Image
-            loading="eager"
-            className="hero-pouch hero-pouch-blue"
-            src="/generated/blue-raspberry-pink-v1.png"
-            alt=""
-            width={1254}
-            height={1254}
-            sizes="(max-width: 639px) 42vw, 24vw"
-          />
-          <Image
-            loading="eager"
-            className="hero-pouch hero-pouch-belts"
-            src="/generated/sour-belts-pink-hero-v1.png"
-            alt=""
-            width={1254}
-            height={1254}
-            sizes="(max-width: 639px) 42vw, 24vw"
-          />
-          <Image
-            className="hero-pouch hero-pouch-rainbow"
-            src="/generated/rainbow-mix-pink-v1.png"
-            alt=""
-            width={1254}
-            height={1254}
-            sizes="(max-width: 639px) 34vw, (max-width: 900px) 24vw, 20vw"
-            preload
-          />
-          <Image
-            className="hero-sour-belts"
-            src="/generated/rainbow-sour-cutout.png"
-            alt=""
-            width={520}
-            height={520}
-            sizes="(max-width: 639px) 24vw, 13vw"
-          />
-        </div>
-        <div className="hero-gloss" aria-hidden="true" />
         <div className="discovery-hero-copy">
           <h1 id="discovery-title">Taste the Twist.</h1>
           <Link href="#candy-lineup" className="button primary">
             Shop candy <ArrowUpRight size={19} aria-hidden="true" />
           </Link>
         </div>
+        <HeroVideo />
       </section>
       <section
         id="candy-lineup"

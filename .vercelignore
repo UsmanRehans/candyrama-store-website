@@ -1,0 +1,13 @@
+.git/
+node_modules/
+.next/
+.env*
+*.tsbuildinfo
+.DS_Store
+prisma/dev.db
+prisma/dev.db-*
+outputs/
+work/
+.agents/
+.codex/
+docs/

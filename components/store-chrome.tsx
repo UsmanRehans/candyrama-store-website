@@ -1,10 +1,10 @@
-import Link from 'next/link';
-import { SignupButton } from './email-signup-popup';
-import { StoreHeaderClient } from './store-header-client';
+import Link from "next/link";
+import { SignupButton } from "./email-signup-popup";
+import { StoreHeaderClient } from "./store-header-client";
 
 export function Wordmark({ footer = false }: { footer?: boolean }) {
   return (
-    <span className={`wordmark${footer ? ' footer-wordmark' : ''}`}>
+    <span className={`wordmark${footer ? " footer-wordmark" : ""}`}>
       <span>CANDY</span>
       <span>RAMA</span>
     </span>
@@ -20,10 +20,9 @@ export function StoreFooter() {
     <footer className="site-footer">
       <div className="footer-brand">
         <Wordmark footer />
-        <p>More candy. More drama.</p>
+        <p>Stay curious. Try some candy.</p>
         <p className="footer-description">
-          Bold, tangy, and sweet treats packed with personality in Rosenberg,
-          Texas.
+          A small Texas team, always looking for your next favorite.
         </p>
       </div>
       <nav className="footer-column" aria-label="Footer shop navigation">
@@ -40,6 +39,8 @@ export function StoreFooter() {
         <Link href="/legal/shipping-returns">Shipping &amp; returns</Link>
         <Link href="/freshness-promise">Freshness promise</Link>
         <Link href="/allergens">Allergen info</Link>
+        <Link href="/dietary-information">Dietary information</Link>
+        <Link href="/candy-safety">Candy safety &amp; care</Link>
         <Link href="/legal/privacy">Privacy policy</Link>
         <Link href="/legal/privacy-choices">Privacy choices</Link>
         <Link href="/account">My account</Link>
@@ -55,7 +56,7 @@ export function StoreFooter() {
       </div>
       <div className="footer-bottom">
         <p>© 2026 CandyRama. All rights reserved.</p>
-        <p>Made with sweetness in Rosenberg, Texas.</p>
+        <p>From our team in Rosenberg, Texas.</p>
       </div>
     </footer>
   );

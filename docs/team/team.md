@@ -22,3 +22,11 @@ Cando coordinates Lauren, Vita, and task-specific Avery research. Miles joins Am
 ## Versioned skill entry points
 
 The seven Candy Rama skill entry points and their display metadata are stored in `.agents/skills/` in this repository. Shared role instructions and brand memory remain in `docs/team/`; keep these canonical rather than copying them into every skill. Personal installations may also exist in `~/.codex/skills/`. Zahid is an existing separately installed security skill; its source is not duplicated here.
+
+## Shared interface design toolkit
+
+For website and app design assignments, every employee follows [the Impeccable integration guide](impeccable.md). It maps commands to role responsibilities and preserves the existing brand, image-review, and release rules. The upstream skill is installed in `.agents/skills/impeccable/`.
+
+## The team on future websites
+
+The reusable `website-team` skill carries the role responsibilities, direct-owner communication protocol and cross-project preferences. A personal installation is available at `~/.codex/skills/website-team/`; the versioned source is `.agents/skills/website-team/`. New brands get their own brief and memory. Candy Rama facts and visual choices do not automatically transfer.

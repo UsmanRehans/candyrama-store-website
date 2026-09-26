@@ -10,12 +10,8 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false, nocache: true },
 };
 
-export default async function AmazonDemo({
-  searchParams,
-}: {
-  searchParams: Promise<{ error?: string }>;
-}) {
-  if (await hasDemoSession()) redirect('/amazon-demo/preview');
+export default async function AmazonDemo({ searchParams }: { searchParams: Promise<{ error?: string }> }) {
+  if (await hasDemoSession()) redirect('/amazon-demo/preview/index.html');
   const { error } = await searchParams;
   return (
     <main className={`${styles.studio} ${styles.login}`}>

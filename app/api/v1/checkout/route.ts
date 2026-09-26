@@ -3,7 +3,7 @@ import { randomUUID } from 'node:crypto';
 import { Prisma } from '@prisma/client';
 import { checkoutSchema } from '@/lib/schemas/commerce';
 import { db } from '@/lib/server/db';
-import { env } from '@/lib/server/env';
+import { env, getStripeEnv } from '@/lib/server/env';
 import { getStripe } from '@/lib/server/stripe';
 
 export async function POST(request: NextRequest) {
@@ -11,7 +11,12 @@ export async function POST(request: NextRequest) {
   try {
     if (!env.STORE_PURCHASING_ENABLED)
       return NextResponse.json(
-        { error: 'CandyRama ordering is coming soon.' },
+        { error: 'Ordering is temporarily unavailable.' },
+        { status: 503 },
+      );
+    if (getStripeEnv().mode !== 'live' || !getStripeEnv().secretKey)
+      return NextResponse.json(
+        { error: 'Please place your order using the payment-link option below.' },
         { status: 503 },
       );
     const body = checkoutSchema.parse(await request.json());
@@ -119,7 +124,6 @@ export async function POST(request: NextRequest) {
       !usesSignupOffer;
     const rewardPointsRedeemed =
       !usesSignupOffer && !usesBundleOffer ? availableRewardPoints : 0;
-    const rewardDiscountCents = rewardPointsRedeemed * 5;
     const promotionDiscountCents = usesSignupOffer
       ? welcomeDiscountCents
       : usesBundleOffer

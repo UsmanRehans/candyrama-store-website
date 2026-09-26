@@ -50,3 +50,21 @@ The second headline deliberately avoids a flavor/texture claim until the target 
 ## Claims are a separate review
 
 The live site contains manufacturing, hand-packing, workshop, small-batch, bestseller, and promotional language. Their presence establishes that the copy is published, not that the claims are verified. Do not transfer them to new assets without evidence. Texas-based is recorded owner direction; it does not imply Texas-made. Local-made and affordability remain ambitions until substantiated. Keep origin, ingredients, allergens, certifications, net weight, contents, inventory, and comparative claims tied to approved product/business records.
+
+## Latest owner direction — September 14, 2026
+
+Prioritize the small Texas business's curiosity, candy variety, and enthusiasm for bringing new discoveries to online customers. Use fewer words and let product selection and imagery carry more of the story. Earlier “main character energy” and “drama” examples are historical voice references, not mandatory lead messages. Sound personal, eager, straightforward, and candy-obsessed; avoid corporate innovation language and exaggerated Texas mannerisms.
+
+Suggested direction, not yet approved campaign copy: “Small Texas team. Big candy curiosity.” Use specific discovery invitations such as “See what's new” when linked to genuine current arrivals. Show breadth using actual available products. Fast development of new offerings must not become an unsupported shipping-speed promise or a guaranteed release cadence.
+
+## Owner feedback — September 14, 2026: typography and opening
+
+The owner dislikes the current typography and questions the lack of a strong opening/header page. Header versus hero meaning is not yet confirmed; current exploration assumes hero/banner and reviews navigation separately. Research and alternative type/image concepts are requested. Fraunces and Bricolage Grotesque are proposals, not selected fonts. Do not treat the latest local discovery layout as approved or publish it on that basis.
+
+## Owner decision — September 14, 2026: typography direction
+
+The owner selected the second typography concept: Bricolage Grotesque for expressive headlines paired with DM Sans for product names, prices, navigation, controls, and body copy. Treat this as the approved direction for the next Candy Rama website design pass. It does not by itself authorize publication or require the display face on dense legal or administrative surfaces.
+
+## Owner direction — September 15, 2026: let the candy talk
+
+Keep the homepage hero visually led by candy and the pink Candy Rama packaging. Use very little hero copy. Text baked into hero imagery is limited to the Candy Rama name, logo, or “Taste the Twist” slogan. Put longer brand explanations, health and safety guidance, dietary information, and policies on their own pages where visitors intentionally seek detail.

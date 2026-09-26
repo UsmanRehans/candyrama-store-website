@@ -24,9 +24,8 @@ export default async function ShopPage({
     <main className="candy-counter">
       <StoreHeader />
       <section className="page-hero shop-hero">
-        <p className="eyebrow">Find your new favorite</p>
-        <h1>All the good stuff.</h1>
-        <p>Sweet, sour, spicy, or crunchy.</p>
+        <h1>What are you craving?</h1>
+        <p>Find a favorite. Try something different.</p>
       </section>
       <ShopCatalog key={active} products={products} initialCraving={active} />
       <StoreFooter />

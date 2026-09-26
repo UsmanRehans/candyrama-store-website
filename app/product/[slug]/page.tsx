@@ -1,13 +1,14 @@
-import { ProductPhoto } from '@/components/product-photo';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
-import { ProductOptions } from '@/components/product-options';
-import { StoreFooter, StoreHeader } from '@/components/store-chrome';
-import { connection } from 'next/server';
+import { ProductPhoto } from "@/components/product-photo";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { ViewTransition } from "react";
+import { ProductOptions } from "@/components/product-options";
+import { StoreFooter, StoreHeader } from "@/components/store-chrome";
+import { connection } from "next/server";
 import {
   getStorefrontProduct,
   getStorefrontProducts,
-} from '@/lib/server/catalog';
+} from "@/lib/server/catalog";
 export async function generateMetadata({
   params,
 }: {
@@ -28,10 +29,10 @@ export default async function ProductPage({
   const { slug } = await params;
   const product = await getStorefrontProduct(slug);
   if (!product) notFound();
-  const craving = ['Brittle', 'Bark'].includes(product.category)
-    ? 'crunchy'
-    : product.category.toLowerCase() === 'gummies'
-      ? 'sweet'
+  const craving = ["Brittle", "Bark"].includes(product.category)
+    ? "crunchy"
+    : product.category.toLowerCase() === "gummies"
+      ? "sweet"
       : product.category.toLowerCase();
   const related = (await getStorefrontProducts())
     .filter((item) => item.slug !== slug)
@@ -50,7 +51,13 @@ export default async function ProductPage({
       </nav>
       <section className="product-detail">
         <div className={`product-detail-art ${product.tone}`}>
-          <ProductPhoto src={product.image} alt={product.name} priority />
+          <ViewTransition
+            name={`product-${product.slug}`}
+            share="product-morph"
+            default="none"
+          >
+            <ProductPhoto src={product.image} alt={product.name} priority />
+          </ViewTransition>
         </div>
         <div className="product-detail-copy">
           <p className="eyebrow">{product.category}</p>
@@ -61,7 +68,7 @@ export default async function ProductPage({
             purchaseEnabled={product.purchaseEnabled ?? false}
           />
           <div className="product-facts">
-            Ingredient and allergen information appears on the current package.{' '}
+            Ingredient and allergen information appears on the current package.{" "}
             <Link href="/allergens">Read ingredient and allergen guidance</Link>
           </div>
         </div>

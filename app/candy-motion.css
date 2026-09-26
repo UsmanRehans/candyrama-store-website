@@ -1,0 +1,559 @@
+:root {
+  --motion-quick: 180ms;
+  --motion-medium: 320ms;
+  --motion-reveal: 620ms;
+  --motion-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+::view-transition {
+  pointer-events: none;
+}
+
+::view-transition-group(.product-morph) {
+  animation-duration: 380ms;
+  animation-timing-function: var(--motion-spring);
+}
+
+.candy-counter .button,
+.candy-counter .quick-add:not(:disabled) {
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 0 #5b123e;
+  transition:
+    transform var(--motion-quick) var(--motion-spring),
+    box-shadow var(--motion-quick) var(--motion-spring),
+    background-color var(--motion-quick) ease;
+}
+
+.candy-counter .button::before,
+.candy-counter .quick-add:not(:disabled)::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 48%;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgb(255 242 217 / 16%), transparent);
+  pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .candy-counter .button:hover,
+  .candy-counter .quick-add:not(:disabled):hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #5b123e;
+  }
+}
+
+.candy-counter .button:active,
+.candy-counter .quick-add:not(:disabled):active {
+  transform: translateY(3px) scale(0.99);
+  box-shadow: 0 1px 0 #5b123e;
+}
+
+.candy-counter .button svg,
+.candy-counter .text-link svg {
+  transition: transform var(--motion-quick) var(--motion-spring);
+}
+
+.candy-counter :is(.button, .text-link):hover svg {
+  transform: translate(3px, -2px);
+}
+
+.candy-counter .discovery-hero {
+  --hero-x: 0px;
+  --hero-y: 0px;
+}
+
+.candy-counter .hero-pouch {
+  animation: hero-candy-float 8s var(--motion-spring) 2 both;
+}
+
+.candy-counter .hero-pouch-belts {
+  animation-delay: 0ms;
+}
+
+.candy-counter .hero-pouch-rainbow {
+  animation-delay: 0ms;
+}
+
+.candy-counter .hero-gloss {
+  position: absolute;
+  z-index: 1;
+  top: -20%;
+  right: -18%;
+  width: 58%;
+  height: 145%;
+  transform: translateX(-190%) rotate(12deg);
+  background: linear-gradient(
+    100deg,
+    transparent 24%,
+    rgb(255 242 217 / 9%) 45%,
+    rgb(255 242 217 / 12%) 50%,
+    rgb(255 242 217 / 8%) 55%,
+    transparent 76%
+  );
+  pointer-events: none;
+  animation: pouch-sheen 980ms var(--motion-spring) 380ms 1 both;
+}
+
+.candy-counter .hero-candy-drift {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.candy-counter .hero-candy-drift span {
+  position: absolute;
+  display: block;
+  width: 18px;
+  aspect-ratio: 1;
+  border: 3px solid #5b123e;
+  background: #ea537b;
+  border-radius: 42% 58% 52% 48%;
+  box-shadow: inset 3px 3px 0 rgb(255 242 217 / 42%);
+  animation: loose-candy-drift 5.8s var(--motion-bounce) 2 alternate;
+}
+
+.candy-counter .hero-candy-drift span:nth-child(1) {
+  left: 40%;
+  bottom: 10%;
+}
+.candy-counter .hero-candy-drift span:nth-child(2) {
+  left: 48%;
+  bottom: 17%;
+  width: 13px;
+  background: #ffd23f;
+  animation-delay: 180ms;
+}
+.candy-counter .hero-candy-drift span:nth-child(3) {
+  right: 8%;
+  bottom: 9%;
+  width: 15px;
+  background: #fff2d9;
+  animation-delay: 320ms;
+}
+
+.candy-counter .product-card {
+  position: relative;
+  isolation: isolate;
+}
+
+.candy-counter .product-card::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -14px;
+  border: 1px solid transparent;
+  background: transparent;
+  transition:
+    background-color var(--motion-medium) ease,
+    border-color var(--motion-medium) ease,
+    box-shadow var(--motion-medium) ease;
+}
+
+.candy-counter .product-spill {
+  position: absolute;
+  inset: auto 18% 2% 18%;
+  height: 26px;
+  pointer-events: none;
+}
+
+.candy-counter .product-spill span {
+  position: absolute;
+  left: calc(50% - 7px);
+  bottom: 0;
+  width: 14px;
+  aspect-ratio: 1;
+  border: 2px solid #5b123e;
+  border-radius: 48% 52% 45% 55%;
+  background: #ea537b;
+  opacity: 0;
+  transform: translateY(-14px) scale(0.65);
+  transition:
+    opacity 140ms ease,
+    transform 280ms var(--motion-bounce);
+}
+
+.candy-counter .product-spill span:nth-child(2) {
+  background: #ffd23f;
+  transition-delay: 35ms;
+}
+
+.candy-counter .product-spill span:nth-child(3) {
+  background: #fff2d9;
+  transition-delay: 70ms;
+}
+
+.candy-counter
+  .product-card[data-product="chocolate-crunch-bark"]
+  .product-spill
+  span {
+  border-radius: 2px;
+}
+
+.candy-counter .flavor-cue {
+  position: absolute;
+  z-index: 2;
+  top: 8px;
+  right: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 28px;
+  padding: 5px 9px;
+  border: 1px solid #5b123e;
+  border-radius: 999px;
+  background: #fff2d9;
+  color: #5b123e;
+  font-size: 11px;
+  font-weight: 800;
+  opacity: 0;
+  transform: translateY(6px) scale(0.96);
+  transition:
+    opacity var(--motion-quick) ease,
+    transform var(--motion-quick) var(--motion-bounce);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .candy-counter .product-card:hover::before,
+  .candy-counter .product-card:focus-within::before {
+    background: color-mix(in srgb, #fff2d9 82%, #ffd23f 18%);
+    border-color: color-mix(in srgb, #5b123e 20%, transparent);
+    box-shadow: 0 14px 30px rgb(91 18 62 / 8%);
+  }
+
+  .candy-counter
+    .product-card:is(
+      [data-product="spicy-gummy-bears"],
+      [data-product="chamoy-heatwave"]
+    ):hover::before {
+    background: color-mix(in srgb, #fff2d9 78%, #ea537b 22%);
+  }
+
+  .candy-counter
+    .product-card[data-product="chocolate-crunch-bark"]:hover::before {
+    background: color-mix(in srgb, #fff2d9 76%, #5b123e 24%);
+  }
+
+  .candy-counter .product-card[data-product="rainbow-sour-mix"]:hover::before {
+    border-color: #ea537b;
+    box-shadow:
+      5px 0 0 #ffd23f,
+      -5px 0 0 #ea537b;
+  }
+
+  .candy-counter .product-card:hover .product-photo,
+  .candy-counter .product-card:focus-within .product-photo {
+    transform: translateY(-6px) rotate(-0.6deg) scale(1.025);
+  }
+
+  .candy-counter .product-card:hover .product-spill span,
+  .candy-counter .product-card:focus-within .product-spill span {
+    opacity: 1;
+  }
+
+  .candy-counter .product-card:hover .product-spill span:nth-child(1),
+  .candy-counter .product-card:focus-within .product-spill span:nth-child(1) {
+    transform: translate(-20px, 6px) rotate(-18deg) scale(1);
+  }
+  .candy-counter .product-card:hover .product-spill span:nth-child(2),
+  .candy-counter .product-card:focus-within .product-spill span:nth-child(2) {
+    transform: translate(1px, 12px) rotate(14deg) scale(0.86);
+  }
+  .candy-counter .product-card:hover .product-spill span:nth-child(3),
+  .candy-counter .product-card:focus-within .product-spill span:nth-child(3) {
+    transform: translate(22px, 7px) rotate(30deg) scale(0.92);
+  }
+
+  .candy-counter .product-card:hover .flavor-cue,
+  .candy-counter .product-card:focus-within .flavor-cue {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.candy-counter .discovery-flavor {
+  position: relative;
+  isolation: isolate;
+}
+
+.candy-counter .discovery-flavor::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .candy-counter .discovery-flavor-sour:hover .discovery-candy-image img {
+    animation: sour-zing 460ms var(--motion-bounce) 1;
+  }
+
+  .candy-counter .discovery-flavor-spicy::after {
+    background: radial-gradient(
+      circle at 50% 72%,
+      rgb(234 83 123 / 42%),
+      transparent 52%
+    );
+  }
+  .candy-counter .discovery-flavor-spicy:hover::after {
+    animation: heat-shimmer 520ms var(--motion-spring) 1;
+  }
+
+  .candy-counter .discovery-flavor-crunchy::after {
+    background:
+      linear-gradient(62deg, transparent 48%, #5b123e 49% 51%, transparent 52%)
+        46% 40% / 44px 70px no-repeat,
+      linear-gradient(-55deg, transparent 48%, #ea537b 49% 51%, transparent 52%)
+        57% 52% / 36px 58px no-repeat;
+  }
+  .candy-counter .discovery-flavor-crunchy:hover::after {
+    animation: candy-crack 420ms var(--motion-bounce) 1;
+  }
+}
+
+.candy-counter [data-sparkle] {
+  position: relative;
+  isolation: isolate;
+}
+
+.candy-counter [data-sparkle]::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  opacity: 0.11;
+  background-image:
+    radial-gradient(circle, #fff2d9 0 1px, transparent 1.5px),
+    radial-gradient(circle, #5b123e 0 1px, transparent 1.5px);
+  background-position:
+    0 0,
+    17px 13px;
+  background-size:
+    31px 31px,
+    37px 37px;
+  pointer-events: none;
+}
+
+.candy-counter [data-sparkle] > * {
+  position: relative;
+  z-index: 1;
+}
+
+.candy-counter .discovery-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.candy-counter .pick-four-motion {
+  position: relative;
+  width: min(330px, 35vw);
+  height: 155px;
+  flex: 0 0 auto;
+}
+
+.candy-counter .pick-four-pouches {
+  position: absolute;
+  inset: 0 22px 24px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.candy-counter .pick-four-pouches img {
+  width: 82px;
+  height: 82px;
+  object-fit: contain;
+  margin-inline: -9px;
+  opacity: 0;
+  transform: translateY(-70px) rotate(calc((var(--pouch-index) - 1.5) * 3deg));
+}
+
+.candy-counter [data-revealed="true"] .pick-four-pouches img {
+  animation: pouch-into-box 520ms var(--motion-bounce)
+    calc(var(--pouch-index) * 75ms) forwards;
+}
+
+.candy-counter .pick-four-box {
+  position: absolute;
+  inset: auto 18px 0;
+  height: 58px;
+  border: 3px solid #5b123e;
+  background: #ea537b;
+  box-shadow: inset 0 8px 0 rgb(255 242 217 / 16%);
+}
+
+.candy-counter .pick-four-box::before,
+.candy-counter .pick-four-box::after {
+  content: "";
+  position: absolute;
+  top: -17px;
+  width: 52%;
+  height: 18px;
+  border: 3px solid #5b123e;
+  background: #ffd23f;
+  transform-origin: bottom;
+}
+
+.candy-counter [data-revealed="true"] .pick-four-box::before,
+.candy-counter [data-revealed="true"] .pick-four-box::after {
+  animation: box-lid-open 430ms var(--motion-spring) 1 both;
+}
+.candy-counter .pick-four-box::before {
+  left: -3px;
+  transform: skewX(20deg) rotate(-5deg);
+}
+.candy-counter .pick-four-box::after {
+  right: -3px;
+  transform: skewX(-20deg) rotate(5deg);
+}
+
+@keyframes hero-candy-float {
+  0%,
+  100% {
+    transform: translate3d(var(--hero-x), var(--hero-y), 0) scale(1.012);
+  }
+  50% {
+    transform: translate3d(
+        calc(var(--hero-x) + 3px),
+        calc(var(--hero-y) - 3px),
+        0
+      )
+      scale(1.018);
+  }
+}
+@keyframes loose-candy-drift {
+  to {
+    transform: translate3d(5px, -7px, 0) rotate(12deg);
+  }
+}
+@keyframes pouch-sheen {
+  from {
+    transform: translateX(-190%) rotate(12deg);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  to {
+    transform: translateX(110%) rotate(12deg);
+    opacity: 0;
+  }
+}
+@keyframes sour-zing {
+  0%,
+  100% {
+    transform: scale(1.045) translateX(0);
+  }
+  35% {
+    transform: scale(1.055) translateX(-3px) skewX(-1deg);
+  }
+  68% {
+    transform: scale(1.05) translateX(3px) skewX(1deg);
+  }
+}
+@keyframes heat-shimmer {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scaleY(0.9);
+  }
+  55% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.35;
+    transform: translateY(-4px) scaleY(1.04);
+  }
+}
+@keyframes candy-crack {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  55% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.14);
+  }
+}
+@keyframes pouch-into-box {
+  0% {
+    opacity: 0;
+    transform: translateY(-70px) scale(0.82);
+  }
+  72% {
+    opacity: 1;
+    transform: translateY(5px) scale(1.03);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+@keyframes box-lid-open {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  .candy-counter .pick-four-motion {
+    width: min(360px, 100%);
+  }
+}
+
+@media (max-width: 639px) {
+  .candy-counter .hero-candy-drift span:nth-child(1) {
+    left: 22%;
+  }
+  .candy-counter .hero-candy-drift span:nth-child(2) {
+    left: 44%;
+  }
+  .candy-counter .hero-candy-drift span:nth-child(3) {
+    right: 7%;
+  }
+  .candy-counter .flavor-cue {
+    display: none;
+  }
+  .candy-counter .pick-four-motion {
+    height: 135px;
+  }
+  .candy-counter .pick-four-pouches img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+
+  .candy-counter *,
+  .candy-counter *::before,
+  .candy-counter *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .candy-counter .hero-pouch {
+    transform: none !important;
+  }
+
+  .candy-counter .pick-four-pouches img {
+    opacity: 1;
+    transform: none;
+  }
+}

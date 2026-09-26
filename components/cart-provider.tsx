@@ -22,30 +22,37 @@ const storageKey = 'candyrama-cart-v2';
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
+  const [restored, setRestored] = useState(false);
   useEffect(() => {
+    let savedItems: CartItem[] = [];
     try {
       const saved: unknown = JSON.parse(
         localStorage.getItem(storageKey) ?? '[]',
       );
       if (Array.isArray(saved))
-        queueMicrotask(() =>
-          setItems(
-            saved.filter(
+        savedItems = saved.filter(
               (item): item is CartItem =>
                 typeof item?.variantSku === 'string' &&
                 item.variantSku.length > 0 &&
                 Number.isInteger(item.quantity) &&
                 item.quantity > 0,
-            ),
-          ),
-        );
+            );
     } catch {
-      localStorage.removeItem(storageKey);
+      // Storage may be blocked; the in-memory cart still works.
     }
+    queueMicrotask(() => {
+      setItems(savedItems);
+      setRestored(true);
+    });
   }, []);
   useEffect(() => {
-    localStorage.setItem(storageKey, JSON.stringify(items));
-  }, [items]);
+    if (!restored) return;
+    try {
+      localStorage.setItem(storageKey, JSON.stringify(items));
+    } catch {
+      // Retain the current cart when browser storage is unavailable.
+    }
+  }, [items, restored]);
   const clear = useCallback(() => setItems([]), []);
   const value = useMemo<CartContextValue>(
     () => ({

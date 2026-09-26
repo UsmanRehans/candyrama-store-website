@@ -1,17 +1,23 @@
 'use client';
+import '@/app/cart/cart.css';
 import { ProductPhoto } from '@/components/product-photo';
 import Link from 'next/link';
 import { useState } from 'react';
 import { useCart } from './cart-provider';
+import { PaymentLinkOrder } from './payment-link-order';
 import type { StorefrontProduct } from '@/lib/products';
 
 export function CartPageClient({
   products,
+  canPayOnline = false,
 }: {
   products: StorefrontProduct[];
+  canPayOnline?: boolean;
 }) {
   const { items, setQuantity } = useCart();
   const [email, setEmail] = useState('');
+  const [showPaymentLink, setShowPaymentLink] = useState(!canPayOnline);
+  const [orderNumber, setOrderNumber] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [isGift, setIsGift] = useState(false);
@@ -79,8 +85,25 @@ export function CartPageClient({
         cause instanceof Error ? cause.message : 'Checkout is unavailable.',
       );
       setLoading(false);
+      setShowPaymentLink(true);
     }
   }
+  if (orderNumber)
+    return (
+      <section className="cart-shell" aria-live="polite">
+        <h1>Order received.</h1>
+        <p>
+          Your order number is <strong>{orderNumber}</strong>.
+        </p>
+        <p>
+          Payment is still due. We’ll review your order and email your payment
+          link. Your candy ships after payment.
+        </p>
+        <Link href="/shop" className="button primary">
+          Keep exploring
+        </Link>
+      </section>
+    );
   return (
     <section className="cart-shell">
       <h1>Your bag</h1>
@@ -175,19 +198,27 @@ export function CartPageClient({
               <span>Estimated total</span>
               <strong>${(total / 100).toFixed(2)}</strong>
             </p>
-            <small>Taxes and eligible offers are finalized at checkout.</small>
-            <label>
-              Email for your receipt
-              <input
-                type="email"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                placeholder="you@example.com"
-              />
-            </label>
+            <small>
+              U.S. shipping only. Taxes and eligible offers are finalized before
+              payment.
+            </small>
+          </aside>
+          <section className="cart-checkout" aria-labelledby="cart-details-heading">
+            <h2 id="cart-details-heading">Your details</h2>
+            {canPayOnline && (
+              <label>
+                Email for your receipt
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                  placeholder="you@example.com"
+                />
+              </label>
+            )}
             <p className="automatic-offer-note">
-              Email list member on your first order? Add two treats and your
-              lowest priced treat is free automatically.
+              Email list member on your first order? We’ll check your welcome
+              offer before payment.
             </p>
             <label className="cart-check">
               <input
@@ -223,41 +254,64 @@ export function CartPageClient({
                 <small>{giftMessage.length} of 300 characters</small>
               </div>
             )}
-            <label>
-              Referral code
-              <input
-                value={referralCode}
-                onChange={(event) =>
-                  setReferralCode(event.target.value.toUpperCase())
-                }
-                maxLength={24}
-                placeholder="CANDYCODE"
-              />
-            </label>
-            <label className="cart-check">
-              <input
-                type="checkbox"
-                checked={useRewards}
-                onChange={(event) => setUseRewards(event.target.checked)}
-              />
-              Use my Sugar Points
-            </label>
-            <small>
-              We will apply every available point tied to this email.
-            </small>
+            {canPayOnline && (
+              <>
+                <label>
+                  Referral code
+                  <input
+                    value={referralCode}
+                    onChange={(event) =>
+                      setReferralCode(event.target.value.toUpperCase())
+                    }
+                    maxLength={24}
+                    placeholder="CANDYCODE"
+                  />
+                </label>
+                <label className="cart-check">
+                  <input
+                    type="checkbox"
+                    checked={useRewards}
+                    onChange={(event) => setUseRewards(event.target.checked)}
+                  />
+                  Use my Sugar Points
+                </label>
+                <small>
+                  We will apply every available point tied to this email.
+                </small>
+              </>
+            )}
             {error && (
               <p className="form-error" role="alert">
                 {error}
               </p>
             )}
-            <button
-              className="button primary"
-              disabled={loading}
-              onClick={checkout}
-            >
-              {loading ? 'Opening checkout…' : 'Checkout'}
-            </button>
-          </aside>
+            {canPayOnline && (
+              <button
+                className="button primary"
+                disabled={loading}
+                onClick={checkout}
+              >
+                {loading ? 'Opening checkout…' : 'Pay now'}
+              </button>
+            )}
+            {!showPaymentLink && (
+              <button
+                type="button"
+                className="button secondary"
+                onClick={() => setShowPaymentLink(true)}
+              >
+                Pay by link instead
+              </button>
+            )}
+            {showPaymentLink && (
+              <PaymentLinkOrder
+                email={email}
+                giftRecipientName={isGift ? giftRecipientName : undefined}
+                giftMessage={isGift ? giftMessage : undefined}
+                onComplete={setOrderNumber}
+              />
+            )}
+          </section>
         </div>
       )}
     </section>

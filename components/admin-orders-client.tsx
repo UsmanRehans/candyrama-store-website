@@ -20,8 +20,15 @@ type Order = {
   status: string;
   totalCents: number;
   shippingName: string;
+  shippingLine1: string;
+  shippingLine2: string | null;
   shippingCity: string;
   shippingState: string;
+  shippingZip: string;
+  shippingCountry: string;
+  giftRecipientName: string | null;
+  giftMessage: string | null;
+  internalNote: string | null;
   createdAt: string;
   carrier: string | null;
   serviceLevel: string | null;
@@ -214,7 +221,7 @@ export function AdminOrdersClient() {
         <header className="admin-topbar">
           <div>
             <h1>Orders</h1>
-            <p>Paid orders, fulfillment, tracking, and shipping.</p>
+            <p>Order requests, payments, fulfillment, and shipping.</p>
           </div>
           <div className="admin-account">
             <span>{session.user.email}</span>
@@ -240,28 +247,44 @@ export function AdminOrdersClient() {
             {orders.length === 0 ? (
               <div className="admin-note">
                 <strong>No orders yet.</strong>
-                <p>
-                  Completed Stripe sandbox orders will appear here
-                  automatically.
-                </p>
+                <p>New order requests and paid orders will appear here.</p>
               </div>
             ) : (
               orders.map((order) => (
                 <article className="order-card" key={order.id}>
                   <div className="order-summary">
                     <div>
-                      <span className="order-status">{order.status}</span>
+                      <span className="order-status">
+                        {order.status === 'PENDING'
+                          ? 'Awaiting payment · review availability'
+                          : order.status}
+                      </span>
                       <h2>{order.orderNumber}</h2>
                       <p>
-                        {order.shippingName} · {order.shippingCity},{' '}
-                        {order.shippingState}
+                        <strong>{order.shippingName}</strong>
+                        <br />
+                        {order.shippingLine1}
+                        <br />
+                        {order.shippingLine2 && (
+                          <>
+                            {order.shippingLine2}
+                            <br />
+                          </>
+                        )}
+                        {order.shippingCity}, {order.shippingState}{' '}
+                        {order.shippingZip}
+                        <br />
+                        {order.shippingCountry}
                       </p>
                       <small>
                         {new Date(order.createdAt).toLocaleString()} ·{' '}
                         {order.email}
                       </small>
                     </div>
-                    <strong>${(order.totalCents / 100).toFixed(2)}</strong>
+                    <strong>
+                      {order.status === 'PENDING' ? 'Estimated ' : ''}$
+                      {(order.totalCents / 100).toFixed(2)}
+                    </strong>
                   </div>
                   <ul>
                     {order.items.map((item) => (
@@ -271,6 +294,20 @@ export function AdminOrdersClient() {
                       </li>
                     ))}
                   </ul>
+                  {(order.giftRecipientName || order.giftMessage) && (
+                    <div>
+                      <strong>Gift details</strong>
+                      {order.giftRecipientName && (
+                        <p>Recipient: {order.giftRecipientName}</p>
+                      )}
+                      {order.giftMessage && <p>Message: {order.giftMessage}</p>}
+                    </div>
+                  )}
+                  {order.internalNote && (
+                    <p>
+                      <strong>Internal note:</strong> {order.internalNote}
+                    </p>
+                  )}
                   {order.shippingLabelUrl ? (
                     <a
                       className="button primary"

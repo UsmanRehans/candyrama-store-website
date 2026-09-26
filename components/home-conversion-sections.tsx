@@ -72,7 +72,7 @@ export function HomeConversionSections({
     setBoxNotice(
       readyToAdd.length === 4
         ? 'Your candy box is in the bag!'
-        : 'Your box looks good. Ordering opens soon.',
+        : 'Ordering is temporarily unavailable. Please contact us.',
     );
   }
 

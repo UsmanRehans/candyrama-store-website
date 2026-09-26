@@ -1,8 +1,51 @@
-import { InfoPage, InfoSection } from '@/components/info-page';
+import Link from "next/link";
+import { InfoPage, InfoSection } from "@/components/info-page";
 
-export const metadata = { title: 'Allergen Information | CandyRama' };
-export default function AllergensPage(){return <InfoPage eyebrow="KNOW BEFORE YOU BITE" title="Allergen information" intro="Check the ingredients and shared facility details before choosing your candy.">
-  <div className="allergen-alert"><strong>Shared facility notice</strong><p>Products are packed in a facility that handles peanuts, tree nuts, milk, eggs, wheat, soy, and sesame. Cleaning and handling procedures reduce risk, but we cannot guarantee that any product is free from cross contact.</p></div>
-  <InfoSection title="Quick category guide"><div className="shipping-table allergen-table"><div><b>Category</b><span>Contains</span><span>May contain</span></div><div><b>Sour & sweet gummies</b><span>Gelatin</span><span>Tree nuts, soy, wheat</span></div><div><b>Spicy candy</b><span>Varies by product</span><span>Tree nuts, soy, wheat, sesame</span></div><div><b>Chocolate bark</b><span>Milk, soy</span><span>Peanuts, tree nuts, wheat, egg</span></div><div><b>Peanut brittle</b><span>Peanuts, milk, soy</span><span>Tree nuts, wheat, egg, sesame</span></div><div><b>Caramel brittle</b><span>Milk, soy</span><span>Peanuts, tree nuts, wheat, egg</span></div></div><p className="fine-print">Formulas can change. The label on the product you receive is always the most current source of ingredient and allergen information.</p></InfoSection>
-  <InfoSection title="Severe allergies"><p>If you have a severe allergy, please contact <a href="mailto:admin@thecandyrama.com">admin@thecandyrama.com</a> before ordering. We’ll help you review the available information, but we cannot promise an allergen free environment.</p></InfoSection>
-  </InfoPage>}
+export const metadata = {
+  title: "Allergen Information | Candy Rama",
+  description:
+    "How to review Candy Rama ingredient and allergen information before choosing or sharing candy.",
+};
+
+export default function AllergensPage() {
+  return (
+    <InfoPage
+      eyebrow="KNOW BEFORE YOU BITE"
+      title="Allergen information"
+      intro="Ingredients and allergen risks vary. Always check the package you receive."
+    >
+      <div className="allergen-alert">
+        <strong>The current label comes first</strong>
+        <p>
+          Read the full ingredient list and every “contains” or “may contain”
+          statement before eating or sharing a product. Formulas and suppliers
+          can change.
+        </p>
+      </div>
+      <InfoSection title="Do not assume from the category">
+        <p>
+          Gummies, sour candy, spicy candy, bark, and brittle can contain
+          different ingredients even when they look similar. A product name,
+          color, or candy type is not enough to determine allergen safety.
+        </p>
+      </InfoSection>
+      <InfoSection title="Severe allergies">
+        <p>
+          If you or the person eating the candy has a severe allergy, review the
+          physical package carefully before opening it. Contact{" "}
+          <a href="mailto:admin@thecandyrama.com">admin@thecandyrama.com</a> if
+          you need help locating the available label information. We cannot
+          promise an allergen-free product or environment.
+        </p>
+      </InfoSection>
+      <InfoSection title="Dietary requirements">
+        <p>
+          Allergen information and dietary suitability are related, but they are
+          not the same. See our{" "}
+          <Link href="/dietary-information">dietary information page</Link> for
+          kosher, halal, vegan, vegetarian, and gluten-free guidance.
+        </p>
+      </InfoSection>
+    </InfoPage>
+  );
+}

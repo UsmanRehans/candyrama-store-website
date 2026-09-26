@@ -1,51 +1,60 @@
-import 'server-only';
-import { db } from './db';
+import "server-only";
+import { db } from "./db";
 import {
   products as designProducts,
   type StorefrontProduct,
-} from '@/lib/products';
-import { env } from './env';
-import { productImageFrames } from '@/lib/product-image-framing';
+} from "@/lib/products";
+import { env } from "./env";
+import { productImageFrames } from "@/lib/product-image-framing";
+
+const pinkPackageImages: Record<string, string> = {
+  "spicy-gummy-bears": "/generated/spicy-gummy-bears-pink-v1.png",
+  "chocolate-crunch-bark": "/generated/chocolate-crunch-bark-pink-v1.png",
+  "gummy-bear-party": "/generated/gummy-bear-party-pink-v1.png",
+  "chamoy-heatwave": "/generated/chamoy-heatwave-pink-v1.png",
+  "blue-raspberry-blast": "/generated/blue-raspberry-pink-v1.png",
+  "rainbow-sour-mix": "/generated/rainbow-mix-pink-v1.png",
+};
 
 function categoryLabel(value: string) {
   return value
     .toLowerCase()
-    .replaceAll('_', ' ')
+    .replaceAll("_", " ")
     .replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 function toneFor(accentColor: string) {
   const color = accentColor.toUpperCase();
-  if (color === '#2EC5FF') return 'sky';
-  if (color === '#FFD23F') return 'yellow';
-  if (color === '#B5622A') return 'copper';
-  if (color === '#8ED11F') return 'lime';
-  if (color === '#6B1749' || color === '#4E0F34') return 'plum';
-  return 'pink';
+  if (color === "#2EC5FF") return "sky";
+  if (color === "#FFD23F") return "yellow";
+  if (color === "#B5622A") return "copper";
+  if (color === "#8ED11F") return "lime";
+  if (color === "#6B1749" || color === "#4E0F34") return "plum";
+  return "pink";
 }
 
 function stableProductImageUrl(image: string) {
   // Use the inspected local cutouts so their alpha bounds match the shared frame.
   if (productImageFrames[image]) return image;
-  return image.startsWith('/generated/')
+  return image.startsWith("/generated/")
     ? `https://candyrama-store.vercel.app${image}`
     : image;
 }
 
 export async function getStorefrontProducts(): Promise<StorefrontProduct[]> {
   const records = await db.product.findMany({
-    where: { status: 'ACTIVE' },
+    where: { status: "ACTIVE" },
     include: {
-      images: { orderBy: { position: 'asc' }, take: 1 },
+      images: { orderBy: { position: "asc" }, take: 1 },
       variants: {
         where: {
           active: true,
           priceCents: { not: null },
           stockQty: { not: null },
         },
-        orderBy: [{ isDefault: 'desc' }, { position: 'asc' }],
+        orderBy: [{ isDefault: "desc" }, { position: "asc" }],
       },
     },
-    orderBy: { createdAt: 'asc' },
+    orderBy: { createdAt: "asc" },
   });
   return records.flatMap((record) => {
     const variant = record.variants[0];
@@ -60,11 +69,12 @@ export async function getStorefrontProducts(): Promise<StorefrontProduct[]> {
       return [
         {
           sku: item.sku,
-          label: item.netWeight ?? item.sizeSig ?? 'Standard',
+          label: item.netWeight ?? item.sizeSig ?? "Standard",
           price: `$${(item.priceCents / 100).toFixed(2)}`,
           priceCents: item.priceCents,
           netWeight: item.netWeight ?? undefined,
-          available: env.STORE_PURCHASING_ENABLED && item.stockQty > 0,
+          // Availability here means eligible to submit an unpaid order for review.
+          available: env.STORE_PURCHASING_ENABLED,
         },
       ];
     });
@@ -76,15 +86,17 @@ export async function getStorefrontProducts(): Promise<StorefrontProduct[]> {
         note: record.tagline ?? record.description,
         price: `$${(priceCents / 100).toFixed(2)}`,
         priceCents,
-        image: stableProductImageUrl(
-          record.images[0]?.url ??
-            design?.image ??
-            '/generated/rainbow-sour-cutout.png',
-        ),
+        image:
+          pinkPackageImages[record.slug] ??
+          stableProductImageUrl(
+            record.images[0]?.url ??
+              design?.image ??
+              "/generated/rainbow-sour-cutout.png",
+          ),
         tone: design?.tone ?? toneFor(record.accentColor),
         badge: design?.badge,
         netWeight: variant.netWeight ?? undefined,
-        available: env.STORE_PURCHASING_ENABLED && variant.stockQty > 0,
+        available: env.STORE_PURCHASING_ENABLED,
         variantSku: variant.sku,
         purchaseEnabled: env.STORE_PURCHASING_ENABLED,
         variants,

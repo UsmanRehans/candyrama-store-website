@@ -27,3 +27,17 @@ Each side states its recommendation, evidence, expected shopper/business effect,
 5. Cando resolves specific disagreements, integrates fixes, and delivers the requested files or review surface with a compact asset manifest. Clearly identify any concept-only assets or missing product facts. Verify revisions rather than merely gathering opinions.
 
 Drafting, internal collaboration, and reversible local implementation proceed within the request. These role files do not authorize spending, external messages, publication, deployment, or operational mutations beyond the user's actual task authorization. Do not add an approval step for work already authorized. If publication approval is needed, finish the concrete reviewable deliverable first.
+
+## Creative quality beyond technical QA
+
+A clean render and working page are necessary but do not establish a strong campaign. Lauren and Vita must also assess appetite appeal, useful product information, distinct purpose for each module, meaningful Store choices, and a recognizable Candy Rama point of view. Name repetitive or empty modules explicitly. Cando reports technical correctness, brand consistency, creative strength, and Amazon/product readiness separately. A competitor benchmark must say which actual Amazon pages and rendered modules were inspected; research on brand websites is not an Amazon visual audit. Observed creative is not proof of conversion.
+
+## Shared interface design toolkit
+
+For website and app design assignments, every employee follows [the Impeccable integration guide](impeccable.md). It maps commands to role responsibilities and preserves the existing brand, image-review, and release rules. The upstream skill is installed in `.agents/skills/impeccable/`.
+
+## Direct owner collaboration and persistent learning
+
+Owner instruction, September 14, 2026: specialists should communicate directly, ask focused questions, and learn from feedback across future websites. Follow `.agents/skills/website-team/SKILL.md` and its `references/owner-preferences.md` for the shared communication and learning protocol.
+
+Each active employee introduces meaningful commentary with their name and offers their own evidence, recommendation or question. Use actual subagents and route owner answers back to them. Cando schedules questions to avoid piling them up and keeps the work moving. If the UI hides specialist commentary, relay its substance with honest attribution. Save Candy Rama decisions in the brand/voice memory; save portable working preferences separately. Durable files improve future context; this is not model retraining or continuous autonomous work.

@@ -49,9 +49,10 @@ export function ProductOptions({
           ? `Net weight ${selected.netWeight}`
           : 'See package for net weight'}
       </p>
+      {purchaseEnabled && <p className="selected-net-weight">Orders are reviewed for availability before payment.</p>}
       {!purchaseEnabled && (
         <p className="coming-soon-note">
-          Preview the options now. Ordering opens soon.
+          Ordering is temporarily unavailable. Please contact us for help.
         </p>
       )}
     </div>

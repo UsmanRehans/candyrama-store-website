@@ -115,7 +115,7 @@ export function PickFourBuilder({
                 }}
               >
                 {!product.purchaseEnabled
-                  ? 'Coming soon'
+                  ? 'Unavailable'
                   : !product.available
                     ? 'Sold out'
                     : 'Add to box'}
